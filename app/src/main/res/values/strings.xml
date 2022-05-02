@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">Paradox</string>
+
+    <string name="upload_documents">Subir documentos</string>
+    <string name="search_system">Sistema de búsqueda</string>
+    <string name="covert_tutor">Conviertete en tutor</string>
+    <string name="find_docs">Encuentra documentos</string>
+    <string name="tutors">y tambien tutores</string>
+    <string name="career">de tu carrera universitaria</string>
+    <string name="background_descrip">It\'s a simple background</string>
+    <string name="share_knowledge">Comparte tus conocimientos</string>
+    <string name="gain">y cobra por ello</string>
+    <string name="image_descript">It\'s a simple image</string>
+    <string name="share_docs">Comparte tus documentos</string>
+    <string name="notes">y apuntes</string>
+    <string name="email_hint">Correo electronico</string>
+    <string name="password_hint">Contraseña</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="login">Iniciar sesión</string>
+    <string name="register">Registrate</string>
+
+    <string name="username_or_password">Username or Password are incorrect</string>
+    <string name="buscar">Buscar</string>
+
 </resources>
