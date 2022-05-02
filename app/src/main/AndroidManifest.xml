@@ -10,6 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Paradox">
         <activity
+            android:name=".EditProfessionalProfileP"
+            android:exported="false" />
+        <activity
+            android:name=".SeeProfessionalProfileP"
+            android:exported="false" />
+        <activity
+            android:name=".EditProfilePostulant"
+            android:exported="false" />
+        <activity
+            android:name=".SeeProfilePostulant"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
