@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Paradox">
         <activity
+            android:name=".RegisterEmployeerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegisterPostulantActivity"
+            android:exported="false" />
+        <activity
             android:name=".Register"
             android:exported="false" />
         <activity

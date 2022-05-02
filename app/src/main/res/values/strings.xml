@@ -22,8 +22,18 @@
     <string name="username_or_password">Username or Password are incorrect</string>
     <string name="buscar">Buscar</string>
     <string name="title_registro">Registro</string>
+    <string name="title_postulant">Postulante</string>
+    <string name="title_empleador">Empleador</string>
     <string name="subtitle_register">Elige el tipo de usuario con el que te identificas</string>
     <string name="name_register_postulant">Postulante</string>
     <string name="name_register_empleador">Empleador</string>
+    <string name="apellidos">Apellidos</string>
+    <string name="estado_civil">Estado civil</string>
+    <string name="nombres">Nombres</string>
+    <string name="documento_de_identidad">Documento de identidad</string>
+    <string name="adjuntar_archivos">Adjuntar archivos</string>
+    <string name="numero_telefonico">Número teléfonico</string>
+    <string name="correo_electronico">Correo electronico</string>
+    <string name="contrase_a">contraseña</string>
 
 </resources>
