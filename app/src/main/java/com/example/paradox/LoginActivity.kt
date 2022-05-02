@@ -1,10 +1,11 @@
 package com.example.paradox
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-
+import android.widget.Toast
 
 
 class LoginActivity : AppCompatActivity() {
@@ -16,26 +17,7 @@ class LoginActivity : AppCompatActivity() {
 
 
 
-        val btLogin = findViewById<Button>(R.id.btLogin)
 
-        val etUser = findViewById<EditText>(R.id.etUsername)
-        val etPassword = findViewById<EditText>(R.id.etPassword)
-
-
-
-        btLogin.setOnClickListener {
-
-
-            val name = etUser.text.toString()
-            val password = etPassword.text.toString()
-
-
-
-
-
-
-
-        }
 
 
     }

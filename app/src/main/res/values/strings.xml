@@ -21,5 +21,9 @@
 
     <string name="username_or_password">Username or Password are incorrect</string>
     <string name="buscar">Buscar</string>
+    <string name="title_registro">Registro</string>
+    <string name="subtitle_register">Elige el tipo de usuario con el que te identificas</string>
+    <string name="name_register_postulant">Postulante</string>
+    <string name="name_register_empleador">Empleador</string>
 
 </resources>
