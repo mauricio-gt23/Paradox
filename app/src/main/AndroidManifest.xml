@@ -10,6 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Paradox">
         <activity
+            android:name=".PostulationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".InformationJobActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FiltrosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PerfilPostulanteActivity"
+            android:exported="false" />
+        <activity
             android:name=".RegisterEmployeerActivity"
             android:exported="false" />
         <activity

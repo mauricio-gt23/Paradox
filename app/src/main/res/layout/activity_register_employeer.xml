@@ -13,7 +13,7 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/apellidos"
+        android:hint="@string/apellidos"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -25,7 +25,7 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/estado_civil"
+        android:hint="@string/estado_civil"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -37,7 +37,7 @@
         android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/nombres"
+        android:hint="@string/nombres"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,7 +64,7 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/documento_de_identidad"
+        android:hint="@string/documento_de_identidad"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -75,23 +75,35 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:ems="10"
-        android:text="@string/numero_telefonico"
+        android:hint="@string/numero_telefonico"
         android:inputType="phone"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
+        android:id="@+id/editTextPhone3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/posicion"
+        android:inputType="phone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPhone" />
+
+    <EditText
         android:id="@+id/editTextTextEmailAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:ems="10"
+        android:hint="@string/correo_electronico"
         android:inputType="textEmailAddress"
-        android:text="@string/correo_electronico"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPhone"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPhone3" />
 
     <EditText
         android:id="@+id/editTextTextPassword2"
@@ -106,13 +118,47 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/btnAdjuntarArchivos"
+        android:layout_width="205dp"
+        android:layout_height="47dp"
         android:layout_marginTop="8dp"
-        android:text="@string/adjuntar_archivos"
+        android:backgroundTint="#00FFFFFF"
+
+        android:hint="@string/adjuntar_archivos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2" />
+
+    <Button
+        android:id="@+id/btRegistrarseEmp"
+        android:layout_width="245dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/purple_500"
+        android:shadowRadius="@integer/material_motion_duration_short_1"
+        android:text="@string/registrarse"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:cornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="@string/he_le_do_y_acepto_los_terminos_y_condiciones"
+        app:layout_constraintEnd_toStartOf="@+id/checkBox"
+        app:layout_constraintTop_toBottomOf="@+id/btnAdjuntarArchivos" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnAdjuntarArchivos" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
