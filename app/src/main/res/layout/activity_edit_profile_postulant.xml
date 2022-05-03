@@ -36,7 +36,7 @@
 
     <EditText
         android:id="@+id/editTextTextPersonName"
-        android:layout_width="306dp"
+        android:layout_width="0dp"
         android:layout_height="58dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="165dp"
@@ -51,7 +51,7 @@
 
     <EditText
         android:id="@+id/editTextTextPersonName2"
-        android:layout_width="306dp"
+        android:layout_width="0dp"
         android:layout_height="58dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="10dp"
@@ -66,7 +66,7 @@
 
     <EditText
         android:id="@+id/editTextTextPersonName3"
-        android:layout_width="306dp"
+        android:layout_width="0dp"
         android:layout_height="58dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="80dp"
@@ -81,7 +81,7 @@
 
     <EditText
         android:id="@+id/editTextTextPersonName4"
-        android:layout_width="306dp"
+        android:layout_width="0dp"
         android:layout_height="58dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="10dp"
@@ -96,7 +96,7 @@
 
     <EditText
         android:id="@+id/editTextTextPersonName5"
-        android:layout_width="306dp"
+        android:layout_width="0dp"
         android:layout_height="58dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="10dp"
@@ -111,7 +111,7 @@
 
     <EditText
         android:id="@+id/editTextTextPersonName6"
-        android:layout_width="306dp"
+        android:layout_width="0dp"
         android:layout_height="58dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="10dp"
