@@ -6,4 +6,89 @@
     android:layout_height="match_parent"
     tools:context=".EditProfilePostulant">
 
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mi perfil"
+        android:textColor="#7E57C2"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="168dp"
+        tools:layout_editor_absoluteY="62dp"
+        tools:text="Mi perfil" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="151dp"
+        android:layout_height="130dp"
+        tools:layout_editor_absoluteX="130dp"
+        tools:layout_editor_absoluteY="103dp"
+        tools:srcCompat="@drawable/ic_baseline_account_circle_avatar_paradox" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="306dp"
+        android:layout_height="58dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Marcus"
+        tools:layout_editor_absoluteX="40dp"
+        tools:layout_editor_absoluteY="254dp"
+        tools:text="Marcus" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName2"
+        android:layout_width="306dp"
+        android:layout_height="58dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Workman"
+        tools:layout_editor_absoluteX="40dp"
+        tools:layout_editor_absoluteY="322dp"
+        tools:text="Workman" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName3"
+        android:layout_width="306dp"
+        android:layout_height="58dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="75856849"
+        tools:layout_editor_absoluteX="40dp"
+        tools:layout_editor_absoluteY="393dp"
+        tools:text="75856849" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName4"
+        android:layout_width="306dp"
+        android:layout_height="58dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Soltero"
+        tools:layout_editor_absoluteX="40dp"
+        tools:layout_editor_absoluteY="464dp"
+        tools:text="Soltero" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName5"
+        android:layout_width="306dp"
+        android:layout_height="58dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="989654323"
+        tools:layout_editor_absoluteX="40dp"
+        tools:layout_editor_absoluteY="529dp"
+        tools:text="989654323" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName6"
+        android:layout_width="306dp"
+        android:layout_height="58dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="marcusworkman@gmail.com"
+        tools:layout_editor_absoluteX="40dp"
+        tools:layout_editor_absoluteY="599dp"
+        tools:text="marcusworkman@gmail.com" />
 </androidx.constraintlayout.widget.ConstraintLayout>
