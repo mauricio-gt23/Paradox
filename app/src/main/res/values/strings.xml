@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Paradox</string>
+    <string name="anuncios">Anuncios</string>
+    <string name="buscar">Buscar</string>
+    <string name="claro">Claro</string>
+    <string name="movistar">Movistar</string>
+    <string name="puesto_empresa_o_palabra_clave">Puesto, empresa o palabra clave</string>
+    <string name="_3_ofertas_de_trabajo_disponibles">3 Ofertas de trabajo disponibles</string>
+    <string name="estado">Estado</string>
+    <string name="mis_postulaciones">Mis postulaciones</string>
 </resources>
