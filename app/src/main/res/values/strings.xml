@@ -41,5 +41,7 @@
     <string name="he_le_do_y_acepto_los_terminos_y_condiciones">He leído y acepto los terminos y condiciones.</string>
     <string name="perfil_del_postulante">Perfil del postulante</string>
     <string name="grado_de_estudios">Grado de estudios</string>
+    <string name="ocupaci_n">Ocupación</string>
+    <string name="descripci_n">Descripción</string>
 
 </resources>
