@@ -12,6 +12,8 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintSet
 import androidx.core.view.isInvisible
+import android.widget.ArrayAdapter
+import androidx.core.content.ContentProviderCompat.requireContext
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,6 +52,9 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+
+
+        val languages = resources.getStringArray(R.array.languages)
 
     }
 

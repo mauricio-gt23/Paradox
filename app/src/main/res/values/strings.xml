@@ -44,4 +44,9 @@
     <string name="ocupaci_n">Ocupación</string>
     <string name="descripci_n">Descripción</string>
 
+    <string-array name="languages">
+        <item>English</item>
+        <item>French</item>
+        <item>German</item>
+    </string-array>
 </resources>

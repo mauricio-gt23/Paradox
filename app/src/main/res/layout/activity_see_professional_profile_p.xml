@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SeeProfessionalProfileP">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="114dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="115dp"
+            android:text="Mi perfil profesional"
+            android:textColor="#7E57C2"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Mi perfil profesional" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="40dp"
+            android:text="Ocupacion"
+            android:textColor="#7E57C2"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView13"
+            tools:text="Ocupacion" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="7dp"
+            android:text="Ingeniero de sistemas"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="20dp"
+            android:text="Descripcion"
+            android:textColor="#7E57C2"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView12"
+            tools:text="Descripcion" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="0dp"
+            android:layout_height="122dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="48dp"
+            android:text="Ingeniero de Sistemas de la Universidad La Sapienza (Roma -Italia ) con amplios conocimientos en tecnologías SOA con énfasis en arquitecturas basadas en JEE. Soy una persona capaz de aprender temas nuevos con el objetivo de aportar al trabajo en equipo y hacer crecer mi conocimiento."
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView15"
+            tools:text="Ingeniero de Sistemas de la Universidad La Sapienza (Roma -Italia ) con amplios conocimientos en tecnologías SOA con énfasis en arquitecturas basadas en JEE. Soy una persona capaz de aprender temas nuevos con el objetivo de aportar al trabajo en equipo y hacer crecer mi conocimiento." />
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="20dp"
+            android:text="Grado de estudios"
+            android:textColor="#7E57C2"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView16"
+            tools:text="Grado de estudios" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="7dp"
+            android:text="Maestria"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="47dp"
+            android:layout_marginTop="20dp"
+            android:text="Habilidades"
+            android:textColor="#7E57C2"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView18"
+            tools:text="Habilidades" />
+
+        <TextView
+            android:id="@+id/textView21"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="20dp"
+            android:text="Idiomas"
+            android:textColor="#7E57C2"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView24"
+            tools:text="Idiomas" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btGoToEditProfessional"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="650dp"
+            android:layout_marginEnd="28dp"
+            android:clickable="true"
+            app:backgroundTint="#7E57C2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:drawable/ic_menu_edit" />
+
+        <TextView
+            android:id="@+id/textView24"
+            android:layout_width="179dp"
+            android:layout_height="86dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="184dp"
+            android:text="Autoconocimiento
+                          Empatia
+                          Comunicacion Asertiva
+                          Relaciones Interpersonales
+                          Toma de decisiones"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView19" />
+
+        <TextView
+            android:id="@+id/textView25"
+            android:layout_width="80dp"
+            android:layout_height="47dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="283dp"
+            android:text="Ingles
+                          Español"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView21" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

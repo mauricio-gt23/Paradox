@@ -7,6 +7,8 @@
         <entry key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/drawable/ic_baseline_lock_24.xml" value="0.2325" />
         <entry key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/drawable/ic_baseline_person_outline_24.xml" value="0.2325" />
         <entry key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1295" />
+        <entry key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/layout/activity_edit_professional_profile_p.xml" value="0.1" />
+        <entry key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/layout/activity_edit_profile_postulant.xml" value="0.1" />
         <entry key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/layout/activity_filtros.xml" value="0.2151268115942029" />
         <entry key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/layout/activity_login.xml" value="0.29270833333333335" />
         <entry key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/layout/activity_main.xml" value="0.33" />
@@ -15,6 +17,7 @@
         <entry key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/layout/activity_register.xml" value="0.5" />
         <entry key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/layout/activity_register_employeer.xml" value="0.5" />
         <entry key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/layout/activity_register_postulant.xml" value="0.2151268115942029" />
+        <entry key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/layout/activity_see_professional_profile_p.xml" value="0.1" />
       </map>
     </option>
   </component>

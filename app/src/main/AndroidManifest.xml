@@ -34,6 +34,16 @@
             android:name=".LoginActivity"
             android:exported="false" />
         <activity
+
+            android:name=".EditProfessionalProfileP"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name=".SeeProfessionalProfileP"
+
+            android:exported="false">
+        </activity>
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -42,6 +52,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".EditProfilePostulant"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name=".SeeProfilePostulant"
+            android:exported="false">
+        </activity>
+
     </application>
 
 </manifest>
