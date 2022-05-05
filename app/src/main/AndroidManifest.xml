@@ -16,7 +16,7 @@
             android:name=".InformationJobActivity"
             android:exported="false" />
         <activity
-            android:name=".FiltrosActivity"
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".PerfilPostulanteActivity"
@@ -44,7 +44,7 @@
             android:exported="false">
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".FiltrosActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

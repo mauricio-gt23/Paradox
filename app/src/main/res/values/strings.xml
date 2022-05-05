@@ -43,6 +43,8 @@
     <string name="grado_de_estudios">Grado de estudios</string>
     <string name="ocupaci_n">Ocupación</string>
     <string name="descripci_n">Descripción</string>
+    <string name="limpiar">Limpiar</string>
+    <string name="filtrar">Filtrar</string>
 
     <string-array name="languages">
         <item>English</item>
@@ -80,6 +82,39 @@
         <item>Español </item>
         <item>Portugues</item>
         <item>Alemán </item>
+
+    </string-array>
+
+    <string-array name="tipo_de_contrato_array">
+        <item>Contrato a Término Fijo </item>
+        <item>Contrato a término indefinido </item>
+        <item>Contrato civil por prestación de servicios</item>
+        <item>Contrato de aprendizaje </item>
+        <item>Contrato ocasional de trabajo </item>
+
+    </string-array>
+    <string-array name="salario_array">
+        <item>1025 a 2000 </item>
+        <item>2000 a 3000 </item>
+        <item>3000 a 4000</item>
+        <item>4000 a 5000 </item>
+        <item>mas </item>
+
+    </string-array>
+    <string-array name="fecha_de_publicacion_array">
+        <item>24/04/2022 </item>
+        <item>26/05/2022 </item>
+        <item>28/06/2022</item>
+        <item>24/07/2022 </item>
+        <item>mas </item>
+
+    </string-array>
+    <string-array name="lugar_array">
+        <item>Lima </item>
+        <item>San isidro </item>
+        <item>Los olivos</item>
+        <item>Comas</item>
+        <item>mas </item>
 
     </string-array>
 </resources>
