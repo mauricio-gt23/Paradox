@@ -117,12 +117,12 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="48dp"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="20dp"
             android:text="Idiomas"
             android:textColor="#7E57C2"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView19"
+            app:layout_constraintTop_toBottomOf="@+id/textView24"
             tools:text="Idiomas" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -137,6 +137,35 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@android:drawable/ic_menu_edit" />
+
+        <TextView
+            android:id="@+id/textView24"
+            android:layout_width="179dp"
+            android:layout_height="86dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="184dp"
+            android:text="Autoconocimiento
+                          Empatia
+                          Comunicacion Asertiva
+                          Relaciones Interpersonales
+                          Toma de decisiones"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView19" />
+
+        <TextView
+            android:id="@+id/textView25"
+            android:layout_width="80dp"
+            android:layout_height="47dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="283dp"
+            android:text="Ingles
+                          Español"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView21" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
