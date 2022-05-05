@@ -8,4 +8,6 @@
     <string name="_3_ofertas_de_trabajo_disponibles">3 Ofertas de trabajo disponibles</string>
     <string name="estado">Estado</string>
     <string name="mis_postulaciones">Mis postulaciones</string>
+    <string name="navegation_drawer_open">Open</string>
+    <string name="navegation_drawer_close">Close</string>
 </resources>
