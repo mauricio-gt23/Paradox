@@ -59,4 +59,27 @@
         <item>Uranus</item>
         <item>Neptune</item>
     </string-array>
+    <string-array name="grado_array">
+        <item>Trabajo en equipo</item>
+        <item>Secundaria</item>
+        <item>Universidad Incompleta</item>
+        <item>Universidad Completa</item>
+        <item>Técnico Incompleto</item>
+        <item>Técnico Completo</item>
+     </string-array>
+    <string-array name="habilidades_array">
+
+        <item>Pensamiento crítico</item>
+        <item>Pensamiento abstracto</item>
+        <item>Capacidad de aprendizaje</item>
+        <item>Manejo de conflictos</item>
+        <item>Adaptación</item>
+    </string-array>
+    <string-array name="idiomas_array">
+        <item>Inglés </item>
+        <item>Español </item>
+        <item>Portugues</item>
+        <item>Alemán </item>
+
+    </string-array>
 </resources>
