@@ -10,6 +10,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Paradox">
         <activity
+            android:name=".PostulantProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PostulantActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditAnnouncementActivity"
+            android:exported="false" />
+        <activity
+            android:name=".WatchAnnouncementActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PostulationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AnnouncementActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
