@@ -6,4 +6,117 @@
     android:layout_height="match_parent"
     tools:context=".InformationJobActivity">
 
+    <TextView
+        android:id="@+id/title_desarrollador"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="41dp"
+        android:text="@string/desarrollador_backend_c"
+        android:textColor="@color/purple_500"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="188dp"
+        android:layout_marginTop="44dp"
+        android:text="Claro"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_desarrollador" />
+
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="36dp"
+        android:textColor="@color/purple_500"
+        android:text="@string/tipo_de_contrato"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView27" />
+
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="28dp"
+
+        android:text="@string/contrato_a_plazo_indeterminado"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView28" />
+
+    <TextView
+        android:id="@+id/textView30"
+        android:textColor="@color/purple_500"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/salario"
+        app:layout_constraintTop_toBottomOf="@+id/textView29"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView31"
+        android:textColor="@color/purple_500"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="22dp"
+        android:text="@string/lugar"
+        app:layout_constraintTop_toBottomOf="@+id/textView32"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView32"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="23dp"
+        android:text="@string/s_5000"
+        app:layout_constraintTop_toBottomOf="@+id/textView30"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView33"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/san_isidro_lima"
+        app:layout_constraintTop_toBottomOf="@+id/textView31"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView34"
+        android:textColor="@color/purple_500"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="23dp"
+        android:text="@string/descripci_n"
+        app:layout_constraintTop_toBottomOf="@+id/textView33"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView35"
+        android:layout_width="350dp"
+        android:layout_height="187dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="36dp"
+        android:text="@string/nuestro_cliente_en_tecnolog_a_de_la_informaci_n_con_m_s_de_39_a_os_en_el_sector_enfocado_en_proyectos_de_medio_de_pago_pos_se_encuentra_en_b_squeda_de_un_programador_front_end_requisitos_experiencia_en_angular_nivel_avanzado_en_html5_css3_javascript_jquery_experiencia_en_creaci_n_de_mockups_wireframe_y_prototipos_experiencia_en_consumo_api_rest_experiencia_ux_opcional_conocimiento_git_ofrecemos_ingreso_a_planilla_trabajo_remoto"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView34" />
 </androidx.constraintlayout.widget.ConstraintLayout>

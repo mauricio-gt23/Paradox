@@ -13,7 +13,7 @@
             android:name=".PostulationActivity"
             android:exported="false" />
         <activity
-            android:name=".InformationJobActivity"
+            android:name=".FiltrosActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
@@ -44,7 +44,7 @@
             android:exported="false">
         </activity>
         <activity
-            android:name=".FiltrosActivity"
+            android:name=".InformationJobActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
