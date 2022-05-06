@@ -7,13 +7,13 @@
     tools:context=".EditProfessionalProfileP">
 
     <TextView
-        android:id="@+id/textView22"
+        android:id="@+id/tvProfessionalProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="114dp"
         android:layout_marginTop="60dp"
         android:layout_marginEnd="115dp"
-        android:text="Mi perfil profesional"
+        android:text="@string/mi_perfil_profesional"
         android:textColor="#7E57C2"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -23,23 +23,24 @@
         tools:text="Mi perfil profesional" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName7"
+        android:id="@+id/etDegreeEdit"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="46dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="46dp"
+        android:autofillHints=""
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="Ingeniero de sistemas"
+        android:text="@string/degree_edit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView22"
+        app:layout_constraintTop_toBottomOf="@+id/tvProfessionalProfile"
         tools:text="Ingeniero de sistemas" />
 
     <EditText
-        android:id="@+id/editTextTextMultiLine2"
+        android:id="@+id/etProfileDescriptionShow"
         android:layout_width="0dp"
         android:layout_height="209dp"
         android:layout_marginStart="46dp"
@@ -48,22 +49,36 @@
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
-        android:text="Ingeniero de Sistemas de la Universidad La Sapienza (Roma -Italia ) con amplios conocimientos en tecnologías SOA con énfasis en arquitecturas basadas en JEE. Soy una persona capaz de aprender temas nuevos con el objetivo de aportar al trabajo en equipo y hacer crecer mi conocimiento."
+        android:text="@string/profile_description_edit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName7"
-        tools:text="Ingeniero de Sistemas de la Universidad La Sapienza (Roma -Italia ) con amplios conocimientos en tecnologías SOA con énfasis en arquitecturas basadas en JEE. Soy una persona capaz de aprender temas nuevos con el objetivo de aportar al trabajo en equipo y hacer crecer mi conocimiento." />
+        app:layout_constraintTop_toBottomOf="@+id/etDegreeEdit"
+        tools:text="Ingeniero de Sistemas de la Universidad La Sapienza (Roma -Italia ) con amplios conocimientos en tecnologías SOA con énfasis en arquitecturas basadas en JEE. Soy una persona capaz de aprender temas nuevos con el objetivo de aportar al trabajo en equipo y hacer crecer mi conocimiento."
+        android:autofillHints="" />
 
     <Spinner
         android:id="@+id/spStudyDegree"
         android:layout_width="317dp"
-        android:layout_height="41dp"
+        android:layout_height="48dp"
         android:layout_marginStart="46dp"
         android:layout_marginTop="11dp"
         android:layout_marginEnd="46dp"
+        android:contentDescription="@string/study_degree_dropdown"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine2" />
+        app:layout_constraintTop_toBottomOf="@+id/etProfileDescriptionShow" />
+
+    <Spinner
+        android:id="@+id/spSkills"
+        android:layout_width="317dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="46dp"
+        android:contentDescription="@string/skills_dropdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spStudyDegree" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

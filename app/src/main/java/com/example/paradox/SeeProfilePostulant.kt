@@ -10,7 +10,7 @@ class SeeProfilePostulant : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_see_profile_postulant)
 
-        val buttonEdit = findViewById<FloatingActionButton>(R.id.btEditPostulantProfile)
+        val buttonEdit = findViewById<FloatingActionButton>(R.id.fabEditProfile)
         buttonEdit.setOnClickListener {
             val intent = Intent(this, EditProfilePostulant::class.java)
             startActivity(intent)

@@ -1,5 +1,41 @@
 <resources>
     <string name="app_name">Paradox</string>
+    <string name="mi_perfil_profesional">Mi perfil profesional</string>
+    <string name="degree_edit">Ingeniero de sistemas</string>
+    <string name="profile_description_edit">Ingeniero de Sistemas de la Universidad La Sapienza (Roma -Italia ) con amplios conocimientos en tecnologías SOA con énfasis en arquitecturas basadas en JEE. Soy una persona capaz de aprender temas nuevos con el objetivo de aportar al trabajo en equipo y hacer crecer mi conocimiento.</string>
+    <string name="study_degree_dropdown">studyDegree</string>
+    <string name="skills_dropdown">Skills dropdown</string>
+    <string name="languages_show">Ingles Español</string>
+    <string name="skills_show">Autoconocimiento Empatia Comunicacion Asertiva Relaciones Interpersonales Toma de decisiones</string>
+    <string name="language_title">Idiomas</string>
+    <string name="skills_title">Habilidades</string>
+    <string name="study_degree_show">Maestria</string>
+    <string name="study_degree_title">Grado de estudios</string>
+    <string name="profile_description_show">Ingeniero de Sistemas de la Universidad La Sapienza (Roma -Italia ) con amplios conocimientos en tecnologías SOA con énfasis en arquitecturas basadas en JEE. Soy una persona capaz de aprender temas nuevos con el objetivo de aportar al trabajo en equipo y hacer crecer mi conocimiento.</string>
+    <string name="description_title">Descripcion</string>
+    <string name="occupation_title">Ocupacion</string>
+    <string name="degree_show">Ingeniero de sistemas</string>
+    <string name="prof_profile_supertitle">Mi perfil profesional</string>
+    <string name="floating_edit_prof_profile">ButtonToEditProfProfile</string>
+    <string name="profile_supertitle">Mi perfil</string>
+    <string name="namesTitle">Nombres</string>
+    <string name="lastname_profile_show">Workman</string>
+    <string name="lastname_title_profile">Apellidos</string>
+    <string name="name_show_profile">Marcus</string>
+    <string name="doc_dni_title_profile">Documento de identidad</string>
+    <string name="doc_dni_show_profile">75856849</string>
+    <string name="civil_status_profile_title">Estado civil</string>
+    <string name="civil_status_show_profile">Soltero</string>
+    <string name="go_to_edit_profile">go to edit Profile</string>
+    <string name="number_profile_title">Numero telefonico</string>
+    <string name="number_show_profile">989589596</string>
+    <string name="profile_photo_of_postulant">Profile photo of postulant</string>
+    <string name="name_edit_profile">Marcus</string>
+    <string name="lastname_profile_edit">Workman</string>
+    <string name="doc_dni_edit_profile">75856849</string>
+    <string name="civil_status_edit_profile">Soltero</string>
+    <string name="number_edit_profile">989654323</string>
+    <string name="email_edit_profile">marcusworkman@gmail.com</string>
     <string-array name="languages">
         <item>English</item>
         <item>French</item>
