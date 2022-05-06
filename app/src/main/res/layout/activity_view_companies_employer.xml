@@ -23,10 +23,11 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvCompanies"
-        android:layout_width="294dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvViewTitle"
-        tools:layout_editor_absoluteX="58dp"
         tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,6 +13,8 @@ class ViewCompanyEmployerActivity : AppCompatActivity() {
     lateinit var ivLogoDetail: ImageView
     lateinit var tvNameDetail: TextView
     lateinit var tvRucDetail: TextView
+    lateinit var tvAddressDetail: TextView
+    lateinit var tvDescriptionDetail: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,15 +23,17 @@ class ViewCompanyEmployerActivity : AppCompatActivity() {
         ivLogoDetail = findViewById(R.id.ivLogo)
         tvNameDetail = findViewById(R.id.tvNameDetail)
         tvRucDetail = findViewById(R.id.tvRucDetail)
+        tvAddressDetail = findViewById(R.id.tvAddressDetail)
+        tvDescriptionDetail = findViewById(R.id.tvDescriptionDetail)
 
         val btBack1=findViewById<ImageButton>(R.id.btBack1)
-        val btSaveEditedCompany=findViewById<Button>(R.id.btSaveEditedCompany)
+        val btEditCompany=findViewById<Button>(R.id.btEditCompany)
 
         btBack1.setOnClickListener{
             val intent = Intent(this, ViewCompanyEmployerActivity::class.java)
             startActivity(intent)
         }
-        btSaveEditedCompany.setOnClickListener {
+        btEditCompany.setOnClickListener {
             val intent = Intent(this, EditCompanyActivity::class.java)
             startActivity(intent)
         }

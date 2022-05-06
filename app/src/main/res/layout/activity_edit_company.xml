@@ -55,7 +55,6 @@
             android:id="@+id/etEditName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
             android:textColor="@color/secondary"
             android:textSize="14sp"
             tools:ignore="TextContrastCheck" />
@@ -84,7 +83,6 @@
             android:id="@+id/etEditRuc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="number"
             android:textColor="@color/secondary"
             android:textSize="14sp"
             tools:ignore="TextContrastCheck" />
@@ -113,7 +111,6 @@
             android:id="@+id/etEditAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPostalAddress"
             android:textColor="@color/secondary"
             android:textSize="14sp"
             tools:ignore="TextContrastCheck" />
@@ -142,7 +139,6 @@
             android:id="@+id/etEditDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textLongMessage"
             android:textColor="@color/secondary"
             android:textSize="14sp"
             tools:ignore="TextContrastCheck" />

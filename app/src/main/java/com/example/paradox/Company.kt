@@ -1,10 +1,21 @@
 package com.example.paradox
 
-class Company (
-    val id: Int,
-    val name: String,
-    val ruc: Long,
-    val direction: String,
-    val description: String,
-    val logo: String
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity
+data class Company (
+    @PrimaryKey(autoGenerate = true)
+    var id: Int?,
+    @ColumnInfo(name = "name")
+    var name: String?,
+    @ColumnInfo(name = "ruc")
+    var ruc: String?,
+    @ColumnInfo(name = "address")
+    var address: String?,
+    @ColumnInfo(name = "description")
+    var description: String?,
+    @ColumnInfo(name = "logo")
+    var logo: String?
 )
