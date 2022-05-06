@@ -54,6 +54,10 @@
     <string name="san_isidro_lima">San Isidro, Lima</string>
 
     <string name="nuestro_cliente_en_tecnolog_a_de_la_informaci_n_con_m_s_de_39_a_os_en_el_sector_enfocado_en_proyectos_de_medio_de_pago_pos_se_encuentra_en_b_squeda_de_un_programador_front_end_requisitos_experiencia_en_angular_nivel_avanzado_en_html5_css3_javascript_jquery_experiencia_en_creaci_n_de_mockups_wireframe_y_prototipos_experiencia_en_consumo_api_rest_experiencia_ux_opcional_conocimiento_git_ofrecemos_ingreso_a_planilla_trabajo_remoto">Nuestro cliente en tecnología de la información con más de 39 años en el sector, enfocado en proyectos de Medio de Pago - POS. Se encuentra en búsqueda de un PROGRAMADOR FRONT END. Requisitos: Experiencia en Angular Nivel avanzado en HTML5, CSS3, JavaScript, JQuery Experiencia en creación de mockups, wireframe y prototipos Experiencia en consumo API REST Experiencia UX (Opcional) Conocimiento GIT Ofrecemos: Ingreso a planilla Trabajo remoto</string>
+    <string name="adjunta_tu_hoja_de_vida_detallando_informaci_n_relevante_para_el_puesto_de_trabajo_al_que_postulas">Adjunta tu hoja de vida detallando información relevante para el puesto de trabajo al que postulas.</string>
+    <string name="declaro_que_toda_la_informaci_n_enviada_es_completamente_ver_dica_y_acepto_las_consecuencias_establecidas_por_la_ley_por_la_falsificaci_n_de_las_mismas_de_ser_el_caso">Declaro que toda la información enviada es completamente verídica y acepto las consecuencias establecidas por la ley por la falsificación de las mismas de ser el caso.</string>
+    <string name="agrega_un_video_selfie_de_presentaci_n_personal_para_conocer_m_s_sobre_tus_aptitudes_y_experiencia">Agrega un video selfie de presentación personal para conocer más sobre tus aptitudes y experiencia.</string>
+    <string name="confirmar_postulacion">Confirmar Postulacion</string>
 
     <string-array name="languages">
         <item>English</item>

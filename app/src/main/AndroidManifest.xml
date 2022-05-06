@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Paradox">
         <activity
-            android:name=".PostulationActivity"
+            android:name=".InformationJobActivity"
             android:exported="false" />
         <activity
             android:name=".FiltrosActivity"
@@ -44,7 +44,7 @@
             android:exported="false">
         </activity>
         <activity
-            android:name=".InformationJobActivity"
+            android:name=".PostulationActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
