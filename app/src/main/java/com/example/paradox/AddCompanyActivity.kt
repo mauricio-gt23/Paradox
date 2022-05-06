@@ -5,21 +5,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 
-class MainActivity : AppCompatActivity() {
+class AddCompanyActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_add_company)
 
-        val btVer=findViewById<Button>(R.id.btVer)
-        val btAgregar=findViewById<Button>(R.id.btAgregar)
+        val btAddCompany = findViewById<Button>(R.id.btAddCompany)
 
-
-        btVer.setOnClickListener {
+        btAddCompany.setOnClickListener{
             val intent = Intent(this, ViewCompaniesEmployerActivity::class.java)
-            startActivity(intent)
-        }
-        btAgregar.setOnClickListener {
-            val intent = Intent(this, AddCompanyActivity::class.java)
             startActivity(intent)
         }
     }
