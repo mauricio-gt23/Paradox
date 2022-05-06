@@ -153,17 +153,17 @@
 
     <ImageView
         android:id="@+id/ivProfilePhoto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="127dp"
+        android:layout_height="109dp"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="30dp"
         android:contentDescription="@string/profile_photo_of_postulant"
+        android:src="@drawable/ic_baseline_account_circle_avatar_paradox"
         app:layout_constraintBottom_toTopOf="@+id/tvNameProfileTitle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvProfileSupertitle"
-        tools:ignore="ImageContrastCheck"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:ignore="ImageContrastCheck" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabEditProfile"

@@ -42,13 +42,15 @@
         <item>German</item>
     </string-array>
     <string-array name="planets_array">
-        <item>Mercury</item>
-        <item>Venus</item>
-        <item>Earth</item>
-        <item>Mars</item>
-        <item>Jupiter</item>
-        <item>Saturn</item>
-        <item>Uranus</item>
-        <item>Neptune</item>
+        <item>Secundaria Completa</item>
+        <item>Tecnico</item>
+        <item>Universitario</item>
+        <item>Magister</item>
+    </string-array>
+    <string-array name="skills_array">
+        <item>Autoconocimiento</item>
+        <item>Responsabilidad</item>
+        <item>Comunicacion efectiva</item>
+        <item>Liderazgo</item>
     </string-array>
 </resources>
