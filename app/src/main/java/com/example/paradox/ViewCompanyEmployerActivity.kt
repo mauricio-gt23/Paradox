@@ -23,7 +23,6 @@ class ViewCompanyEmployerActivity : AppCompatActivity() {
     var sectorId : Int = 0
     var name : String = ""
     var logo : String = ""
-    var nameSector : String = ""
     var ruc : Int = 0
     var description : String = ""
     var direccion : String = ""
@@ -49,7 +48,6 @@ class ViewCompanyEmployerActivity : AppCompatActivity() {
             intent.putExtra("sectorId", sectorId)
             intent.putExtra("name", name)
             intent.putExtra("logo", logo)
-            intent.putExtra("nameSector", nameSector)
             intent.putExtra("ruc", ruc)
             intent.putExtra("description", description)
             intent.putExtra("direccion", direccion)
@@ -87,7 +85,6 @@ class ViewCompanyEmployerActivity : AppCompatActivity() {
                     sectorId = company.idSector
                     name = company.name
                     logo = company.logo
-                    nameSector = company.nameSector
                     ruc  = company.ruc
                     description  = company.description
                     direccion  = company.direccion
