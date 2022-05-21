@@ -3,13 +3,18 @@ package com.example.paradox
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
+import android.widget.EditText
 import android.widget.ImageButton
+import com.example.paradox.models.Company
+import com.example.paradox.network.CompaniesService
 import com.google.gson.Gson
-import kotlinx.android.synthetic.main.activity_edit_company.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class EditCompanyActivity : AppCompatActivity() {
-
     lateinit var company: Company
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,43 +24,52 @@ class EditCompanyActivity : AppCompatActivity() {
         loadCompany()
 
         val btBack2 = findViewById<ImageButton>(R.id.btBack2)
-        val btEditCompany = findViewById<Button>(R.id.btEditCompany)
+        val btSaveEditedCompany = findViewById<Button>(R.id.btSaveEditedCompany)
 
         btBack2.setOnClickListener{
             val intent = Intent(this, ViewCompanyEmployerActivity::class.java)
             startActivity(intent)
         }
 
-        btEditCompany.setOnClickListener{
+        btSaveEditedCompany.setOnClickListener{
             editCompany()
-            val intent = Intent(this, ViewCompaniesEmployerActivity::class.java)
+            val intent = Intent(this, ViewCompanyEmployerActivity::class.java)
             startActivity(intent)
         }
     }
     private fun loadCompany() {
+        val etEditName = findViewById<EditText>(R.id.etEditName)
+        val etEditRuc = findViewById<EditText>(R.id.etEditRuc)
+        val etEditAddress = findViewById<EditText>(R.id.etEditAddress)
+        val etEditDescription = findViewById<EditText>(R.id.etEditDescription)
+        val etEditLogo = findViewById<EditText>(R.id.etEditLogo)
+
         val gson = Gson()
         val stringObj = intent.getStringExtra("company")
+        company = gson.fromJson(stringObj, Company::class.java) ?: Company(0, "", "", "",0,"", 0, 0)
 
-        company = gson.fromJson(stringObj, Company::class.java) ?: Company(null, "", "", "","","")
-
-        if (company.id != null){
+        if (company.id != 0){
             etEditName.setText(company.name)
             etEditRuc.setText(company.ruc)
-            etEditAddress.setText(company.address)
+            etEditAddress.setText(company.direccion)
             etEditDescription.setText(company.description)
             etEditLogo.setText(company.logo)
         }
     }
 
-    fun editCompany(){
-        company.name = etEditName.text.toString()
-        company.ruc = etEditRuc.text.toString()
-        company.address = etEditAddress.text.toString()
-        company.description = etEditDescription.text.toString()
-        company.logo = etEditLogo.text.toString()
+    private fun editCompany(){
+        val request = CompaniesService.companiesInstance.editCompany(company.id, company)
+        request.enqueue(object: Callback<Company> {
+            override fun onFailure(call: Call<Company>, t: Throwable) {
+                Log.d("EditCompanyActivity","Error in Editing Company")
+            }
 
-        AppDatabase.getInstance(this).getDao().updateCompany(company)
-
-        finish()
+            override fun onResponse(call: Call<Company>, response: Response<Company>) {
+                val editedCompany = response.body()
+                if (editedCompany != null) {
+                    Log.d("EditCompanyActivity", editedCompany.toString())
+                }
+            }
+        })
     }
 }

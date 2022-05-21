@@ -3,9 +3,14 @@ package com.example.paradox
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
+import com.example.paradox.models.Company
+import com.example.paradox.network.CompaniesService
 import com.google.gson.Gson
-import kotlinx.android.synthetic.main.activity_add_company.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class AddCompanyActivity : AppCompatActivity() {
 
@@ -30,18 +35,22 @@ class AddCompanyActivity : AppCompatActivity() {
         val gson = Gson()
         val stringObj = intent.getStringExtra("company")
 
-        company = gson.fromJson(stringObj, Company::class.java) ?: Company(null, "", "", "","","")
+        company = gson.fromJson(stringObj, Company::class.java) ?: Company(0, "", "", "",0,"", 0, 0)
     }
 
-    fun addCompany(){
-        company.name = etAddName.text.toString()
-        company.ruc = etAddRuc.text.toString()
-        company.address = etAddAddress.text.toString()
-        company.description = etAddDescription.text.toString()
-        company.logo = etAddLogo.text.toString()
+    private fun addCompany(){
+        val request = CompaniesService.companiesInstance.addCompany(company)
+        request.enqueue(object: Callback<Company> {
+            override fun onFailure(call: Call<Company>, t: Throwable) {
+                Log.d("AddCompanyActivity","Error in Adding Company")
+            }
 
-        AppDatabase.getInstance(this).getDao().insertCompany(company)
-
-        finish()
+            override fun onResponse(call: Call<Company>, response: Response<Company>) {
+                val editedCompany = response.body()
+                if (editedCompany != null) {
+                    Log.d("AddCompanyActivity", editedCompany.toString())
+                }
+            }
+        })
     }
 }

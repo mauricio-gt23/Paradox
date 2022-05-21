@@ -1,39 +1,45 @@
 package com.example.paradox
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.gson.Gson
-import kotlinx.android.synthetic.main.activity_view_companies_employer.*
+import androidx.recyclerview.widget.RecyclerView
+import com.example.paradox.adapter.CompanyAdapter
+import com.example.paradox.models.Companies
+import com.example.paradox.network.CompaniesService
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
-class ViewCompaniesEmployerActivity : AppCompatActivity(), OnItemClickListener {
-
-    override fun OnItemClicked(company: Company) {
-        val intent = Intent(this, ViewCompanyEmployerActivity::class.java)
-        val gson = Gson()
-        intent.putExtra("company", gson.toJson(company))
-        startActivity(intent)
-    }
-
-    lateinit var companies: List<Company>
-    lateinit var companyAdapter: CompanyAdapter
+class ViewCompaniesEmployerActivity : AppCompatActivity() {
+    lateinit var companyAdapter : CompanyAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_companies_employer)
-    }
 
-    override fun onResume() {
-        super.onResume()
         loadCompanies()
-
-        companyAdapter = CompanyAdapter(companies, this)
-        rvCompanies.adapter = companyAdapter
-        rvCompanies.layoutManager = LinearLayoutManager(this)
     }
 
     private fun loadCompanies() {
-        companies = AppDatabase.getInstance(this).getDao().getAll()
+        val request = CompaniesService.companiesInstance.getAllCompaniesByEmployerId()
+        request.enqueue(object: Callback<Companies> {
+            override fun onFailure(call: Call<Companies>, t: Throwable) {
+                Log.d("ViewCompaniesEmployerActivity","Error in Fetching Companies")
+            }
+
+            override fun onResponse(call: Call<Companies>, response: Response<Companies>) {
+                val rvCompanies = findViewById<RecyclerView>(R.id.rvCompanies)
+                val content = response.body()
+                if (content != null) {
+                    Log.d("ViewCompaniesEmployerActivity", content.toString())
+                    companyAdapter = CompanyAdapter(content.companies, this@ViewCompaniesEmployerActivity)
+                    rvCompanies.adapter = companyAdapter
+                    rvCompanies.layoutManager = LinearLayoutManager(this@ViewCompaniesEmployerActivity)
+                }
+            }
+        })
     }
+    //cuando le doy clic a una compania
 }
