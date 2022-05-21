@@ -11,7 +11,7 @@ const val BASE_URL = "https://movilesback.herokuapp.com/"
 
 interface CompaniesInterface {
     //List
-    @GET("api/employers/1/companies")
+    @GET("api/employeers/1/companys")
     fun getAllCompaniesByEmployerId(): Call<Companies>
 
     //Get
