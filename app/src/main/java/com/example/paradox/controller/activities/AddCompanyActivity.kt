@@ -1,10 +1,11 @@
-package com.example.paradox
+package com.example.paradox.controller.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import com.example.paradox.R
 import com.example.paradox.models.Company
 import com.example.paradox.network.CompaniesService
 import com.google.gson.Gson

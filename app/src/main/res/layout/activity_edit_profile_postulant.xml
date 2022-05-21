@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".controller.activities.EditProfilePostulant">
+
+    <TextView
+        android:id="@+id/tvProfProfileEditSupertitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="168dp"
+        android:layout_marginTop="62dp"
+        android:layout_marginEnd="168dp"
+        android:text="@string/profile_supertitle"
+        android:textColor="#7E57C2"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Mi perfil" />
+
+    <ImageView
+        android:id="@+id/ivProfilePhotoEdir"
+        android:layout_width="151dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="131dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="130dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvProfProfileEditSupertitle"
+        android:src="@drawable/ic_baseline_account_circle_avatar_paradox"
+        android:contentDescription="@string/profile_photo_of_postulant" />
+
+    <EditText
+        android:id="@+id/etNameProfProfile"
+        android:layout_width="0dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="165dp"
+        android:layout_marginEnd="65dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/name_edit_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvProfProfileEditSupertitle"
+        tools:text="Marcus"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/etLastNameProfProfile"
+        android:layout_width="0dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="65dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/lastname_profile_edit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etNameProfProfile"
+        tools:text="Workman"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/etPhoneProfProfile"
+        android:layout_width="0dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="65dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/doc_dni_edit_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etNameProfProfile"
+        tools:text="75856849"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/etCivilStatusProfile"
+        android:layout_width="0dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="65dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/civil_status_edit_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etPhoneProfProfile"
+        tools:text="Soltero"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/etPhoneProfProfileEdit"
+        android:layout_width="0dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="65dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/number_edit_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etCivilStatusProfile"
+        tools:text="989654323"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/etProfEmail"
+        android:layout_width="0dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="65dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/email_edit_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etPhoneProfProfileEdit"
+        tools:text="marcusworkman@gmail.com"
+        android:autofillHints="" />
+</androidx.constraintlayout.widget.ConstraintLayout>

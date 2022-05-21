@@ -1,4 +1,4 @@
-package com.example.paradox
+package com.example.paradox.controller.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +9,7 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
+import com.example.paradox.R
 import com.example.paradox.models.Company
 import com.example.paradox.network.CompaniesService
 import retrofit2.Call

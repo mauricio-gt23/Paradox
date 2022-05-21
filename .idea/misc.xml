@@ -3,17 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/j_lis/AndroidStudioProjects/Paradox/app/src/main/res/layout/activity_add_comany.xml" value="0.25052083333333336" />
-        <entry key="..\:/Users/j_lis/AndroidStudioProjects/Paradox/app/src/main/res/layout/activity_add_company.xml" value="0.25052083333333336" />
-        <entry key="..\:/Users/j_lis/AndroidStudioProjects/Paradox/app/src/main/res/layout/activity_edit_company.xml" value="0.25052083333333336" />
-        <entry key="..\:/Users/j_lis/AndroidStudioProjects/Paradox/app/src/main/res/layout/activity_main.xml" value="0.25052083333333336" />
-        <entry key="..\:/Users/j_lis/AndroidStudioProjects/Paradox/app/src/main/res/layout/activity_view_companies_employer.xml" value="0.25052083333333336" />
-        <entry key="..\:/Users/j_lis/AndroidStudioProjects/Paradox/app/src/main/res/layout/activity_view_company_employer.xml" value="0.3" />
-        <entry key="..\:/Users/j_lis/AndroidStudioProjects/Paradox/app/src/main/res/layout/protoptype_company.xml" value="0.36" />
-        <entry key="..\:/Users/j_lis/AndroidStudioProjects/Paradox/app/src/main/res/layout/prototype_company.xml" value="0.36626506024096384" />
+        <entry key="..\:/Users/Brigitte/UPC/Moviles/Paradox/MobileParadox/app/src/main/res/layout/activity_main.xml" value="0.15625" />
+        <entry key="..\:/Users/Brigitte/UPC/Moviles/Paradox/MobileParadox/app/src/main/res/layout/activity_see_professional_profile_p.xml" value="0.25" />
       </map>
     </option>
   </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
