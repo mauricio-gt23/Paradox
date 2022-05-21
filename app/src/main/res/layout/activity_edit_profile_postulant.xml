@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EditProfilePostulant">
+    tools:context=".controller.activities.EditProfilePostulant">
 
     <TextView
-        android:id="@+id/textView20"
+        android:id="@+id/tvProfProfileEditSupertitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="168dp"
         android:layout_marginTop="62dp"
         android:layout_marginEnd="168dp"
-        android:text="Mi perfil"
+        android:text="@string/profile_supertitle"
         android:textColor="#7E57C2"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -23,7 +23,7 @@
         tools:text="Mi perfil" />
 
     <ImageView
-        android:id="@+id/imageView1"
+        android:id="@+id/ivProfilePhotoEdir"
         android:layout_width="151dp"
         android:layout_height="130dp"
         android:layout_marginStart="131dp"
@@ -31,11 +31,12 @@
         android:layout_marginEnd="130dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView20"
-        tools:srcCompat="@drawable/ic_baseline_account_circle_avatar_paradox" />
+        app:layout_constraintTop_toBottomOf="@+id/tvProfProfileEditSupertitle"
+        android:src="@drawable/ic_baseline_account_circle_avatar_paradox"
+        android:contentDescription="@string/profile_photo_of_postulant" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/etNameProfProfile"
         android:layout_width="0dp"
         android:layout_height="58dp"
         android:layout_marginStart="40dp"
@@ -43,14 +44,15 @@
         android:layout_marginEnd="65dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Marcus"
+        android:text="@string/name_edit_profile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView20"
-        tools:text="Marcus" />
+        app:layout_constraintTop_toBottomOf="@+id/tvProfProfileEditSupertitle"
+        tools:text="Marcus"
+        android:autofillHints="" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/etLastNameProfProfile"
         android:layout_width="0dp"
         android:layout_height="58dp"
         android:layout_marginStart="40dp"
@@ -58,14 +60,15 @@
         android:layout_marginEnd="65dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Workman"
+        android:text="@string/lastname_profile_edit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
-        tools:text="Workman" />
+        app:layout_constraintTop_toBottomOf="@+id/etNameProfProfile"
+        tools:text="Workman"
+        android:autofillHints="" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/etPhoneProfProfile"
         android:layout_width="0dp"
         android:layout_height="58dp"
         android:layout_marginStart="40dp"
@@ -73,14 +76,15 @@
         android:layout_marginEnd="65dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="75856849"
+        android:text="@string/doc_dni_edit_profile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
-        tools:text="75856849" />
+        app:layout_constraintTop_toBottomOf="@+id/etNameProfProfile"
+        tools:text="75856849"
+        android:autofillHints="" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName4"
+        android:id="@+id/etCivilStatusProfile"
         android:layout_width="0dp"
         android:layout_height="58dp"
         android:layout_marginStart="40dp"
@@ -88,14 +92,15 @@
         android:layout_marginEnd="65dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Soltero"
+        android:text="@string/civil_status_edit_profile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3"
-        tools:text="Soltero" />
+        app:layout_constraintTop_toBottomOf="@+id/etPhoneProfProfile"
+        tools:text="Soltero"
+        android:autofillHints="" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName5"
+        android:id="@+id/etPhoneProfProfileEdit"
         android:layout_width="0dp"
         android:layout_height="58dp"
         android:layout_marginStart="40dp"
@@ -103,14 +108,15 @@
         android:layout_marginEnd="65dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="989654323"
+        android:text="@string/number_edit_profile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4"
-        tools:text="989654323" />
+        app:layout_constraintTop_toBottomOf="@+id/etCivilStatusProfile"
+        tools:text="989654323"
+        android:autofillHints="" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName6"
+        android:id="@+id/etProfEmail"
         android:layout_width="0dp"
         android:layout_height="58dp"
         android:layout_marginStart="40dp"
@@ -118,9 +124,10 @@
         android:layout_marginEnd="65dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="marcusworkman@gmail.com"
+        android:text="@string/email_edit_profile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5"
-        tools:text="marcusworkman@gmail.com" />
+        app:layout_constraintTop_toBottomOf="@+id/etPhoneProfProfileEdit"
+        tools:text="marcusworkman@gmail.com"
+        android:autofillHints="" />
 </androidx.constraintlayout.widget.ConstraintLayout>

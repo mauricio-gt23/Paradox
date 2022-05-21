@@ -1,8 +1,9 @@
-package com.example.paradox
+package com.example.paradox.controller.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.paradox.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class SeeProfessionalProfileP : AppCompatActivity() {

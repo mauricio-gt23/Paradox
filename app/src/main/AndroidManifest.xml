@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.paradox">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,54 +12,65 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Paradox">
         <activity
-            android:name=".FiltrosActivity"
+            android:name=".controller.activities.FiltrosActivity"
             android:exported="false" />
         <activity
-            android:name=".PostulationActivity"
+            android:name=".controller.activities.PostulationActivity"
             android:exported="false" />
         <activity
-            android:name=".InformationJobActivity"
+            android:name=".controller.activities.InformationJobActivity"
             android:exported="false" />
         <activity
-            android:name=".PerfilPostulanteActivity"
+            android:name=".controller.activities.PerfilPostulanteActivity"
             android:exported="false" />
         <activity
-            android:name=".RegisterEmployeerActivity"
+            android:name=".controller.activities.RegisterEmployeerActivity"
             android:exported="false" />
         <activity
-            android:name=".RegisterPostulantActivity"
+            android:name=".controller.activities.RegisterPostulantActivity"
             android:exported="false" />
         <activity
-            android:name=".Register"
+            android:name=".controller.activities.Register"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".controller.activities.LoginActivity"
             android:exported="false" />
         <activity
 
-            android:name=".EditProfessionalProfileP"
-            android:exported="false">
-        </activity>
+            android:name=".controller.activities.EditProfessionalProfileP"
+            android:exported="false"/>
+     
         <activity
-            android:name=".SeeProfessionalProfileP"
+            android:name=".controller.activities.SeeProfessionalProfileP"
 
-            android:exported="false">
-        </activity>
+            android:exported="false"/>
+        
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".controller.activities.ViewCompaniesEmployerActivity"
+            android:exported="false">
+            </activity>
+        <activity
+            android:name=".controller.activities.EditCompanyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".controller.activities.ViewCompanyEmployerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".controller.activities.MainActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
         <activity
-            android:name=".EditProfilePostulant"
+            android:name=".controller.activities.EditProfilePostulant"
             android:exported="false">
         </activity>
         <activity
-            android:name=".SeeProfilePostulant"
+            android:name=".controller.activities.SeeProfilePostulant"
             android:exported="false">
         </activity>
 

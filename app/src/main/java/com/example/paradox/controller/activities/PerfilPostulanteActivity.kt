@@ -1,9 +1,10 @@
-package com.example.paradox
+package com.example.paradox.controller.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import com.example.paradox.R
 
 class PerfilPostulanteActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -12,4 +12,12 @@
     <color name="blue_night">#2C305B</color>
     <color name="grey">#D3D3D3</color>
     <color name="red">#AA1414</color>
+
+    <color name="primary">#7E57C2</color>
+    <color name="secondary">#79747E</color>
+    <color name="success">#68C281</color>
+    <color name="danger">#EA4E4E</color>
+    <color name="warning">#FABC3D</color>
+
+    <color name="dark">#1F313F</color>
 </resources>
