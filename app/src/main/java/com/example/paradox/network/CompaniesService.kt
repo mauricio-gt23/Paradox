@@ -15,16 +15,16 @@ interface CompaniesInterface {
     fun getAllCompaniesByEmployerId(): Call<Companies>
 
     //Get
-    @GET("api/employers/1/companies/{companyId}")
+    @GET("api/companys/{companyId}")
     fun getCompanyById(@Path("companyId") companyId: Int): Call<Company>
 
-    //Add
-    @POST("api/employers/1/companies")
-    fun addCompany(@Body company: Company): Call<Company>
-
     //Edit
-    @PUT("api/employers/1/companies/{companyId}")
-    fun editCompany(@Path("companyId") companyId: Int, @Body company: Company): Call<Company>
+    @PUT("api/employers/1/sector/{sectorId}/companys")
+    fun editCompany(@Path("sectorId") sectorId: Int, @Body company: Company): Call<Company>
+
+    //Add
+    @POST("api/employers/1/sector/{sectorId}/companys")
+    fun addCompany(@Path("sectorId") sectorId: Int, @Body company: Company): Call<Company>
 }
 
 object CompaniesService {

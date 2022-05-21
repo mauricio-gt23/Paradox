@@ -35,22 +35,22 @@ class AddCompanyActivity : AppCompatActivity() {
         val gson = Gson()
         val stringObj = intent.getStringExtra("company")
 
-        company = gson.fromJson(stringObj, Company::class.java) ?: Company(0, "", "", "",0,"", 0, 0)
+        company = gson.fromJson(stringObj, Company::class.java) ?: Company(0, "", "", "",0,"", 0, 0, "")
     }
 
     private fun addCompany(){
-        val request = CompaniesService.companiesInstance.addCompany(company)
-        request.enqueue(object: Callback<Company> {
-            override fun onFailure(call: Call<Company>, t: Throwable) {
-                Log.d("AddCompanyActivity","Error in Adding Company")
-            }
-
-            override fun onResponse(call: Call<Company>, response: Response<Company>) {
-                val editedCompany = response.body()
-                if (editedCompany != null) {
-                    Log.d("AddCompanyActivity", editedCompany.toString())
-                }
-            }
-        })
+//        val request = CompaniesService.companiesInstance.addCompany(company)
+//        request.enqueue(object: Callback<Company> {
+//            override fun onFailure(call: Call<Company>, t: Throwable) {
+//                Log.d("AddCompanyActivity","Error in Adding Company")
+//            }
+//
+//            override fun onResponse(call: Call<Company>, response: Response<Company>) {
+//                val editedCompany = response.body()
+//                if (editedCompany != null) {
+//                    Log.d("AddCompanyActivity", editedCompany.toString())
+//                }
+//            }
+//        })
     }
 }

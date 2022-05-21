@@ -25,5 +25,8 @@ data class Company (
     val idEmployeer: Int,
 
     @SerializedName("idSector")
-    val idSector: Int
+    val idSector: Int,
+
+    @SerializedName("nameSector")
+    val nameSector: String
 )

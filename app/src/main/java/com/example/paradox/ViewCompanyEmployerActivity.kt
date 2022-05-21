@@ -9,18 +9,32 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
+import com.example.paradox.adapter.CompanyAdapter
 import com.example.paradox.models.Company
 import com.example.paradox.network.CompaniesService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import kotlin.properties.Delegates
 
 class ViewCompanyEmployerActivity : AppCompatActivity() {
+    //This data is for Edit Activity
+    var employerId : Int = 0
+    var sectorId : Int = 0
+    var name : String = ""
+    var logo : String = ""
+    var nameSector : String = ""
+    var ruc : Int = 0
+    var description : String = ""
+    var direccion : String = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_company_employer)
-
-        loadCompany()
+        if (intent.extras != null) {
+            val companyId : Int = intent.getIntExtra("companyId", 0)
+            loadCompany(companyId)
+        }
 
         val btBack1 = findViewById<ImageButton>(R.id.btBack1)
         val btEditCompany = findViewById<Button>(R.id.btEditCompany)
@@ -31,14 +45,20 @@ class ViewCompanyEmployerActivity : AppCompatActivity() {
         }
         btEditCompany.setOnClickListener {
             val intent = Intent(this, EditCompanyActivity::class.java)
-            intent.putExtra("employerId", 1) //cambiar value despues
-            intent.putExtra("companyId", 1)
+            intent.putExtra("employerId", employerId)
+            intent.putExtra("sectorId", sectorId)
+            intent.putExtra("name", name)
+            intent.putExtra("logo", logo)
+            intent.putExtra("nameSector", nameSector)
+            intent.putExtra("ruc", ruc)
+            intent.putExtra("description", description)
+            intent.putExtra("direccion", direccion)
             startActivity(intent)
         }
     }
 
-    private fun loadCompany() {
-        val request = CompaniesService.companiesInstance.getCompanyById(1)
+    private fun loadCompany(companyId: Int) {
+        val request = CompaniesService.companiesInstance.getCompanyById(companyId)
         request.enqueue(object: Callback<Company> {
             override fun onFailure(call: Call<Company>, t: Throwable) {
                 Log.d("ViewCompanyEmployerActivity","Error in Fetching Company")
@@ -57,10 +77,20 @@ class ViewCompanyEmployerActivity : AppCompatActivity() {
                     Log.d("ViewCompanyEmployerActivity", company.toString())
                     tvNameDetail.text = company.name
                     Glide.with(this@ViewCompanyEmployerActivity).load(company.logo).into(ivLogo)
-                    tvSectorDetail.text  = company.idSector.toString()
+                    tvSectorDetail.text  = company.nameSector
                     tvRucDetail.text  = company.ruc.toString()
                     tvDescriptionDetail.text  = company.description
                     tvAddressDetail.text  = company.direccion
+
+                    //This data is for Edit Activity
+                    employerId = company.idEmployeer
+                    sectorId = company.idSector
+                    name = company.name
+                    logo = company.logo
+                    nameSector = company.nameSector
+                    ruc  = company.ruc
+                    description  = company.description
+                    direccion  = company.direccion
                 }
             }
         })

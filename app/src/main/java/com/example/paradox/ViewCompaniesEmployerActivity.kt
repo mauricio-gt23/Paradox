@@ -1,5 +1,6 @@
 package com.example.paradox
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -12,7 +13,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class ViewCompaniesEmployerActivity : AppCompatActivity() {
+class ViewCompaniesEmployerActivity : AppCompatActivity(), CompanyAdapter.OnItemClickListener {
     lateinit var companyAdapter : CompanyAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,12 +35,17 @@ class ViewCompaniesEmployerActivity : AppCompatActivity() {
                 val content = response.body()
                 if (content != null) {
                     Log.d("ViewCompaniesEmployerActivity", content.toString())
-                    companyAdapter = CompanyAdapter(content.companies, this@ViewCompaniesEmployerActivity)
+                    companyAdapter = CompanyAdapter(content.companies, this@ViewCompaniesEmployerActivity, this@ViewCompaniesEmployerActivity)
                     rvCompanies.adapter = companyAdapter
                     rvCompanies.layoutManager = LinearLayoutManager(this@ViewCompaniesEmployerActivity)
                 }
             }
         })
     }
-    //cuando le doy clic a una compania
+
+    override fun onItemClicked(id: Int) {
+        val intent = Intent(this, ViewCompanyEmployerActivity::class.java)
+        intent.putExtra("companyId", id)
+        startActivity(intent)
+    }
 }
