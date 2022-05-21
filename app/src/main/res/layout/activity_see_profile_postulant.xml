@@ -15,7 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="168dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="168dp"
         android:text="@string/profile_supertitle"
         android:textColor="#7E57C2"
@@ -31,7 +31,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
-        android:layout_marginTop="170dp"
+        android:layout_marginTop="160dp"
         android:text="@string/namesTitle"
         android:textColor="#7E57C2"
         android:textSize="16sp"
@@ -91,7 +91,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tvLastNameShow"
+        app:layout_constraintTop_toBottomOf="@+id/tvLastNameProfileTitle"
         tools:text="Documento de identidad" />
 
     <TextView
@@ -155,7 +155,7 @@
         android:id="@+id/ivProfilePhoto"
         android:layout_width="127dp"
         android:layout_height="109dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="25dp"
         android:layout_marginBottom="30dp"
         android:contentDescription="@string/profile_photo_of_postulant"
         android:src="@drawable/ic_baseline_account_circle_avatar_paradox"
@@ -178,6 +178,28 @@
         app:rippleColor="#00000000"
         app:srcCompat="@android:drawable/ic_menu_edit"
         android:contentDescription="@string/go_to_edit_profile" />
+
+    <TextView
+        android:id="@+id/tvEmailTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="60dp"
+        android:text="@string/email_title"
+        android:textColor="#7E57C2"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNumberProfileTitle" />
+
+    <TextView
+        android:id="@+id/tvEmailShow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/email_show_profile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvEmailTitle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

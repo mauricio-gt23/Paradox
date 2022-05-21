@@ -48,6 +48,8 @@
     <string name="civil_status_edit_profile">Soltero</string>
     <string name="number_edit_profile">989654323</string>
     <string name="email_edit_profile">marcusworkman@gmail.com</string>
+    <string name="email_title">Email</string>
+    <string name="email_show_profile">TextView</string>
     <string-array name="languages">
         <item>English</item>
         <item>French</item>
