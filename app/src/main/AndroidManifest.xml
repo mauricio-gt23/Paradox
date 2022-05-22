@@ -14,6 +14,14 @@
         <activity
             android:name=".AddCompanyActivity"
             android:exported="false" />
+<!--        <activity-->
+<!--            android:name=".AddCompanyActivity"-->
+<!--            android:exported="true" >-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
         <activity
             android:name=".EditCompanyActivity"
             android:exported="false" />
@@ -28,6 +36,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<!--        <activity-->
+<!--            android:name=".ViewCompaniesEmployerActivity"-->
+<!--            android:exported="false" />-->
     </application>
 
 </manifest>

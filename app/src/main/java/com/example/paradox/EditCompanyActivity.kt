@@ -69,7 +69,7 @@ class EditCompanyActivity : AppCompatActivity() {
             requiredAddress
         )
 
-        val request = CompaniesService.companiesInstance.editCompany(sectorId, requestCompany)
+        val request = CompaniesService.companiesInstance.editCompany(employerId, sectorId, requestCompany)
         request.enqueue(object: Callback<Company> {
             override fun onFailure(call: Call<Company>, t: Throwable) {
                 Log.d("EditCompanyActivity","Error in Editing Company")

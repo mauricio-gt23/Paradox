@@ -15,16 +15,17 @@ import retrofit2.Response
 
 class ViewCompaniesEmployerActivity : AppCompatActivity(), CompanyAdapter.OnItemClickListener {
     lateinit var companyAdapter : CompanyAdapter
+    var employerId: Int = 3
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_companies_employer)
 
-        loadCompanies()
+        loadCompanies(employerId)
     }
 
-    private fun loadCompanies() {
-        val request = CompaniesService.companiesInstance.getAllCompaniesByEmployerId()
+    private fun loadCompanies(employerId: Int) {
+        val request = CompaniesService.companiesInstance.getAllCompaniesByEmployerId(employerId)
         request.enqueue(object: Callback<Companies> {
             override fun onFailure(call: Call<Companies>, t: Throwable) {
                 Log.d("ViewCompaniesEmployerActivity","Error in Fetching Companies")
@@ -45,6 +46,7 @@ class ViewCompaniesEmployerActivity : AppCompatActivity(), CompanyAdapter.OnItem
 
     override fun onItemClicked(id: Int) {
         val intent = Intent(this, ViewCompanyEmployerActivity::class.java)
+        intent.putExtra("employerId", employerId)
         intent.putExtra("companyId", id)
         startActivity(intent)
     }

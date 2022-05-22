@@ -29,6 +29,7 @@ class ViewCompanyEmployerActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_company_employer)
         if (intent.extras != null) {
+            employerId = intent.getIntExtra("employerId", 0)
             val companyId : Int = intent.getIntExtra("companyId", 0)
             loadCompany(companyId)
         }
@@ -42,6 +43,7 @@ class ViewCompanyEmployerActivity : AppCompatActivity() {
         }
         btEditCompany.setOnClickListener {
             val intent = Intent(this, EditCompanyActivity::class.java)
+
             intent.putExtra("employerId", employerId)
             intent.putExtra("sectorId", sectorId)
             intent.putExtra("name", name)
@@ -79,7 +81,6 @@ class ViewCompanyEmployerActivity : AppCompatActivity() {
                     tvAddressDetail.text  = companyDetail.direccion
 
                     //This data is for Edit Activity
-                    employerId = companyDetail.idEmployeer
                     sectorId = companyDetail.idSector
                     name = companyDetail.name
                     logo = companyDetail.logo

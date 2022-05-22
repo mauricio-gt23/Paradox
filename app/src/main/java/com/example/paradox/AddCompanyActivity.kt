@@ -47,7 +47,7 @@ class AddCompanyActivity : AppCompatActivity() {
             requiredAddress
         )
 
-        val request = CompaniesService.companiesInstance.addCompany(sectorId, requestCompany)
+        val request = CompaniesService.companiesInstance.addCompany(employerId, sectorId, requestCompany)
         request.enqueue(object: Callback<Company> {
             override fun onFailure(call: Call<Company>, t: Throwable) {
                 Log.d("AddCompanyActivity","Error in Adding Company")
