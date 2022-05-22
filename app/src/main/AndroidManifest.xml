@@ -36,19 +36,15 @@
             android:name=".controller.activities.LoginActivity"
             android:exported="false" />
         <activity
-
             android:name=".controller.activities.EditProfessionalProfileP"
             android:exported="false"/>
-     
-        <activity
+         <activity
             android:name=".controller.activities.SeeProfessionalProfileP"
-
             android:exported="false"/>
-        
-        <activity
+         <activity
             android:name=".controller.activities.ViewCompaniesEmployerActivity"
-            android:exported="false">
-            </activity>
+            android:exported="false"/>
+
         <activity
             android:name=".controller.activities.EditCompanyActivity"
             android:exported="false" />
@@ -57,7 +53,28 @@
             android:exported="false" />
         <activity
             android:name=".controller.activities.MainActivity"
-            android:exported="true" >
+            android:exported="false" />
+        <activity  android:name=".controller.activities.PostulantProfileActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".controller.activities.PostulantActivity"
+            android:exported="false" />
+        <activity
+            android:name=".controller.activities.EditAnnouncementActivity"
+            android:exported="false" />
+        <activity
+            android:name=".controller.activities.WatchAnnouncementActivity"
+            android:exported="false" />
+        <activity
+            android:name=".controller.activities.PostulationEActivity"
+            android:exported="false" />
+        <activity
+            android:name=".controller.activities.AnnouncementActivity"
+            android:exported="false" />
+        <activity
+            android:name=".controller.activities.HomeEmployeer"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
