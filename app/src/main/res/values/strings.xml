@@ -10,4 +10,7 @@
     <string name="mis_postulaciones">Mis postulaciones</string>
     <string name="navegation_drawer_open">Open</string>
     <string name="navegation_drawer_close">Close</string>
+    <string name="mis_anuncios">Mis anuncios</string>
+    <string name="logo" />
+    <string name="desarrollador_backend_c">Desarrollador Backend C#</string>
 </resources>
