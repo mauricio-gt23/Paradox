@@ -52,7 +52,7 @@
             android:name=".controller.activities.ViewCompanyEmployerActivity"
             android:exported="false" />
         <activity
-            android:name=".controller.activities.MainActivity"
+            android:name=".controller.activities.HomeEmployeer"
             android:exported="false" />
         <activity  android:name=".controller.activities.PostulantProfileActivity"
             android:exported="false" />
@@ -73,7 +73,7 @@
             android:name=".controller.activities.AnnouncementActivity"
             android:exported="false" />
         <activity
-            android:name=".controller.activities.HomeEmployeer"
+            android:name=".controller.activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
