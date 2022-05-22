@@ -9,13 +9,11 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
-import com.example.paradox.adapter.CompanyAdapter
 import com.example.paradox.models.Company
 import com.example.paradox.network.CompaniesService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import kotlin.properties.Delegates
 
 class ViewCompanyEmployerActivity : AppCompatActivity() {
     //This data is for Edit Activity
@@ -70,24 +68,24 @@ class ViewCompanyEmployerActivity : AppCompatActivity() {
                 val tvDescriptionDetail = findViewById<TextView>(R.id.tvDescriptionDetail)
                 val tvAddressDetail = findViewById<TextView>(R.id.tvAddressDetail)
 
-                val company = response.body()
-                if (company != null) {
-                    Log.d("ViewCompanyEmployerActivity", company.toString())
-                    tvNameDetail.text = company.name
-                    Glide.with(this@ViewCompanyEmployerActivity).load(company.logo).into(ivLogo)
-                    tvSectorDetail.text  = company.nameSector
-                    tvRucDetail.text  = company.ruc.toString()
-                    tvDescriptionDetail.text  = company.description
-                    tvAddressDetail.text  = company.direccion
+                val companyDetail = response.body()
+                if (companyDetail != null) {
+                    Log.d("ViewCompanyEmployerActivity", companyDetail.toString())
+                    tvNameDetail.text = companyDetail.name
+                    Glide.with(this@ViewCompanyEmployerActivity).load(companyDetail.logo).into(ivLogo)
+                    tvSectorDetail.text  = companyDetail.nameSector
+                    tvRucDetail.text  = companyDetail.ruc.toString()
+                    tvDescriptionDetail.text  = companyDetail.description
+                    tvAddressDetail.text  = companyDetail.direccion
 
                     //This data is for Edit Activity
-                    employerId = company.idEmployeer
-                    sectorId = company.idSector
-                    name = company.name
-                    logo = company.logo
-                    ruc  = company.ruc
-                    description  = company.description
-                    direccion  = company.direccion
+                    employerId = companyDetail.idEmployeer
+                    sectorId = companyDetail.idSector
+                    name = companyDetail.name
+                    logo = companyDetail.logo
+                    ruc  = companyDetail.ruc
+                    description  = companyDetail.description
+                    direccion  = companyDetail.direccion
                 }
             }
         })

@@ -55,30 +55,30 @@ class EditCompanyActivity : AppCompatActivity() {
         val employerId = intent.getIntExtra("employerId", 0)
         val sectorId = intent.getIntExtra("sectorId", 0)
 
-        val nameRequest = findViewById<EditText>(R.id.etEditName).text.toString()
-        val rucRequest = Integer.parseInt(findViewById<EditText>(R.id.etEditRuc).text.toString())
-        val addressRequest = findViewById<EditText>(R.id.etEditAddress).text.toString()
-        val descriptionRequest = findViewById<EditText>(R.id.etEditDescription).text.toString()
-        val logoRequest = findViewById<EditText>(R.id.etEditLogo).text.toString()
+        val requiredName = findViewById<EditText>(R.id.etEditName).text.toString()
+        val requiredRuc = Integer.parseInt(findViewById<EditText>(R.id.etEditRuc).text.toString())
+        val requiredAddress = findViewById<EditText>(R.id.etEditAddress).text.toString()
+        val requiredDescription = findViewById<EditText>(R.id.etEditDescription).text.toString()
+        val requiredLogo = findViewById<EditText>(R.id.etEditLogo).text.toString()
 
-        val companyEdited = RequestCompany(
-            nameRequest,
-            descriptionRequest,
-            logoRequest,
-            rucRequest,
-            addressRequest
+        val requestCompany = RequestCompany(
+            requiredName,
+            requiredDescription,
+            requiredLogo,
+            requiredRuc,
+            requiredAddress
         )
 
-        val request = CompaniesService.companiesInstance.editCompany(sectorId, companyEdited)
+        val request = CompaniesService.companiesInstance.editCompany(sectorId, requestCompany)
         request.enqueue(object: Callback<Company> {
             override fun onFailure(call: Call<Company>, t: Throwable) {
                 Log.d("EditCompanyActivity","Error in Editing Company")
             }
 
             override fun onResponse(call: Call<Company>, response: Response<Company>) {
-                val editedCompany = response.body()
-                if (editedCompany != null) {
-                    Log.d("EditCompanyActivity", editedCompany.toString())
+                val companyEdited = response.body()
+                if (companyEdited != null) {
+                    Log.d("EditCompanyActivity", companyEdited.toString())
                 }
             }
         })
