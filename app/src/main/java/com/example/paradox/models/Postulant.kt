@@ -1,7 +1,11 @@
 package com.example.paradox.models
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
+
+@Parcelize
 class Postulant (
     @SerializedName("id")
     val id: Int,
@@ -19,4 +23,4 @@ class Postulant (
     val document: String,
     @SerializedName("civil_status")
     val civilStatus: String,
-)
+) : Parcelable

@@ -13,7 +13,8 @@ import retrofit2.*
 import retrofit2.converter.gson.GsonConverterFactory
 
 class SeeProfilePostulant : AppCompatActivity() {
-    lateinit var postulant: Postulant
+
+    var postulant: Postulant = TODO()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_see_profile_postulant)
@@ -22,7 +23,7 @@ class SeeProfilePostulant : AppCompatActivity() {
         val buttonEdit = findViewById<FloatingActionButton>(R.id.fabEditProfile)
         buttonEdit.setOnClickListener {
             val intent = Intent(this, EditProfilePostulant::class.java)
-//            intent.putExtra("Postulant", this.postulant)
+            intent.putExtra("Postulant", this.postulant)
             startActivity(intent)
         }
     }
@@ -43,19 +44,21 @@ class SeeProfilePostulant : AppCompatActivity() {
         val postulantService: PostulantService
         postulantService = retrofit.create(PostulantService::class.java)
 
-        val request = postulantService.getPostulantById(2)
+        val request = postulantService.getPostulantById(4)
 
         request.enqueue(object : Callback<Postulant> {
             override fun onResponse(call: Call<Postulant>, response: Response<Postulant>) {
                 if (response.isSuccessful){
-                    postulant = response.body()!!
-                    tvNameShow.text = response.body()!!.firstName
-                    tvLastNameShow.text = response.body()!!.lastName
-                    tvIdDocShow.text = response.body()!!.document
-                    tvCivilStatusShow.text = response.body()!!.civilStatus
-                    tvPhoneShow.text = response.body()!!.number.toString()
-                    tvEmailShow.text = response.body()!!.email
-
+                    val postulantRetrieved = response.body()
+                    tvNameShow.text = postulantRetrieved!!.firstName
+                    tvLastNameShow.text = postulantRetrieved.lastName
+                    tvIdDocShow.text = postulantRetrieved.document
+                    tvCivilStatusShow.text = postulantRetrieved.civilStatus
+                    tvPhoneShow.text = postulantRetrieved.number.toString()
+                    tvEmailShow.text = postulantRetrieved.email
+                    postulant = Postulant(postulantRetrieved.id, postulantRetrieved.firstName, postulantRetrieved.lastName,
+                    postulantRetrieved.email, postulantRetrieved.number, postulantRetrieved.password, postulantRetrieved.document,
+                    postulantRetrieved.civilStatus)
                 }
             }
 
