@@ -22,6 +22,30 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tfSectors"
+
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+
+        android:layout_width="249dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="81dp"
+        android:layout_marginTop="16dp"
+        android:hint="@string/sector"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAddTitle">
+
+        <AutoCompleteTextView
+            android:id="@+id/atvSector"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            tools:ignore="TextContrastCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tfAddName"
 
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -30,12 +54,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="81dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="81dp"
         android:hint="@string/name"
         android:textColorHint="@color/secondary"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvAddTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tfSectors"
         tools:ignore="MissingConstraints">
 
         <!--this is the actual edit text which takes the input-->
@@ -58,10 +80,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="81dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="81dp"
         android:hint="@string/ruc"
         android:textColorHint="@color/secondary"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tfAddName"
         tools:ignore="MissingConstraints">
@@ -86,10 +106,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="81dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="81dp"
         android:hint="@string/address"
         android:textColorHint="@color/secondary"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tfAddRuc"
         tools:ignore="MissingConstraints">
@@ -114,10 +132,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="81dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="81dp"
         android:hint="@string/description"
         android:textColorHint="@color/secondary"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tfAddAddress"
         tools:ignore="MissingConstraints">
@@ -142,10 +158,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="81dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="81dp"
         android:hint="@string/add_logo"
         android:textColorHint="@color/secondary"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tfAddDescription"
         tools:ignore="MissingConstraints">
@@ -163,12 +177,13 @@
 
     <Button
         android:id="@+id/btAddCompany"
-        android:layout_width="245dp"
+        android:layout_width="249dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="83dp"
+        android:layout_marginStart="81dp"
         android:layout_marginTop="16dp"
         android:text="@string/add_company"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tfAddLogo"
         tools:ignore="MissingConstraints,DuplicateSpeakableTextCheck" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

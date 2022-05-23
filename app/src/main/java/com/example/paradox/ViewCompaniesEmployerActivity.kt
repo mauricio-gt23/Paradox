@@ -15,7 +15,7 @@ import retrofit2.Response
 
 class ViewCompaniesEmployerActivity : AppCompatActivity(), CompanyAdapter.OnItemClickListener {
     lateinit var companyAdapter : CompanyAdapter
-    var employerId: Int = 3
+    var employerId: Int = 2
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
