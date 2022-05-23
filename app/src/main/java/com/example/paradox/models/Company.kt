@@ -25,5 +25,25 @@ data class Company (
     val idEmployeer: Int,
 
     @SerializedName("idSector")
-    val idSector: Int
+    val idSector: Int,
+
+    @SerializedName("nameSector")
+    val nameSector: String
+)
+
+data class RequestCompany (
+    @SerializedName("name")
+    val name: String,
+
+    @SerializedName("description")
+    val description: String,
+
+    @SerializedName("logo")
+    val logo: String,
+
+    @SerializedName("ruc")
+    val ruc: Int,
+
+    @SerializedName("direccion")
+    val direccion: String
 )

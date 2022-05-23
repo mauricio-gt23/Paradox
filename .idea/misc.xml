@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+<<<<<<< HEAD
         <entry key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1295" />
         <entry key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/drawable/ic_baseline_lock_24.xml" value="0.2325" />
         <entry key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/drawable/ic_baseline_person_outline_24.xml" value="0.2325" />
@@ -52,6 +53,17 @@
         <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/list_element_postulation.xml" value="0.1" />
         <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/nav_header_main.xml" value="0.1" />
 >>>>>>> 6b3de25f0ef60631a7da095022538319adb21f9d
+=======
+        <entry key="..\:/Users/j_lis/AndroidStudioProjects/Paradox/app/src/main/res/layout/activity_add_comany.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/j_lis/AndroidStudioProjects/Paradox/app/src/main/res/layout/activity_add_company.xml" value="0.2026507054296708" />
+        <entry key="..\:/Users/j_lis/AndroidStudioProjects/Paradox/app/src/main/res/layout/activity_edit_company.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/j_lis/AndroidStudioProjects/Paradox/app/src/main/res/layout/activity_main.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/j_lis/AndroidStudioProjects/Paradox/app/src/main/res/layout/activity_view_companies_employer.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/j_lis/AndroidStudioProjects/Paradox/app/src/main/res/layout/activity_view_company_employer.xml" value="0.2056434373663959" />
+        <entry key="..\:/Users/j_lis/AndroidStudioProjects/Paradox/app/src/main/res/layout/protoptype_company.xml" value="0.36" />
+        <entry key="..\:/Users/j_lis/AndroidStudioProjects/Paradox/app/src/main/res/layout/prototype_company.xml" value="0.36626506024096384" />
+        <entry key="..\:/Users/j_lis/AndroidStudioProjects/Paradox/app/src/main/res/layout/prototype_sector.xml" value="0.3" />
+>>>>>>> feature/Company
       </map>
     </option>
   </component>

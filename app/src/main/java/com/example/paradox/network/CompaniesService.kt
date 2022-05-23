@@ -2,6 +2,7 @@ package com.example.paradox.network
 
 import com.example.paradox.models.Companies
 import com.example.paradox.models.Company
+import com.example.paradox.models.RequestCompany
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -11,20 +12,20 @@ const val BASE_URL = "https://movilesback.herokuapp.com/"
 
 interface CompaniesInterface {
     //List
-    @GET("api/employeers/1/companys")
-    fun getAllCompaniesByEmployerId(): Call<Companies>
+    @GET("api/employeers/{employeerId}/companys")
+    fun getAllCompaniesByEmployerId(@Path("employeerId") employeerId: Int): Call<Companies>
 
     //Get
-    @GET("api/employers/1/companies/{companyId}")
+    @GET("api/companys/{companyId}")
     fun getCompanyById(@Path("companyId") companyId: Int): Call<Company>
 
-    //Add
-    @POST("api/employers/1/companies")
-    fun addCompany(@Body company: Company): Call<Company>
-
     //Edit
-    @PUT("api/employers/1/companies/{companyId}")
-    fun editCompany(@Path("companyId") companyId: Int, @Body company: Company): Call<Company>
+    @PUT("api/employeers/{employeerId}/sector/{sectorId}/companys")
+    fun editCompany(@Path("employeerId") employeerId: Int, @Path("sectorId") sectorId: Int, @Body requestCompany: RequestCompany): Call<Company>
+
+    //Add
+    @POST("api/employeers/{employeerId}/sector/{sectorId}/companys")
+    fun addCompany(@Path("employeerId") employeerId: Int, @Path("sectorId") sectorId: Int, @Body requestCompany: RequestCompany): Call<Company>
 }
 
 object CompaniesService {

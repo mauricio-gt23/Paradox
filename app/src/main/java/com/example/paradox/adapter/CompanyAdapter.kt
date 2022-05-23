@@ -13,7 +13,7 @@ import com.example.paradox.R
 import com.example.paradox.models.Company
 
 
-class CompanyAdapter(val companies: List<Company>, val context: Context):
+class CompanyAdapter(val companies: List<Company>, val context: Context, val itemClickListener: OnItemClickListener):
     RecyclerView.Adapter<CompanyAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater
@@ -24,17 +24,24 @@ class CompanyAdapter(val companies: List<Company>, val context: Context):
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val company = companies[position]
+        Glide.with(context).load(company.logo).into(holder.logo)
         holder.name.text = company.name
         holder.ruc.text = company.ruc.toString()
-        Glide.with(context).load(company.logo).into(holder.image)
+
+        holder.itemView.setOnClickListener { itemClickListener.onItemClicked(company.id) }
     }
 
     override fun getItemCount(): Int {
         return companies.size
     }
+
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val logo = itemView.findViewById<ImageView>(R.id.ivCardLogo)
         val name = itemView.findViewById<TextView>(R.id.tvCardName)
         val ruc = itemView.findViewById<TextView>(R.id.tvCardRuc)
-        val image = itemView.findViewById<ImageView>(R.id.ivCardLogo)
+    }
+
+    interface OnItemClickListener {
+        fun onItemClicked(id: Int)
     }
 }
