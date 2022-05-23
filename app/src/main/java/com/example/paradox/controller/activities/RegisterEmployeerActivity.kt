@@ -45,7 +45,7 @@ class RegisterEmployeerActivity : AppCompatActivity() {
         val txCreateNameEmployeer = findViewById<EditText>(R.id.txCreateNameEmp)
         val txCreateApellidoEmp = findViewById<EditText>(R.id.txCreateApellidoEmp)
         val txDocumentoIdentidadEmp = findViewById<EditText>(R.id.txDocumentoIdentidadEmp)
-        val txtEstadoCivilEmpl = findViewById<EditText>(R.id.txtEstadoCivilEmpl)
+        //val txtEstadoCivilEmpl = findViewById<EditText>(R.id.txtEstadoCivilEmpl)
         val txtPhoneEmp = findViewById<EditText>(R.id.txtPhoneEmp)
         val txtPosicionEmp = findViewById<EditText>(R.id.txtPosicionEmp)
         val txtEmailEmp = findViewById<EditText>(R.id.txtEmailEmp)

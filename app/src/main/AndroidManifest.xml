@@ -14,6 +14,8 @@
         <activity
             android:name=".controller.activities.FiltrosActivity"
             android:exported="false" />
+        <activity android:name=".controller.activities.BarActivity"
+            android:exported="false"/>
         <activity
             android:name=".controller.activities.PostulationActivity"
             android:exported="false" />
@@ -38,25 +40,12 @@
         <activity
             android:name=".controller.activities.EditProfessionalProfileP"
             android:exported="false"/>
-         <activity
-            android:name=".controller.activities.SeeProfessionalProfileP"
-            android:exported="false"/>
-         <activity
-            android:name=".controller.activities.ViewCompaniesEmployerActivity"
-            android:exported="false"/>
-
-        <activity
-            android:name=".controller.activities.EditCompanyActivity"
-            android:exported="false" />
-        <activity
-            android:name=".controller.activities.ViewCompanyEmployerActivity"
-            android:exported="false" />
         <activity
             android:name=".controller.activities.HomeEmployeer"
             android:exported="false" />
-        <activity  android:name=".controller.activities.PostulantProfileActivity"
+        <activity
+            android:name=".controller.activities.PostulantProfileActivity"
             android:exported="false" />
-
         <activity
             android:name=".controller.activities.PostulantActivity"
             android:exported="false" />
@@ -80,17 +69,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
         <activity
             android:name=".controller.activities.EditProfilePostulant"
-            android:exported="false">
-        </activity>
+            android:exported="false" />
         <activity
             android:name=".controller.activities.SeeProfilePostulant"
-            android:exported="false">
-        </activity>
-
+            android:exported="false" />
+        <activity
+            android:name=".controller.activities.AddCompanyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".controller.activities.EditCompanyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".controller.activities.ViewCompanyEmployerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".controller.activities.ViewCompaniesEmployerActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

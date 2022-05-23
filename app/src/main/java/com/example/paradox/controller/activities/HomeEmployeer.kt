@@ -46,8 +46,26 @@ class HomeEmployeer : AppCompatActivity() {
     }
 
     private fun loadWorks() {
-        works.add(Work("Claro", "Publicado el 10 de Enero", "Desarrollador Backend C#", "Contrato indefinido", "Nuestro cliente en tecnología de la información con más de 39 años en...", "Aceptado"))
-        works.add(Work("Movistar", "Publicado el 04 de Abril", "Desarrollador Frontend", "Contrato indefinido", "Nuestro cliente", "Rechazado"))
+        works.add(
+            Work(
+                "Claro",
+                "Publicado el 10 de Enero",
+                "Desarrollador Backend C#",
+                "Contrato indefinido",
+                "Nuestro cliente en tecnología de la información con más de 39 años en...",
+                "Aceptado"
+            )
+        )
+        works.add(
+            Work(
+                "Movistar",
+                "Publicado el 04 de Abril",
+                "Desarrollador Frontend",
+                "Contrato indefinido",
+                "Nuestro cliente",
+                "Rechazado"
+            )
+        )
     }
 
     private fun loadPostulants() {

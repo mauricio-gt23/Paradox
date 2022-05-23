@@ -193,4 +193,6 @@
     <string name="mi_perfil">Mi perfil</string>
     <string name="mi_postulaciones">Mi Postulaciones</string>
     <string name="mis_anuncios">Mis anuncios</string>
+    <string name="bienvenido_a">Bienvenido(a)</string>
+    <string name="icon_image">Icon Image</string>
 </resources>
