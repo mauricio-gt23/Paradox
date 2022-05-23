@@ -14,6 +14,8 @@
         <activity
             android:name=".controller.activities.FiltrosActivity"
             android:exported="false" />
+        <activity android:name=".controller.activities.BarActivity"
+            android:exported="false"/>
         <activity
             android:name=".controller.activities.PostulationActivity"
             android:exported="false" />

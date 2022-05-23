@@ -1,77 +1,188 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DesignSurface">
-    <option name="filePathToZoomLevelMap">
-      <map>
-<<<<<<< HEAD
-        <entry key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1295" />
-        <entry key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/drawable/ic_baseline_lock_24.xml" value="0.2325" />
-        <entry key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/drawable/ic_baseline_person_outline_24.xml" value="0.2325" />
-        <entry key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1295" />
-        <entry key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/layout/activity_edit_professional_profile_p.xml" value="0.18" />
-        <entry key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/layout/activity_edit_profile_postulant.xml" value="0.1" />
-        <entry key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/layout/activity_filtros.xml" value="0.22" />
-        <entry key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/layout/activity_information_job.xml" value="0.33" />
-        <entry key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/layout/activity_login.xml" value="0.29270833333333335" />
-        <entry key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/layout/activity_perfil_postulante.xml" value="0.33" />
-        <entry key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/layout/activity_postulation.xml" value="0.18958333333333333" />
-        <entry key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/layout/activity_register.xml" value="0.5" />
-        <entry key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/layout/activity_register_employeer.xml" value="0.1" />
-        <entry key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/layout/activity_register_postulant.xml" value="0.1" />
-        <entry key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/layout/activity_see_professional_profile_p.xml" value="0.1" />
-        <entry key="..\:/Users/Brigitte/UPC/Moviles/Paradox/MobileParadox/app/src/main/res/layout/activity_main.xml" value="0.15625" />
-        <entry key="..\:/Users/Brigitte/UPC/Moviles/Paradox/MobileParadox/app/src/main/res/layout/activity_see_professional_profile_p.xml" value="0.25" />
-        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_add_company.xml" value="0.1671875" />
-        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_announcement.xml" value="0.1671875" />
-        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_edit_announcement.xml" value="0.18" />
-        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_login.xml" value="0.1" />
-        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_main.xml" value="0.18177083333333333" />
-        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_postulant.xml" value="0.1" />
-        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_postulant_profile.xml" value="0.1" />
-        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_postulation.xml" value="0.18177083333333333" />
-<<<<<<< HEAD
-        <entry key="..\:/Users/ippo_/OneDrive/Escritorio/este/MobileParadox/app/src/main/res/layout/activity_add_company.xml" value="0.25" />
-        <entry key="..\:/Users/ippo_/OneDrive/Escritorio/este/MobileParadox/app/src/main/res/layout/activity_bar.xml" value="0.1" />
-        <entry key="..\:/Users/ippo_/OneDrive/Escritorio/este/MobileParadox/app/src/main/res/layout/activity_edit_announcement.xml" value="0.25" />
-        <entry key="..\:/Users/ippo_/OneDrive/Escritorio/este/MobileParadox/app/src/main/res/layout/activity_main.xml" value="0.16" />
-        <entry key="..\:/Users/ippo_/OneDrive/Escritorio/este/MobileParadox/app/src/main/res/layout/activity_my_announcement.xml" value="0.25" />
-        <entry key="..\:/Users/ippo_/OneDrive/Escritorio/este/MobileParadox/app/src/main/res/layout/activity_see_professional_profile_p.xml" value="0.25" />
-        <entry key="..\:/Users/ippo_/OneDrive/Escritorio/este/MobileParadox/app/src/main/res/layout/activity_see_profile_postulant.xml" value="0.25" />
-        <entry key="..\:/Users/ippo_/OneDrive/Escritorio/este/MobileParadox/app/src/main/res/layout/activity_view_companies_employer.xml" value="0.25" />
-        <entry key="..\:/Users/ippo_/OneDrive/Escritorio/este/MobileParadox/app/src/main/res/layout/activity_view_company_employer.xml" value="0.25" />
-        <entry key="..\:/Users/ippo_/OneDrive/Escritorio/este/MobileParadox/app/src/main/res/layout/activity_watch_announcement.xml" value="0.25" />
-        <entry key="..\:/Users/ippo_/OneDrive/Escritorio/este/MobileParadox/app/src/main/res/layout/app_bar_main.xml" value="0.264" />
-        <entry key="..\:/Users/ippo_/OneDrive/Escritorio/este/MobileParadox/app/src/main/res/layout/nav_header_main.xml" value="0.1" />
-        <entry key="..\:/Users/ippo_/OneDrive/Escritorio/este/MobileParadox/app/src/main/res/menu/activity_main_drawer.xml" value="0.2" />
-=======
-        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_register_employeer.xml" value="0.22" />
-        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_watch_announcement.xml" value="0.18177083333333333" />
-        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/app_bar_main.xml" value="0.1" />
-        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/list_element_card_work.xml" value="0.1" />
-        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/list_element_postulant.xml" value="0.1" />
-        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/list_element_postulation.xml" value="0.1" />
-        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/nav_header_main.xml" value="0.1" />
->>>>>>> 6b3de25f0ef60631a7da095022538319adb21f9d
-=======
-        <entry key="..\:/Users/j_lis/AndroidStudioProjects/Paradox/app/src/main/res/layout/activity_add_comany.xml" value="0.25052083333333336" />
-        <entry key="..\:/Users/j_lis/AndroidStudioProjects/Paradox/app/src/main/res/layout/activity_add_company.xml" value="0.2026507054296708" />
-        <entry key="..\:/Users/j_lis/AndroidStudioProjects/Paradox/app/src/main/res/layout/activity_edit_company.xml" value="0.25052083333333336" />
-        <entry key="..\:/Users/j_lis/AndroidStudioProjects/Paradox/app/src/main/res/layout/activity_main.xml" value="0.25052083333333336" />
-        <entry key="..\:/Users/j_lis/AndroidStudioProjects/Paradox/app/src/main/res/layout/activity_view_companies_employer.xml" value="0.25052083333333336" />
-        <entry key="..\:/Users/j_lis/AndroidStudioProjects/Paradox/app/src/main/res/layout/activity_view_company_employer.xml" value="0.2056434373663959" />
-        <entry key="..\:/Users/j_lis/AndroidStudioProjects/Paradox/app/src/main/res/layout/protoptype_company.xml" value="0.36" />
-        <entry key="..\:/Users/j_lis/AndroidStudioProjects/Paradox/app/src/main/res/layout/prototype_company.xml" value="0.36626506024096384" />
-        <entry key="..\:/Users/j_lis/AndroidStudioProjects/Paradox/app/src/main/res/layout/prototype_sector.xml" value="0.3" />
->>>>>>> feature/Company
-      </map>
-    </option>
-  </component>
-  <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/build/classes" />
-  </component>
-  <component name="ProjectType">
-    <option name="id" value="Android" />
-  </component>
+    <component name="DesignSurface">
+        <option name="filePathToZoomLevelMap">
+            <map>
+                HEAD
+                <entry
+                    key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/drawable-v24/ic_launcher_foreground.xml"
+                    value="0.1295" />
+                <entry
+                    key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/drawable/ic_baseline_lock_24.xml"
+                    value="0.2325" />
+                <entry
+                    key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/drawable/ic_baseline_person_outline_24.xml"
+                    value="0.2325" />
+                <entry
+                    key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/drawable/ic_launcher_background.xml"
+                    value="0.1295" />
+                <entry
+                    key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/layout/activity_edit_professional_profile_p.xml"
+                    value="0.18" />
+                <entry
+                    key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/layout/activity_edit_profile_postulant.xml"
+                    value="0.1" />
+                <entry
+                    key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/layout/activity_filtros.xml"
+                    value="0.22" />
+                <entry
+                    key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/layout/activity_information_job.xml"
+                    value="0.33" />
+                <entry
+                    key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/layout/activity_login.xml"
+                    value="0.29270833333333335" />
+                <entry
+                    key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/layout/activity_main.xml"
+                    value="0.33" />
+                <entry
+                    key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/layout/activity_perfil_postulante.xml"
+                    value="0.33" />
+                <entry
+                    key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/layout/activity_postulation.xml"
+                    value="0.18958333333333333" />
+                <entry
+                    key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/layout/activity_register.xml"
+                    value="0.5" />
+                <entry
+                    key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/layout/activity_register_employeer.xml"
+                    value="0.1" />
+                <entry
+                    key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/layout/activity_register_postulant.xml"
+                    value="0.1" />
+                <entry
+                    key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/layout/activity_see_professional_profile_p.xml"
+                    value="0.1" />
+                <entry
+                    key="..\:/Users/Brigitte/UPC/Moviles/Paradox/MobileParadox/app/src/main/res/layout/activity_main.xml"
+                    value="0.15625" />
+                <entry
+                    key="..\:/Users/Brigitte/UPC/Moviles/Paradox/MobileParadox/app/src/main/res/layout/activity_see_professional_profile_p.xml"
+                    value="0.25" />
+                <entry
+                    key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_add_company.xml"
+                    value="0.1671875" />
+                <entry
+                    key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_announcement.xml"
+                    value="0.1671875" />
+                <entry
+                    key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_edit_announcement.xml"
+                    value="0.18" />
+                <entry
+                    key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_login.xml"
+                    value="0.1" />
+                <entry
+                    key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_main.xml"
+                    value="0.18177083333333333" />
+                <entry
+                    key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_postulant.xml"
+                    value="0.1" />
+                <entry
+                    key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_postulant_profile.xml"
+                    value="0.1" />
+                <entry
+                    key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_postulation.xml"
+                    value="0.18177083333333333" />
+                HEAD
+                <entry
+                    key="..\:/Users/ippo_/OneDrive/Escritorio/este/MobileParadox/app/src/main/res/layout/activity_add_company.xml"
+                    value="0.25" />
+                <entry
+                    key="..\:/Users/ippo_/OneDrive/Escritorio/este/MobileParadox/app/src/main/res/layout/activity_bar.xml"
+                    value="0.1" />
+                <entry
+                    key="..\:/Users/ippo_/OneDrive/Escritorio/este/MobileParadox/app/src/main/res/layout/activity_edit_announcement.xml"
+                    value="0.25" />
+                <entry
+                    key="..\:/Users/ippo_/OneDrive/Escritorio/este/MobileParadox/app/src/main/res/layout/activity_main.xml"
+                    value="0.16" />
+                <entry
+                    key="..\:/Users/ippo_/OneDrive/Escritorio/este/MobileParadox/app/src/main/res/layout/activity_my_announcement.xml"
+                    value="0.25" />
+                <entry
+                    key="..\:/Users/ippo_/OneDrive/Escritorio/este/MobileParadox/app/src/main/res/layout/activity_see_professional_profile_p.xml"
+                    value="0.25" />
+                <entry
+                    key="..\:/Users/ippo_/OneDrive/Escritorio/este/MobileParadox/app/src/main/res/layout/activity_see_profile_postulant.xml"
+                    value="0.25" />
+                <entry
+                    key="..\:/Users/ippo_/OneDrive/Escritorio/este/MobileParadox/app/src/main/res/layout/activity_view_companies_employer.xml"
+                    value="0.25" />
+                <entry
+                    key="..\:/Users/ippo_/OneDrive/Escritorio/este/MobileParadox/app/src/main/res/layout/activity_view_company_employer.xml"
+                    value="0.25" />
+                <entry
+                    key="..\:/Users/ippo_/OneDrive/Escritorio/este/MobileParadox/app/src/main/res/layout/activity_watch_announcement.xml"
+                    value="0.25" />
+                <entry
+                    key="..\:/Users/ippo_/OneDrive/Escritorio/este/MobileParadox/app/src/main/res/layout/app_bar_main.xml"
+                    value="0.264" />
+                <entry
+                    key="..\:/Users/ippo_/OneDrive/Escritorio/este/MobileParadox/app/src/main/res/layout/nav_header_main.xml"
+                    value="0.1" />
+                <entry
+                    key="..\:/Users/ippo_/OneDrive/Escritorio/este/MobileParadox/app/src/main/res/menu/activity_main_drawer.xml"
+                    value="0.2" />
+                =======
+                <entry
+                    key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_register_employeer.xml"
+                    value="0.22" />
+                <entry
+                    key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_watch_announcement.xml"
+                    value="0.18177083333333333" />
+                <entry
+                    key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/app_bar_main.xml"
+                    value="0.1" />
+                <entry
+                    key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/list_element_card_work.xml"
+                    value="0.1" />
+                <entry
+                    key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/list_element_postulant.xml"
+                    value="0.1" />
+                <entry
+                    key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/list_element_postulation.xml"
+                    value="0.1" />
+                <entry
+                    key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/nav_header_main.xml"
+                    value="0.1" />
+                >>>>>>> 6b3de25f0ef60631a7da095022538319adb21f9d
+                =======
+                <entry
+                    key="..\:/Users/j_lis/AndroidStudioProjects/Paradox/app/src/main/res/layout/activity_add_comany.xml"
+                    value="0.25052083333333336" />
+                <entry
+                    key="..\:/Users/j_lis/AndroidStudioProjects/Paradox/app/src/main/res/layout/activity_add_company.xml"
+                    value="0.2026507054296708" />
+                <entry
+                    key="..\:/Users/j_lis/AndroidStudioProjects/Paradox/app/src/main/res/layout/activity_edit_company.xml"
+                    value="0.25052083333333336" />
+                <entry
+                    key="..\:/Users/j_lis/AndroidStudioProjects/Paradox/app/src/main/res/layout/activity_main.xml"
+                    value="0.25052083333333336" />
+                <entry
+                    key="..\:/Users/j_lis/AndroidStudioProjects/Paradox/app/src/main/res/layout/activity_view_companies_employer.xml"
+                    value="0.25052083333333336" />
+                <entry
+                    key="..\:/Users/j_lis/AndroidStudioProjects/Paradox/app/src/main/res/layout/activity_view_company_employer.xml"
+                    value="0.2056434373663959" />
+                <entry
+                    key="..\:/Users/j_lis/AndroidStudioProjects/Paradox/app/src/main/res/layout/protoptype_company.xml"
+                    value="0.36" />
+                <entry
+                    key="..\:/Users/j_lis/AndroidStudioProjects/Paradox/app/src/main/res/layout/prototype_company.xml"
+                    value="0.36626506024096384" />
+                <entry
+                    key="..\:/Users/j_lis/AndroidStudioProjects/Paradox/app/src/main/res/layout/prototype_sector.xml"
+                    value="0.3" />
+                >>>>>>> feature/Company
+            </map>
+        </option>
+    </component>
+    <component name="ExternalStorageConfigurationManager" enabled="true" />
+    <component name="ProjectRootManager" default="true" languageLevel="JDK_11" project-jdk-name="Android Studio default JDK"
+        project-jdk-type="JavaSDK" version="2">
+        <output url="file://$PROJECT_DIR$/build/classes" />
+    </component>
+    <component name="ProjectType">
+        <option name="id" value="Android" />
+    </component>
 </project>
