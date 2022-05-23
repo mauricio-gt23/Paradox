@@ -176,6 +176,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
+        android:enabled="false"
         android:id="@+id/btAddCompany"
         android:layout_width="249dp"
         android:layout_height="wrap_content"

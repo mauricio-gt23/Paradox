@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.*
+import androidx.core.widget.addTextChangedListener
 import com.example.paradox.models.*
 import com.example.paradox.network.CompaniesService
 import com.example.paradox.network.SectorsService
@@ -20,17 +21,17 @@ class AddCompanyActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_company)
 
+        val atvSector = findViewById<AutoCompleteTextView>(R.id.atvSector)
+        val btAddCompany = findViewById<Button>(R.id.btAddCompany)
+
         val sectors = loadSectors()
         val sectorAdapter = ArrayAdapter<Sector>(this@AddCompanyActivity,R.layout.prototype_sector, sectors)
-        val atvSector = findViewById<AutoCompleteTextView>(R.id.atvSector)
         atvSector.setAdapter(sectorAdapter)
-
         atvSector.setOnItemClickListener { _, _, position, _ ->
             val selectedSector = sectorAdapter.getItem(position) as Sector
             sectorId = selectedSector.id
+            btAddCompany.isEnabled = true
         }
-
-        val btAddCompany = findViewById<Button>(R.id.btAddCompany)
 
         btAddCompany.setOnClickListener{
             addCompany()
