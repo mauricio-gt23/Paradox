@@ -1,14 +1,16 @@
 package com.example.paradox.controller.activities
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import com.example.paradox.R
 import com.example.paradox.models.Postulant
 import com.example.paradox.network.PostulantService
-import com.google.android.material.floatingactionbutton.FloatingActionButton
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -45,10 +47,24 @@ class EditProfilePostulant : AppCompatActivity() {
 
         val postulantEdited = Postulant(postulant.id, etNameProfProfile.text.toString(),
             etLastNameProfProfile.text.toString(), etProfEmail.text.toString(),
-            9952, postulant.password,etPhoneProfProfile.text.toString(),
+            etPhoneProfProfile.text.toString().toInt(), postulant.password,etPhoneProfProfile.text.toString(),
             etCivilStatusProfile.text.toString())
-        )
         val request = postulantService.editPostulant(postulant.id, postulantEdited)
+        request.enqueue(object : Callback<Postulant> {
+            override fun onResponse(call: Call<Postulant>, response: Response<Postulant>) {
+                if (response.isSuccessful){
+                    val editedPostulant = response.body()
+                    if (editedPostulant != null) {
+                        Toast.makeText(this@EditProfilePostulant, "Successfully updated", Toast.LENGTH_LONG).show()
+                    }
+                }
+            }
+
+            override fun onFailure(call: Call<Postulant>, t: Throwable) {
+                Toast.makeText(this@EditProfilePostulant, "There was a problem updating the info ", Toast.LENGTH_LONG).show()
+            }
+
+        })
     }
 
     private fun loadData() {
@@ -63,3 +79,4 @@ class EditProfilePostulant : AppCompatActivity() {
 
     }
 }
+

@@ -12,7 +12,7 @@ interface PostulantService {
     fun getPostulantById(@Path("id") format: Int) : Call<Postulant>
 
     @PUT("postulants/{id}")
-    fun editPostulant(@Path("id") postulantId: Int, @Body postulant: Postulant): Call<Path>
+    fun editPostulant(@Path("id") postulantId: Int, @Body postulant: Postulant): Call<Postulant>
 
     @GET("postulants/{postulantId}/profiles/{profileId}")
     fun getProfileByIdAndPostulantId(@Path("postulantId") postulantId: Int, @Path("profileId") profileId: Int): Call<ProfProfile>
