@@ -41,15 +41,15 @@
         android:layout_height="58dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="165dp"
-        android:layout_marginEnd="65dp"
+        android:layout_marginEnd="40dp"
+        android:autofillHints=""
         android:ems="10"
         android:inputType="textPersonName"
         android:text="@string/name_edit_profile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvProfProfileEditSupertitle"
-        tools:text="Marcus"
-        android:autofillHints="" />
+        tools:text="Marcus" />
 
     <EditText
         android:id="@+id/etLastNameProfProfile"
@@ -57,15 +57,15 @@
         android:layout_height="58dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="65dp"
+        android:layout_marginEnd="40dp"
+        android:autofillHints=""
         android:ems="10"
         android:inputType="textPersonName"
         android:text="@string/lastname_profile_edit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etNameProfProfile"
-        tools:text="Workman"
-        android:autofillHints="" />
+        tools:text="Workman" />
 
     <EditText
         android:id="@+id/etPhoneProfProfile"
@@ -73,15 +73,15 @@
         android:layout_height="58dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="80dp"
-        android:layout_marginEnd="65dp"
+        android:layout_marginEnd="40dp"
+        android:autofillHints=""
         android:ems="10"
         android:inputType="textPersonName"
         android:text="@string/doc_dni_edit_profile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etNameProfProfile"
-        tools:text="75856849"
-        android:autofillHints="" />
+        tools:text="75856849" />
 
     <EditText
         android:id="@+id/etCivilStatusProfile"
@@ -89,15 +89,15 @@
         android:layout_height="58dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="65dp"
+        android:layout_marginEnd="40dp"
+        android:autofillHints=""
         android:ems="10"
         android:inputType="textPersonName"
         android:text="@string/civil_status_edit_profile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etPhoneProfProfile"
-        tools:text="Soltero"
-        android:autofillHints="" />
+        tools:text="Soltero" />
 
     <EditText
         android:id="@+id/etPhoneProfProfileEdit"
@@ -105,15 +105,15 @@
         android:layout_height="58dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="65dp"
+        android:layout_marginEnd="40dp"
+        android:autofillHints=""
         android:ems="10"
         android:inputType="textPersonName"
         android:text="@string/number_edit_profile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etCivilStatusProfile"
-        tools:text="989654323"
-        android:autofillHints="" />
+        tools:text="989654323" />
 
     <EditText
         android:id="@+id/etProfEmail"
@@ -121,13 +121,21 @@
         android:layout_height="58dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="65dp"
+        android:layout_marginEnd="40dp"
+        android:autofillHints=""
         android:ems="10"
         android:inputType="textPersonName"
         android:text="@string/email_edit_profile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etPhoneProfProfileEdit"
-        tools:text="marcusworkman@gmail.com"
-        android:autofillHints="" />
+        tools:text="marcusworkman@gmail.com" />
+
+    <Button
+        android:id="@+id/btSaveEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        tools:layout_editor_absoluteX="158dp"
+        tools:layout_editor_absoluteY="669dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

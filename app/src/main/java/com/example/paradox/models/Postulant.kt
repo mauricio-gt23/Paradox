@@ -8,19 +8,19 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 class Postulant (
     @SerializedName("id")
-    val id: Int,
+    val id: Int = 1,
     @SerializedName("firstname")
-    val firstName: String,
+    val firstName: String = "",
     @SerializedName("lastname")
-    val lastName: String,
+    val lastName: String = "",
     @SerializedName("email")
-    val email: String,
+    val email: String = "",
     @SerializedName("number")
-    val number: Int,
+    val number: Int = 1,
     @SerializedName("password")
-    val password: String,
+    val password: String = "",
     @SerializedName("document")
-    val document: String,
+    val document: String = "",
     @SerializedName("civil_status")
-    val civilStatus: String,
+    val civilStatus: String = "",
 ) : Parcelable

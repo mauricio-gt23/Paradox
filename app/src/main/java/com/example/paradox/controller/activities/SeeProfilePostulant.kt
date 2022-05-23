@@ -3,6 +3,7 @@ package com.example.paradox.controller.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.TextView
 import android.widget.Toast
 import com.example.paradox.R
@@ -14,7 +15,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class SeeProfilePostulant : AppCompatActivity() {
 
-    var postulant: Postulant = TODO()
+    var postulant = Postulant()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_see_profile_postulant)
@@ -28,7 +29,7 @@ class SeeProfilePostulant : AppCompatActivity() {
         }
     }
 
-    public fun loadPostulant() {
+    fun loadPostulant() {
         val tvNameShow = findViewById<TextView>(R.id.tvNameShow)
         val tvLastNameShow = findViewById<TextView>(R.id.tvLastNameShow)
         val tvIdDocShow = findViewById<TextView>(R.id.tvIdDocShow)
@@ -63,6 +64,7 @@ class SeeProfilePostulant : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<Postulant>, t: Throwable) {
+                Toast.makeText(this@SeeProfilePostulant, "we couldnt retrieve postulant ", Toast.LENGTH_LONG).show()
             }
 
         })
