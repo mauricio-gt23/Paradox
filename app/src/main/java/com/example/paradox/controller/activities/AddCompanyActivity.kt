@@ -1,11 +1,11 @@
-package com.example.paradox
+package com.example.paradox.controller.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.*
-import androidx.core.widget.addTextChangedListener
+import com.example.paradox.R
 import com.example.paradox.models.*
 import com.example.paradox.network.CompaniesService
 import com.example.paradox.network.SectorsService
@@ -25,7 +25,8 @@ class AddCompanyActivity : AppCompatActivity() {
         val btAddCompany = findViewById<Button>(R.id.btAddCompany)
 
         val sectors = loadSectors()
-        val sectorAdapter = ArrayAdapter<Sector>(this@AddCompanyActivity,R.layout.prototype_sector, sectors)
+        val sectorAdapter = ArrayAdapter<Sector>(this@AddCompanyActivity,
+            R.layout.prototype_sector, sectors)
         atvSector.setAdapter(sectorAdapter)
         atvSector.setOnItemClickListener { _, _, position, _ ->
             val selectedSector = sectorAdapter.getItem(position) as Sector

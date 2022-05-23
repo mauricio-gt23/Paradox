@@ -11,33 +11,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Paradox">
-<!--        <activity-->
-<!--            android:name=".AddCompanyActivity"-->
-<!--            android:exported="false" />-->
         <activity
-            android:name=".AddCompanyActivity"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".EditCompanyActivity"
+            android:name=".controller.activities.AddCompanyActivity"
             android:exported="false" />
         <activity
-            android:name=".ViewCompanyEmployerActivity"
+            android:name=".controller.activities.EditCompanyActivity"
             android:exported="false" />
-<!--        <activity-->
-<!--            android:name=".ViewCompaniesEmployerActivity"-->
-<!--            android:exported="true" >-->
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-<!--        </activity>-->
         <activity
-            android:name=".ViewCompaniesEmployerActivity"
+            android:name=".controller.activities.ViewCompanyEmployerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".controller.activities.ViewCompaniesEmployerActivity"
             android:exported="false" />
     </application>
 
