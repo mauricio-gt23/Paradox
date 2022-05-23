@@ -7,7 +7,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.paradox.R
-import com.example.paradox.models.Prueba
+import com.example.paradox.models.Errores
 import com.example.paradox.models.RequestEmployeer
 import com.example.paradox.models.ResponseEmployeer
 import com.example.paradox.network.RegisterService
@@ -84,7 +84,7 @@ class RegisterEmployeerActivity : AppCompatActivity() {
 
                         val pojo = gson.fromJson(
                             response.errorBody()!!.string(),
-                            Prueba::class.java)
+                            Errores::class.java)
 
                         Log.e("ERROR_CHECK","here else is the error${pojo.message}")
 
