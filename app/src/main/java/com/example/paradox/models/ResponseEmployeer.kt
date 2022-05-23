@@ -9,6 +9,7 @@ class ResponseEmployeer (
     val password: String,
     val document: String,
     val posicion: String,
+    val message:String,
         )
 
 {

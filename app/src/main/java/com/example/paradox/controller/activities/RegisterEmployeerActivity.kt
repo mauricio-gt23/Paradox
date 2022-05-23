@@ -1,19 +1,25 @@
 package com.example.paradox.controller.activities
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.paradox.R
+import com.example.paradox.models.Prueba
 import com.example.paradox.models.RequestEmployeer
 import com.example.paradox.models.ResponseEmployeer
 import com.example.paradox.network.RegisterService
+import com.google.gson.GsonBuilder
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.io.IOException
+
 
 class RegisterEmployeerActivity : AppCompatActivity() {
+    val errores = mutableListOf<String>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register_employeer)
@@ -25,7 +31,9 @@ class RegisterEmployeerActivity : AppCompatActivity() {
 
 
             addCompany()
-
+           if(errores.size>0){
+               Toast.makeText(this, "${errores[0]}", Toast.LENGTH_SHORT).show()
+           }
 
 
         }
@@ -55,18 +63,45 @@ class RegisterEmployeerActivity : AppCompatActivity() {
                 posicionEmp
      )
 
+
         val request = RegisterService.registerInstance.createEmployeer(requestEmployeer)
+
+
         request.enqueue(object: Callback<ResponseEmployeer> {
             override fun onFailure(call: Call<ResponseEmployeer>, t: Throwable) {
-                Log.d("AddEmployeerAddedActivity","Error in Adding Employeer")
+                Log.d("ga","Error in Adding Employeer")
             }
 
-            override fun onResponse(call: Call<ResponseEmployeer>, response: Response<ResponseEmployeer>) {
+            override fun onResponse(call: Call<ResponseEmployeer>, response: Response<ResponseEmployeer?>) {
                 val employeerAdded = response.body()
-                if (employeerAdded != null) {
-                    Log.d("AddEmployeerActivity", employeerAdded.toString())
+                if( response.isSuccessful){
+                    Log.d("AddEmployeerActivity", employeerAdded?.email.toString())
                 }
+                if (response.code() === 404) {
+
+                    val gson = GsonBuilder().create()
+                    try {
+
+                        val pojo = gson.fromJson(
+                            response.errorBody()!!.string(),
+                            Prueba::class.java)
+
+                        Log.e("ERROR_CHECK","here else is the error${pojo.message}")
+
+                        errores.add(pojo.message)
+
+                    } catch (e: IOException) {
+                        // handle failure at e
+                }}
+
+                else  {
+                    Log.d("AddEmployeerActivity", response.errorBody()!!.toString())
+
+                }
+
             }
         })
+
+
     }
 }
