@@ -12,7 +12,7 @@ interface UserInterface {
 
 
     //Get
-    @POST("/api/employeers")
+    @POST("api/users/email/{email}/password/{password}")
     fun getAuth(@Path("email") email: String,@Path("password") password: String): Call<User>
 
 
