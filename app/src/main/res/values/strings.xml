@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Paradox</string>
-
+    <string name="navegation_drawer_open">Open</string>
+    <string name="navegation_drawer_close">Close</string>
     <string name="upload_documents">Subir documentos</string>
     <string name="search_system">Sistema de búsqueda</string>
     <string name="covert_tutor">Conviertete en tutor</string>
@@ -188,4 +189,8 @@
     <string name="_3_ofertas_de_trabajo_disponibles">3 Ofertas de trabajo disponibles</string>
     <string name="estado">Estado</string>
     <string name="mis_postulaciones">Mis postulaciones</string>
+    <string name="cerrar_sesion">Cerrar Sesion</string>
+    <string name="mi_perfil">Mi perfil</string>
+    <string name="mi_postulaciones">Mi Postulaciones</string>
+    <string name="mis_anuncios">Mis anuncios</string>
 </resources>

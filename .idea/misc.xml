@@ -29,6 +29,21 @@
         <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_postulant.xml" value="0.1" />
         <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_postulant_profile.xml" value="0.1" />
         <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_postulation.xml" value="0.18177083333333333" />
+<<<<<<< HEAD
+        <entry key="..\:/Users/ippo_/OneDrive/Escritorio/este/MobileParadox/app/src/main/res/layout/activity_add_company.xml" value="0.25" />
+        <entry key="..\:/Users/ippo_/OneDrive/Escritorio/este/MobileParadox/app/src/main/res/layout/activity_bar.xml" value="0.1" />
+        <entry key="..\:/Users/ippo_/OneDrive/Escritorio/este/MobileParadox/app/src/main/res/layout/activity_edit_announcement.xml" value="0.25" />
+        <entry key="..\:/Users/ippo_/OneDrive/Escritorio/este/MobileParadox/app/src/main/res/layout/activity_main.xml" value="0.16" />
+        <entry key="..\:/Users/ippo_/OneDrive/Escritorio/este/MobileParadox/app/src/main/res/layout/activity_my_announcement.xml" value="0.25" />
+        <entry key="..\:/Users/ippo_/OneDrive/Escritorio/este/MobileParadox/app/src/main/res/layout/activity_see_professional_profile_p.xml" value="0.25" />
+        <entry key="..\:/Users/ippo_/OneDrive/Escritorio/este/MobileParadox/app/src/main/res/layout/activity_see_profile_postulant.xml" value="0.25" />
+        <entry key="..\:/Users/ippo_/OneDrive/Escritorio/este/MobileParadox/app/src/main/res/layout/activity_view_companies_employer.xml" value="0.25" />
+        <entry key="..\:/Users/ippo_/OneDrive/Escritorio/este/MobileParadox/app/src/main/res/layout/activity_view_company_employer.xml" value="0.25" />
+        <entry key="..\:/Users/ippo_/OneDrive/Escritorio/este/MobileParadox/app/src/main/res/layout/activity_watch_announcement.xml" value="0.25" />
+        <entry key="..\:/Users/ippo_/OneDrive/Escritorio/este/MobileParadox/app/src/main/res/layout/app_bar_main.xml" value="0.264" />
+        <entry key="..\:/Users/ippo_/OneDrive/Escritorio/este/MobileParadox/app/src/main/res/layout/nav_header_main.xml" value="0.1" />
+        <entry key="..\:/Users/ippo_/OneDrive/Escritorio/este/MobileParadox/app/src/main/res/menu/activity_main_drawer.xml" value="0.2" />
+=======
         <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_register_employeer.xml" value="0.22" />
         <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_watch_announcement.xml" value="0.18177083333333333" />
         <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/app_bar_main.xml" value="0.1" />
@@ -36,6 +51,7 @@
         <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/list_element_postulant.xml" value="0.1" />
         <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/list_element_postulation.xml" value="0.1" />
         <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/nav_header_main.xml" value="0.1" />
+>>>>>>> 6b3de25f0ef60631a7da095022538319adb21f9d
       </map>
     </option>
   </component>
