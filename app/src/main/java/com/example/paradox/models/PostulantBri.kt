@@ -6,7 +6,7 @@ import kotlinx.parcelize.Parcelize
 
 
 @Parcelize
-class Postulant (
+class PostulantBri (
     @SerializedName("id")
     val id: Int = 1,
     @SerializedName("firstname")

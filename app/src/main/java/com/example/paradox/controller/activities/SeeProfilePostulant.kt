@@ -3,11 +3,10 @@ package com.example.paradox.controller.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.TextView
 import android.widget.Toast
 import com.example.paradox.R
-import com.example.paradox.models.Postulant
+import com.example.paradox.models.PostulantBri
 import com.example.paradox.network.PostulantService
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import retrofit2.*
@@ -15,7 +14,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class SeeProfilePostulant : AppCompatActivity() {
 
-    var postulant = Postulant()
+    var postulantBri = PostulantBri()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_see_profile_postulant)
@@ -24,7 +23,7 @@ class SeeProfilePostulant : AppCompatActivity() {
         val buttonEdit = findViewById<FloatingActionButton>(R.id.fabEditProfile)
         buttonEdit.setOnClickListener {
             val intent = Intent(this, EditProfilePostulant::class.java)
-            intent.putExtra("Postulant", this.postulant)
+            intent.putExtra("Postulant", this.postulantBri)
             startActivity(intent)
         }
     }
@@ -47,8 +46,8 @@ class SeeProfilePostulant : AppCompatActivity() {
 
         val request = postulantService.getPostulantById(4)
 
-        request.enqueue(object : Callback<Postulant> {
-            override fun onResponse(call: Call<Postulant>, response: Response<Postulant>) {
+        request.enqueue(object : Callback<PostulantBri> {
+            override fun onResponse(call: Call<PostulantBri>, response: Response<PostulantBri>) {
                 if (response.isSuccessful){
                     val postulantRetrieved = response.body()
                     tvNameShow.text = postulantRetrieved!!.firstName
@@ -57,13 +56,13 @@ class SeeProfilePostulant : AppCompatActivity() {
                     tvCivilStatusShow.text = postulantRetrieved.civilStatus
                     tvPhoneShow.text = postulantRetrieved.number.toString()
                     tvEmailShow.text = postulantRetrieved.email
-                    postulant = Postulant(postulantRetrieved.id, postulantRetrieved.firstName, postulantRetrieved.lastName,
+                    postulantBri = PostulantBri(postulantRetrieved.id, postulantRetrieved.firstName, postulantRetrieved.lastName,
                     postulantRetrieved.email, postulantRetrieved.number, postulantRetrieved.password, postulantRetrieved.document,
                     postulantRetrieved.civilStatus)
                 }
             }
 
-            override fun onFailure(call: Call<Postulant>, t: Throwable) {
+            override fun onFailure(call: Call<PostulantBri>, t: Throwable) {
                 Toast.makeText(this@SeeProfilePostulant, "we couldnt retrieve postulant ", Toast.LENGTH_LONG).show()
             }
 

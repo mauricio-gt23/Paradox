@@ -7,7 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.example.paradox.R
-import com.example.paradox.models.Postulant
+import com.example.paradox.models.PostulantBri
 import com.example.paradox.network.PostulantService
 import retrofit2.Call
 import retrofit2.Callback
@@ -38,7 +38,7 @@ class EditProfilePostulant : AppCompatActivity() {
     }
 
     private fun saveEditedPostulant() {
-        val postulant: Postulant = intent.getParcelableExtra("Postulant")!!
+        val postulantBri: PostulantBri = intent.getParcelableExtra("Postulant")!!
         val retrofit = Retrofit.Builder()
             .baseUrl("https://movilesback.herokuapp.com/api/")
             .addConverterFactory(GsonConverterFactory.create())
@@ -54,13 +54,13 @@ class EditProfilePostulant : AppCompatActivity() {
         val postulantService: PostulantService
         postulantService = retrofit.create(PostulantService::class.java)
 
-        val postulantEdited = Postulant(postulant.id, etNameProfProfile.text.toString(),
+        val postulantBriEdited = PostulantBri(postulantBri.id, etNameProfProfile.text.toString(),
             etLastNameProfProfile.text.toString(), etProfEmail.text.toString(),
-            etPhoneProfProfileEdit.text.toString().toInt(), postulant.password,etPhoneProfProfile.text.toString(),
+            etPhoneProfProfileEdit.text.toString().toInt(), postulantBri.password,etPhoneProfProfile.text.toString(),
             etCivilStatusProfile.text.toString())
-        val request = postulantService.editPostulant(postulant.id, postulantEdited)
-        request.enqueue(object : Callback<Postulant> {
-            override fun onResponse(call: Call<Postulant>, response: Response<Postulant>) {
+        val request = postulantService.editPostulant(postulantBri.id, postulantBriEdited)
+        request.enqueue(object : Callback<PostulantBri> {
+            override fun onResponse(call: Call<PostulantBri>, response: Response<PostulantBri>) {
                 if (response.isSuccessful){
                     val editedPostulant = response.body()
                     if (editedPostulant != null) {
@@ -69,7 +69,7 @@ class EditProfilePostulant : AppCompatActivity() {
                 }
             }
 
-            override fun onFailure(call: Call<Postulant>, t: Throwable) {
+            override fun onFailure(call: Call<PostulantBri>, t: Throwable) {
                 Toast.makeText(this@EditProfilePostulant, "There was a problem updating the info ", Toast.LENGTH_LONG).show()
             }
 
@@ -78,7 +78,7 @@ class EditProfilePostulant : AppCompatActivity() {
 
     private fun loadData() {
 
-        val postulant: Postulant = intent.getParcelableExtra("Postulant")!!
+        val postulantBri: PostulantBri = intent.getParcelableExtra("Postulant")!!
 
 
     val etNameProfProfile = findViewById<EditText>(R.id.etNameProfProfile)
@@ -87,12 +87,12 @@ class EditProfilePostulant : AppCompatActivity() {
     val etCivilStatusProfile = findViewById<EditText>(R.id.etCivilStatusProfile)
     val etPhoneProfProfileEdit = findViewById<EditText>(R.id.etPhoneProfProfileEdit)
     val etProfEmail = findViewById<EditText>(R.id.etProfEmail)
-        etNameProfProfile.setText(postulant.firstName)
-        etLastNameProfProfile.setText(postulant.lastName)
-        etPhoneProfProfile.setText(postulant.document)
-        etCivilStatusProfile.setText(postulant.civilStatus)
-        etPhoneProfProfileEdit.setText(postulant.number.toString())
-        etProfEmail.setText(postulant.email)
+        etNameProfProfile.setText(postulantBri.firstName)
+        etLastNameProfProfile.setText(postulantBri.lastName)
+        etPhoneProfProfile.setText(postulantBri.document)
+        etCivilStatusProfile.setText(postulantBri.civilStatus)
+        etPhoneProfProfileEdit.setText(postulantBri.number.toString())
+        etProfEmail.setText(postulantBri.email)
     }
 }
 
