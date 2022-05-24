@@ -12,6 +12,70 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Paradox">
         <activity
+            android:name=".controller.activities.FiltrosActivity"
+            android:exported="false" />
+        <activity android:name=".controller.activities.BarActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".controller.activities.PostulationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".controller.activities.InformationJobActivity"
+            android:exported="false" />
+        <activity
+            android:name=".controller.activities.PerfilPostulanteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".controller.activities.RegisterEmployeerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".controller.activities.RegisterPostulantActivity"
+            android:exported="false" />
+        <activity
+            android:name=".controller.activities.Register"
+            android:exported="false" />
+        <activity
+            android:name=".controller.activities.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".controller.activities.EditProfessionalProfileP"
+            android:exported="false"/>
+        <activity
+            android:name=".controller.activities.HomeEmployeer"
+            android:exported="false" />
+        <activity
+            android:name=".controller.activities.PostulantProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".controller.activities.PostulantActivity"
+            android:exported="false" />
+        <activity
+            android:name=".controller.activities.EditAnnouncementActivity"
+            android:exported="false" />
+        <activity
+            android:name=".controller.activities.WatchAnnouncementActivity"
+            android:exported="false" />
+        <activity
+            android:name=".controller.activities.PostulationEActivity"
+            android:exported="false" />
+        <activity
+            android:name=".controller.activities.AnnouncementActivity"
+            android:exported="false" />
+        <activity
+            android:name=".controller.activities.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".controller.activities.EditProfilePostulant"
+            android:exported="false" />
+        <activity
+            android:name=".controller.activities.SeeProfilePostulant"
+            android:exported="false" />
+        <activity
             android:name=".controller.activities.AddCompanyActivity"
             android:exported="false" />
         <activity
@@ -24,30 +88,13 @@
             android:name=".controller.activities.ViewCompaniesEmployerActivity"
             android:exported="true" >
         </activity>
-        <activity
-            android:name=".controller.activities.EditProfessionalProfileP"
-            android:exported="false">
-        </activity>
+
         <activity
             android:name=".controller.activities.SeeProfessionalProfileP"
             android:exported="true">
         </activity>
-        <activity
-            android:name=".controller.activities.EditProfilePostulant"
-            android:exported="false">
-        </activity>
-        <activity
-            android:name=".controller.activities.SeeProfilePostulant"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".controller.activities.MainActivity"
-            android:exported="false">
-        </activity>
+
+
     </application>
 
 </manifest>
