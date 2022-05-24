@@ -2,6 +2,7 @@ package com.example.paradox.controller.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -16,12 +17,12 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class EditProfilePostulant : AppCompatActivity() {
 
-    val etNameProfProfile = findViewById<EditText>(R.id.etNameProfProfile)
-    val etLastNameProfProfile = findViewById<EditText>(R.id.etLastNameProfProfile)
-    val etPhoneProfProfile = findViewById<EditText>(R.id.etPhoneProfProfile)
-    val etCivilStatusProfile = findViewById<EditText>(R.id.etCivilStatusProfile)
-    val etPhoneProfProfileEdit = findViewById<EditText>(R.id.etPhoneProfProfileEdit)
-    val etProfEmail = findViewById<EditText>(R.id.etProfEmail)
+//    val etNameProfProfile = findViewById<EditText>(R.id.etNameProfProfile)
+//    val etLastNameProfProfile = findViewById<EditText>(R.id.etLastNameProfProfile)
+//    val etPhoneProfProfile = findViewById<EditText>(R.id.etPhoneProfProfile)
+//    val etCivilStatusProfile = findViewById<EditText>(R.id.etCivilStatusProfile)
+//    val etPhoneProfProfileEdit = findViewById<EditText>(R.id.etPhoneProfProfileEdit)
+//    val etProfEmail = findViewById<EditText>(R.id.etProfEmail)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +32,7 @@ class EditProfilePostulant : AppCompatActivity() {
         }
         val buttonSaveEditProfile = findViewById<Button>(R.id.btSaveEdit)
         buttonSaveEditProfile.setOnClickListener {
+            Log.d("bri", "button pressed");
             saveEditedPostulant()
         }
     }
@@ -42,12 +44,19 @@ class EditProfilePostulant : AppCompatActivity() {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
+        val etNameProfProfile = findViewById<EditText>(R.id.etNameProfProfile)
+        val etLastNameProfProfile = findViewById<EditText>(R.id.etLastNameProfProfile)
+        val etPhoneProfProfile = findViewById<EditText>(R.id.etPhoneProfProfile)
+        val etCivilStatusProfile = findViewById<EditText>(R.id.etCivilStatusProfile)
+        val etPhoneProfProfileEdit = findViewById<EditText>(R.id.etPhoneProfProfileEdit)
+        val etProfEmail = findViewById<EditText>(R.id.etProfEmail)
+
         val postulantService: PostulantService
         postulantService = retrofit.create(PostulantService::class.java)
 
         val postulantEdited = Postulant(postulant.id, etNameProfProfile.text.toString(),
             etLastNameProfProfile.text.toString(), etProfEmail.text.toString(),
-            etPhoneProfProfile.text.toString().toInt(), postulant.password,etPhoneProfProfile.text.toString(),
+            etPhoneProfProfileEdit.text.toString().toInt(), postulant.password,etPhoneProfProfile.text.toString(),
             etCivilStatusProfile.text.toString())
         val request = postulantService.editPostulant(postulant.id, postulantEdited)
         request.enqueue(object : Callback<Postulant> {
@@ -70,13 +79,20 @@ class EditProfilePostulant : AppCompatActivity() {
     private fun loadData() {
 
         val postulant: Postulant = intent.getParcelableExtra("Postulant")!!
+
+
+    val etNameProfProfile = findViewById<EditText>(R.id.etNameProfProfile)
+    val etLastNameProfProfile = findViewById<EditText>(R.id.etLastNameProfProfile)
+    val etPhoneProfProfile = findViewById<EditText>(R.id.etPhoneProfProfile)
+    val etCivilStatusProfile = findViewById<EditText>(R.id.etCivilStatusProfile)
+    val etPhoneProfProfileEdit = findViewById<EditText>(R.id.etPhoneProfProfileEdit)
+    val etProfEmail = findViewById<EditText>(R.id.etProfEmail)
         etNameProfProfile.setText(postulant.firstName)
         etLastNameProfProfile.setText(postulant.lastName)
         etPhoneProfProfile.setText(postulant.document)
         etCivilStatusProfile.setText(postulant.civilStatus)
         etPhoneProfProfileEdit.setText(postulant.number.toString())
         etProfEmail.setText(postulant.email)
-
     }
 }
 
