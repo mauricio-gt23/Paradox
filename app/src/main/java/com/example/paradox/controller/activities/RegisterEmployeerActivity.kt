@@ -13,6 +13,7 @@ import com.example.paradox.R
 import com.example.paradox.models.Errores
 import com.example.paradox.models.RequestEmployeer
 import com.example.paradox.models.ResponseEmployeer
+import com.example.paradox.models.Sector
 import com.example.paradox.network.RegisterService
 import com.google.gson.GsonBuilder
 import retrofit2.Call
@@ -23,7 +24,7 @@ import java.io.IOException
 
 class RegisterEmployeerActivity : AppCompatActivity() {
     val errores = mutableListOf<String>()
-    val success = mutableListOf<String>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register_employeer)
@@ -35,30 +36,16 @@ class RegisterEmployeerActivity : AppCompatActivity() {
         btRegister.setOnClickListener {
 
 
-         if(btncheckBox.isChecked()){
+            if (btncheckBox.isChecked) {
 
-             addCompany()
-             if(errores.size>0){
-                 Toast.makeText(this, errores[0], LENGTH_SHORT).show()
-                 errores.removeAt(0)
-             }
-             if(success.size>0) {
-                 val intent = Intent(this, MainActivity::class.java)
-                 startActivity(intent)
-                 Toast.makeText(this, "Se registro correctamente", LENGTH_SHORT).show()
-             }
-         }
-             else{
-             Toast.makeText(this, "No olvides aceptar los términos y condiciones", LENGTH_SHORT).show()
-         }
+                addCompany()
+
+            } else {
+                Toast.makeText(this, "No olvides aceptar los términos y condiciones", LENGTH_SHORT)
+                    .show()
 
 
-
-
-
-
-
-
+            }
         }
 
     }
@@ -123,27 +110,30 @@ class RegisterEmployeerActivity : AppCompatActivity() {
                  }
 
                  override fun onResponse(call: Call<ResponseEmployeer>, response: Response<ResponseEmployeer?>) {
-                     val employeerAdded = response.body()
+
+                     if (response.code() === 404) {
+
+                         val gson = GsonBuilder().create()
+                         try {
+
+                             val pojo = gson.fromJson(
+                                 response.errorBody()!!.string(),
+                                 Errores::class.java)
+
+                             Log.e("ERROR_CHECK","here else is the error${pojo.message}")
+
+                             Toast.makeText(this@RegisterEmployeerActivity, pojo.message, Toast.LENGTH_LONG).show()
+
+                         } catch (e: IOException) {
+                             // handle failure at e
+                         }}
                      if(response.isSuccessful){
-                         if (response.code() === 404) {
 
-                             val gson = GsonBuilder().create()
-                             try {
 
-                                 val pojo = gson.fromJson(
-                                     response.errorBody()!!.string(),
-                                     Errores::class.java)
+                             Toast.makeText(this@RegisterEmployeerActivity, "Successfully created", Toast.LENGTH_LONG).show()
+                             val intent = Intent(this@RegisterEmployeerActivity, MainActivity::class.java)
+                             startActivity(intent)
 
-                                 Log.e("ERROR_CHECK","here else is the error${pojo.message}")
-
-                                 errores.add(pojo.message)
-
-                             } catch (e: IOException) {
-                                 // handle failure at e
-                             }}
-                         else{
-                             success.add("Success")
-                         }
 
                      }
 
