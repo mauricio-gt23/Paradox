@@ -3,10 +3,7 @@ package com.example.paradox.controller.activities
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
-import android.widget.CheckBox
-import android.widget.EditText
-import android.widget.Toast
+import android.widget.*
 import android.widget.Toast.LENGTH_SHORT
 import androidx.appcompat.app.AppCompatActivity
 import com.example.paradox.R
@@ -15,14 +12,23 @@ import com.example.paradox.models.RequestEmployeer
 import com.example.paradox.models.ResponseEmployeer
 import com.example.paradox.models.Sector
 import com.example.paradox.network.RegisterService
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 import com.google.gson.GsonBuilder
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.io.IOException
+import java.util.HashMap
 
 
 class RegisterEmployeerActivity : AppCompatActivity() {
+    private val File = 1
+    private val database = Firebase.database
+    val myRef = database.getReference("user")
+    private var prueba = "prueba"
     val errores = mutableListOf<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,7 +37,10 @@ class RegisterEmployeerActivity : AppCompatActivity() {
 
         val btRegister = findViewById<Button>(R.id.btRegistrarseEmp)
         val btncheckBox = findViewById<CheckBox>(R.id.btncheckBox)
-
+        val uploadImageView = findViewById<ImageView>(R.id.uploadImageView)
+        uploadImageView.setOnClickListener {
+            fileUpload()
+        }
 
         btRegister.setOnClickListener {
 
@@ -39,7 +48,7 @@ class RegisterEmployeerActivity : AppCompatActivity() {
             if (btncheckBox.isChecked) {
 
                 addCompany()
-
+                Log.d("Mensajess",prueba)
             } else {
                 Toast.makeText(this, "No olvides aceptar los términos y condiciones", LENGTH_SHORT)
                     .show()
@@ -48,6 +57,11 @@ class RegisterEmployeerActivity : AppCompatActivity() {
             }
         }
 
+    }
+    fun fileUpload() {
+        val intent = Intent(Intent.ACTION_GET_CONTENT)
+        intent.type = "*/*"
+        startActivityForResult(intent, File)
     }
 
     private fun addCompany() {
@@ -97,7 +111,7 @@ class RegisterEmployeerActivity : AppCompatActivity() {
              val emailEmp = txtEmailEmp.text.toString()
              val contraEmp = txtContraEmp.text.toString()
              val requestEmployeer = RequestEmployeer(nameEmp,apellidoEmp,emailEmp, phoneEmp,contraEmp,identidadEmp,
-                 posicionEmp
+                 prueba
              )
 
 
@@ -149,5 +163,27 @@ class RegisterEmployeerActivity : AppCompatActivity() {
 
 
 
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == File) {
+            if (resultCode == RESULT_OK) {
+                val FileUri = data!!.data
+                val Folder: StorageReference =
+                    FirebaseStorage.getInstance().getReference().child("User")
+                val file_name: StorageReference = Folder.child("file" + FileUri!!.lastPathSegment)
+                file_name.putFile(FileUri).addOnSuccessListener { taskSnapshot ->
+                    file_name.getDownloadUrl().addOnSuccessListener { uri ->
+                        val hashMap =
+                            HashMap<String, String>()
+                        hashMap["link"] = java.lang.String.valueOf(uri)
+                        myRef.setValue(hashMap)
+                        prueba = uri.toString()
+                        Log.d("Mensaje", uri.toString())
+                    }
+                }
+            }
+        }
     }
 }

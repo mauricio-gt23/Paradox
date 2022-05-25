@@ -120,17 +120,33 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/btnAdjuntarArchivos"
-        android:layout_width="205dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="8dp"
-        android:backgroundTint="#00FFFFFF"
+        <TextView
+            android:id="@+id/btnAdjuntarArchivos"
+            android:layout_width="205dp"
+           android:layout_height="match_parent"
+            android:textColor="@color/purple_500"
+            android:textSize="20sp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#00FFFFFF"
 
-        android:hint="@string/adjuntar_archivos"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtContraEmp" />
+            android:hint="@string/adjuntar_archivos"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtContraEmp" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnAdjuntarArchivos"
+            tools:ignore="UseCompoundDrawables">
+
+
+        </LinearLayout>
 
     <Button
         android:id="@+id/btRegistrarseEmp"
@@ -165,5 +181,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnAdjuntarArchivos" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/uploadImageView"
+            android:layout_width="20dp"
+            android:layout_height="30dp"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:layout_marginStart="215dp"
+            android:layout_marginTop="492dp"
+            android:contentDescription="@string/all"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/btnAdjuntarArchivos"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_upload_file"
+            tools:ignore="VectorDrawableCompat" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

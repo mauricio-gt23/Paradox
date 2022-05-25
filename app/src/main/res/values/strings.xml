@@ -19,9 +19,9 @@
     <string name="sign_in">SIGN IN</string>
     <string name="login">Iniciar sesión</string>
     <string name="register">Registrate</string>
-
+    <string name="upload">Subir imagen</string>
     <string name="username_or_password">Username or Password are incorrect</string>
-
+    <string name="all">TODO</string>
     <string name="title_registro">Registro</string>
     <string name="title_postulant">Postulante</string>
     <string name="title_empleador">Empleador</string>
