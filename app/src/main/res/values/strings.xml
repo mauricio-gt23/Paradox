@@ -134,7 +134,7 @@
         <item>Universidad Completa</item>
         <item>Técnico Incompleto</item>
         <item>Técnico Completo</item>
-     </string-array>
+    </string-array>
     <string-array name="habilidades_array">
 
         <item>Pensamiento crítico</item>
@@ -197,4 +197,18 @@
     <string name="mis_anuncios">Mis anuncios</string>
     <string name="bienvenido_a">Bienvenido(a)</string>
     <string name="icon_image">Icon Image</string>
+    <string name="title_activity_menu">MenuActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_mis_anuncios">Mis anuncios</string>
+    <string name="menu_publicar_anuncio">Publicar anuncio</string>
+    <string name="menu_mis_compañias">Mis compañias</string>
+    <string name="menu_agregar_compañia">Agregar compañia</string>
+    <string name="menu_mi_perfil">Mi perfil</string>
+    <string name="menu_cerrar_sesion">Cerrar sesion</string>
 </resources>

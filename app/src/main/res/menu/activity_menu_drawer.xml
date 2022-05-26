@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_mis_anuncios"
+            android:title="@string/menu_mis_anuncios" />
+        <item
+            android:id="@+id/nav_publicar_anuncio"
+            android:title="@string/menu_publicar_anuncio" />
+        <item
+            android:id="@+id/nav_menu_mis_compañoas"
+            android:title="@string/menu_mis_compañias" />
+        <item
+            android:id="@+id/nav_agregar_compañi"
+            android:title="@string/menu_agregar_compañia" />-
+        <item
+            android:id="@+id/nav_mi_perfil"
+            android:title="@string/menu_mi_perfil" />
+        <item
+            android:id="@+id/nav_cerrar_sesion"
+            android:title="@string/menu_cerrar_sesion" />
+
+    </group>
+</menu>

@@ -12,10 +12,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Paradox">
         <activity
+            android:name=".EmpleadorProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MenuActivity"
+            android:exported="false"
+            android:label="@string/title_activity_menu"
+            android:theme="@style/Theme.Paradox.NoActionBar" />
+        <activity
             android:name=".controller.activities.FiltrosActivity"
             android:exported="false" />
-        <activity android:name=".controller.activities.BarActivity"
-            android:exported="false"/>
+        <activity
+            android:name=".controller.activities.BarActivity"
+            android:exported="false" />
         <activity
             android:name=".controller.activities.PostulationActivity"
             android:exported="false" />
@@ -39,7 +48,7 @@
             android:exported="false" />
         <activity
             android:name=".controller.activities.EditProfessionalProfileP"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".controller.activities.HomeEmployeer"
             android:exported="false" />
@@ -66,6 +75,7 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -86,15 +96,10 @@
             android:exported="false" />
         <activity
             android:name=".controller.activities.ViewCompaniesEmployerActivity"
-            android:exported="true" >
-        </activity>
-
+            android:exported="true" />
         <activity
             android:name=".controller.activities.SeeProfessionalProfileP"
-            android:exported="true">
-        </activity>
-
-
+            android:exported="true" />
     </application>
 
 </manifest>
