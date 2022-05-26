@@ -188,7 +188,6 @@
     <string name="claro">Claro</string>
     <string name="movistar">Movistar</string>
     <string name="puesto_empresa_o_palabra_clave">Puesto, empresa o palabra clave</string>
-    <string name="_3_ofertas_de_trabajo_disponibles">3 Ofertas de trabajo disponibles</string>
     <string name="estado">Estado</string>
     <string name="mis_postulaciones">Mis postulaciones</string>
     <string name="cerrar_sesion">Cerrar Sesion</string>
@@ -211,4 +210,6 @@
     <string name="menu_agregar_compañia">Agregar compañia</string>
     <string name="menu_mi_perfil">Mi perfil</string>
     <string name="menu_cerrar_sesion">Cerrar sesion</string>
+    <string name="ofertas">Ofertas de trabajos disponibles</string>
+    <string name="postulantes">Postulantes:</string>
 </resources>

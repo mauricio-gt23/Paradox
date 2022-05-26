@@ -4,11 +4,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.paradox.R
-import com.example.paradox.models.Postulant
+import com.example.paradox.controller.activities.WatchAnnouncementActivity
+import com.example.paradox.models.Postul
+import com.example.paradox.models.PublishedWork
+import java.util.*
 
-class PostulantAdapter(var postulants: ArrayList<Postulant>): RecyclerView.Adapter<PostulantPrototype>() {
+class PostulantAdapter(var postulants: List<Postul>, val itemClickListener: WatchAnnouncementActivity): RecyclerView.Adapter<PostulantPrototype>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostulantPrototype {
         val view = LayoutInflater
             .from(parent.context)
@@ -17,7 +21,7 @@ class PostulantAdapter(var postulants: ArrayList<Postulant>): RecyclerView.Adapt
     }
 
     override fun onBindViewHolder(holder: PostulantPrototype, position: Int) {
-        holder.bind(postulants.get(position))
+        holder.bind(postulants.get(position), itemClickListener)
     }
 
     override fun getItemCount(): Int {
@@ -26,8 +30,18 @@ class PostulantAdapter(var postulants: ArrayList<Postulant>): RecyclerView.Adapt
 }
 
 class PostulantPrototype(itemView: View) : RecyclerView.ViewHolder(itemView) {
-    val tvPostulant = itemView.findViewById<TextView>(R.id.tvPostulant)
-    fun bind(postulant: Postulant) {
-        tvPostulant.text = postulant.name
+
+    val cvPostulant = itemView.findViewById<CardView>(R.id.cvPostulant)
+    val tvNombrePostulante = itemView.findViewById<TextView>(R.id.tvNombrePostulante)
+    val tvApelldioPostulante = itemView.findViewById<TextView>(R.id.tvApellidoPostulante)
+
+    fun bind(postulant: Postul, itemClickListener: OnItemClickListener<Postul>) {
+        tvNombrePostulante.text = postulant.firstname
+        tvApelldioPostulante.text = postulant.lastname
+
+        cvPostulant.setOnClickListener {
+            itemClickListener.OnItemClicked(postulant)
+        }
     }
 }
+

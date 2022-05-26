@@ -3,6 +3,7 @@
     package="com.example.paradox">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -12,19 +13,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Paradox">
         <activity
-            android:name=".EmpleadorProfileActivity"
+            android:name=".controller.activities.EmpleadorProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".MenuActivity"
+            android:name=".controller.activities.MenuActivity"
             android:exported="false"
             android:label="@string/title_activity_menu"
             android:theme="@style/Theme.Paradox.NoActionBar" />
         <activity
-            android:name=".controller.activities.FiltrosActivity"
+            android:name=".PublishedWorksActivity"
             android:exported="false" />
         <activity
-            android:name=".controller.activities.BarActivity"
+            android:name=".controller.activities.FiltrosActivity"
             android:exported="false" />
+
         <activity
             android:name=".controller.activities.PostulationActivity"
             android:exported="false" />
@@ -49,9 +51,7 @@
         <activity
             android:name=".controller.activities.EditProfessionalProfileP"
             android:exported="false" />
-        <activity
-            android:name=".controller.activities.HomeEmployeer"
-            android:exported="false" />
+
         <activity
             android:name=".controller.activities.PostulantProfileActivity"
             android:exported="false" />
@@ -69,6 +69,9 @@
             android:exported="false" />
         <activity
             android:name=".controller.activities.AnnouncementActivity"
+            android:exported="false" />
+        <activity
+            android:name=".controller.activities.MyAnnoucementActivity"
             android:exported="false" />
         <activity
             android:name=".controller.activities.MainActivity"

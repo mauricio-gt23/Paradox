@@ -2,10 +2,10 @@ package com.example.paradox.models
 
 import com.google.gson.annotations.SerializedName
 
-data class Work (
+data class PublishedWork (
 
-    @SerializedName("direction")
-    val company: String,
+    @SerializedName("id")
+    val id: Int?,
 
     @SerializedName("begin_date_offer")
     val subtitle: String,
@@ -17,6 +17,11 @@ data class Work (
     val time: String,
 
     @SerializedName("description")
-    val info: String,
+    val description: String,
 
+    @SerializedName("direction")
+    val address: String,
+
+    @SerializedName("salary")
+    val salary: Int?
     )
