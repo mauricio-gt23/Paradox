@@ -91,7 +91,7 @@ class RegisterEmployeerActivity : AppCompatActivity() {
 
         }
          else if(txtPosicionEmp.text.isEmpty()){
-            Toast.makeText(this, "Falta el Posición", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Falta la Posición", Toast.LENGTH_SHORT).show()
 
         }
          else if(txtEmailEmp.text.isEmpty()){
@@ -120,7 +120,7 @@ class RegisterEmployeerActivity : AppCompatActivity() {
 
              request.enqueue(object: Callback<ResponseEmployeer> {
                  override fun onFailure(call: Call<ResponseEmployeer>, t: Throwable) {
-                     Log.d("ga","Error in Adding Employeer")
+                     Log.d("44","Error in Adding Employeer")
                  }
 
                  override fun onResponse(call: Call<ResponseEmployeer>, response: Response<ResponseEmployeer?>) {
@@ -180,6 +180,9 @@ class RegisterEmployeerActivity : AppCompatActivity() {
                         hashMap["link"] = java.lang.String.valueOf(uri)
                         myRef.setValue(hashMap)
                         prueba = uri.toString()
+                        if(uri.toString().isNotEmpty()){
+                            Toast.makeText(this@RegisterEmployeerActivity, "Se subio el archivo correctamente!", Toast.LENGTH_LONG).show()
+                        }
                         Log.d("Mensaje", uri.toString())
                     }
                 }

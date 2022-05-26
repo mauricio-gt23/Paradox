@@ -2,27 +2,16 @@ package com.example.paradox.models
 
 import com.google.gson.annotations.SerializedName
 
-data class User (
-    @SerializedName("id")
-    val id: Int,
+class User (
 
-    @SerializedName("firstname")
+    val id: Long,
+
     val firstname: String,
-
-    @SerializedName("lastname")
     val lastname: String,
-
-    @SerializedName("email")
     val email: String,
-
-    @SerializedName("number")
-    val number: Int,
-
-    @SerializedName("password")
+    val number: Long,
     val password: String,
-
-    @SerializedName("document")
-    val document: Int,
+    val document: String,
 
 
 )

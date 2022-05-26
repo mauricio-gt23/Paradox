@@ -17,7 +17,9 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
+        val sharedPreferences = SharedPreferences(this)
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_login)
@@ -34,7 +36,11 @@ class MainActivity : AppCompatActivity() {
             val password = etPassword.text.toString()
             if (name.isNotBlank() && password.isNotBlank()) {
                 loadUser()
-                Toast.makeText(this, "Bienvenido ${name}", Toast.LENGTH_SHORT).show()
+                val id =  sharedPreferences.getValues("id").toString()
+                val name =  sharedPreferences.getValues("name").toString()
+
+                Toast.makeText(this@MainActivity,id, Toast.LENGTH_SHORT).show()
+
 
             } else {
                 tvErrorLogin.isInvisible = false
@@ -53,6 +59,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun loadUser() {
+
+        val sharedPreferences = SharedPreferences(this@MainActivity)
+
         val etUser = findViewById<EditText>(R.id.etUsername)
         val etPassword = findViewById<EditText>(R.id.etPassword)
         val name = etUser.text.toString()
@@ -60,9 +69,18 @@ class MainActivity : AppCompatActivity() {
         val request = UserService.userInstance.getAuth(name, password)
         request.enqueue(object : Callback<User> {
             override fun onFailure(call: Call<User>, t: Throwable) {
-                Log.d("ga", "Error in Fetching Company")
+                Log.d("ga", "Err34r in Fetching Company")
+
             }
             override fun onResponse(call: Call<User>, response: Response<User>) {
+                if(response.isSuccessful){
+                    val user =  response.body()!!
+
+                    sharedPreferences.save("id", user.id.toString())
+                    sharedPreferences.save("name", user.firstname)
+
+                }
+
             }
         })
     }
