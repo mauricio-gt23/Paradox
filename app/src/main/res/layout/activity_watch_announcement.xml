@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".WatchAnnouncementActivity">
+    android:fillViewport="true">
+
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".controller.activities.WatchAnnouncementActivity">
+
+
 
     <TextView
         android:id="@+id/tvTitleJob"
@@ -37,10 +47,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginTop="320dp"
-        android:text="San Isidro, Lima"
         android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="direction" />
 
     <TextView
         android:id="@+id/tvMoney"
@@ -48,10 +58,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginTop="244dp"
-        android:text="S/. 5000"
         android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="salary" />
 
     <TextView
         android:id="@+id/tvSalary"
@@ -81,10 +91,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginTop="188dp"
-        android:text="Contrato indefinido"
         android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="type" />
 
     <TextView
         android:id="@+id/tvTypeContract"
@@ -99,14 +109,15 @@
 
     <TextView
         android:id="@+id/tvDes1"
-        android:layout_width="323dp"
-        android:layout_height="58dp"
-        android:layout_marginTop="396dp"
-        android:text="Nuestro cliente en tecnología de la información con más de 39 años en el sector, enfocado en proyectos de Medio de Pago - POS."
+        android:layout_width="318dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="388dp"
         android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.631"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="description" />
 
     <TextView
         android:id="@+id/tvDescription"
@@ -120,23 +131,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvDes2"
-        android:layout_width="326dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="460dp"
-        android:text="Se encuentra en búsqueda de un PROGRAMADOR FRONT END."
-        android:textColor="#000000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.517"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/tvR2"
         android:layout_width="304dp"
         android:layout_height="45dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="556dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="516dp"
         android:text="- Nivel avanzado en HTML5, CSS3, JavaScript, JQuery"
         android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
@@ -146,31 +145,9 @@
         android:id="@+id/tvR3"
         android:layout_width="306dp"
         android:layout_height="45dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="592dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="572dp"
         android:text="- Experiencia en creación de mockups, wireframe y prototipos"
-        android:textColor="#000000"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tvR5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="644dp"
-        android:text="- Experiencia UX (Opcional) Conocimiento GIT"
-        android:textColor="#000000"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tvR4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="628dp"
-        android:text="- Experiencia en consumo API REST"
         android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -179,8 +156,8 @@
         android:id="@+id/tvR1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="540dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="488dp"
         android:text="- Experiencia en Angular"
         android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
@@ -191,11 +168,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="516dp"
+        android:layout_marginTop="12dp"
         android:text="Requisitos:"
         android:textColor="#7E57C2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tvDes1" />
+
+    <TextView
+        android:id="@+id/tvPostulants"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/postulantes"
+        android:textColor="#7E57C2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvR3" />
 
     <ImageView
         android:id="@+id/imageView4"
@@ -207,4 +195,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/ic_paradox" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvPostulant2"
+        android:layout_width="318dp"
+        android:layout_height="205dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPostulants" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

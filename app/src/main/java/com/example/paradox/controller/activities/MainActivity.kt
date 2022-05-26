@@ -66,14 +66,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         }
 
-
         btRegister.setOnClickListener {
 
             val intent = Intent(this, Register::class.java)
             startActivity(intent)
         }
-
-
 
         val languages = resources.getStringArray(R.array.languages)
 

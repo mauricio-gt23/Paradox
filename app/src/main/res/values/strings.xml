@@ -132,7 +132,7 @@
         <item>Universidad Completa</item>
         <item>Técnico Incompleto</item>
         <item>Técnico Completo</item>
-     </string-array>
+    </string-array>
     <string-array name="habilidades_array">
 
         <item>Pensamiento crítico</item>
@@ -186,11 +186,12 @@
     <string name="claro">Claro</string>
     <string name="movistar">Movistar</string>
     <string name="puesto_empresa_o_palabra_clave">Puesto, empresa o palabra clave</string>
-    <string name="_3_ofertas_de_trabajo_disponibles">3 Ofertas de trabajo disponibles</string>
     <string name="estado">Estado</string>
     <string name="mis_postulaciones">Mis postulaciones</string>
     <string name="cerrar_sesion">Cerrar Sesion</string>
     <string name="mi_perfil">Mi perfil</string>
     <string name="mi_postulaciones">Mi Postulaciones</string>
     <string name="mis_anuncios">Mis anuncios</string>
+    <string name="ofertas">Ofertas de trabajos disponibles</string>
+    <string name="postulantes">Postulantes:</string>
 </resources>

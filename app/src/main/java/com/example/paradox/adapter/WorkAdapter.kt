@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.paradox.R
 import com.example.paradox.models.Work
 
-class WorkAdapter(var works: ArrayList<Work>): RecyclerView.Adapter<WorkPrototype>() {
+class WorkAdapter(var works: List<Work>): RecyclerView.Adapter<WorkPrototype>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WorkPrototype {
         val view = LayoutInflater
             .from(parent.context)
