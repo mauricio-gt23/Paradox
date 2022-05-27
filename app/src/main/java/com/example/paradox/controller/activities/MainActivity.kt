@@ -10,7 +10,9 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.core.view.isInvisible
 import com.example.paradox.R
+import com.example.paradox.models.EmployeerCaro
 import com.example.paradox.models.User
+import com.example.paradox.network.EmployeerService
 import com.example.paradox.network.UserService
 import retrofit2.Call
 import retrofit2.Callback
@@ -36,9 +38,14 @@ class MainActivity : AppCompatActivity() {
             val password = etPassword.text.toString()
             if (name.isNotBlank() && password.isNotBlank()) {
                 loadUser()
+
+
                 val id =  sharedPreferences.getValues("id").toString()
                 val name =  sharedPreferences.getValues("name").toString()
 
+                if(id.isNotEmpty()){
+                    validateUser()
+                }
                 Toast.makeText(this@MainActivity,id, Toast.LENGTH_SHORT).show()
 
 
@@ -56,6 +63,30 @@ class MainActivity : AppCompatActivity() {
 
         //val languages = resources.getStringArray(R.array.languages)
 
+    }
+
+    private fun validateUser() {
+        val sharedPreferences = SharedPreferences(this@MainActivity)
+        val id =  sharedPreferences.getValues("id").toString().toLong()
+        val request = EmployeerService.employeerInstance.getEmployeer(id)
+        request.enqueue(object : Callback<EmployeerCaro> {
+            override fun onFailure(call: Call<EmployeerCaro>, t: Throwable) {
+                Log.d("Employeer", "Error in Fetching EmployeerCaro")
+
+            }
+            override fun onResponse(call: Call<EmployeerCaro>, response: Response<EmployeerCaro>) {
+                if(response.isSuccessful){
+
+                    val intent = Intent(this@MainActivity, AnnouncementActivity::class.java)
+                    startActivity(intent)
+
+
+
+
+                }
+
+            }
+        })
     }
 
     private fun loadUser() {
