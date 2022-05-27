@@ -44,9 +44,6 @@ class MainActivity : AppCompatActivity() {
 
 
                     validateUser()
-                }else{
-                    loadUser()
-                    validateUser()
                 }
             } else {
                 tvErrorLogin.isInvisible = false
