@@ -82,7 +82,7 @@
     <string name="language_title">Idiomas</string>
     <string name="skills_title">Habilidades</string>
     <string name="study_degree_show">Maestria</string>
-    <string name="study_degree_title">Grado de estudios</string>
+    <string name="study_degree_title">Estudios</string>
     <string name="profile_description_show">Ingeniero de Sistemas de la Universidad La Sapienza (Roma -Italia ) con amplios conocimientos en tecnologías SOA con énfasis en arquitecturas basadas en JEE. Soy una persona capaz de aprender temas nuevos con el objetivo de aportar al trabajo en equipo y hacer crecer mi conocimiento.</string>
     <string name="description_title">Descripcion</string>
     <string name="occupation_title">Ocupacion</string>
@@ -213,4 +213,9 @@
     <string name="ofertas">Ofertas de trabajos disponibles</string>
     <string name="postulantes">Postulantes:</string>
     <string name="cerrar_sesion2">Cerrar Sesion</string>
+    <string name="text_study_name">Name</string>
+    <string name="text_study_degree">Degree</string>
+    <string name="text_name_skill">Name skill</string>
+    <string name="text_name_language">Name</string>
+    <string name="text_name_level">level</string>
 </resources>

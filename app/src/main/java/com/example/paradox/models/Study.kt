@@ -8,5 +8,5 @@ class Study (
     @SerializedName("name")
     val name: String = "",
     @SerializedName("degree")
-    val degree: String = ""
+    val degree: Int = 1
 )
