@@ -11,6 +11,8 @@ import com.example.paradox.adapter.LanguageAdapter
 import com.example.paradox.adapter.SkillAdapter
 import com.example.paradox.adapter.StudyAdapter
 import com.example.paradox.models.ProfProfile
+import com.example.paradox.models.Skill
+import com.example.paradox.models.Skills
 import com.example.paradox.network.PostulantService
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import retrofit2.Call
@@ -50,9 +52,9 @@ class SeeProfessionalProfileP : AppCompatActivity() {
         val postulantService: PostulantService = retrofit.create(PostulantService::class.java)
 
         val request = postulantService.getProfileByIdAndPostulantId(4, 1)
-        val request2 = postulantService.getSkillsByProfile(4)
-        val request3 = postulantService.getStudiesByProfile(4)
-        val request4 = postulantService.getLanguagesByProfile(4)
+        val request2 = postulantService.getSkillsByProfile(1)
+        val request3 = postulantService.getStudiesByProfile(1)
+        val request4 = postulantService.getLanguagesByProfile(1)
 
         request.enqueue(object : Callback<ProfProfile> {
             override fun onResponse(call: Call<ProfProfile>, response: Response<ProfProfile>) {
@@ -63,6 +65,19 @@ class SeeProfessionalProfileP : AppCompatActivity() {
             }
             override fun onFailure(call: Call<ProfProfile>, t: Throwable) {
                  Toast.makeText(this@SeeProfessionalProfileP, "Data could not be retrieved", Toast.LENGTH_LONG).show()
+            }
+
+        })
+
+        request2.enqueue(object : Callback<Skills> {
+            override fun onResponse(call: Call<Skills>, response: Response<Skills>) {
+                if (response.isSuccessful){
+                    
+                }
+            }
+
+            override fun onFailure(call: Call<Skills>, t: Throwable) {
+                TODO("Not yet implemented")
             }
 
         })
