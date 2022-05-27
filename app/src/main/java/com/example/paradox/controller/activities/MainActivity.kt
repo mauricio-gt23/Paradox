@@ -38,17 +38,16 @@ class MainActivity : AppCompatActivity() {
             val password = etPassword.text.toString()
             if (name.isNotBlank() && password.isNotBlank()) {
                 loadUser()
+                val id =  sharedPreferences.getValues("id")
+
+                if(!id.isNullOrBlank()){
 
 
-                val id =  sharedPreferences.getValues("id").toString()
-                val name =  sharedPreferences.getValues("name").toString()
-
-                if(id.isNotEmpty()){
+                    validateUser()
+                }else{
+                    loadUser()
                     validateUser()
                 }
-                Toast.makeText(this@MainActivity,id, Toast.LENGTH_SHORT).show()
-
-
             } else {
                 tvErrorLogin.isInvisible = false
             }
@@ -67,26 +66,31 @@ class MainActivity : AppCompatActivity() {
 
     private fun validateUser() {
         val sharedPreferences = SharedPreferences(this@MainActivity)
-        val id =  sharedPreferences.getValues("id").toString().toLong()
-        val request = EmployeerService.employeerInstance.getEmployeer(id)
-        request.enqueue(object : Callback<EmployeerCaro> {
-            override fun onFailure(call: Call<EmployeerCaro>, t: Throwable) {
-                Log.d("Employeer", "Error in Fetching EmployeerCaro")
-
-            }
-            override fun onResponse(call: Call<EmployeerCaro>, response: Response<EmployeerCaro>) {
-                if(response.isSuccessful){
-
-                    val intent = Intent(this@MainActivity, AnnouncementActivity::class.java)
-                    startActivity(intent)
 
 
-
+            val id =  sharedPreferences.getValues("id").toString().toLong()
+            val request = EmployeerService.employeerInstance.getEmployeer(id)
+            request.enqueue(object : Callback<EmployeerCaro> {
+                override fun onFailure(call: Call<EmployeerCaro>, t: Throwable) {
+                    Log.d("Employeer", "Error in Fetching EmployeerCaro")
 
                 }
+                override fun onResponse(call: Call<EmployeerCaro>, response: Response<EmployeerCaro>) {
+                    if(response.isSuccessful){
 
-            }
-        })
+                        val intent = Intent(this@MainActivity, AnnouncementActivity::class.java)
+                        startActivity(intent)
+
+
+
+
+                    }
+
+                }
+            })
+
+
+
     }
 
     private fun loadUser() {
@@ -108,7 +112,7 @@ class MainActivity : AppCompatActivity() {
                     val user =  response.body()!!
 
                     sharedPreferences.save("id", user.id.toString())
-                    sharedPreferences.save("name", user.firstname)
+
 
                 }
 
