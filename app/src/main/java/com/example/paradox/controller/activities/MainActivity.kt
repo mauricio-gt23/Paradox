@@ -98,8 +98,8 @@ class MainActivity : AppCompatActivity() {
             override fun onResponse(call: Call<EmployeerCaro>, response: Response<EmployeerCaro>) {
                 if(response.isSuccessful){
 
-//                    val intent = Intent(this@MainActivity, AnnouncementActivity::class.java)
-//                    startActivity(intent)
+                    val intent = Intent(this@MainActivity, MyAnnoucementActivity::class.java)
+                    startActivity(intent)
 
 
 
