@@ -63,7 +63,7 @@ class SeeProfilePostulant : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<PostulantBri>, t: Throwable) {
-                Toast.makeText(this@SeeProfilePostulant, "we couldnt retrieve postulant ", Toast.LENGTH_LONG).show()
+                Toast.makeText(this@SeeProfilePostulant, "we couldn't retrieve postulant ", Toast.LENGTH_LONG).show()
             }
 
         })

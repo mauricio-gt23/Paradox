@@ -40,7 +40,7 @@ class SeeProfessionalProfileP : AppCompatActivity() {
 
         val postulantService: PostulantService = retrofit.create(PostulantService::class.java)
 
-        val request = postulantService.getProfileByIdAndPostulantId(7, 6)
+        val request = postulantService.getProfileByIdAndPostulantId(4, 1)
 
         request.enqueue(object : Callback<ProfProfile> {
             override fun onResponse(call: Call<ProfProfile>, response: Response<ProfProfile>) {
