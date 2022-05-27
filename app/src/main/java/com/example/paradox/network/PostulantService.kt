@@ -1,7 +1,6 @@
 package com.example.paradox.network
 
-import com.example.paradox.models.PostulantBri
-import com.example.paradox.models.ProfProfile
+import com.example.paradox.models.*
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -28,11 +27,12 @@ interface PostulantService {
     fun editProfileOfSpecificPostulant(@Path("postulantId") postulantId: Int, @Path("profileId") profileId: Int, @Body profProfile: ProfProfile): Call<Path>
 
     @GET("studies/{studyId}/profiles")
-    fun getStudiesByProfile(@Path("studyId") studyId: Int): Call<ProfProfile>
+    fun getStudiesByProfile(@Path("studyId") studyId: Int): Call<Studies>
 
     @GET("studies/{skillId}/profiles")
-    fun getSkillsByProfile(@Path("skillId") skillId: Int): Call<ProfProfile>
+    fun getSkillsByProfile(@Path("skillId") skillId: Int): Call<Skills>
 
     @GET("languages/{languageId}/profiles")
-    fun getLanguagesByProfile(@Path("languageId") languageId: Int): Call<ProfProfile>
+    fun getLanguagesByProfile(@Path("languageId") languageId: Int): Call<Languages>
+
 }
