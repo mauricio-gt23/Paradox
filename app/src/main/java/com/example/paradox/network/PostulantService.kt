@@ -15,13 +15,13 @@ interface PostulantService {
     fun getProfileByIdAndPostulantId(@Path("postulantId") postulantId: Int, @Path("profileId") profileId: Int): Call<ProfProfile>
 
     @GET("profiles/{profileId}/studies")
-    fun getStudiesByProfileId(@Path("profileId") postulantId: Int): Call<ProfProfile>
+    fun getStudiesByProfileId(@Path("profileId") postulantId: Int): Call<Studies>
 
     @GET("profiles/{profileId}/skills")
-    fun getSkillsByProfileId(@Path("profileId") postulantId: Int): Call<ProfProfile>
+    fun getSkillsByProfileId(@Path("profileId") postulantId: Int): Call<Skills>
 
     @GET("profiles/{profileId}/languages")
-    fun getLanguagesByProfileId(@Path("profileId") postulantId: Int): Call<ProfProfile>
+    fun getLanguagesByProfileId(@Path("profileId") postulantId: Int): Call<Languages>
 
     @PUT("postulants/{postulantId}/profiles/{profileId}")
     fun editProfileOfSpecificPostulant(@Path("postulantId") postulantId: Int, @Path("profileId") profileId: Int, @Body profProfile: ProfProfile): Call<Path>

@@ -13,7 +13,7 @@ import com.example.paradox.models.Study
 class StudyAdapter(val studies: List<Study>, val context: Context)
     : RecyclerView.Adapter<StudyPrototype>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StudyPrototype {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.prototype_languages, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.prototype_studies, parent, false)
         return StudyPrototype(view)
     }
 

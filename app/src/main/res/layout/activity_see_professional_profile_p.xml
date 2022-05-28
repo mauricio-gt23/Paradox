@@ -16,7 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="114dp"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="40dp"
             android:layout_marginEnd="115dp"
             android:text="@string/prof_profile_supertitle"
             android:textColor="#7E57C2"
@@ -66,7 +66,7 @@
         <TextView
             android:id="@+id/tvDescriptionTextProfProfile"
             android:layout_width="0dp"
-            android:layout_height="122dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="48dp"
             android:layout_marginTop="7dp"
             android:layout_marginEnd="48dp"
@@ -105,8 +105,8 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rcSkills"
-            android:layout_width="89dp"
-            android:layout_height="43dp"
+            android:layout_width="318dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="48dp"
             android:layout_marginTop="7dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -125,6 +125,15 @@
             app:layout_constraintTop_toBottomOf="@+id/rcStudies"
             tools:text="Habilidades" />
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcLanguages"
+            android:layout_width="335dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="7dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvLanguagesProfProfile" />
+
         <TextView
             android:id="@+id/tvLanguagesProfProfile"
             android:layout_width="0dp"
@@ -139,18 +148,9 @@
             tools:text="Idiomas" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rcLanguages"
-            android:layout_width="322dp"
-            android:layout_height="57dp"
-            android:layout_marginStart="48dp"
-            android:layout_marginTop="7dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvLanguagesProfProfile" />
-
-        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rcStudies"
-            android:layout_width="91dp"
-            android:layout_height="85dp"
+            android:layout_width="321dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="48dp"
             android:layout_marginTop="7dp"
             app:layout_constraintStart_toStartOf="parent"
