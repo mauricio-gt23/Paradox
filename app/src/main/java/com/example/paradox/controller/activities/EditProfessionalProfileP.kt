@@ -15,6 +15,7 @@ import retrofit2.Response
 class EditProfessionalProfileP : AppCompatActivity() {
     var languages = listOf<Language>()
     var skills = listOf<Skill>()
+    var existentSkills = listOf<Skill>()
     private val languagesList = mutableListOf<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -70,6 +71,7 @@ class EditProfessionalProfileP : AppCompatActivity() {
     private fun getData() {
         val request = PostulantService.postulantInstance.getAllLanguages()
         val request2 = PostulantService.postulantInstance.getAllSkills()
+        val request3 = PostulantService.postulantInstance.getSkillsByProfileId(1)
 
         request.enqueue(object : Callback<Languages> {
             override fun onResponse(call: Call<Languages>, response: Response<Languages>) {
@@ -102,6 +104,22 @@ class EditProfessionalProfileP : AppCompatActivity() {
                 Toast.makeText(this@EditProfessionalProfileP, "Skills could not be retrieved", Toast.LENGTH_LONG).show()
             }
         })
+
+        request3.enqueue(object : Callback<Skills> {
+            override fun onResponse(call: Call<Skills>, response: Response<Skills>) {
+                if (response.isSuccessful){
+                    val content = response.body()
+                    if (content != null) {
+                        existentSkills = content.skills
+                        Log.d("Brigitte", existentSkills.toString())
+                    }
+                }
+            }
+
+            override fun onFailure(call: Call<Skills>, t: Throwable) {
+                Toast.makeText(this@EditProfessionalProfileP, "Skills could not be retrieved", Toast.LENGTH_LONG).show()
+            }
+        })
     }
 
     private fun configMultiSelectSkills() {
@@ -109,9 +127,13 @@ class EditProfessionalProfileP : AppCompatActivity() {
         val tvMultiSelect = findViewById<TextView>(R.id.tvMultiSelectB)
         val builder = AlertDialog.Builder(this@EditProfessionalProfileP)
         // String array for alert dialog multi choice items
-        val colorsArray = arrayOf("Black", "Orange", "Green", "Yellow", "White", "Purple")
         for (i in skills.indices) {
             languagesList.add(skills[i].name)
+            for (j in existentSkills.indices) {
+                if (skills[i].id == existentSkills[j].id) {
+                    checkedColorsArray[i] = true
+                }
+            }
         }
         val languagesArray: Array<String> = languagesList.toTypedArray()
         // Boolean array for initial selected items
@@ -139,10 +161,7 @@ class EditProfessionalProfileP : AppCompatActivity() {
                 }
             }
         }
-        // Set the neutral/cancel button click listener
-        builder.setNeutralButton("Cancel") { _, _ ->
-            // Do something when click the neutral button
-        }
+        builder.setNeutralButton("Cancel") { _, _ -> }
         val dialog = builder.create()
         dialog.show()
     }

@@ -23,6 +23,7 @@ class SeeProfessionalProfileP : AppCompatActivity() {
     lateinit var skillAdapter : SkillAdapter
     lateinit var languageAdapter: LanguageAdapter
     lateinit var studiesAdapter: StudyAdapter
+    var skills = listOf<Skill>()
     var professionalProfilePostulant = ProfProfile()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,6 +51,7 @@ class SeeProfessionalProfileP : AppCompatActivity() {
                     val rvSkills = findViewById<RecyclerView>(R.id.rcSkills)
                     val content = response.body()
                     if (content != null) {
+                        skills = content.skills
                         skillAdapter = SkillAdapter(content.skills, this@SeeProfessionalProfileP)
                         rvSkills.adapter = skillAdapter
                         rvSkills.layoutManager = LinearLayoutManager(this@SeeProfessionalProfileP)
