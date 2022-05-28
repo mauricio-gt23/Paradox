@@ -5,23 +5,18 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.paradox.R
-import com.example.paradox.adapter.SkillAdapter
-import com.example.paradox.models.Language
-import com.example.paradox.models.Languages
-import com.example.paradox.models.ProfProfile
-import com.example.paradox.models.Skills
+import com.example.paradox.models.*
 import com.example.paradox.network.PostulantService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 
 class EditProfessionalProfileP : AppCompatActivity() {
     var languages = listOf<Language>()
+    var skills = listOf<Skill>()
+    private val languagesList = mutableListOf<String>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_professional_profile_p)
@@ -73,13 +68,8 @@ class EditProfessionalProfileP : AppCompatActivity() {
     }
 
     private fun getData() {
-        val retrofit = Retrofit.Builder()
-            .baseUrl("https://movilesback.herokuapp.com/api/")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-
-        val postulantService: PostulantService = retrofit.create(PostulantService::class.java)
-        val request = postulantService.getAllLanguages()
+        val request = PostulantService.postulantInstance.getAllLanguages()
+        val request2 = PostulantService.postulantInstance.getAllSkills()
 
         request.enqueue(object : Callback<Languages> {
             override fun onResponse(call: Call<Languages>, response: Response<Languages>) {
@@ -93,24 +83,43 @@ class EditProfessionalProfileP : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<Languages>, t: Throwable) {
-                Toast.makeText(this@EditProfessionalProfileP, "Data could not be retrieved", Toast.LENGTH_LONG).show()
+                Toast.makeText(this@EditProfessionalProfileP, "Languages could not be retrieved", Toast.LENGTH_LONG).show()
+            }
+        })
+
+        request2.enqueue(object : Callback<Skills> {
+            override fun onResponse(call: Call<Skills>, response: Response<Skills>) {
+                if (response.isSuccessful){
+                    val content = response.body()
+                    if (content != null) {
+                        skills = content.skills
+                        Log.d("Brigitte", skills.toString())
+                    }
+                }
+            }
+
+            override fun onFailure(call: Call<Skills>, t: Throwable) {
+                Toast.makeText(this@EditProfessionalProfileP, "Skills could not be retrieved", Toast.LENGTH_LONG).show()
             }
         })
     }
 
     private fun configMultiSelectSkills() {
+        val checkedColorsArray = BooleanArray(skills.size)
         val tvMultiSelect = findViewById<TextView>(R.id.tvMultiSelectB)
-        val checkedColorsArray = BooleanArray(6)
         val builder = AlertDialog.Builder(this@EditProfessionalProfileP)
         // String array for alert dialog multi choice items
         val colorsArray = arrayOf("Black", "Orange", "Green", "Yellow", "White", "Purple")
+        for (i in skills.indices) {
+            languagesList.add(skills[i].name)
+        }
+        val languagesArray: Array<String> = languagesList.toTypedArray()
         // Boolean array for initial selected items
         // Convert the color array to list
-        val colorsList = listOf(*colorsArray)
-        //setTitle
-        builder.setTitle("Select colors")
+        val colorsList = listOf(*languagesArray)
+        builder.setTitle("Select your skills")
         //set multi choice
-        builder.setMultiChoiceItems(colorsArray, checkedColorsArray) { _, which, isChecked ->
+        builder.setMultiChoiceItems(languagesArray, checkedColorsArray) { _, which, isChecked ->
             // Update the current focused item's checked status
             checkedColorsArray[which] = isChecked
             // Get the current focused item
@@ -121,7 +130,7 @@ class EditProfessionalProfileP : AppCompatActivity() {
         // Set the positive/yes button click listener
         builder.setPositiveButton("OK") { _, _ ->
             // Do something when click positive button
-            tvMultiSelect.hint = "Your preferred colors....."
+            tvMultiSelect.hint = "Select your skills..."
             tvMultiSelect.text = ""
             for (i in checkedColorsArray.indices) {
                 val checked = checkedColorsArray[i]
@@ -135,7 +144,6 @@ class EditProfessionalProfileP : AppCompatActivity() {
             // Do something when click the neutral button
         }
         val dialog = builder.create()
-        // Display the alert dialog on interface
         dialog.show()
     }
 }

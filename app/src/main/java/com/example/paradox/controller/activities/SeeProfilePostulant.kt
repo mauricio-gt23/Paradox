@@ -10,7 +10,6 @@ import com.example.paradox.models.PostulantBri
 import com.example.paradox.network.PostulantService
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import retrofit2.*
-import retrofit2.converter.gson.GsonConverterFactory
 
 class SeeProfilePostulant : AppCompatActivity() {
 
@@ -36,15 +35,7 @@ class SeeProfilePostulant : AppCompatActivity() {
         val tvPhoneShow = findViewById<TextView>(R.id.tvPhoneShow)
         val tvEmailShow = findViewById<TextView>(R.id.tvEmailShow)
 
-        val retrofit = Retrofit.Builder()
-            .baseUrl("https://movilesback.herokuapp.com/api/")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-
-        val postulantService: PostulantService
-        postulantService = retrofit.create(PostulantService::class.java)
-
-        val request = postulantService.getPostulantById(4)
+        val request = PostulantService.postulantInstance.getPostulantById(4)
 
         request.enqueue(object : Callback<PostulantBri> {
             override fun onResponse(call: Call<PostulantBri>, response: Response<PostulantBri>) {

@@ -2,9 +2,12 @@ package com.example.paradox.network
 
 import com.example.paradox.models.*
 import retrofit2.Call
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.*
+const val BASE_URL_BRI = "https://movilesback.herokuapp.com/api/"
 
-interface PostulantService {
+interface PostulantInterface2 {
     @GET("postulants/{id}")
     fun getPostulantById(@Path("id") format: Int) : Call<PostulantBri>
 
@@ -26,6 +29,9 @@ interface PostulantService {
     @GET("languages")
     fun getAllLanguages(): Call<Languages>
 
+    @GET("skills")
+    fun getAllSkills(): Call<Skills>
+
     @PUT("postulants/{postulantId}/profiles/{profileId}")
     fun editProfileOfSpecificPostulant(@Path("postulantId") postulantId: Int, @Path("profileId") profileId: Int, @Body profProfile: ProfProfile): Call<Path>
 
@@ -38,4 +44,15 @@ interface PostulantService {
     @GET("languages/{languageId}/profiles")
     fun getLanguagesByProfile(@Path("languageId") languageId: Int): Call<Languages>
 
+}
+
+object PostulantService {
+    val postulantInstance: PostulantInterface2
+    init {
+        val retrofit = Retrofit.Builder()
+            .baseUrl(BASE_URL_BRI)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+        postulantInstance = retrofit.create(PostulantInterface2::class.java)
+    }
 }

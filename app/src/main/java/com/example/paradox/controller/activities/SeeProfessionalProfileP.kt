@@ -8,7 +8,6 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.paradox.R
-import com.example.paradox.adapter.CompanyAdapter
 import com.example.paradox.adapter.LanguageAdapter
 import com.example.paradox.adapter.SkillAdapter
 import com.example.paradox.adapter.StudyAdapter
@@ -18,8 +17,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 
 class SeeProfessionalProfileP : AppCompatActivity() {
 
@@ -43,16 +40,9 @@ class SeeProfessionalProfileP : AppCompatActivity() {
 
     }
     fun loadSkills() {
-        val retrofit = Retrofit.Builder()
-            .baseUrl("https://movilesback.herokuapp.com/api/")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-
-        val postulantService: PostulantService = retrofit.create(PostulantService::class.java)
-        val request2 = postulantService.getSkillsByProfileId(1)
-        val request3 = postulantService.getStudiesByProfileId(1)
-        val request4 = postulantService.getLanguagesByProfileId(1)
-
+        val request2 = PostulantService.postulantInstance.getSkillsByProfileId(1)
+        val request3 = PostulantService.postulantInstance.getStudiesByProfileId(1)
+        val request4 = PostulantService.postulantInstance.getLanguagesByProfileId(1)
 
         request2.enqueue(object : Callback<Skills> {
             override fun onResponse(call: Call<Skills>, response: Response<Skills>) {
@@ -66,7 +56,6 @@ class SeeProfessionalProfileP : AppCompatActivity() {
                     }
                 }
             }
-
             override fun onFailure(call: Call<Skills>, t: Throwable) {
                 Toast.makeText(this@SeeProfessionalProfileP, "Data could not be retrieved", Toast.LENGTH_LONG).show()
             }
@@ -84,7 +73,6 @@ class SeeProfessionalProfileP : AppCompatActivity() {
                     }
                 }
             }
-
             override fun onFailure(call: Call<Studies>, t: Throwable) {
                 Toast.makeText(this@SeeProfessionalProfileP, "Data could not be retrieved", Toast.LENGTH_LONG).show()
             }
@@ -102,31 +90,22 @@ class SeeProfessionalProfileP : AppCompatActivity() {
                     }
                 }
             }
-
             override fun onFailure(call: Call<Languages>, t: Throwable) {
                 Toast.makeText(this@SeeProfessionalProfileP, "Data could not be retrieved", Toast.LENGTH_LONG).show()
             }
         })
     }
     fun loadProfessionalProfile() {
-        val tvOcupacionTextProfProfile = findViewById<TextView>(R.id.tvOcupacionTextProfProfile)
+        val tvOccupationTextProfProfile = findViewById<TextView>(R.id.tvOcupacionTextProfProfile)
         val tvDescriptionTextProfProfile = findViewById<TextView>(R.id.tvDescriptionTextProfProfile)
-
-        val retrofit = Retrofit.Builder()
-            .baseUrl("https://movilesback.herokuapp.com/api/")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-
-        val postulantService: PostulantService = retrofit.create(PostulantService::class.java)
-
-        val request = postulantService.getProfileByIdAndPostulantId(4, 1)
+        val request = PostulantService.postulantInstance.getProfileByIdAndPostulantId(4, 1)
 
         request.enqueue(object : Callback<ProfProfile> {
             override fun onResponse(call: Call<ProfProfile>, response: Response<ProfProfile>) {
                 if (response.isSuccessful){
                     val profProfileRetrieved = response.body()
                     if (profProfileRetrieved != null){
-                        tvOcupacionTextProfProfile.text = profProfileRetrieved.ocupation
+                        tvOccupationTextProfProfile.text = profProfileRetrieved.ocupation
                         tvDescriptionTextProfProfile.text = profProfileRetrieved.description
                         professionalProfilePostulant = ProfProfile(profProfileRetrieved.id, profProfileRetrieved.ocupation, profProfileRetrieved.video, profProfileRetrieved.description)
                     }

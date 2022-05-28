@@ -12,17 +12,8 @@ import com.example.paradox.network.PostulantService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 
 class EditProfilePostulant : AppCompatActivity() {
-
-//    val etNameProfProfile = findViewById<EditText>(R.id.etNameProfProfile)
-//    val etLastNameProfProfile = findViewById<EditText>(R.id.etLastNameProfProfile)
-//    val etPhoneProfProfile = findViewById<EditText>(R.id.etPhoneProfProfile)
-//    val etCivilStatusProfile = findViewById<EditText>(R.id.etCivilStatusProfile)
-//    val etPhoneProfProfileEdit = findViewById<EditText>(R.id.etPhoneProfProfileEdit)
-//    val etProfEmail = findViewById<EditText>(R.id.etProfEmail)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,11 +30,6 @@ class EditProfilePostulant : AppCompatActivity() {
 
     private fun saveEditedPostulant() {
         val postulantBri: PostulantBri = intent.getParcelableExtra("Postulant")!!
-        val retrofit = Retrofit.Builder()
-            .baseUrl("https://movilesback.herokuapp.com/api/")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-
         val etNameProfProfile = findViewById<EditText>(R.id.etNameProfProfile)
         val etLastNameProfProfile = findViewById<EditText>(R.id.etLastNameProfProfile)
         val etPhoneProfProfile = findViewById<EditText>(R.id.etPhoneProfProfile)
@@ -51,14 +37,11 @@ class EditProfilePostulant : AppCompatActivity() {
         val etPhoneProfProfileEdit = findViewById<EditText>(R.id.etPhoneProfProfileEdit)
         val etProfEmail = findViewById<EditText>(R.id.etProfEmail)
 
-        val postulantService: PostulantService
-        postulantService = retrofit.create(PostulantService::class.java)
-
         val postulantBriEdited = PostulantBri(postulantBri.id, etNameProfProfile.text.toString(),
             etLastNameProfProfile.text.toString(), etProfEmail.text.toString(),
             etPhoneProfProfileEdit.text.toString().toInt(), postulantBri.password,etPhoneProfProfile.text.toString(),
             etCivilStatusProfile.text.toString())
-        val request = postulantService.editPostulant(postulantBri.id, postulantBriEdited)
+        val request = PostulantService.postulantInstance.editPostulant(postulantBri.id, postulantBriEdited)
         request.enqueue(object : Callback<PostulantBri> {
             override fun onResponse(call: Call<PostulantBri>, response: Response<PostulantBri>) {
                 if (response.isSuccessful){
@@ -79,14 +62,12 @@ class EditProfilePostulant : AppCompatActivity() {
     private fun loadData() {
 
         val postulantBri: PostulantBri = intent.getParcelableExtra("Postulant")!!
-
-
-    val etNameProfProfile = findViewById<EditText>(R.id.etNameProfProfile)
-    val etLastNameProfProfile = findViewById<EditText>(R.id.etLastNameProfProfile)
-    val etPhoneProfProfile = findViewById<EditText>(R.id.etPhoneProfProfile)
-    val etCivilStatusProfile = findViewById<EditText>(R.id.etCivilStatusProfile)
-    val etPhoneProfProfileEdit = findViewById<EditText>(R.id.etPhoneProfProfileEdit)
-    val etProfEmail = findViewById<EditText>(R.id.etProfEmail)
+        val etNameProfProfile = findViewById<EditText>(R.id.etNameProfProfile)
+        val etLastNameProfProfile = findViewById<EditText>(R.id.etLastNameProfProfile)
+        val etPhoneProfProfile = findViewById<EditText>(R.id.etPhoneProfProfile)
+        val etCivilStatusProfile = findViewById<EditText>(R.id.etCivilStatusProfile)
+        val etPhoneProfProfileEdit = findViewById<EditText>(R.id.etPhoneProfProfileEdit)
+        val etProfEmail = findViewById<EditText>(R.id.etProfEmail)
         etNameProfProfile.setText(postulantBri.firstName)
         etLastNameProfProfile.setText(postulantBri.lastName)
         etPhoneProfProfile.setText(postulantBri.document)
