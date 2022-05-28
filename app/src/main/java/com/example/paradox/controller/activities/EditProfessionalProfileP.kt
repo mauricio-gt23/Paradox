@@ -115,32 +115,32 @@ class EditProfessionalProfileP : AppCompatActivity() {
     }
 
     private fun configMultiSelectSkills() {
-        val checkedColorsArray = BooleanArray(skills.size)
+        val checkedSkillsArray = BooleanArray(skills.size)
         val tvMultiSelect = findViewById<TextView>(R.id.tvMultiSelectB)
         val builder = AlertDialog.Builder(this@EditProfessionalProfileP)
-        val languagesList = mutableListOf<String>()
+        val skillsList = mutableListOf<String>()
         // String array for alert dialog multi choice items
         for (i in skills.indices) {
-            languagesList.add(skills[i].name)
+            skillsList.add(skills[i].name)
             for (j in existentSkills.indices) {
                 if (skills[i].id == existentSkills[j].id) {
-                    checkedColorsArray[i] = true
+                    checkedSkillsArray[i] = true
                 }
             }
         }
-        val languagesArray: Array<String> = languagesList.toTypedArray()
+        val languagesArray: Array<String> = skillsList.toTypedArray()
         val colorsList = listOf(*languagesArray)
         builder.setTitle("Select your skills")
-        builder.setMultiChoiceItems(languagesArray, checkedColorsArray) { _, which, isChecked ->
-            checkedColorsArray[which] = isChecked
+        builder.setMultiChoiceItems(languagesArray, checkedSkillsArray) { _, which, isChecked ->
+            checkedSkillsArray[which] = isChecked
             val currentItem = colorsList[which]
             Toast.makeText(applicationContext, "$currentItem $isChecked", Toast.LENGTH_SHORT).show()
         }
         builder.setPositiveButton("OK") { _, _ ->
             tvMultiSelect.hint = "Select your skills..."
             tvMultiSelect.text = ""
-            for (i in checkedColorsArray.indices) {
-                val checked = checkedColorsArray[i]
+            for (i in checkedSkillsArray.indices) {
+                val checked = checkedSkillsArray[i]
                 if (checked) {
                     tvMultiSelect.text = tvMultiSelect.text.toString() + colorsList[i] + "\n"
                 }

@@ -3,8 +3,10 @@ package com.example.paradox.controller.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import com.bumptech.glide.Glide
 import com.example.paradox.R
 import com.example.paradox.models.PostulantBri
 import com.example.paradox.network.PostulantService
@@ -34,6 +36,7 @@ class SeeProfilePostulant : AppCompatActivity() {
         val tvCivilStatusShow = findViewById<TextView>(R.id.tvCivilStatusShow)
         val tvPhoneShow = findViewById<TextView>(R.id.tvPhoneShow)
         val tvEmailShow = findViewById<TextView>(R.id.tvEmailShow)
+        val ivProfilePhoto = findViewById<ImageView>(R.id.ivProfilePhoto)
 
         val request = PostulantService.postulantInstance.getPostulantById(4)
 
@@ -42,6 +45,7 @@ class SeeProfilePostulant : AppCompatActivity() {
                 if (response.isSuccessful){
                     val postulantRetrieved = response.body()
                     tvNameShow.text = postulantRetrieved!!.firstName
+                    Glide.with(this@SeeProfilePostulant).load(companyDetail.logo).into(ivLogo)
                     tvLastNameShow.text = postulantRetrieved.lastName
                     tvIdDocShow.text = postulantRetrieved.document
                     tvCivilStatusShow.text = postulantRetrieved.civilStatus
