@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="114dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="115dp"
         android:text="@string/mi_perfil_profesional"
         android:textColor="#7E57C2"
@@ -42,10 +42,11 @@
     <EditText
         android:id="@+id/etProfileDescriptionShow"
         android:layout_width="0dp"
-        android:layout_height="209dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="46dp"
         android:layout_marginTop="11dp"
         android:layout_marginEnd="46dp"
+        android:autofillHints=""
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
@@ -53,13 +54,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etDegreeEdit"
-        tools:text="Ingeniero de Sistemas de la Universidad La Sapienza (Roma -Italia ) con amplios conocimientos en tecnologías SOA con énfasis en arquitecturas basadas en JEE. Soy una persona capaz de aprender temas nuevos con el objetivo de aportar al trabajo en equipo y hacer crecer mi conocimiento."
-        android:autofillHints="" />
+        tools:text="Ingeniero de Sistemas de la Universidad La Sapienza (Roma -Italia ) con amplios conocimientos en tecnologías SOA con énfasis en arquitecturas basadas en JEE. Soy una persona capaz de aprender temas nuevos con el objetivo de aportar al trabajo en equipo y hacer crecer mi conocimiento." />
 
     <Spinner
         android:id="@+id/spStudyDegree"
         android:layout_width="317dp"
-        android:layout_height="48dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="46dp"
         android:layout_marginTop="11dp"
         android:layout_marginEnd="46dp"
@@ -71,7 +71,7 @@
     <Spinner
         android:id="@+id/spSkills"
         android:layout_width="317dp"
-        android:layout_height="48dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="46dp"
         android:layout_marginTop="11dp"
         android:layout_marginEnd="46dp"
@@ -80,5 +80,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spStudyDegree" />
 
-
+    <TextView
+        android:id="@+id/tvMultiSelectB"
+        android:layout_width="317dp"
+        android:layout_height="54dp"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="48dp"
+        android:background="@android:drawable/editbox_background"
+        android:drawablePadding="16dp"
+        android:padding="12dp"
+        android:text="Skills"
+        app:drawableEndCompat="@android:drawable/arrow_down_float"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spSkills" />
 </androidx.constraintlayout.widget.ConstraintLayout>

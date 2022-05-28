@@ -23,6 +23,9 @@ interface PostulantService {
     @GET("profiles/{profileId}/languages")
     fun getLanguagesByProfileId(@Path("profileId") postulantId: Int): Call<Languages>
 
+    @GET("languages")
+    fun getAllLanguages(): Call<Languages>
+
     @PUT("postulants/{postulantId}/profiles/{profileId}")
     fun editProfileOfSpecificPostulant(@Path("postulantId") postulantId: Int, @Path("profileId") profileId: Int, @Body profProfile: ProfProfile): Call<Path>
 

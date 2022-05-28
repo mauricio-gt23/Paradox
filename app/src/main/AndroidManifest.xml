@@ -13,6 +13,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Paradox">
         <activity
+            android:name=".controller.activities.Multiselect"
+            android:exported="true">
+
+        </activity>
+        <activity
             android:name=".controller.activities.EmpleadorProfileActivity"
             android:exported="false" />
         <activity
@@ -26,7 +31,6 @@
         <activity
             android:name=".controller.activities.FiltrosActivity"
             android:exported="false" />
-
         <activity
             android:name=".controller.activities.PostulationActivity"
             android:exported="false" />
@@ -47,11 +51,12 @@
             android:exported="false" />
         <activity
             android:name=".controller.activities.LoginActivity"
-            android:exported="false" />
+            android:exported="false">
+
+        </activity>
         <activity
             android:name=".controller.activities.EditProfessionalProfileP"
             android:exported="false" />
-
         <activity
             android:name=".controller.activities.PostulantProfileActivity"
             android:exported="false" />
@@ -82,8 +87,7 @@
             android:exported="false" />
         <activity
             android:name=".controller.activities.SeeProfilePostulant"
-            android:exported="true">
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".controller.activities.AddCompanyActivity"
             android:exported="false" />

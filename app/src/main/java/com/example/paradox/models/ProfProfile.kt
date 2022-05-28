@@ -7,11 +7,11 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 class ProfProfile (
     @SerializedName("id")
-    val id: Int,
+    val id: Int = 1,
     @SerializedName("ocupation")
-    val ocupation: String,
+    val ocupation: String = "",
     @SerializedName("video")
-    val video: String,
+    val video: String = "",
     @SerializedName("description")
-    val description: String,
+    val description: String = "",
 )  : Parcelable

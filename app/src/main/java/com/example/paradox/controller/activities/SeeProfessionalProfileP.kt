@@ -26,6 +26,7 @@ class SeeProfessionalProfileP : AppCompatActivity() {
     lateinit var skillAdapter : SkillAdapter
     lateinit var languageAdapter: LanguageAdapter
     lateinit var studiesAdapter: StudyAdapter
+    var professionalProfilePostulant = ProfProfile()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +37,7 @@ class SeeProfessionalProfileP : AppCompatActivity() {
         val buttonEditProfessional = findViewById<FloatingActionButton>(R.id.btGoToEditProfessional)
         buttonEditProfessional.setOnClickListener {
             val intent = Intent(this, EditProfessionalProfileP::class.java)
+            intent.putExtra("ProfProfile", this.professionalProfilePostulant)
             startActivity(intent)
         }
 
@@ -122,8 +124,12 @@ class SeeProfessionalProfileP : AppCompatActivity() {
         request.enqueue(object : Callback<ProfProfile> {
             override fun onResponse(call: Call<ProfProfile>, response: Response<ProfProfile>) {
                 if (response.isSuccessful){
-                    tvOcupacionTextProfProfile.text = response.body()!!.ocupation
-                    tvDescriptionTextProfProfile.text = response.body()!!.description
+                    val profProfileRetrieved = response.body()
+                    if (profProfileRetrieved != null){
+                        tvOcupacionTextProfProfile.text = profProfileRetrieved.ocupation
+                        tvDescriptionTextProfProfile.text = profProfileRetrieved.description
+                        professionalProfilePostulant = ProfProfile(profProfileRetrieved.id, profProfileRetrieved.ocupation, profProfileRetrieved.video, profProfileRetrieved.description)
+                    }
                 }
             }
             override fun onFailure(call: Call<ProfProfile>, t: Throwable) {
