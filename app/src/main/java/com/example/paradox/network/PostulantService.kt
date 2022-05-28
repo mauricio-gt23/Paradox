@@ -17,6 +17,9 @@ interface PostulantInterface2 {
     @GET("postulants/{postulantId}/profiles/{profileId}")
     fun getProfileByIdAndPostulantId(@Path("postulantId") postulantId: Int, @Path("profileId") profileId: Int): Call<ProfProfile>
 
+    @GET("postulants/{postulantId}/profiles")
+    fun getProfileIdByUserId(@Path("postulantId") postulantId: Int): Call<ProfProfiles>
+
     @GET("profiles/{profileId}/studies")
     fun getStudiesByProfileId(@Path("profileId") postulantId: Int): Call<Studies>
 
