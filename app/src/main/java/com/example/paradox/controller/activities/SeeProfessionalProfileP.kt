@@ -23,6 +23,7 @@ class SeeProfessionalProfileP : AppCompatActivity() {
     lateinit var skillAdapter : SkillAdapter
     lateinit var languageAdapter: LanguageAdapter
     lateinit var studiesAdapter: StudyAdapter
+    var profileId: Int? = null
     var skills = listOf<Skill>()
     var professionalProfilePostulant = ProfProfile()
 
@@ -97,6 +98,24 @@ class SeeProfessionalProfileP : AppCompatActivity() {
             }
         })
     }
+
+    fun loadProfProfileOfUser(){
+        val request = PostulantService.postulantInstance.getProfileIdByUserId(4)
+        request.enqueue(object : Callback<ProfProfiles> {
+            override fun onResponse(call: Call<ProfProfiles>, response: Response<ProfProfiles>) {
+                if (response.isSuccessful){
+                    val profProfileRetrieved = response.body()?.profProfiles?.get(0)
+                    if (profProfileRetrieved != null) {
+                        profileId = profProfileRetrieved.id
+                    }
+                }
+            }
+            override fun onFailure(call: Call<ProfProfiles>, t: Throwable) {
+                Toast.makeText(this@SeeProfessionalProfileP, "Data could not be retrieved", Toast.LENGTH_LONG).show()
+            }
+        })
+    }
+
     fun loadProfessionalProfile() {
         val tvOccupationTextProfProfile = findViewById<TextView>(R.id.tvOcupacionTextProfProfile)
         val tvDescriptionTextProfProfile = findViewById<TextView>(R.id.tvDescriptionTextProfProfile)
