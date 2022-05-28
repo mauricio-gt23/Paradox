@@ -45,7 +45,7 @@ class SeeProfilePostulant : AppCompatActivity() {
                 if (response.isSuccessful){
                     val postulantRetrieved = response.body()
                     tvNameShow.text = postulantRetrieved!!.firstName
-                    Glide.with(this@SeeProfilePostulant).load(companyDetail.logo).into(ivLogo)
+                    Glide.with(this@SeeProfilePostulant).load(postulantRetrieved.link).into(ivProfilePhoto)
                     tvLastNameShow.text = postulantRetrieved.lastName
                     tvIdDocShow.text = postulantRetrieved.document
                     tvCivilStatusShow.text = postulantRetrieved.civilStatus
@@ -53,7 +53,7 @@ class SeeProfilePostulant : AppCompatActivity() {
                     tvEmailShow.text = postulantRetrieved.email
                     postulantBri = PostulantBri(postulantRetrieved.id, postulantRetrieved.firstName, postulantRetrieved.lastName,
                     postulantRetrieved.email, postulantRetrieved.number, postulantRetrieved.password, postulantRetrieved.document,
-                    postulantRetrieved.civilStatus)
+                    postulantRetrieved.civilStatus, postulantRetrieved.link, postulantRetrieved.other)
                 }
             }
 

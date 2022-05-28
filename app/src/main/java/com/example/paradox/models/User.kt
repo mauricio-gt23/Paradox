@@ -12,6 +12,9 @@ class User (
     val number: Long,
     val password: String,
     val document: String,
-
+    @SerializedName("link")
+    val link: String = "",
+    @SerializedName("other")
+    val other: String = "",
 
 )

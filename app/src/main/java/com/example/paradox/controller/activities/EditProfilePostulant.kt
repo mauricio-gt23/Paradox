@@ -5,7 +5,9 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Toast
+import com.bumptech.glide.Glide
 import com.example.paradox.R
 import com.example.paradox.models.PostulantBri
 import com.example.paradox.network.PostulantService
@@ -40,7 +42,7 @@ class EditProfilePostulant : AppCompatActivity() {
         val postulantBriEdited = PostulantBri(postulantBri.id, etNameProfProfile.text.toString(),
             etLastNameProfProfile.text.toString(), etProfEmail.text.toString(),
             etPhoneProfProfileEdit.text.toString().toInt(), postulantBri.password,etPhoneProfProfile.text.toString(),
-            etCivilStatusProfile.text.toString())
+            etCivilStatusProfile.text.toString(), postulantBri.link, postulantBri.other)
         val request = PostulantService.postulantInstance.editPostulant(postulantBri.id, postulantBriEdited)
         request.enqueue(object : Callback<PostulantBri> {
             override fun onResponse(call: Call<PostulantBri>, response: Response<PostulantBri>) {
@@ -68,12 +70,16 @@ class EditProfilePostulant : AppCompatActivity() {
         val etCivilStatusProfile = findViewById<EditText>(R.id.etCivilStatusProfile)
         val etPhoneProfProfileEdit = findViewById<EditText>(R.id.etPhoneProfProfileEdit)
         val etProfEmail = findViewById<EditText>(R.id.etProfEmail)
+        val ivProfilePhotoEdir = findViewById<ImageView>(R.id.ivProfilePhotoEdir)
+
         etNameProfProfile.setText(postulantBri.firstName)
         etLastNameProfProfile.setText(postulantBri.lastName)
         etPhoneProfProfile.setText(postulantBri.document)
         etCivilStatusProfile.setText(postulantBri.civilStatus)
         etPhoneProfProfileEdit.setText(postulantBri.number.toString())
         etProfEmail.setText(postulantBri.email)
+        Glide.with(this@EditProfilePostulant).load(postulantBri.link).into(ivProfilePhotoEdir)
+
     }
 }
 

@@ -23,4 +23,8 @@ class PostulantBri (
     val document: String = "",
     @SerializedName("civil_status")
     val civilStatus: String = "",
+    @SerializedName("link")
+    val link: String = "",
+    @SerializedName("other")
+    val other: String = "",
 ) : Parcelable
