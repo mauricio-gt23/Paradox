@@ -3,6 +3,7 @@ package com.example.paradox.controller.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -30,13 +31,14 @@ class SeeProfessionalProfileP : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_see_professional_profile_p)
-        loadProfessionalProfile()
+        loadProfProfileOfUser()
         loadSkills()
 
         val buttonEditProfessional = findViewById<FloatingActionButton>(R.id.btGoToEditProfessional)
         buttonEditProfessional.setOnClickListener {
             val intent = Intent(this, EditProfessionalProfileP::class.java)
             intent.putExtra("ProfProfile", this.professionalProfilePostulant)
+            intent.putExtra("profileId", this.profileId)
             startActivity(intent)
         }
 
@@ -105,8 +107,10 @@ class SeeProfessionalProfileP : AppCompatActivity() {
             override fun onResponse(call: Call<ProfProfiles>, response: Response<ProfProfiles>) {
                 if (response.isSuccessful){
                     val profProfileRetrieved = response.body()?.profProfiles?.get(0)
+                    Log.d("Profile ", profProfileRetrieved.toString())
                     if (profProfileRetrieved != null) {
                         profileId = profProfileRetrieved.id
+                        loadProfessionalProfile()
                     }
                 }
             }
@@ -119,21 +123,35 @@ class SeeProfessionalProfileP : AppCompatActivity() {
     fun loadProfessionalProfile() {
         val tvOccupationTextProfProfile = findViewById<TextView>(R.id.tvOcupacionTextProfProfile)
         val tvDescriptionTextProfProfile = findViewById<TextView>(R.id.tvDescriptionTextProfProfile)
-        val request = PostulantService.postulantInstance.getProfileByIdAndPostulantId(4, 1)
 
-        request.enqueue(object : Callback<ProfProfile> {
+        profileId?.let {
+            PostulantService.postulantInstance.getProfileByIdAndPostulantId(
+                4,
+                it
+            )
+        }?.enqueue(object : Callback<ProfProfile> {
             override fun onResponse(call: Call<ProfProfile>, response: Response<ProfProfile>) {
-                if (response.isSuccessful){
+                if (response.isSuccessful) {
                     val profProfileRetrieved = response.body()
-                    if (profProfileRetrieved != null){
+                    if (profProfileRetrieved != null) {
                         tvOccupationTextProfProfile.text = profProfileRetrieved.ocupation
                         tvDescriptionTextProfProfile.text = profProfileRetrieved.description
-                        professionalProfilePostulant = ProfProfile(profProfileRetrieved.id, profProfileRetrieved.ocupation, profProfileRetrieved.video, profProfileRetrieved.description)
+                        professionalProfilePostulant = ProfProfile(
+                            profProfileRetrieved.id,
+                            profProfileRetrieved.ocupation,
+                            profProfileRetrieved.video,
+                            profProfileRetrieved.description
+                        )
                     }
                 }
             }
+
             override fun onFailure(call: Call<ProfProfile>, t: Throwable) {
-                 Toast.makeText(this@SeeProfessionalProfileP, "Data could not be retrieved", Toast.LENGTH_LONG).show()
+                Toast.makeText(
+                    this@SeeProfessionalProfileP,
+                    "Data could not be retrieved",
+                    Toast.LENGTH_LONG
+                ).show()
             }
         })
     }

@@ -35,6 +35,9 @@ interface PostulantInterface2 {
     @GET("skills")
     fun getAllSkills(): Call<Skills>
 
+    @GET("studies")
+    fun getAllStudies(): Call<Studies>
+
     @PUT("postulants/{postulantId}/profiles/{profileId}")
     fun editProfileOfSpecificPostulant(@Path("postulantId") postulantId: Int, @Path("profileId") profileId: Int, @Body profProfile: ProfProfile): Call<Path>
 
