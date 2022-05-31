@@ -5,11 +5,23 @@
       <map>
         <entry key="..\:/Brigitte/7mo ciclo/Apps-Moviles/paradox/MobileParadox/app/src/main/res/layout/activity_edit_professional_profile_p.xml" value="0.4" />
         <entry key="..\:/Brigitte/7mo ciclo/Apps-Moviles/paradox/MobileParadox/app/src/main/res/layout/activity_edit_profile_postulant.xml" value="0.1" />
+        <entry key="..\:/Brigitte/7mo ciclo/Apps-Moviles/paradox/MobileParadox/app/src/main/res/layout/activity_navigation_postulant.xml" value="0.28960155490767736" />
         <entry key="..\:/Brigitte/7mo ciclo/Apps-Moviles/paradox/MobileParadox/app/src/main/res/layout/activity_see_professional_profile_p.xml" value="0.264" />
         <entry key="..\:/Brigitte/7mo ciclo/Apps-Moviles/paradox/MobileParadox/app/src/main/res/layout/activity_see_profile_postulant.xml" value="0.1" />
+        <entry key="..\:/Brigitte/7mo ciclo/Apps-Moviles/paradox/MobileParadox/app/src/main/res/layout/app_bar_navigation_employeer.xml" value="0.1" />
+        <entry key="..\:/Brigitte/7mo ciclo/Apps-Moviles/paradox/MobileParadox/app/src/main/res/layout/app_bar_navigation_postulant.xml" value="0.1" />
+        <entry key="..\:/Brigitte/7mo ciclo/Apps-Moviles/paradox/MobileParadox/app/src/main/res/layout/content_navigation.xml" value="0.23645833333333333" />
+        <entry key="..\:/Brigitte/7mo ciclo/Apps-Moviles/paradox/MobileParadox/app/src/main/res/layout/content_navigation_employeer.xml" value="0.1" />
+        <entry key="..\:/Brigitte/7mo ciclo/Apps-Moviles/paradox/MobileParadox/app/src/main/res/layout/content_navigation_postulant.xml" value="0.1" />
+        <entry key="..\:/Brigitte/7mo ciclo/Apps-Moviles/paradox/MobileParadox/app/src/main/res/layout/fragment_gallery.xml" value="0.1" />
+        <entry key="..\:/Brigitte/7mo ciclo/Apps-Moviles/paradox/MobileParadox/app/src/main/res/layout/fragment_home.xml" value="0.1" />
+        <entry key="..\:/Brigitte/7mo ciclo/Apps-Moviles/paradox/MobileParadox/app/src/main/res/layout/fragment_slideshow.xml" value="0.1" />
+        <entry key="..\:/Brigitte/7mo ciclo/Apps-Moviles/paradox/MobileParadox/app/src/main/res/layout/nav_header_navigation_employeer.xml" value="0.1" />
+        <entry key="..\:/Brigitte/7mo ciclo/Apps-Moviles/paradox/MobileParadox/app/src/main/res/layout/nav_header_navigation_postulant.xml" value="0.1" />
         <entry key="..\:/Brigitte/7mo ciclo/Apps-Moviles/paradox/MobileParadox/app/src/main/res/layout/prototype_languages.xml" value="0.536" />
         <entry key="..\:/Brigitte/7mo ciclo/Apps-Moviles/paradox/MobileParadox/app/src/main/res/layout/prototype_skills.xml" value="0.23645833333333333" />
         <entry key="..\:/Brigitte/7mo ciclo/Apps-Moviles/paradox/MobileParadox/app/src/main/res/layout/prototype_studies.xml" value="0.4" />
+        <entry key="..\:/Brigitte/7mo ciclo/Apps-Moviles/paradox/MobileParadox/app/src/main/res/menu/activity_navigation_employeer_drawer.xml" value="0.4" />
         <entry key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1295" />
         <entry key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/drawable/ic_baseline_lock_24.xml" value="0.2325" />
         <entry key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/drawable/ic_baseline_person_outline_24.xml" value="0.2325" />

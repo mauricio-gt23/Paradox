@@ -183,7 +183,7 @@
         <item>mas </item>
 
     </string-array>
-    <string name="anuncios">Anuncios</string>
+
     <string name="buscar">Buscar</string>
     <string name="claro">Claro</string>
     <string name="movistar">Movistar</string>
@@ -218,4 +218,13 @@
     <string name="text_name_skill">Name skill</string>
     <string name="text_name_language">Name</string>
     <string name="text_name_level">level</string>
+    <string name="title_activity_navigation_employeer">NavigationEmployeerActivity</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="title_activity_navigation_postulant">NavigationPostulantActivity</string>
+    <string name="anuncios">Anuncios</string>
+    <string name="Mispostulaciones">Mis postulaciones</string>
+    <string name="miPerfil">Mi perfil</string>
 </resources>

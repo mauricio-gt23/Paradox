@@ -9,6 +9,8 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.view.isInvisible
+import com.example.paradox.NavigationEmployeerActivity
+import com.example.paradox.NavigationPostulantActivity
 import com.example.paradox.R
 import com.example.paradox.models.EmployeerCaro
 import com.example.paradox.models.PostulantCaro
@@ -78,7 +80,7 @@ class MainActivity : AppCompatActivity() {
                 override fun onResponse(call: Call<PostulantCaro>, response: Response<PostulantCaro>) {
                     if(response.isSuccessful){
 
-                        val intent = Intent(this@MainActivity, AnnouncementActivity::class.java)
+                        val intent = Intent(this@MainActivity, NavigationPostulantActivity::class.java)
                         startActivity(intent)
 
 
@@ -98,7 +100,7 @@ class MainActivity : AppCompatActivity() {
             override fun onResponse(call: Call<EmployeerCaro>, response: Response<EmployeerCaro>) {
                 if(response.isSuccessful){
 
-                    val intent = Intent(this@MainActivity, MyAnnoucementActivity::class.java)
+                    val intent = Intent(this@MainActivity, NavigationEmployeerActivity::class.java)
                     startActivity(intent)
 
 
