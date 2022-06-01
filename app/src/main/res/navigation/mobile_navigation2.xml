@@ -3,14 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation2"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/publishedWorksFragment">
 
     <fragment
-        android:id="@+id/nav_home"
-        android:name="com.example.paradox.ui.home.HomeFragment"
-        android:label="@string/anuncios"
-        tools:layout="@layout/fragment_home" />
-
+        android:id="@+id/publishedWorksFragment"
+        android:name="com.example.paradox.ui.publishedworksm.PublishedWorksFragment"
+        android:label="fragment_published_works"
+        tools:layout="@layout/fragment_published_works" />
     <fragment
         android:id="@+id/nav_gallery"
         android:name="com.example.paradox.ui.gallery.GalleryFragment"

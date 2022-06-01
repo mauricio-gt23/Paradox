@@ -26,7 +26,7 @@ class NavigationEmployeerActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.appBarNavigationEmployeer.toolbar)
 
-        binding.appBarNavigationEmployeer.fab.setOnClickListener { view ->
+        binding.appBarNavigationEmployeer.toolbar.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
@@ -37,7 +37,7 @@ class NavigationEmployeerActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow
+                R.id.nav_gallery, R.id.nav_slideshow, R.id.publishedWorksFragment
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

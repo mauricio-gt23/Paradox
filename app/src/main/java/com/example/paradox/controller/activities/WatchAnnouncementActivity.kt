@@ -42,6 +42,7 @@ class WatchAnnouncementActivity : AppCompatActivity(), OnItemClickListener<Postu
 
         if (publishedWork.id != null) {
             loadPostulants(publishedWork.id!!)
+            findViewById<TextView>(R.id.tvTitleJob).text = publishedWork.job
             findViewById<TextView>(R.id.tvTimeJob).text = publishedWork.time
             findViewById<TextView>(R.id.tvMoney).text = publishedWork.salary.toString()
             findViewById<TextView>(R.id.tvDistrict).text = publishedWork.address

@@ -3,13 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation3"
-    app:startDestination="@+id/nav_home">
-
-    <fragment
-        android:id="@+id/nav_home"
-        android:name="com.example.paradox.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+    app:startDestination="@+id/announcementFragment">
 
     <fragment
         android:id="@+id/nav_gallery"
@@ -22,4 +16,16 @@
         android:name="com.example.paradox.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+
+    <fragment
+        android:id="@+id/announcementFragment"
+        android:name="com.example.paradox.ui.announcement.AnnouncementFragment"
+        android:label="fragment_announcement"
+        tools:layout="@layout/fragment_announcement" />
+    <fragment
+        android:id="@+id/postulationFragment"
+        android:name="com.example.paradox.ui.postulationm.PostulationFragment"
+        android:label="fragment_postulation"
+        tools:layout="@layout/fragment_postulation" />
+
 </navigation>

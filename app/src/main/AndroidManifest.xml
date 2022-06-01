@@ -46,13 +46,7 @@
             android:label="@string/title_activity_menu"
             android:theme="@style/Theme.Paradox.NoActionBar" />
         <activity
-            android:name=".PublishedWorksActivity"
-            android:exported="false" />
-        <activity
             android:name=".controller.activities.FiltrosActivity"
-            android:exported="false" />
-        <activity
-            android:name=".controller.activities.PostulationActivity"
             android:exported="false" />
         <activity
             android:name=".controller.activities.InformationJobActivity"
@@ -79,19 +73,7 @@
             android:name=".controller.activities.PostulantProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".controller.activities.PostulantActivity"
-            android:exported="false" />
-        <activity
-            android:name=".controller.activities.EditAnnouncementActivity"
-            android:exported="false" />
-        <activity
             android:name=".controller.activities.WatchAnnouncementActivity"
-            android:exported="false" />
-        <activity
-            android:name=".controller.activities.PostulationEActivity"
-            android:exported="false" />
-        <activity
-            android:name=".controller.activities.AnnouncementActivity"
             android:exported="false" />
         <activity
             android:name=".controller.activities.MyAnnoucementActivity"

@@ -128,6 +128,42 @@
         <entry key="..\:/Users/j_lis/AndroidStudioProjects/Paradox/app/src/main/res/layout/protoptype_company.xml" value="0.36" />
         <entry key="..\:/Users/j_lis/AndroidStudioProjects/Paradox/app/src/main/res/layout/prototype_company.xml" value="0.36626506024096384" />
         <entry key="..\:/Users/j_lis/AndroidStudioProjects/Paradox/app/src/main/res/layout/prototype_sector.xml" value="0.3" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/activity_add_company.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/activity_announcement.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/activity_edit_announcement.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/activity_edit_professional_profile_p.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/activity_menu.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/activity_my_announcement.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/activity_navigation_employeer.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/activity_navigation_postulant.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/activity_postulant.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/activity_postulant_profile.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/activity_postulation.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/activity_published_works.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/activity_view_company_employer.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/activity_watch_announcement.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/app_bar_navigation_employeer.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/app_bar_navigation_postulant.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/content_navigation_employeer.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/content_navigation_postulant.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/dropdown_item.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/fragment_announcement.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/fragment_home.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/fragment_postulation.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/fragment_published_works.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/list_element_published_work.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/nav_header_navigation_employeer.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/nav_header_navigation_postulant.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/prototype_company.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/prototype_languages.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/prototype_studies.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/menu/activity_menu_drawer.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/menu/activity_navigation_drawer.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/menu/activity_navigation_employeer_drawer.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/menu/menu.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/menu/menu_salir.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/menu/navigation_employeer.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/menu/navigation_postulant.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>
