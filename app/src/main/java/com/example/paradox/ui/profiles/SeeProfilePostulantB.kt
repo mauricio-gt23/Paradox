@@ -1,24 +1,30 @@
 package com.example.paradox.ui.profiles
 
+import android.app.ProgressDialog.show
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
+import android.widget.Toast
+import com.bumptech.glide.Glide
 import com.example.paradox.R
+import com.example.paradox.controller.activities.EditProfilePostulant
+import com.example.paradox.models.PostulantBri
+import com.example.paradox.network.PostulantService
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
+var postulantBri = PostulantBri()
 
-/**
- * A simple [Fragment] subclass.
- * Use the [SeeProfilePostulantB.newInstance] factory method to
- * create an instance of this fragment.
- */
 class SeeProfilePostulantB : Fragment() {
-    // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
 
@@ -33,9 +39,16 @@ class SeeProfilePostulantB : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_see_profile_postulant_b, container, false)
+    ): View {
+        val vista: View = inflater.inflate(R.layout.fragment_see_profile_postulant_b, container, false)
+        val buttonEdit = vista.findViewById<FloatingActionButton>(R.id.fabEditProfile)
+        loadPostulant(vista)
+        buttonEdit.setOnClickListener {
+//            val intent = Intent(this, EditProfilePostulant::class.java)
+//            intent.putExtra("Postulant", this.postulantBri)
+//            startActivity(intent)
+        }
+        return vista
     }
 
     companion object {
@@ -47,7 +60,6 @@ class SeeProfilePostulantB : Fragment() {
          * @param param2 Parameter 2.
          * @return A new instance of fragment SeeProfilePostulantB.
          */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
             SeeProfilePostulantB().apply {
@@ -56,5 +68,40 @@ class SeeProfilePostulantB : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    fun loadPostulant(view: View) {
+        val tvNameShow = view.findViewById<TextView>(R.id.tvNameShow)
+        val tvLastNameShow = view.findViewById<TextView>(R.id.tvLastNameShow)
+        val tvIdDocShow = view.findViewById<TextView>(R.id.tvIdDocShow)
+        val tvCivilStatusShow = view.findViewById<TextView>(R.id.tvCivilStatusShow)
+        val tvPhoneShow = view.findViewById<TextView>(R.id.tvPhoneShow)
+        val tvEmailShow = view.findViewById<TextView>(R.id.tvEmailShow)
+        val ivProfilePhoto = view.findViewById<ImageView>(R.id.ivProfilePhoto)
+
+        val request = PostulantService.postulantInstance.getPostulantById(4)
+
+        request.enqueue(object : Callback<PostulantBri> {
+            override fun onResponse(call: Call<PostulantBri>, response: Response<PostulantBri>) {
+                if (response.isSuccessful){
+                    val postulantRetrieved = response.body()
+                    tvNameShow.text = postulantRetrieved!!.firstName
+                    Glide.with(this@SeeProfilePostulantB).load(postulantRetrieved.link).into(ivProfilePhoto)
+                    tvLastNameShow.text = postulantRetrieved.lastName
+                    tvIdDocShow.text = postulantRetrieved.document
+                    tvCivilStatusShow.text = postulantRetrieved.civilStatus
+                    tvPhoneShow.text = postulantRetrieved.number.toString()
+                    tvEmailShow.text = postulantRetrieved.email
+                    postulantBri = PostulantBri(postulantRetrieved.id, postulantRetrieved.firstName, postulantRetrieved.lastName,
+                        postulantRetrieved.email, postulantRetrieved.number, postulantRetrieved.password, postulantRetrieved.document,
+                        postulantRetrieved.civilStatus, postulantRetrieved.link, postulantRetrieved.other)
+                }
+            }
+
+            override fun onFailure(call: Call<PostulantBri>, t: Throwable) {
+                Toast.makeText(activity, "We couldn't retrieve postulant, try again please ", Toast.LENGTH_LONG).show()
+            }
+
+        })
     }
 }

@@ -28,4 +28,10 @@
         android:label="fragment_postulation"
         tools:layout="@layout/fragment_postulation" />
 
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.paradox.ui.profiles.SeeProfilePostulantB"
+        android:label="Mi perfil"
+        tools:layout="@layout/fragment_see_profile_postulant_b" />
+
 </navigation>
