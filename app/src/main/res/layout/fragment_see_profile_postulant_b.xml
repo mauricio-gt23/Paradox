@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -7,17 +8,203 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".controller.activities.SeeProfilePostulant"
-        tools:ignore="UselessParent">
+        tools:context=".controller.activities.SeeProfilePostulant">
+
         <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:context=".controller.activities.SeeProfilePostulant">
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/hello_blank_fragment" />
+                android:id="@+id/tvProfileSupertitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="168dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="168dp"
+                android:text="@string/profile_supertitle"
+                android:textColor="#7E57C2"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Mi perfil" />
+
+            <TextView
+                android:id="@+id/tvNameProfileTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="160dp"
+                android:text="@string/namesTitle"
+                android:textColor="#7E57C2"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvProfileSupertitle"
+                tools:text="Nombres" />
+
+            <TextView
+                android:id="@+id/tvLastNameShow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/lastname_profile_show"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvLastNameProfileTitle"
+                tools:text="Workman" />
+
+            <TextView
+                android:id="@+id/tvLastNameProfileTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginEnd="285dp"
+                android:text="@string/lastname_title_profile"
+                android:textColor="#7E57C2"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvNameProfileTitle"
+                tools:text="Apellidos" />
+
+            <TextView
+                android:id="@+id/tvNameShow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/name_show_profile"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvNameProfileTitle" />
+
+            <TextView
+                android:id="@+id/tvIdDocProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginEnd="285dp"
+                android:text="@string/doc_dni_title_profile"
+                android:textColor="#7E57C2"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvLastNameProfileTitle"
+                tools:text="Documento de identidad" />
+
+            <TextView
+                android:id="@+id/tvIdDocShow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/doc_dni_show_profile"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvIdDocProfile" />
+
+            <TextView
+                android:id="@+id/tvCivilStatusProfileTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="60dp"
+                android:text="@string/civil_status_profile_title"
+                android:textColor="#7E57C2"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvIdDocProfile" />
+
+            <TextView
+                android:id="@+id/tvCivilStatusShow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/civil_status_show_profile"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvCivilStatusProfileTitle" />
+
+            <TextView
+                android:id="@+id/tvNumberProfileTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="60dp"
+                android:text="@string/number_profile_title"
+                android:textColor="#7E57C2"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvCivilStatusProfileTitle"
+                tools:text="Numero telefonico" />
+
+            <TextView
+                android:id="@+id/tvPhoneShow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="80dp"
+                android:text="@string/number_show_profile"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvNumberProfileTitle" />
+
+            <ImageView
+                android:id="@+id/ivProfilePhoto"
+                android:layout_width="127dp"
+                android:layout_height="109dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="30dp"
+                android:contentDescription="@string/profile_photo_of_postulant"
+                android:src="@drawable/ic_baseline_account_circle_avatar_paradox"
+                app:layout_constraintBottom_toTopOf="@+id/tvNameProfileTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvProfileSupertitle"
+                tools:ignore="ImageContrastCheck" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabEditProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="30dp"
+                android:clickable="true"
+                app:backgroundTint="#7E57C2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:rippleColor="#00000000"
+                app:srcCompat="@android:drawable/ic_menu_edit"
+                android:contentDescription="@string/go_to_edit_profile" />
+
+            <TextView
+                android:id="@+id/tvEmailTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="60dp"
+                android:text="@string/email_title"
+                android:textColor="#7E57C2"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvNumberProfileTitle" />
+
+            <TextView
+                android:id="@+id/tvEmailShow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/email_show_profile"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvEmailTitle" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
