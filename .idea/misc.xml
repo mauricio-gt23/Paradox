@@ -3,6 +3,25 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Brigitte/7mo ciclo/Apps-Moviles/paradox/MobileParadox/app/src/main/res/layout/activity_edit_professional_profile_p.xml" value="0.4" />
+        <entry key="..\:/Brigitte/7mo ciclo/Apps-Moviles/paradox/MobileParadox/app/src/main/res/layout/activity_edit_profile_postulant.xml" value="0.1" />
+        <entry key="..\:/Brigitte/7mo ciclo/Apps-Moviles/paradox/MobileParadox/app/src/main/res/layout/activity_navigation_postulant.xml" value="0.28960155490767736" />
+        <entry key="..\:/Brigitte/7mo ciclo/Apps-Moviles/paradox/MobileParadox/app/src/main/res/layout/activity_see_professional_profile_p.xml" value="0.264" />
+        <entry key="..\:/Brigitte/7mo ciclo/Apps-Moviles/paradox/MobileParadox/app/src/main/res/layout/activity_see_profile_postulant.xml" value="0.1" />
+        <entry key="..\:/Brigitte/7mo ciclo/Apps-Moviles/paradox/MobileParadox/app/src/main/res/layout/app_bar_navigation_employeer.xml" value="0.1" />
+        <entry key="..\:/Brigitte/7mo ciclo/Apps-Moviles/paradox/MobileParadox/app/src/main/res/layout/app_bar_navigation_postulant.xml" value="0.1" />
+        <entry key="..\:/Brigitte/7mo ciclo/Apps-Moviles/paradox/MobileParadox/app/src/main/res/layout/content_navigation.xml" value="0.23645833333333333" />
+        <entry key="..\:/Brigitte/7mo ciclo/Apps-Moviles/paradox/MobileParadox/app/src/main/res/layout/content_navigation_employeer.xml" value="0.1" />
+        <entry key="..\:/Brigitte/7mo ciclo/Apps-Moviles/paradox/MobileParadox/app/src/main/res/layout/content_navigation_postulant.xml" value="0.1" />
+        <entry key="..\:/Brigitte/7mo ciclo/Apps-Moviles/paradox/MobileParadox/app/src/main/res/layout/fragment_gallery.xml" value="0.1" />
+        <entry key="..\:/Brigitte/7mo ciclo/Apps-Moviles/paradox/MobileParadox/app/src/main/res/layout/fragment_home.xml" value="0.1" />
+        <entry key="..\:/Brigitte/7mo ciclo/Apps-Moviles/paradox/MobileParadox/app/src/main/res/layout/fragment_slideshow.xml" value="0.1" />
+        <entry key="..\:/Brigitte/7mo ciclo/Apps-Moviles/paradox/MobileParadox/app/src/main/res/layout/nav_header_navigation_employeer.xml" value="0.1" />
+        <entry key="..\:/Brigitte/7mo ciclo/Apps-Moviles/paradox/MobileParadox/app/src/main/res/layout/nav_header_navigation_postulant.xml" value="0.1" />
+        <entry key="..\:/Brigitte/7mo ciclo/Apps-Moviles/paradox/MobileParadox/app/src/main/res/layout/prototype_languages.xml" value="0.536" />
+        <entry key="..\:/Brigitte/7mo ciclo/Apps-Moviles/paradox/MobileParadox/app/src/main/res/layout/prototype_skills.xml" value="0.23645833333333333" />
+        <entry key="..\:/Brigitte/7mo ciclo/Apps-Moviles/paradox/MobileParadox/app/src/main/res/layout/prototype_studies.xml" value="0.4" />
+        <entry key="..\:/Brigitte/7mo ciclo/Apps-Moviles/paradox/MobileParadox/app/src/main/res/menu/activity_navigation_employeer_drawer.xml" value="0.4" />
         <entry key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1295" />
         <entry key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/drawable/ic_baseline_lock_24.xml" value="0.2325" />
         <entry key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/drawable/ic_baseline_person_outline_24.xml" value="0.2325" />
@@ -20,8 +39,13 @@
         <entry key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/layout/activity_register_postulant.xml" value="0.1" />
         <entry key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/layout/activity_see_professional_profile_p.xml" value="0.1" />
         <entry key="..\:/Users/Brigitte/UPC/Moviles/Paradox/MobileParadox/app/src/main/res/layout/activity_main.xml" value="0.15625" />
+        <entry key="..\:/Users/Brigitte/UPC/Moviles/Paradox/MobileParadox/app/src/main/res/layout/activity_menu.xml" value="0.2" />
+        <entry key="..\:/Users/Brigitte/UPC/Moviles/Paradox/MobileParadox/app/src/main/res/layout/activity_navigation_employeer.xml" value="0.215625" />
+        <entry key="..\:/Users/Brigitte/UPC/Moviles/Paradox/MobileParadox/app/src/main/res/layout/activity_navigation_postulant.xml" value="0.215625" />
+        <entry key="..\:/Users/Brigitte/UPC/Moviles/Paradox/MobileParadox/app/src/main/res/layout/activity_perfil_postulante.xml" value="0.14479166666666668" />
         <entry key="..\:/Users/Brigitte/UPC/Moviles/Paradox/MobileParadox/app/src/main/res/layout/activity_see_professional_profile_p.xml" value="0.25" />
         <entry key="..\:/Users/Brigitte/UPC/Moviles/Paradox/MobileParadox/app/src/main/res/layout/activity_see_profile_postulant.xml" value="0.3489583333333333" />
+        <entry key="..\:/Users/Brigitte/UPC/Moviles/Paradox/MobileParadox/app/src/main/res/layout/content_navigation_postulant.xml" value="0.215625" />
         <entry key="..\:/Users/Brigitte/UPC/Moviles/Paradox/MobileParadox/app/src/main/res/layout/fragment_announcement.xml" value="0.3489583333333333" />
         <entry key="..\:/Users/Brigitte/UPC/Moviles/Paradox/MobileParadox/app/src/main/res/layout/fragment_gallery.xml" value="0.3489583333333333" />
         <entry key="..\:/Users/Brigitte/UPC/Moviles/Paradox/MobileParadox/app/src/main/res/layout/fragment_home.xml" value="0.3489583333333333" />
@@ -33,6 +57,12 @@
         <entry key="..\:/Users/Brigitte/UPC/Moviles/Paradox/MobileParadox/app/src/main/res/layout/nav_header_main.xml" value="0.3489583333333333" />
         <entry key="..\:/Users/Brigitte/UPC/Moviles/Paradox/MobileParadox/app/src/main/res/layout/nav_header_navigation_employeer.xml" value="0.3489583333333333" />
         <entry key="..\:/Users/Brigitte/UPC/Moviles/Paradox/MobileParadox/app/src/main/res/layout/nav_header_navigation_postulant.xml" value="0.3489583333333333" />
+        <entry key="..\:/Users/Brigitte/UPC/Moviles/Paradox/MobileParadox/app/src/main/res/menu/activity_navigation_drawer.xml" value="0.215625" />
+        <entry key="..\:/Users/Brigitte/UPC/Moviles/Paradox/MobileParadox/app/src/main/res/menu/activity_navigation_employeer_drawer.xml" value="0.215625" />
+        <entry key="..\:/Users/Brigitte/UPC/Moviles/Paradox/MobileParadox/app/src/main/res/menu/menu.xml" value="0.215625" />
+        <entry key="..\:/Users/Brigitte/UPC/Moviles/Paradox/MobileParadox/app/src/main/res/menu/menu_salir.xml" value="0.215625" />
+        <entry key="..\:/Users/Brigitte/UPC/Moviles/Paradox/MobileParadox/app/src/main/res/menu/navigation_employeer.xml" value="0.215625" />
+        <entry key="..\:/Users/Brigitte/UPC/Moviles/Paradox/MobileParadox/app/src/main/res/menu/navigation_postulant.xml" value="0.215625" />
         <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/drawable/ic_upload_file.xml" value="0.1435" />
         <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_add_company.xml" value="0.1671875" />
         <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_announcement.xml" value="0.1671875" />
@@ -47,23 +77,17 @@
         <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_main.xml" value="0.18177083333333333" />
         <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_menu.xml" value="0.15715579710144928" />
         <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_my_announcement.xml" value="0.15715579710144928" />
-        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_navigation.xml" value="0.17119565217391305" />
         <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_perfil_postulante.xml" value="0.12708333333333333" />
         <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_postulant.xml" value="0.1" />
         <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_postulant_profile.xml" value="0.1" />
         <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_postulation.xml" value="0.18177083333333333" />
         <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_published_works.xml" value="0.12708333333333333" />
         <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_register_employeer.xml" value="0.22" />
-        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_register_postulant.xml" value="0.19927536231884058" />
         <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_see_professional_profile_p.xml" value="0.17391304347826086" />
         <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_see_profile_postulant.xml" value="0.1" />
         <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_watch_announcement.xml" value="0.18177083333333333" />
         <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/app_bar_main.xml" value="0.1" />
         <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/content_main.xml" value="0.12708333333333333" />
-        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/content_navigation.xml" value="0.13489583333333333" />
-        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/content_navigation_postulant.xml" value="0.2" />
-        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/fragment_gallery.xml" value="0.17119565217391305" />
-        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/fragment_home.xml" value="0.17119565217391305" />
         <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/list_element_card_work.xml" value="0.1" />
         <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/list_element_postulant.xml" value="0.1" />
         <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/list_element_postulation.xml" value="0.1" />
@@ -73,8 +97,6 @@
         <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/menu/activity_menu_drawer.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/menu/menu.xml" value="0.18854166666666666" />
         <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/menu/menu_salir.xml" value="0.12708333333333333" />
-        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/menu/navigation_employeer.xml" value="0.1" />
-        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/menu/navigation_postulant.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/ippo_/OneDrive/Escritorio/MobileParadox/app/src/main/res/layout/activity_add_company.xml" value="0.2484375" />
         <entry key="..\:/Users/ippo_/OneDrive/Escritorio/MobileParadox/app/src/main/res/layout/activity_announcement.xml" value="0.2484375" />
         <entry key="..\:/Users/ippo_/OneDrive/Escritorio/MobileParadox/app/src/main/res/layout/activity_edit_announcement.xml" value="0.2484375" />
@@ -129,6 +151,42 @@
         <entry key="..\:/Users/j_lis/AndroidStudioProjects/Paradox/app/src/main/res/layout/protoptype_company.xml" value="0.36" />
         <entry key="..\:/Users/j_lis/AndroidStudioProjects/Paradox/app/src/main/res/layout/prototype_company.xml" value="0.36626506024096384" />
         <entry key="..\:/Users/j_lis/AndroidStudioProjects/Paradox/app/src/main/res/layout/prototype_sector.xml" value="0.3" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/activity_add_company.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/activity_announcement.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/activity_edit_announcement.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/activity_edit_professional_profile_p.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/activity_menu.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/activity_my_announcement.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/activity_navigation_employeer.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/activity_navigation_postulant.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/activity_postulant.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/activity_postulant_profile.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/activity_postulation.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/activity_published_works.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/activity_view_company_employer.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/activity_watch_announcement.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/app_bar_navigation_employeer.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/app_bar_navigation_postulant.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/content_navigation_employeer.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/content_navigation_postulant.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/dropdown_item.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/fragment_announcement.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/fragment_home.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/fragment_postulation.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/fragment_published_works.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/list_element_published_work.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/nav_header_navigation_employeer.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/nav_header_navigation_postulant.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/prototype_company.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/prototype_languages.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/layout/prototype_studies.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/menu/activity_menu_drawer.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/menu/activity_navigation_drawer.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/menu/activity_navigation_employeer_drawer.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/menu/menu.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/menu/menu_salir.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/menu/navigation_employeer.xml" value="0.36666666666666664" />
+        <entry key="..\:/mobil/MobileParadox/app/src/main/res/menu/navigation_postulant.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>
