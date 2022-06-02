@@ -84,7 +84,7 @@ class SeeProfilePostulantB : Fragment() {
         if (sharedPreferences != null) {
             if(sharedPreferences.getValues("id") != null) {
                 idd = sharedPreferences.getValues("id")!!.toInt()
-                val request = PostulantService.postulantInstance.getPostulantById(idd)
+                val request = PostulantService.postulantInstance.getPostulantById(4)
                 request.enqueue(object : Callback<PostulantBri> {
                     override fun onResponse(
                         call: Call<PostulantBri>,
@@ -93,10 +93,10 @@ class SeeProfilePostulantB : Fragment() {
                         if (response.isSuccessful) {
                             val postulantRetrieved = response.body()
                             tvNameShow.text = postulantRetrieved!!.firstName
-                            if (postulantRetrieved.link != null || postulantRetrieved.link != "null") {
+/*                            if (postulantRetrieved.link != null || postulantRetrieved.link != "null") {
                                 Glide.with(this@SeeProfilePostulantB).load(postulantRetrieved.link)
                                     .into(ivProfilePhoto)
-                            }
+                            }*/
                             tvLastNameShow.text = postulantRetrieved.lastName
                             tvIdDocShow.text = postulantRetrieved.document
                             tvCivilStatusShow.text = postulantRetrieved.civilStatus

@@ -8,12 +8,12 @@
     <fragment
         android:id="@+id/announcementFragment"
         android:name="com.example.paradox.ui.announcement.AnnouncementFragment"
-        android:label="fragment_announcement"
+        android:label="Mis anuncios"
         tools:layout="@layout/fragment_announcement" />
     <fragment
         android:id="@+id/postulationFragment"
         android:name="com.example.paradox.ui.postulationm.PostulationFragment"
-        android:label="fragment_postulation"
+        android:label="Mis postulaciones"
         tools:layout="@layout/fragment_postulation" />
 
     <fragment

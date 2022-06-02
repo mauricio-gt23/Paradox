@@ -2,13 +2,164 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.publishedworksm.SeeProfProfileB">
+    android:layout_height="match_parent">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        tools:context=".controller.activities.SeeProfessionalProfileP">
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvProfProfSupertitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="114dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="115dp"
+                android:text="@string/prof_profile_supertitle"
+                android:textColor="#7E57C2"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Mi perfil profesional" />
+
+            <TextView
+                android:id="@+id/tvOcupacionProfProfile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="32dp"
+                android:text="@string/occupation_title"
+                android:textColor="#7E57C2"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvProfProfSupertitle"
+                tools:text="Ocupacion" />
+
+            <TextView
+                android:id="@+id/tvOcupacionTextProfProfile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="7dp"
+                android:text="@string/degree_show"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvOcupacionProfProfile" />
+
+            <TextView
+                android:id="@+id/tvDescriptionProfProfile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/description_title"
+                android:textColor="#7E57C2"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvOcupacionTextProfProfile"
+                tools:text="Descripcion" />
+
+            <TextView
+                android:id="@+id/tvDescriptionTextProfProfile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="48dp"
+                android:text="@string/profile_description_show"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDescriptionProfProfile"
+                tools:text="Ingeniero de Sistemas de la Universidad La Sapienza (Roma -Italia ) con amplios conocimientos en tecnologías SOA con énfasis en arquitecturas basadas en JEE. Soy una persona capaz de aprender temas nuevos con el objetivo de aportar al trabajo en equipo y hacer crecer mi conocimiento." />
+
+            <TextView
+                android:id="@+id/tvsStudyDegreeProfProfile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/study_degree_title"
+                android:textColor="#7E57C2"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDescriptionTextProfProfile"
+                tools:text="Grado de estudios" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/btGoToEditProfessional"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="650dp"
+                android:layout_marginEnd="28dp"
+                android:clickable="true"
+                app:backgroundTint="#7E57C2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@android:drawable/ic_menu_edit"
+                android:contentDescription="@string/floating_edit_prof_profile" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcSkills"
+                android:layout_width="318dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="7dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvStudySkillsProfProfile" />
+
+            <TextView
+                android:id="@+id/tvStudySkillsProfProfile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/skills_title"
+                android:textColor="#7E57C2"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rcStudies"
+                tools:text="Habilidades" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcLanguages"
+                android:layout_width="335dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="7dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvLanguagesProfProfile" />
+
+            <TextView
+                android:id="@+id/tvLanguagesProfProfile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/language_title"
+                android:textColor="#7E57C2"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rcSkills"
+                tools:text="Idiomas" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcStudies"
+                android:layout_width="321dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="7dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvsStudyDegreeProfProfile" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </FrameLayout>
