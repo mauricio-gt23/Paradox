@@ -13,6 +13,7 @@ import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.example.paradox.R
 import com.example.paradox.controller.activities.EditProfilePostulant
+import com.example.paradox.controller.activities.SharedPreferences
 import com.example.paradox.models.PostulantBri
 import com.example.paradox.network.PostulantService
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -22,11 +23,11 @@ import retrofit2.Response
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
-var postulantBri = PostulantBri()
 
 class SeeProfilePostulantB : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
+    private var postulantBri = PostulantBri()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,9 +45,9 @@ class SeeProfilePostulantB : Fragment() {
         val buttonEdit = vista.findViewById<FloatingActionButton>(R.id.fabEditProfile)
         loadPostulant(vista)
         buttonEdit.setOnClickListener {
-//            val intent = Intent(this, EditProfilePostulant::class.java)
-//            intent.putExtra("Postulant", this.postulantBri)
-//            startActivity(intent)
+            val intent = Intent(context, EditProfilePostulant::class.java)
+            intent.putExtra("Postulant", this.postulantBri)
+            startActivity(intent)
         }
         return vista
     }
@@ -78,30 +79,54 @@ class SeeProfilePostulantB : Fragment() {
         val tvPhoneShow = view.findViewById<TextView>(R.id.tvPhoneShow)
         val tvEmailShow = view.findViewById<TextView>(R.id.tvEmailShow)
         val ivProfilePhoto = view.findViewById<ImageView>(R.id.ivProfilePhoto)
+        val sharedPreferences = context?.let { SharedPreferences(it) }
+        var idd: Int = 0
+        if (sharedPreferences != null) {
+            if(sharedPreferences.getValues("id") != null) {
+                idd = sharedPreferences.getValues("id")!!.toInt()
+                val request = PostulantService.postulantInstance.getPostulantById(idd)
+                request.enqueue(object : Callback<PostulantBri> {
+                    override fun onResponse(
+                        call: Call<PostulantBri>,
+                        response: Response<PostulantBri>
+                    ) {
+                        if (response.isSuccessful) {
+                            val postulantRetrieved = response.body()
+                            tvNameShow.text = postulantRetrieved!!.firstName
+                            if (postulantRetrieved.link != null || postulantRetrieved.link != "null") {
+                                Glide.with(this@SeeProfilePostulantB).load(postulantRetrieved.link)
+                                    .into(ivProfilePhoto)
+                            }
+                            tvLastNameShow.text = postulantRetrieved.lastName
+                            tvIdDocShow.text = postulantRetrieved.document
+                            tvCivilStatusShow.text = postulantRetrieved.civilStatus
+                            tvPhoneShow.text = postulantRetrieved.number.toString()
+                            tvEmailShow.text = postulantRetrieved.email
+                            postulantBri = PostulantBri(
+                                postulantRetrieved.id,
+                                postulantRetrieved.firstName,
+                                postulantRetrieved.lastName,
+                                postulantRetrieved.email,
+                                postulantRetrieved.number,
+                                postulantRetrieved.password,
+                                postulantRetrieved.document,
+                                postulantRetrieved.civilStatus,
+                                postulantRetrieved.link,
+                                postulantRetrieved.other
+                            )
+                        }
+                    }
 
-        val request = PostulantService.postulantInstance.getPostulantById(4)
+                    override fun onFailure(call: Call<PostulantBri>, t: Throwable) {
+                        Toast.makeText(
+                            activity,
+                            "We couldn't retrieve postulant, try again please ",
+                            Toast.LENGTH_LONG
+                        ).show()
+                    }
 
-        request.enqueue(object : Callback<PostulantBri> {
-            override fun onResponse(call: Call<PostulantBri>, response: Response<PostulantBri>) {
-                if (response.isSuccessful){
-                    val postulantRetrieved = response.body()
-                    tvNameShow.text = postulantRetrieved!!.firstName
-                    Glide.with(this@SeeProfilePostulantB).load(postulantRetrieved.link).into(ivProfilePhoto)
-                    tvLastNameShow.text = postulantRetrieved.lastName
-                    tvIdDocShow.text = postulantRetrieved.document
-                    tvCivilStatusShow.text = postulantRetrieved.civilStatus
-                    tvPhoneShow.text = postulantRetrieved.number.toString()
-                    tvEmailShow.text = postulantRetrieved.email
-                    postulantBri = PostulantBri(postulantRetrieved.id, postulantRetrieved.firstName, postulantRetrieved.lastName,
-                        postulantRetrieved.email, postulantRetrieved.number, postulantRetrieved.password, postulantRetrieved.document,
-                        postulantRetrieved.civilStatus, postulantRetrieved.link, postulantRetrieved.other)
-                }
+                })
             }
-
-            override fun onFailure(call: Call<PostulantBri>, t: Throwable) {
-                Toast.makeText(activity, "We couldn't retrieve postulant, try again please ", Toast.LENGTH_LONG).show()
-            }
-
-        })
+        }
     }
 }

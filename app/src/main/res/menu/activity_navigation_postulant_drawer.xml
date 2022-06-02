@@ -16,5 +16,10 @@
             android:id="@+id/profileFragment"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/mi_perfil" />
+
+        <item
+            android:id="@+id/profProfileFragment"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Mi perfil profesional" />
     </group>
 </menu>

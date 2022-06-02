@@ -22,4 +22,11 @@
         android:label="Mi perfil"
         tools:layout="@layout/fragment_see_profile_postulant_b" />
 
+    <fragment
+        android:id="@+id/profProfileFragment"
+        android:name="com.example.paradox.ui.profiles.SeeProfProfileB"
+        android:label="Mi perfil profesional"
+        tools:layout="@layout/fragment_see_prof_profile_b" />
+
+
 </navigation>
