@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/publishedWorksFragment"
         android:name="com.example.paradox.ui.publishedworksm.PublishedWorksFragment"
-        android:label="fragment_published_works"
+        android:label="Mis anuncios"
         tools:layout="@layout/fragment_published_works" />
     <fragment
         android:id="@+id/nav_gallery"

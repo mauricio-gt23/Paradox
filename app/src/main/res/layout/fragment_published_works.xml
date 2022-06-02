@@ -15,7 +15,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="116dp"
-            android:text="@string/mis_postulaciones"
+            android:text="Mis anuncios"
             android:textColor="#7E57C2"
             android:textSize="20sp"
             android:textStyle="bold"
