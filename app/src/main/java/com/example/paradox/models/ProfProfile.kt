@@ -9,9 +9,9 @@ class ProfProfile (
     @SerializedName("id")
     val id: Int = 1,
     @SerializedName("ocupation")
-    val ocupation: String = "",
+    var ocupation: String = "",
     @SerializedName("video")
-    val video: String = "",
+    var video: String = "",
     @SerializedName("description")
-    val description: String = "",
+    var description: String = "",
 )  : Parcelable
