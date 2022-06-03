@@ -16,6 +16,7 @@ import com.example.paradox.adapter.LanguageAdapter
 import com.example.paradox.adapter.SkillAdapter
 import com.example.paradox.adapter.StudyAdapter
 import com.example.paradox.controller.activities.EditProfessionalProfileP
+import com.example.paradox.controller.activities.SharedPreferences
 import com.example.paradox.models.*
 import com.example.paradox.network.PostulantService
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -37,12 +38,13 @@ class SeeProfProfileB : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-    lateinit var skillAdapter : SkillAdapter
+    lateinit var skillAdapter: SkillAdapter
     lateinit var languageAdapter: LanguageAdapter
     lateinit var studiesAdapter: StudyAdapter
     var profileId: Int? = null
     var skills = listOf<Skill>()
     var professionalProfilePostulant = ProfProfile()
+    var idd: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,12 +57,11 @@ class SeeProfProfileB : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         val vista: View = inflater.inflate(R.layout.fragment_see_prof_profile_b, container, false)
         val buttonEditProfessional = vista.findViewById<FloatingActionButton>(R.id.btGoToEditProfessional)
         loadProfProfileOfUser(vista)
-        loadSkills(vista)
         buttonEditProfessional.setOnClickListener {
             val intent = Intent(context, EditProfessionalProfileP::class.java)
             intent.putExtra("ProfProfile", this.professionalProfilePostulant)
@@ -80,95 +81,131 @@ class SeeProfProfileB : Fragment() {
                 }
             }
     }
+
     private fun loadSkills(view: View) {
-        val request2 = PostulantService.postulantInstance.getSkillsByProfileId(1)
-        val request3 = PostulantService.postulantInstance.getStudiesByProfileId(1)
-        val request4 = PostulantService.postulantInstance.getLanguagesByProfileId(1)
-
-        request2.enqueue(object : Callback<Skills> {
-            override fun onResponse(call: Call<Skills>, response: Response<Skills>) {
-                if (response.isSuccessful){
-                    val rvSkills =  view.findViewById<RecyclerView>(R.id.rcSkills)
-                    val content = response.body()
-                    if (content != null) {
-                        skills = content.skills
-                        skillAdapter = context?.let { SkillAdapter(content.skills, it) }!!
-                        rvSkills.adapter = skillAdapter
-                        rvSkills.layoutManager = LinearLayoutManager(context)
+        val tvNoRegistersStudies = view.findViewById<TextView>(R.id.tvNoRegistersStudies)
+        val tvNoRegistersSkills = view.findViewById<TextView>(R.id.tvNoRegistersSkills)
+        val tvNoRegistersLanguages = view.findViewById<TextView>(R.id.tvNoRegistersLanguages)
+        profileId?.let { PostulantService.postulantInstance.getSkillsByProfileId(profileId!!) }
+            ?.enqueue(object : Callback<Skills> {
+                override fun onResponse(call: Call<Skills>, response: Response<Skills>) {
+                    if (response.isSuccessful) {
+                        val rvSkills = view.findViewById<RecyclerView>(R.id.rcSkills)
+                        val content = response.body()
+                        if (content != null) {
+                            skills = content.skills
+                            skillAdapter = context?.let { SkillAdapter(content.skills, it) }!!
+                            rvSkills.adapter = skillAdapter
+                            rvSkills.layoutManager = LinearLayoutManager(context)
+                            Log.d("skills ", skills.size.toString());
+                            if (skills.size.toString() != "0") {
+                                tvNoRegistersSkills.text = ""
+                            }
+//                            tvNoRegistersStudies.text = ""
+//                            tvNoRegistersSkills.text = ""
+//                            tvNoRegistersLanguages.text = ""
+                        }
                     }
                 }
-            }
-            override fun onFailure(call: Call<Skills>, t: Throwable) {
-                Toast.makeText(
-                    activity,
-                    "Data could not be retrieved",
-                    Toast.LENGTH_LONG
-                ).show()
-            }
-        })
 
-        request3.enqueue(object : Callback<Studies> {
-            override fun onResponse(call: Call<Studies>, response: Response<Studies>) {
-                if (response.isSuccessful){
-                    val rvStudies =  view.findViewById<RecyclerView>(R.id.rcStudies)
-                    val content = response.body()
-                    if (content != null) {
-                        studiesAdapter = context?.let { StudyAdapter(content.studies, it) }!!
-                        rvStudies.adapter = studiesAdapter
-                        rvStudies.layoutManager = LinearLayoutManager(context)
+                override fun onFailure(call: Call<Skills>, t: Throwable) {
+                    Toast.makeText(
+                        activity,
+                        "Data could not be retrieved",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+            })
+
+        profileId?.let { PostulantService.postulantInstance.getStudiesByProfileId(it) }
+            ?.enqueue(object : Callback<Studies> {
+                override fun onResponse(call: Call<Studies>, response: Response<Studies>) {
+                    if (response.isSuccessful) {
+                        val rvStudies = view.findViewById<RecyclerView>(R.id.rcStudies)
+                        val content = response.body()
+                        if (content != null) {
+                            studiesAdapter = context?.let { StudyAdapter(content.studies, it) }!!
+                            rvStudies.adapter = studiesAdapter
+                            rvStudies.layoutManager = LinearLayoutManager(context)
+                            if (content.studies.size.toString() != "0") {
+                                tvNoRegistersStudies.text = ""
+                            }
+                        }
                     }
                 }
-            }
-            override fun onFailure(call: Call<Studies>, t: Throwable) {
-                Toast.makeText(context, "Data could not be retrieved", Toast.LENGTH_LONG).show()
-            }
-        })
 
-        request4.enqueue(object : Callback<Languages> {
+                override fun onFailure(call: Call<Studies>, t: Throwable) {
+                    Toast.makeText(context, "Data could not be retrieved", Toast.LENGTH_LONG).show()
+                }
+            })
+
+        profileId?.let {
+            PostulantService.postulantInstance.getLanguagesByProfileId(
+                it
+            )
+        }?.enqueue(object : Callback<Languages> {
             override fun onResponse(call: Call<Languages>, response: Response<Languages>) {
-                if (response.isSuccessful){
-                    val rvLanguages =  view.findViewById<RecyclerView>(R.id.rcLanguages)
+                if (response.isSuccessful) {
+                    val rvLanguages = view.findViewById<RecyclerView>(R.id.rcLanguages)
                     val content = response.body()
                     if (content != null) {
                         languageAdapter = context?.let { LanguageAdapter(content.languages, it) }!!
                         rvLanguages.adapter = languageAdapter
                         rvLanguages.layoutManager = LinearLayoutManager(context)
+                        if (content.languages.size.toString() != "0") {
+                            tvNoRegistersLanguages.text = ""
+                        }
                     }
                 }
             }
+
             override fun onFailure(call: Call<Languages>, t: Throwable) {
                 Toast.makeText(context, "Data could not be retrieved", Toast.LENGTH_LONG).show()
             }
         })
     }
 
-    private fun loadProfProfileOfUser(view: View){
-        val request = PostulantService.postulantInstance.getProfileIdByUserId(4)
-        request.enqueue(object : Callback<ProfProfiles> {
-            override fun onResponse(call: Call<ProfProfiles>, response: Response<ProfProfiles>) {
-                if (response.isSuccessful){
-                    val profProfileRetrieved = response.body()?.profProfiles?.get(0)
-                    Log.d("Profile ", profProfileRetrieved.toString())
-                    if (profProfileRetrieved != null) {
-                        profileId = profProfileRetrieved.id
-                        loadProfessionalProfile(view)
+    private fun loadProfProfileOfUser(view: View) {
+        val sharedPreferences = context?.let { SharedPreferences(it) }
+        if (sharedPreferences != null) {
+            if (sharedPreferences.getValues("id") != null) {
+                idd = sharedPreferences.getValues("id")!!.toInt()
+                Log.d("BrigProf", idd.toString());
+                val request = PostulantService.postulantInstance.getProfileIdByUserId(idd)
+                request.enqueue(object : Callback<ProfProfiles> {
+                    override fun onResponse(
+                        call: Call<ProfProfiles>,
+                        response: Response<ProfProfiles>
+                    ) {
+                        if (response.isSuccessful) {
+                            val profProfileRetrieved = response.body()?.profProfiles?.get(0)
+                            Log.d("Profile ", profProfileRetrieved.toString())
+                            if (profProfileRetrieved != null) {
+                                profileId = profProfileRetrieved.id
+                                Log.d("BrigProf", "id del perfil "+ profileId.toString());
+                                loadProfessionalProfile(view, idd)
+                            }
+                        }
                     }
-                }
-            }
-            override fun onFailure(call: Call<ProfProfiles>, t: Throwable) {
-                Toast.makeText(context, "Data could not be retrieved", Toast.LENGTH_LONG).show()
-            }
-        })
-    }
 
-    fun loadProfessionalProfile(view: View) {
-        val tvOccupationTextProfProfile =  view.findViewById<TextView>(R.id.tvOcupacionTextProfProfile)
-        val tvDescriptionTextProfProfile =  view.findViewById<TextView>(R.id.tvDescriptionTextProfProfile)
+                    override fun onFailure(call: Call<ProfProfiles>, t: Throwable) {
+                        Toast.makeText(context, "Data could not be retrieved", Toast.LENGTH_LONG)
+                            .show()
+                    }
+                })
+            }
+        }
+    }
+    fun loadProfessionalProfile(view: View, userId: Int) {
+        val tvOccupationTextProfProfile =
+            view.findViewById<TextView>(R.id.tvOcupacionTextProfProfile)
+        val tvDescriptionTextProfProfile =
+            view.findViewById<TextView>(R.id.tvDescriptionTextProfProfile)
 
         profileId?.let {
             PostulantService.postulantInstance.getProfileByIdAndPostulantId(
-                4,
-                it
+                userId,
+                profileId!!
             )
         }?.enqueue(object : Callback<ProfProfile> {
             override fun onResponse(call: Call<ProfProfile>, response: Response<ProfProfile>) {
@@ -183,6 +220,7 @@ class SeeProfProfileB : Fragment() {
                             profProfileRetrieved.video,
                             profProfileRetrieved.description
                         )
+                        loadSkills(view)
                     }
                 }
             }
@@ -196,4 +234,5 @@ class SeeProfProfileB : Fragment() {
             }
         })
     }
+
 }

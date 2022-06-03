@@ -3,6 +3,7 @@ package com.example.paradox.ui.profiles
 import android.app.ProgressDialog.show
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -84,19 +85,26 @@ class SeeProfilePostulantB : Fragment() {
         if (sharedPreferences != null) {
             if(sharedPreferences.getValues("id") != null) {
                 idd = sharedPreferences.getValues("id")!!.toInt()
-                val request = PostulantService.postulantInstance.getPostulantById(4)
+                Log.d("Brig", idd.toString());
+                val request = PostulantService.postulantInstance.getPostulantById(idd)
                 request.enqueue(object : Callback<PostulantBri> {
                     override fun onResponse(
-                        call: Call<PostulantBri>,
-                        response: Response<PostulantBri>
+                        call: Call<PostulantBri?>,
+                        response: Response<PostulantBri?>
                     ) {
                         if (response.isSuccessful) {
                             val postulantRetrieved = response.body()
                             tvNameShow.text = postulantRetrieved!!.firstName
-/*                            if (postulantRetrieved.link != null || postulantRetrieved.link != "null") {
-                                Glide.with(this@SeeProfilePostulantB).load(postulantRetrieved.link)
-                                    .into(ivProfilePhoto)
-                            }*/
+                            if (postulantRetrieved.link != null || postulantRetrieved.link != "string") {
+                                val result = postulantRetrieved.link.startsWith("https:")
+                                if (result) {
+                                    Glide.with(this@SeeProfilePostulantB).load(postulantRetrieved.link)
+                                        .into(ivProfilePhoto)
+                                } else {
+                                    Glide.with(this@SeeProfilePostulantB).load("https://i.stack.imgur.com/34AD2.jpg")
+                                        .into(ivProfilePhoto)
+                                }
+                            }
                             tvLastNameShow.text = postulantRetrieved.lastName
                             tvIdDocShow.text = postulantRetrieved.document
                             tvCivilStatusShow.text = postulantRetrieved.civilStatus

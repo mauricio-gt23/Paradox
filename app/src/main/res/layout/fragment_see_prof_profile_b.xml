@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <ScrollView
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".controller.activities.SeeProfessionalProfileP">
@@ -158,6 +157,50 @@
                 android:layout_marginTop="7dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvsStudyDegreeProfProfile" />
+
+            <TextView
+                android:id="@+id/tvNoRegistersStudies"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="72dp"
+                android:layout_marginBottom="9dp"
+                android:text="(Aun no hay registros)"
+                app:layout_constraintBottom_toTopOf="@+id/rcStudies"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvsStudyDegreeProfProfile"
+                app:layout_constraintTop_toBottomOf="@+id/tvDescriptionTextProfProfile"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/tvNoRegistersSkills"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="112dp"
+                android:layout_marginBottom="9dp"
+                android:text="(Aun no hay registros)"
+                app:layout_constraintBottom_toTopOf="@+id/rcSkills"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvStudySkillsProfProfile"
+                app:layout_constraintTop_toBottomOf="@+id/rcStudies"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/tvNoRegistersLanguages"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="38dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginEnd="130dp"
+                android:layout_marginBottom="8dp"
+                android:text="(Aun no hay registros)"
+                app:layout_constraintBottom_toTopOf="@+id/rcLanguages"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvLanguagesProfProfile"
+                app:layout_constraintTop_toBottomOf="@+id/rcSkills" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
