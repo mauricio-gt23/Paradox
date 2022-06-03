@@ -1,6 +1,7 @@
 package com.example.paradox.ui.announcement
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -33,8 +34,7 @@ private const val ARG_PARAM2 = "param2"
  */
 class AnnouncementFragment : Fragment() {
 
-    var works: ArrayList<Work> = ArrayList()
-    var workAdapter = WorkAdapter(works)
+    lateinit var workAdapter: WorkAdapter
 
     // TODO: Rename and change types of parameters
     private var param1: String? = null
@@ -55,7 +55,6 @@ class AnnouncementFragment : Fragment() {
         // Inflate the layout for this fragment
         val vista: View = inflater.inflate(R.layout.fragment_announcement, container, false)
 
-        initView(vista)
         loadWorks(vista)
 
         return vista
@@ -81,13 +80,6 @@ class AnnouncementFragment : Fragment() {
             }
     }
 
-    private fun initView(view: View) {
-        val rvWork = view?.findViewById<RecyclerView>(R.id.rvWork)
-        rvWork.adapter = workAdapter
-        rvWork.layoutManager = LinearLayoutManager(context)
-    }
-
-
     private fun loadWorks(view: View) {
         val retrofit = Retrofit.Builder()
             .baseUrl("https://movilesback.herokuapp.com/")
@@ -101,17 +93,13 @@ class AnnouncementFragment : Fragment() {
         request.enqueue(object : Callback<Works> {
             override fun onResponse(call: Call<Works>, response: Response<Works>) {
                 if (response.isSuccessful) {
+                    val rvWork = view.findViewById<RecyclerView>(R.id.rvWork)
                     val content = response.body()
                     if (content != null) {
-                        view.findViewById<TextView>(R.id.tvCountOffers).text = content.works.size.toString()
-                        for (i in content.works.indices) {
-                            val subtitle = content.works.get(i).subtitle
-                            val job = content.works.get(i).job
-                            val time = content.works.get(i).time
-                            val info = content.works.get(i).info
-                            val work = Work("Claro", subtitle, job, time, info)
-                            works.add(work)
-                        }
+                        Log.d("AnnouncementFragment", content.toString())
+                        workAdapter = WorkAdapter(content.works)
+                        rvWork.adapter = workAdapter
+                        rvWork.layoutManager = LinearLayoutManager(context)
                     }
                 }
             }
