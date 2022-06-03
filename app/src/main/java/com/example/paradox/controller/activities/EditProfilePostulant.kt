@@ -1,13 +1,16 @@
 package com.example.paradox.controller.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
 import com.bumptech.glide.Glide
+import com.example.paradox.NavigationPostulantActivity
 import com.example.paradox.R
 import com.example.paradox.models.PostulantBri
 import com.example.paradox.network.PostulantService
@@ -50,7 +53,12 @@ class EditProfilePostulant : AppCompatActivity() {
                     val editedPostulant = response.body()
                     if (editedPostulant != null) {
                         Toast.makeText(this@EditProfilePostulant, "Successfully updated", Toast.LENGTH_LONG).show()
+                        Handler().postDelayed({
+                            val intent = Intent(this@EditProfilePostulant, NavigationPostulantActivity::class.java)
+                            startActivity(intent)
+                        }, 1700)
                     }
+
                 }
             }
 

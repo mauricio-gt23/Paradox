@@ -1,10 +1,12 @@
 package com.example.paradox.controller.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
+import com.example.paradox.NavigationPostulantActivity
 import com.example.paradox.R
 import com.example.paradox.models.*
 import com.example.paradox.network.PostulantService
@@ -26,6 +28,7 @@ class EditProfessionalProfileP : AppCompatActivity() {
         val tvMultiSelect = findViewById<TextView>(R.id.tvMultiSelectB)
         val tvMultiSelectStudies = findViewById<TextView>(R.id.tvMultiSelectStudies)
         val tvMultiSelectLenguages = findViewById<TextView>(R.id.tvMultiSelectLenguages)
+        val btSaveProfProfile = findViewById<TextView>(R.id.btSaveProfProfile)
 
         tvMultiSelect.setOnClickListener{
             configMultiSelectSkills()
@@ -35,6 +38,10 @@ class EditProfessionalProfileP : AppCompatActivity() {
         }
         tvMultiSelectLenguages.setOnClickListener{
             configMultiSelectLanguages()
+        }
+        btSaveProfProfile.setOnClickListener{
+            val intent = Intent(this@EditProfessionalProfileP, NavigationPostulantActivity::class.java)
+            startActivity(intent)
         }
         if (intent.extras != null) {
             loadData()
