@@ -8,13 +8,15 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.paradox.R
 import com.example.paradox.adapter.CompanyAdapter
+import com.example.paradox.adapter.OnItemClickListener
 import com.example.paradox.models.Companies
+import com.example.paradox.models.Company
 import com.example.paradox.network.CompaniesService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class ViewCompaniesEmployerActivity : AppCompatActivity(), CompanyAdapter.OnItemClickListener {
+class ViewCompaniesEmployerActivity : AppCompatActivity(), OnItemClickListener<Company>{
     lateinit var companyAdapter : CompanyAdapter
     var employerId: Int = 2
 
@@ -45,10 +47,10 @@ class ViewCompaniesEmployerActivity : AppCompatActivity(), CompanyAdapter.OnItem
         })
     }
 
-    override fun onItemClicked(id: Int) {
+    override fun OnItemClicked(obj: Company) {
         val intent = Intent(this, ViewCompanyEmployerActivity::class.java)
         intent.putExtra("employerId", employerId)
-        intent.putExtra("companyId", id)
+        intent.putExtra("companyId", obj.id)
         startActivity(intent)
     }
 }

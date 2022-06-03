@@ -2,7 +2,7 @@ package com.example.paradox.models
 
 import com.google.gson.annotations.SerializedName
 
-class Companies (
+data class Companies (
     @SerializedName("content")
-    val companies: List<Company> //todo: algo
+    val companies: List<Company>
 )

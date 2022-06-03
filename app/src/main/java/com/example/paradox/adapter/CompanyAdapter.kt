@@ -6,15 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.paradox.R
-
 import com.example.paradox.models.Company
 
-
-class CompanyAdapter(val companies: List<Company>, val context: Context, val itemClickListener: OnItemClickListener):
-    RecyclerView.Adapter<CompanyAdapter.ViewHolder>() {
+class CompanyAdapter(val companies: List<Company>, val context: Context, val itemClickListener: OnItemClickListener<Company>):
+    RecyclerView.Adapter<ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater
             .from(parent.context)
@@ -23,25 +22,31 @@ class CompanyAdapter(val companies: List<Company>, val context: Context, val ite
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val company = companies[position]
-        Glide.with(context).load(company.logo).into(holder.logo)
-        holder.name.text = company.name
-        holder.ruc.text = company.ruc.toString()
-
-        holder.itemView.setOnClickListener { itemClickListener.onItemClicked(company.id) }
+        holder.bind(companies.get(position), itemClickListener)
     }
 
     override fun getItemCount(): Int {
         return companies.size
     }
+}
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val logo = itemView.findViewById<ImageView>(R.id.ivCardLogo)
-        val name = itemView.findViewById<TextView>(R.id.tvCardName)
-        val ruc = itemView.findViewById<TextView>(R.id.tvCardRuc)
-    }
+class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    val cvCompany = itemView.findViewById<CardView>(R.id.cvCompany)
+    val logo = itemView.findViewById<ImageView>(R.id.ivCardLogo)
+    val name = itemView.findViewById<TextView>(R.id.tvCardName)
+    val ruc = itemView.findViewById<TextView>(R.id.tvCardRuc)
 
-    interface OnItemClickListener {
-        fun onItemClicked(id: Int)
+    fun bind(company: Company, itemClickListener: OnItemClickListener<Company>?) {
+        Glide.with(itemView.context).load(company.logo).into(logo)
+        name.text = company.name
+        ruc.text = company.ruc.toString()
+
+        cvCompany.setOnClickListener {
+            itemClickListener!!.OnItemClicked(company)
+        }
     }
 }
+
+//interface OnItemClickListener<Company> {
+//    fun OnItemClicked(company: Company)
+//}

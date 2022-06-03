@@ -16,6 +16,12 @@
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/menu_slideshow" />
+        <item
+            android:id="@+id/viewCompaniesFragment"
+            android:title="@string/my_companies" />
+        <item
+            android:id="@+id/addCompanyFragment"
+            android:title="@string/add_company" />
 
     </group>
 </menu>
