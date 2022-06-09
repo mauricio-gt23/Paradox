@@ -6,20 +6,16 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/announcementFragment"
-            android:icon="@drawable/ic_menu_camera"
             android:title="@string/anuncios" />
         <item
             android:id="@+id/postulationFragment"
-            android:icon="@drawable/ic_menu_gallery"
             android:title="@string/mis_postulaciones" />
         <item
             android:id="@+id/profileFragment"
-            android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/mi_perfil" />
 
         <item
             android:id="@+id/profProfileFragment"
-            android:icon="@drawable/ic_menu_slideshow"
             android:title="Mi perfil profesional" />
     </group>
 </menu>

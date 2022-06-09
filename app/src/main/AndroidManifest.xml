@@ -32,7 +32,6 @@
             android:exported="true"
             android:label="@string/title_activity_navigation_employeer"
             android:theme="@style/Theme.Paradox.NoActionBar">
-
         </activity>
         <activity
             android:name=".controller.activities.Multiselect"
@@ -78,25 +77,12 @@
         <activity
             android:name=".controller.activities.MyAnnoucementActivity"
             android:exported="false" />
-
         <activity
             android:name=".controller.activities.EditProfilePostulant"
             android:exported="false" />
         <activity
             android:name=".controller.activities.SeeProfilePostulant"
             android:exported="true" />
-        <activity
-            android:name=".controller.activities.AddCompanyActivity"
-            android:exported="false" />
-        <activity
-            android:name=".controller.activities.EditCompanyActivity"
-            android:exported="false" />
-        <activity
-            android:name=".controller.activities.ViewCompanyEmployerActivity"
-            android:exported="false" />
-        <activity
-            android:name=".controller.activities.ViewCompaniesEmployerActivity"
-            android:exported="false" />
         <activity
             android:name=".controller.activities.SeeProfessionalProfileP"
             android:exported="false" />

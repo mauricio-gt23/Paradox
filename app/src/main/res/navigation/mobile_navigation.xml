@@ -17,18 +17,6 @@
         android:label="my_announcement"
         tools:layout="@layout/activity_my_announcement"/> -->
 
-    <activity
-        android:id="@+id/nav_menu_mis_compañoas"
-        android:name="com.example.paradox.controller.activities.ViewCompaniesEmployerActivity"
-        android:label="@string/my_companies"
-        tools:layout="@layout/activity_view_companies_employer"/>
-
-
-    <activity
-        android:id="@+id/nav_agregar_compañi"
-        android:name="com.example.paradox.controller.activities.AddCompanyActivity"
-        android:label="menu_agregar_compañia"
-        tools:layout="@layout/activity_add_company"/>
 
     <activity
         android:id="@+id/nav_mi_perfil"
