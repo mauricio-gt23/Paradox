@@ -103,6 +103,7 @@
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="175dp"
                 android:padding="3dp"
+                android:textStyle="bold"
                 tools:text="Aceptado" />
 
         </RelativeLayout>

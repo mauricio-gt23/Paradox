@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation3"
+    app:startDestination="@+id/announcementFragment">
+
+    <fragment
+        android:id="@+id/announcementFragment"
+        android:name="com.example.paradox.ui.announcement.AnnouncementFragment"
+        android:label="Mis anuncios"
+        tools:layout="@layout/fragment_announcement" />
+    <fragment
+        android:id="@+id/postulationFragment"
+        android:name="com.example.paradox.ui.postulationm.PostulationFragment"
+        android:label="Mis postulaciones"
+        tools:layout="@layout/fragment_postulation" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.paradox.ui.profiles.SeeProfilePostulantB"
+        android:label="Mi perfil"
+        tools:layout="@layout/fragment_see_profile_postulant_b" />
+
+    <fragment
+        android:id="@+id/profProfileFragment"
+        android:name="com.example.paradox.ui.profiles.SeeProfProfileB"
+        android:label="Mi perfil profesional"
+        tools:layout="@layout/fragment_see_prof_profile_b" />
+
+
+</navigation>

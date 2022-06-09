@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.paradox">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,32 +13,94 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Paradox">
         <activity
-            android:name=".PostulantProfileActivity"
-            android:exported="false" />
+            android:name=".NavigationPostulantActivity"
+            android:exported="true"
+            android:label="@string/title_activity_navigation_postulant"
+            android:theme="@style/Theme.Paradox.NoActionBar">
+        </activity>
         <activity
-            android:name=".PostulantActivity"
-            android:exported="false" />
-        <activity
-            android:name=".EditAnnouncementActivity"
-            android:exported="false" />
-        <activity
-            android:name=".WatchAnnouncementActivity"
-            android:exported="false" />
-        <activity
-            android:name=".PostulationActivity"
-            android:exported="false" />
-        <activity
-            android:name=".AnnouncementActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".controller.activities.MainActivity"
+            android:exported="true"
+           >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".NavigationEmployeerActivity"
+            android:exported="true"
+            android:label="@string/title_activity_navigation_employeer"
+            android:theme="@style/Theme.Paradox.NoActionBar">
+
+        </activity>
+        <activity
+            android:name=".controller.activities.Multiselect"
+            android:exported="true" />
+        <activity
+            android:name=".controller.activities.EmpleadorProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".controller.activities.MenuActivity"
+            android:exported="false"
+            android:label="@string/title_activity_menu"
+            android:theme="@style/Theme.Paradox.NoActionBar" />
+        <activity
+            android:name=".controller.activities.FiltrosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".controller.activities.InformationJobActivity"
+            android:exported="false" />
+        <activity
+            android:name=".controller.activities.PerfilPostulanteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".controller.activities.RegisterEmployeerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".controller.activities.RegisterPostulantActivity"
+            android:exported="false" />
+        <activity
+            android:name=".controller.activities.Register"
+            android:exported="false" />
+        <activity
+            android:name=".controller.activities.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".controller.activities.EditProfessionalProfileP"
+            android:exported="false" />
+        <activity
+            android:name=".controller.activities.PostulantProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".controller.activities.WatchAnnouncementActivity"
+            android:exported="false" />
+        <activity
+            android:name=".controller.activities.MyAnnoucementActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".controller.activities.EditProfilePostulant"
+            android:exported="false" />
+        <activity
+            android:name=".controller.activities.SeeProfilePostulant"
+            android:exported="true" />
+        <activity
+            android:name=".controller.activities.AddCompanyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".controller.activities.EditCompanyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".controller.activities.ViewCompanyEmployerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".controller.activities.ViewCompaniesEmployerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".controller.activities.SeeProfessionalProfileP"
+            android:exported="false" />
+
     </application>
 
 </manifest>

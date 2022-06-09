@@ -1,16 +1,232 @@
 <resources>
     <string name="app_name">Paradox</string>
-    <string name="anuncios">Anuncios</string>
+    <string name="navegation_drawer_open">Open</string>
+    <string name="navegation_drawer_close">Close</string>
+    <string name="upload_documents">Subir documentos</string>
+    <string name="search_system">Sistema de búsqueda</string>
+    <string name="covert_tutor">Conviertete en tutor</string>
+    <string name="find_docs">Encuentra documentos</string>
+    <string name="tutors">y tambien tutores</string>
+    <string name="career">de tu carrera universitaria</string>
+    <string name="background_descrip">It\'s a simple background</string>
+    <string name="share_knowledge">Comparte tus conocimientos</string>
+    <string name="gain">y cobra por ello</string>
+    <string name="image_descript">It\'s a simple image</string>
+    <string name="share_docs">Comparte tus documentos</string>
+    <string name="notes">y apuntes</string>
+    <string name="email_hint">Correo electronico</string>
+    <string name="password_hint">Contraseña</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="login">Iniciar sesión</string>
+    <string name="register">Registrate</string>
+    <string name="upload">Subir imagen</string>
+    <string name="username_or_password">Username or Password are incorrect</string>
+    <string name="all">TODO</string>
+    <string name="title_registro">Registro</string>
+    <string name="title_postulant">Postulante</string>
+    <string name="title_empleador">Empleador</string>
+    <string name="subtitle_register">Elige el tipo de usuario con el que te identificas</string>
+    <string name="name_register_postulant">Postulante</string>
+    <string name="name_register_empleador">Empleador</string>
+    <string name="apellidos">Apellidos</string>
+    <string name="estado_civil">Estado civil</string>
+    <string name="nombres">Nombres</string>
+    <string name="documento_de_identidad">Documento de identidad</string>
+    <string name="adjuntar_archivos">Adjuntar archivos</string>
+    <string name="numero_telefonico">Número teléfonico</string>
+    <string name="correo_electronico">Correo electronico</string>
+    <string name="contrase_a">contraseña</string>
+    <string name="posicion">Posición</string>
+    <string name="continuar">Continuar</string>
+    <string name="registrarse">Registrarse</string>
+    <string name="he_le_do_y_acepto_los_terminos_y_condiciones">He leído y acepto los terminos y condiciones.</string>
+    <string name="perfil_del_postulante">Perfil del postulante</string>
+    <string name="grado_de_estudios">Grado de estudios</string>
+    <string name="ocupaci_n">Ocupación</string>
+    <string name="descripci_n">Descripción</string>
+    <string name="limpiar">Limpiar</string>
+    <string name="filtrar">Filtrar</string>
+    <string name="desarrollador_backend_c">Desarrollador Backend C#</string>
+    <string name="tipo_de_contrato">Tipo de contrato</string>
+    <string name="contrato_a_plazo_indeterminado">Contrato a plazo indeterminado</string>
+    <string name="salario">Salario</string>
+    <string name="lugar">Lugar</string>
+    <string name="s_5000">S./5000</string>
+    <string name="san_isidro_lima">San Isidro, Lima</string>
+
+    <string name="nuestro_cliente_en_tecnolog_a_de_la_informaci_n_con_m_s_de_39_a_os_en_el_sector_enfocado_en_proyectos_de_medio_de_pago_pos_se_encuentra_en_b_squeda_de_un_programador_front_end_requisitos_experiencia_en_angular_nivel_avanzado_en_html5_css3_javascript_jquery_experiencia_en_creaci_n_de_mockups_wireframe_y_prototipos_experiencia_en_consumo_api_rest_experiencia_ux_opcional_conocimiento_git_ofrecemos_ingreso_a_planilla_trabajo_remoto">Nuestro cliente en tecnología de la información con más de 39 años en el sector, enfocado en proyectos de Medio de Pago - POS. Se encuentra en búsqueda de un PROGRAMADOR FRONT END. Requisitos: Experiencia en Angular Nivel avanzado en HTML5, CSS3, JavaScript, JQuery Experiencia en creación de mockups, wireframe y prototipos Experiencia en consumo API REST Experiencia UX (Opcional) Conocimiento GIT Ofrecemos: Ingreso a planilla Trabajo remoto</string>
+    <string name="adjunta_tu_hoja_de_vida_detallando_informaci_n_relevante_para_el_puesto_de_trabajo_al_que_postulas">Adjunta tu hoja de vida detallando información relevante para el puesto de trabajo al que postulas.</string>
+    <string name="declaro_que_toda_la_informaci_n_enviada_es_completamente_ver_dica_y_acepto_las_consecuencias_establecidas_por_la_ley_por_la_falsificaci_n_de_las_mismas_de_ser_el_caso">Declaro que toda la información enviada es completamente verídica y acepto las consecuencias establecidas por la ley por la falsificación de las mismas de ser el caso.</string>
+    <string name="agrega_un_video_selfie_de_presentaci_n_personal_para_conocer_m_s_sobre_tus_aptitudes_y_experiencia">Agrega un video selfie de presentación personal para conocer más sobre tus aptitudes y experiencia.</string>
+    <string name="confirmar_postulacion">Confirmar Postulacion</string>
+
+    <string name="edit_company">Editar compañía</string>
+    <string name="description">Descripción</string>
+    <string name="address">Dirección</string>
+    <string name="ruc">RUC</string>
+    <string name="sector">Sector de industria</string>
+    <string name="name">Nombre de empresa</string>
+    <string name="add_logo">Adjuntar logo</string>
+    <string name="update_company">Guardar cambios</string>
+    <string name="back">Retroceder</string>
+    <string name="logo">Logo</string>
+    <string name="add_company">Agregar compañía</string>
+    <string name="my_companies">Mis compañías</string>
+    <string name="mi_perfil_profesional">Mi perfil profesional</string>
+    <string name="degree_edit">Ingeniero de sistemas</string>
+    <string name="profile_description_edit">Ingeniero de Sistemas de la Universidad La Sapienza (Roma -Italia ) con amplios conocimientos en tecnologías SOA con énfasis en arquitecturas basadas en JEE. Soy una persona capaz de aprender temas nuevos con el objetivo de aportar al trabajo en equipo y hacer crecer mi conocimiento.</string>
+    <string name="study_degree_dropdown">studyDegree</string>
+    <string name="skills_dropdown">Skills dropdown</string>
+    <string name="languages_show">Ingles Español</string>
+    <string name="skills_show">Autoconocimiento Empatia Comunicacion Asertiva Relaciones Interpersonales Toma de decisiones</string>
+    <string name="language_title">Idiomas</string>
+    <string name="skills_title">Habilidades</string>
+    <string name="study_degree_show">Maestria</string>
+    <string name="study_degree_title">Estudios</string>
+    <string name="profile_description_show">Ingeniero de Sistemas de la Universidad La Sapienza (Roma -Italia ) con amplios conocimientos en tecnologías SOA con énfasis en arquitecturas basadas en JEE. Soy una persona capaz de aprender temas nuevos con el objetivo de aportar al trabajo en equipo y hacer crecer mi conocimiento.</string>
+    <string name="description_title">Descripcion</string>
+    <string name="occupation_title">Ocupacion</string>
+    <string name="degree_show">Ingeniero de sistemas</string>
+    <string name="prof_profile_supertitle">Mi perfil profesional</string>
+    <string name="floating_edit_prof_profile">ButtonToEditProfProfile</string>
+    <string name="profile_supertitle">Mi perfil</string>
+    <string name="namesTitle">Nombres</string>
+    <string name="lastname_profile_show">Workman</string>
+    <string name="lastname_title_profile">Apellidos</string>
+    <string name="name_show_profile">Marcus</string>
+    <string name="doc_dni_title_profile">Documento de identidad</string>
+    <string name="doc_dni_show_profile">75856849</string>
+    <string name="civil_status_profile_title">Estado civil</string>
+    <string name="civil_status_show_profile">Soltero</string>
+    <string name="go_to_edit_profile">go to edit Profile</string>
+    <string name="number_profile_title">Numero telefonico</string>
+    <string name="number_show_profile">989589596</string>
+    <string name="profile_photo_of_postulant">Profile photo of postulant</string>
+    <string name="name_edit_profile">Marcus</string>
+    <string name="lastname_profile_edit">Workman</string>
+    <string name="doc_dni_edit_profile">75856849</string>
+    <string name="civil_status_edit_profile">Soltero</string>
+    <string name="number_edit_profile">989654323</string>
+    <string name="email_edit_profile">marcusworkman@gmail.com</string>
+    <string name="email_title">Email</string>
+    <string name="email_show_profile">TextView</string>
+    <string-array name="languages">
+        <item>English</item>
+        <item>French</item>
+        <item>German</item>
+    </string-array>
+    <string-array name="planets_array">
+        <item>Secundaria Completa</item>
+        <item>Tecnico</item>
+        <item>Universitario</item>
+        <item>Magister</item>
+    </string-array>
+    <string-array name="skills_array">
+        <item>Autoconocimiento</item>
+        <item>Responsabilidad</item>
+        <item>Comunicacion efectiva</item>
+        <item>Liderazgo</item>
+    </string-array>
+    <string-array name="grado_array">
+        <item>Trabajo en equipo</item>
+        <item>Secundaria</item>
+        <item>Universidad Incompleta</item>
+        <item>Universidad Completa</item>
+        <item>Técnico Incompleto</item>
+        <item>Técnico Completo</item>
+    </string-array>
+    <string-array name="habilidades_array">
+
+        <item>Pensamiento crítico</item>
+        <item>Pensamiento abstracto</item>
+        <item>Capacidad de aprendizaje</item>
+        <item>Manejo de conflictos</item>
+        <item>Adaptación</item>
+    </string-array>
+    <string-array name="idiomas_array">
+        <item>Inglés </item>
+        <item>Español </item>
+        <item>Portugues</item>
+        <item>Alemán </item>
+
+    </string-array>
+
+    <string-array name="tipo_de_contrato_array">
+        <item>Contrato a Término Fijo </item>
+        <item>Contrato a término indefinido </item>
+        <item>Contrato civil por prestación de servicios</item>
+        <item>Contrato de aprendizaje </item>
+        <item>Contrato ocasional de trabajo </item>
+
+    </string-array>
+    <string-array name="salario_array">
+        <item>1025 a 2000 </item>
+        <item>2000 a 3000 </item>
+        <item>3000 a 4000</item>
+        <item>4000 a 5000 </item>
+        <item>mas </item>
+
+    </string-array>
+    <string-array name="fecha_de_publicacion_array">
+        <item>24/04/2022 </item>
+        <item>26/05/2022 </item>
+        <item>28/06/2022</item>
+        <item>24/07/2022 </item>
+        <item>mas </item>
+
+    </string-array>
+    <string-array name="lugar_array">
+        <item>Lima </item>
+        <item>San isidro </item>
+        <item>Los olivos</item>
+        <item>Comas</item>
+        <item>mas </item>
+
+    </string-array>
+
     <string name="buscar">Buscar</string>
     <string name="claro">Claro</string>
     <string name="movistar">Movistar</string>
     <string name="puesto_empresa_o_palabra_clave">Puesto, empresa o palabra clave</string>
-    <string name="_3_ofertas_de_trabajo_disponibles">3 Ofertas de trabajo disponibles</string>
     <string name="estado">Estado</string>
     <string name="mis_postulaciones">Mis postulaciones</string>
-    <string name="navegation_drawer_open">Open</string>
-    <string name="navegation_drawer_close">Close</string>
+    <string name="cerrar_sesion">Cerrar Sesion</string>
+    <string name="mi_perfil">Mi perfil</string>
+    <string name="mi_postulaciones">Mi Postulaciones</string>
     <string name="mis_anuncios">Mis anuncios</string>
-    <string name="logo" />
-    <string name="desarrollador_backend_c">Desarrollador Backend C#</string>
+    <string name="bienvenido_a">Bienvenido(a)</string>
+    <string name="icon_image">Icon Image</string>
+    <string name="title_activity_menu">MenuActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_mis_anuncios">Mis anuncios</string>
+    <string name="menu_publicar_anuncio">Publicar anuncio</string>
+    <string name="menu_mis_compañias">Mis compañias</string>
+    <string name="menu_agregar_compañia">Agregar compañia</string>
+    <string name="menu_mi_perfil">Mi perfil</string>
+    <string name="menu_cerrar_sesion">Cerrar sesion</string>
+    <string name="ofertas">Ofertas de trabajos disponibles</string>
+    <string name="postulantes">Postulantes:</string>
+    <string name="cerrar_sesion2">Cerrar Sesion</string>
+    <string name="text_study_name">Name</string>
+    <string name="text_study_degree">Degree</string>
+    <string name="text_name_skill">Name skill</string>
+    <string name="text_name_language">Name</string>
+    <string name="text_name_level">level</string>
+    <string name="title_activity_navigation_employeer">NavigationEmployeerActivity</string>
+
+    <string name="menu_home">Mis anuncios</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="title_activity_navigation_postulant">NavigationPostulantActivity</string>
+    <string name="anuncios">Anuncios</string>
+    <string name="Mispostulaciones">Mis postulaciones</string>
+    <string name="miPerfil">Mi perfil</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

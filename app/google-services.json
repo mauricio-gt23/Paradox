@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "31132503948",
+    "project_id": "paradox-73984",
+    "storage_bucket": "paradox-73984.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:31132503948:android:c03bd0e82932f81eac10a9",
+        "android_client_info": {
+          "package_name": "com.example.paradox"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "31132503948-p1c5fpe24srq5vf6g3ahk8626mike8ku.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPkF-0g7vpbmHCzFGMdXs-CbLr7lAlMGw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "31132503948-p1c5fpe24srq5vf6g3ahk8626mike8ku.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
