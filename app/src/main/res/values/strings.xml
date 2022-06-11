@@ -60,18 +60,26 @@
     <string name="agrega_un_video_selfie_de_presentaci_n_personal_para_conocer_m_s_sobre_tus_aptitudes_y_experiencia">Agrega un video selfie de presentación personal para conocer más sobre tus aptitudes y experiencia.</string>
     <string name="confirmar_postulacion">Confirmar Postulacion</string>
 
-    <string name="edit_company">Editar compañía</string>
-    <string name="description">Descripción</string>
-    <string name="address">Dirección</string>
-    <string name="ruc">RUC</string>
-    <string name="sector">Sector de industria</string>
-    <string name="name">Nombre de empresa</string>
-    <string name="add_logo">Adjuntar logo</string>
-    <string name="update_company">Guardar cambios</string>
-    <string name="back">Retroceder</string>
-    <string name="logo">Logo</string>
+    <!--    Strings created for Companies flows: Titles    -->
     <string name="add_company">Agregar compañía</string>
     <string name="my_companies">Mis compañías</string>
+    <string name="edit_company">Editar compañía</string>
+
+    <!--    Strings created for Companies flows: Subtitles    -->
+    <string name="sector_de_industria">Sector de industria</string>
+    <string name="nombre_de_empresa">Nombre de empresa</string>
+    <string name="ruc">RUC</string>
+    <string name="address">Dirección</string>
+    <string name="description">Descripción</string>
+    <string name="adjuntar_logo">Adjuntar logo</string>
+
+    <!--    Strings created for Companies flows: Buttons    -->
+    <string name="guardar_cambios">Guardar cambios</string>
+    <string name="retroceder">Retroceder</string>
+
+    <!--    Strings created for Companies flows: Images    -->
+    <string name="logo">Logo</string>
+
     <string name="mi_perfil_profesional">Mi perfil profesional</string>
     <string name="degree_edit">Ingeniero de sistemas</string>
     <string name="profile_description_edit">Ingeniero de Sistemas de la Universidad La Sapienza (Roma -Italia ) con amplios conocimientos en tecnologías SOA con énfasis en arquitecturas basadas en JEE. Soy una persona capaz de aprender temas nuevos con el objetivo de aportar al trabajo en equipo y hacer crecer mi conocimiento.</string>

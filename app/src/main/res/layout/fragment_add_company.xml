@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="81dp"
             android:layout_marginTop="16dp"
-            android:hint="@string/sector"
+            android:hint="@string/sector_de_industria"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvAddTitle">
 
@@ -58,7 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="81dp"
             android:layout_marginTop="16dp"
-            android:hint="@string/name"
+            android:hint="@string/nombre_de_empresa"
             android:textColorHint="@color/secondary"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tfSectors"
@@ -162,7 +162,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="81dp"
             android:layout_marginTop="16dp"
-            android:hint="@string/add_logo"
+            android:hint="@string/adjuntar_logo"
             android:textColorHint="@color/secondary"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tfAddDescription"

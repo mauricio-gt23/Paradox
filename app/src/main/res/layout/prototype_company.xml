@@ -40,7 +40,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/ivCardLogo"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Nombre de empresa" />
+            tools:text="nombre de empresa" />
 
         <TextView
             android:id="@+id/tvCardRuc"
@@ -57,7 +57,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/ivCardLogo"
             app:layout_constraintTop_toBottomOf="@+id/tvCardName"
-            tools:text="Ruc" />
+            tools:text="ruc" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

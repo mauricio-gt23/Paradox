@@ -17,7 +17,7 @@
             android:layout_marginStart="18dp"
             android:layout_marginTop="17dp"
             android:background="#00FFFFFF"
-            android:contentDescription="@string/back"
+            android:contentDescription="@string/retroceder"
             android:src="?attr/actionModeCloseDrawable"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -56,7 +56,7 @@
             android:layout_marginStart="83dp"
             android:layout_marginTop="16dp"
             android:fontFamily="sans-serif-medium"
-            android:text="@string/sector"
+            android:text="@string/sector_de_industria"
             android:textColor="@color/primary"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
