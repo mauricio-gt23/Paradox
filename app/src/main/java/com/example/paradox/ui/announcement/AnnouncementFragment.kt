@@ -1,18 +1,18 @@
 package com.example.paradox.ui.announcement
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
-import androidx.navigation.fragment.findNavController
+import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.paradox.R
 import com.example.paradox.adapter.WorkAdapter
+import com.example.paradox.databinding.FragmentAnnouncementBinding
 import com.example.paradox.models.Work
 import com.example.paradox.models.Works
 import com.example.paradox.network.JobOfferService
@@ -21,66 +21,48 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import kotlin.collections.ArrayList
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [AnnouncementFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class AnnouncementFragment : Fragment() {
 
+    private lateinit var binding: FragmentAnnouncementBinding
     lateinit var workAdapter: WorkAdapter
-
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    lateinit var rvWork: RecyclerView
+    lateinit var works: ArrayList<Work>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+
         val vista: View = inflater.inflate(R.layout.fragment_announcement, container, false)
-
-        loadWorks(vista)
-
         return vista
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment AnnouncementFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            AnnouncementFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding = FragmentAnnouncementBinding.bind(view)
+
+        loadWorks(view)
+
+        val svSearch = view.findViewById<SearchView>(R.id.svSearch)
+
+        svSearch.setOnQueryTextListener(object: SearchView.OnQueryTextListener {
+            override fun onQueryTextChange(newText: String?): Boolean {
+                workAdapter.filter.filter(newText)
+                return false
             }
+
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+        })
     }
 
     private fun loadWorks(view: View) {
+
+        val editText = view.findViewById<TextView>(R.id.tvCountOffers)
+
         val retrofit = Retrofit.Builder()
             .baseUrl("https://movilesback.herokuapp.com/")
             .addConverterFactory(GsonConverterFactory.create())
@@ -93,13 +75,15 @@ class AnnouncementFragment : Fragment() {
         request.enqueue(object : Callback<Works> {
             override fun onResponse(call: Call<Works>, response: Response<Works>) {
                 if (response.isSuccessful) {
-                    val rvWork = view.findViewById<RecyclerView>(R.id.rvWork)
+                    rvWork = view.findViewById(R.id.rvWork)
                     val content = response.body()
                     if (content != null) {
-                        Log.d("AnnouncementFragment", content.toString())
-                        workAdapter = WorkAdapter(content.works)
+                        editText.text = content.works.size.toString()
+                        works = content.works as ArrayList<Work>
+                        workAdapter = WorkAdapter(works)
                         rvWork.adapter = workAdapter
                         rvWork.layoutManager = LinearLayoutManager(context)
+                        rvWork.setHasFixedSize(true)
                     }
                 }
             }
@@ -108,5 +92,4 @@ class AnnouncementFragment : Fragment() {
             }
         })
     }
-
 }

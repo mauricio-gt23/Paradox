@@ -3,14 +3,26 @@ package com.example.paradox.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Filter
+import android.widget.Filterable
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.paradox.R
 import com.example.paradox.models.PublishedWork
+import com.example.paradox.models.PublishedWorks
+import com.example.paradox.models.Work
 import java.util.*
+import kotlin.collections.ArrayList
 
-class PublishedWorkAdapter(var publishedWorks: List<PublishedWork>, val itemClickListener: OnItemClickListener<PublishedWork>): RecyclerView.Adapter<PublishedWorkPrototype>() {
+class PublishedWorkAdapter(var publishedWorks: ArrayList<PublishedWork>, val itemClickListener: OnItemClickListener<PublishedWork>): RecyclerView.Adapter<PublishedWorkPrototype>(), Filterable {
+
+    var publishedWorksFilterList = ArrayList<PublishedWork>()
+
+    init {
+        publishedWorksFilterList = publishedWorks
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PublishedWorkPrototype {
         val view = LayoutInflater
             .from(parent.context)
@@ -19,14 +31,44 @@ class PublishedWorkAdapter(var publishedWorks: List<PublishedWork>, val itemClic
     }
 
     override fun onBindViewHolder(holder: PublishedWorkPrototype, position: Int) {
-        holder.bind(publishedWorks.get(position), itemClickListener)
+        holder.bind(publishedWorksFilterList.get(position), itemClickListener)
     }
 
     override fun getItemCount(): Int {
-        return publishedWorks.size
+        return publishedWorksFilterList.size
     }
 
+    override fun getFilter(): Filter {
+        return object: Filter() {
+            override fun performFiltering(constraint: CharSequence?): FilterResults {
+                val charSearch = constraint.toString()
+                if (charSearch.isEmpty()) {
+                    publishedWorksFilterList = publishedWorks
+                } else {
+                    val resultList = ArrayList<PublishedWork>()
+                    for (row in publishedWorks) {
+                        if (row.job.lowercase(Locale.ROOT)
+                                .contains(charSearch.lowercase(Locale.ROOT), ignoreCase = true)) {
+                            resultList.add(row)
+                        }
+                    }
+                    publishedWorksFilterList = resultList
+                }
+                val filterResults = FilterResults()
+                filterResults.values = publishedWorksFilterList
+                return filterResults
+            }
+
+            @Suppress("UNCHECLED_CAST")
+            override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
+                publishedWorksFilterList = results?.values as ArrayList<PublishedWork>
+                notifyDataSetChanged()
+            }
+        }
+    }
 }
+
+
 
 class PublishedWorkPrototype(itemView: View): RecyclerView.ViewHolder(itemView) {
 
@@ -35,7 +77,6 @@ class PublishedWorkPrototype(itemView: View): RecyclerView.ViewHolder(itemView) 
     val tvTime = itemView.findViewById<TextView>(R.id.tvTime2)
     val tvSubtitle = itemView.findViewById<TextView>(R.id.tvSubtitle2)
     val tvAddress = itemView.findViewById<TextView>(R.id.tvAddress2)
-    // TODO: COUNT POSTULANTS
 
     fun bind(publishedWork: PublishedWork, itemClickListener: OnItemClickListener<PublishedWork>?) {
         tvJob.text = publishedWork.job

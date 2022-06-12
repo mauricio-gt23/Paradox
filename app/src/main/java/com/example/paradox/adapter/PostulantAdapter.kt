@@ -7,12 +7,12 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.paradox.R
-import com.example.paradox.controller.activities.WatchAnnouncementActivity
 import com.example.paradox.models.Postul
 import com.example.paradox.models.PublishedWork
+import com.example.paradox.ui.watchannouncementm.WatchAnnouncementFragment
 import java.util.*
 
-class PostulantAdapter(var postulants: List<Postul>, val itemClickListener: WatchAnnouncementActivity): RecyclerView.Adapter<PostulantPrototype>() {
+class PostulantAdapter(var postulants: List<Postul>, val itemClickListener: OnItemClickListener<Postul>): RecyclerView.Adapter<PostulantPrototype>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostulantPrototype {
         val view = LayoutInflater
             .from(parent.context)
@@ -35,12 +35,14 @@ class PostulantPrototype(itemView: View) : RecyclerView.ViewHolder(itemView) {
     val tvNombrePostulante = itemView.findViewById<TextView>(R.id.tvNombrePostulante)
     val tvApelldioPostulante = itemView.findViewById<TextView>(R.id.tvApellidoPostulante)
 
-    fun bind(postulant: Postul, itemClickListener: OnItemClickListener<Postul>) {
-        tvNombrePostulante.text = postulant.firstname
-        tvApelldioPostulante.text = postulant.lastname
+    fun bind(postul: Postul, itemClickListener: OnItemClickListener<Postul>) {
+        tvNombrePostulante.text = postul.firstname
+        tvApelldioPostulante.text = postul.lastname
 
         cvPostulant.setOnClickListener {
-            itemClickListener.OnItemClicked(postulant)
+            if (itemClickListener != null) {
+                itemClickListener.OnItemClicked(postul)
+            }
         }
     }
 }

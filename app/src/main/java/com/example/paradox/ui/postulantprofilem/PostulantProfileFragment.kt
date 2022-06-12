@@ -1,31 +1,36 @@
-package com.example.paradox
+package com.example.paradox.ui.postulantprofilem
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
+import android.widget.TextView
+import com.example.paradox.R
+import com.example.paradox.ui.publishedworksm.PublishedWorksFragment
+import com.example.paradox.ui.watchannouncementm.WatchAnnouncementFragment
+import com.google.gson.Gson
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [PostulantProfileFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class PostulantProfileFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+
+    private var firstname: String = ""
+    private var lastname: String = ""
+    private var document: String = ""
+    private var number: Int = 0
+    private var email: String = ""
+    private var publishedWorkId: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+            //
+            firstname = it.getString("firstname").toString()
+            lastname = it.getString("lastname").toString()
+            document = it.getString("document").toString()
+            number = it.getInt("number")
+            email = it.getString("email").toString()
         }
     }
 
@@ -33,27 +38,27 @@ class PostulantProfileFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_postulant_profile, container, false)
+        val vista = inflater.inflate(R.layout.fragment_postulant_profile, container, false)
+
+        loadPostulantProfile(vista)
+
+        val btBack3: ImageButton = vista.findViewById<ImageButton>(R.id.btBack3)
+
+        btBack3.setOnClickListener {
+            val bundle = Bundle()
+            val fragment = WatchAnnouncementFragment()
+            fragmentManager?.beginTransaction()
+                ?.replace(R.id.nav_host_fragment_content_navigation_employeer, fragment)?.commit()
+        }
+        return vista
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment PostulantProfileFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            PostulantProfileFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    private fun loadPostulantProfile(view: View) {
+        Log.d("AAA", publishedWorkId.toString())
+        view.findViewById<TextView>(R.id.tvNamePos).text = firstname
+        view.findViewById<TextView>(R.id.tvLastPos).text = lastname
+        view.findViewById<TextView>(R.id.tvDocument).text = document
+        view.findViewById<TextView>(R.id.tvNum).text = number.toString()
+        view.findViewById<TextView>(R.id.tvGmail).text = email
     }
 }

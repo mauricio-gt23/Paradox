@@ -69,12 +69,6 @@
             android:name=".controller.activities.EditProfessionalProfileP"
             android:exported="false" />
         <activity
-            android:name=".controller.activities.PostulantProfileActivity"
-            android:exported="false" />
-        <activity
-            android:name=".controller.activities.WatchAnnouncementActivity"
-            android:exported="false" />
-        <activity
             android:name=".controller.activities.MyAnnoucementActivity"
             android:exported="false" />
         <activity

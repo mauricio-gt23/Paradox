@@ -9,18 +9,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/btSearch"
-            android:layout_width="271dp"
-            android:layout_height="51dp"
-            android:layout_marginTop="8dp"
-            android:backgroundTint="#7E57C2"
-            android:text="@string/buscar"
-            app:cornerRadius="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tiKeyWord" />
-
         <TextView
             android:id="@+id/tvTitle"
             android:layout_width="wrap_content"
@@ -35,24 +23,61 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tiKeyWord"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="261dp"
-            android:layout_height="55dp"
-            android:layout_marginTop="20dp"
-            android:hint="@string/puesto_empresa_o_palabra_clave"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvWork"
+            android:layout_width="373dp"
+            android:layout_height="290dp"
+            android:layout_marginTop="64dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.493"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvTitle">
+            app:layout_constraintTop_toBottomOf="@+id/svSearch" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text"
-                android:textColor="#C12222" />
-        </com.google.android.material.textfield.TextInputLayout>
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="71dp"
+            android:layout_height="72dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/tvTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@mipmap/ic_paradox" />
+
+
+        <TextView
+            android:id="@+id/tvOffers"
+            android:layout_width="273dp"
+            android:layout_height="21dp"
+            android:layout_marginTop="12dp"
+            android:text="@string/ofertas"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.681"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/svSearch" />
+
+        <TextView
+            android:id="@+id/tvCountOffers"
+            android:layout_width="21dp"
+            android:layout_height="21dp"
+            android:layout_marginTop="12dp"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.187"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/svSearch"
+            tools:text="#" />
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/svSearch"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="140dp"
+            app:iconifiedByDefault="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:queryHint="Buscar empleo" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/floatingActionButton2"
@@ -66,53 +91,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:srcCompat="@drawable/ic_filter" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvWork"
-            android:layout_width="373dp"
-            android:layout_height="290dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btSearch"
-            app:layout_constraintVertical_bias="0.341" />
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="71dp"
-            android:layout_height="72dp"
-            android:layout_marginTop="16dp"
-            app:layout_constraintBottom_toTopOf="@+id/tvTitle"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@mipmap/ic_paradox" />
-
-        <TextView
-            android:id="@+id/tvOffers"
-            android:layout_width="273dp"
-            android:layout_height="21dp"
-            android:layout_marginTop="8dp"
-            android:text="@string/ofertas"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.681"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btSearch" />
-
-        <TextView
-            android:id="@+id/tvCountOffers"
-            android:layout_width="21dp"
-            android:layout_height="21dp"
-            android:layout_marginTop="8dp"
-            android:textAlignment="center"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.181"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btSearch"
-            tools:text="#" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 
 
 </FrameLayout>

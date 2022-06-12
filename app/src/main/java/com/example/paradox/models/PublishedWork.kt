@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 data class PublishedWork (
 
     @SerializedName("id")
-    val id: Int?,
+    val id: Int,
 
     @SerializedName("begin_date_offer")
     val subtitle: String,
@@ -23,5 +23,7 @@ data class PublishedWork (
     val address: String,
 
     @SerializedName("salary")
-    val salary: Int?
+    val salary: Int,
+
+    var countPostulants: Int
     )

@@ -4,6 +4,9 @@ import com.google.gson.annotations.SerializedName
 
 data class Work (
 
+    @SerializedName("id")
+    val id: Int,
+
     @SerializedName("direction")
     val company: String,
 
@@ -19,4 +22,6 @@ data class Work (
     @SerializedName("description")
     val info: String,
 
+    @SerializedName("salary")
+    val salary: Int
     )

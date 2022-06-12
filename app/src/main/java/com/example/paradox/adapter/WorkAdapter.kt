@@ -3,12 +3,23 @@ package com.example.paradox.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Filter
+import android.widget.Filterable
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.paradox.R
 import com.example.paradox.models.Work
+import java.util.*
+import kotlin.collections.ArrayList
 
-class WorkAdapter(var works: List<Work>): RecyclerView.Adapter<WorkPrototype>() {
+class WorkAdapter(var works: ArrayList<Work>): RecyclerView.Adapter<WorkPrototype>(), Filterable {
+
+    var workFilterList = ArrayList<Work>()
+
+    init {
+        workFilterList = works
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WorkPrototype {
         val view = LayoutInflater
             .from(parent.context)
@@ -17,11 +28,40 @@ class WorkAdapter(var works: List<Work>): RecyclerView.Adapter<WorkPrototype>() 
     }
 
     override fun onBindViewHolder(holder: WorkPrototype, position: Int) {
-        holder.bind(works.get(position))
+        holder.bind(workFilterList.get(position))
     }
 
     override fun getItemCount(): Int {
-        return works.size
+        return workFilterList.size
+    }
+
+    override fun getFilter(): Filter {
+        return object: Filter() {
+            override fun performFiltering(constraint: CharSequence?): FilterResults {
+                val charSearch = constraint.toString()
+                if (charSearch.isEmpty()) {
+                    workFilterList = works
+                } else {
+                    val resultList = ArrayList<Work>()
+                    for (row in works) {
+                        if (row.job.lowercase(Locale.ROOT)
+                                .contains(charSearch.lowercase(Locale.ROOT), ignoreCase = true)) {
+                            resultList.add(row)
+                        }
+                    }
+                    workFilterList = resultList
+                }
+                val filterResults = FilterResults()
+                filterResults.values = workFilterList
+                return filterResults
+            }
+
+            @Suppress("UNCHECLED_CAST")
+            override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
+                workFilterList = results?.values as ArrayList<Work>
+                notifyDataSetChanged()
+            }
+        }
     }
 }
 

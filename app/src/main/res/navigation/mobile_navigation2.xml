@@ -9,7 +9,11 @@
         android:id="@+id/publishedWorksFragment"
         android:name="com.example.paradox.ui.publishedworksm.PublishedWorksFragment"
         android:label="Mis anuncios"
-        tools:layout="@layout/fragment_published_works" />
+        tools:layout="@layout/fragment_published_works" >
+        <action
+            android:id="@+id/action_publishedWorksFragment_to_watchAnnouncementFragment"
+            app:destination="@id/watchAnnouncementFragment" />
+    </fragment>
     <fragment
         android:id="@+id/nav_gallery"
         android:name="com.example.paradox.ui.gallery.GalleryFragment"
@@ -58,6 +62,20 @@
         android:name="com.example.paradox.ui.mycompanies.EditCompanyFragment"
         android:label="fragment_edit_company"
         tools:layout="@layout/fragment_edit_company" />
+    <fragment
+        android:id="@+id/watchAnnouncementFragment"
+        android:name="com.example.paradox.ui.watchannouncementm.WatchAnnouncementFragment"
+        android:label="fragment_watch_announcement"
+        tools:layout="@layout/fragment_watch_announcement" >
+        <action
+            android:id="@+id/action_watchAnnouncementFragment_to_postulantProfileFragment"
+            app:destination="@id/postulantProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/postulantProfileFragment"
+        android:name="com.example.paradox.ui.postulantprofilem.PostulantProfileFragment"
+        android:label="fragment_postulant_profile"
+        tools:layout="@layout/fragment_postulant_profile" />
 
 
     <!--    <fragment-->

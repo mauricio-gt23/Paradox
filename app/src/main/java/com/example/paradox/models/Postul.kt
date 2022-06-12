@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 data class Postul (
 
     @SerializedName("idPostulant")
-    val id: Int?,
+    val id: Int,
 
     @SerializedName("firstnamePostulant")
     val firstname: String,
@@ -20,5 +20,5 @@ data class Postul (
     val email: String,
 
     @SerializedName("numberPostulant")
-    val number: Int?
+    val number: Int
     )

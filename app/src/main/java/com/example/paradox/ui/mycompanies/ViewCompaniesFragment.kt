@@ -21,6 +21,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class ViewCompaniesFragment : Fragment(), OnItemClickListener<Company> {
+
     private lateinit var binding: FragmentViewCompaniesBinding
     lateinit var companyAdapter : CompanyAdapter
     private var employerId: Int = 0
