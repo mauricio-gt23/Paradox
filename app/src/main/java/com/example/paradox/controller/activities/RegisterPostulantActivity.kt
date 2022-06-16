@@ -9,9 +9,7 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
 import com.example.paradox.R
-import com.example.paradox.models.Errores
-import com.example.paradox.models.RequestEmployeer
-import com.example.paradox.models.ResponseEmployeer
+import com.example.paradox.models.*
 import com.example.paradox.network.RegisterService
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
@@ -41,10 +39,9 @@ class RegisterPostulantActivity : AppCompatActivity() {
 
 
         etPerfilPostulante.setOnClickListener {
-
-            val intent = Intent(this, PerfilPostulanteActivity::class.java)
-            startActivity(intent)
             addPostulant()
+
+
         }
     }
 
@@ -74,18 +71,6 @@ class RegisterPostulantActivity : AppCompatActivity() {
             Toast.makeText(this, "Falta el Apellido", Toast.LENGTH_SHORT).show()
 
         }
-        else if(txtEmailPost.text.isEmpty()){
-            Toast.makeText(this, "Falta el Email", Toast.LENGTH_SHORT).show()
-
-        }
-        else if(txtPhonePost.text.isEmpty()){
-            Toast.makeText(this, "Falta el Teléfono", Toast.LENGTH_SHORT).show()
-
-        }
-        else if(txtcontraPost.text.isEmpty()){
-            Toast.makeText(this, "Falta la Contraseña", Toast.LENGTH_SHORT).show()
-
-        }
         else if(txDocumentoIdentidadPost.text.isEmpty()){
             Toast.makeText(this, "Falta el Documento de Identidad", Toast.LENGTH_SHORT).show()
 
@@ -94,6 +79,21 @@ class RegisterPostulantActivity : AppCompatActivity() {
             Toast.makeText(this, "Falta el estado civil ", Toast.LENGTH_SHORT).show()
 
         }
+        else if(txtPhonePost.text.isEmpty()){
+            Toast.makeText(this, "Falta el Teléfono", Toast.LENGTH_SHORT).show()
+
+        }
+        else if(txtEmailPost.text.isEmpty()){
+            Toast.makeText(this, "Falta el Email", Toast.LENGTH_SHORT).show()
+
+        }
+
+        else if(txtcontraPost.text.isEmpty()){
+            Toast.makeText(this, "Falta la Contraseña", Toast.LENGTH_SHORT).show()
+
+        }
+
+
         else{
             val namePost = txCreateNamePost.text.toString()
             val apellidoPost = txCreateApellidoPost.text.toString()
@@ -101,21 +101,22 @@ class RegisterPostulantActivity : AppCompatActivity() {
             val phonePost = txtPhonePost.text.toString().toLong()
             val emailPost = txtEmailPost.text.toString()
             val contraPost = txtcontraPost.text.toString()
-            val requestEmployeer = RequestEmployeer(namePost,apellidoPost,identidadPost, phonePost,emailPost,contraPost,
-                prueba
+            val contraCivilStatus = txtCivilStatusPost.text.toString()
+            val requestPostulant = RequestPostulant(namePost,apellidoPost,emailPost,phonePost,contraPost,
+                identidadPost, prueba,"ga", contraCivilStatus
 
             )
 
 
-            val request = RegisterService.registerInstance.createEmployeer(requestEmployeer)
+            val request = RegisterService.registerInstance.createPostulant(requestPostulant)
 
 
-            request.enqueue(object: Callback<ResponseEmployeer> {
-                override fun onFailure(call: Call<ResponseEmployeer>, t: Throwable) {
+            request.enqueue(object: Callback<ResponsePostulant> {
+                override fun onFailure(call: Call<ResponsePostulant>, t: Throwable) {
                     Log.d("44","Error in Adding Postualnt")
                 }
 
-                override fun onResponse(call: Call<ResponseEmployeer>, response: Response<ResponseEmployeer?>) {
+                override fun onResponse(call: Call<ResponsePostulant>, response: Response<ResponsePostulant?>) {
 
                     if (response.code() === 404) {
 
@@ -137,7 +138,7 @@ class RegisterPostulantActivity : AppCompatActivity() {
 
 
                         Toast.makeText(this@RegisterPostulantActivity, "Successfully created", Toast.LENGTH_LONG).show()
-                        val intent = Intent(this@RegisterPostulantActivity, MainActivity::class.java)
+                        val intent = Intent(this@RegisterPostulantActivity, PerfilPostulanteActivity::class.java)
                         startActivity(intent)
 
 
