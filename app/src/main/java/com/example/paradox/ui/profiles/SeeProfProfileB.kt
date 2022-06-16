@@ -1,6 +1,5 @@
 package com.example.paradox.ui.profiles
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -19,6 +18,7 @@ import com.example.paradox.controller.activities.EditProfessionalProfileP
 import com.example.paradox.controller.activities.SharedPreferences
 import com.example.paradox.models.*
 import com.example.paradox.network.PostulantService
+import com.example.paradox.ui.mycompanies.ViewCompanyFragment
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import retrofit2.Call
 import retrofit2.Callback
@@ -46,10 +46,12 @@ class SeeProfProfileB : Fragment() {
         val buttonEditProfessional = vista.findViewById<FloatingActionButton>(R.id.btGoToEditProfessional)
         loadProfProfileOfUser(vista)
         buttonEditProfessional.setOnClickListener {
-            val intent = Intent(context, EditProfessionalProfileP::class.java)
-            intent.putExtra("ProfProfile", this.professionalProfilePostulant)
-            intent.putExtra("profileId", this.profileId)
-            startActivity(intent)
+            val bundle = Bundle()
+            bundle.putParcelable("ProfProfile", this.professionalProfilePostulant)
+            this.profileId?.let { it1 -> bundle.putInt("profileId", it1) }
+            val fragment = EditProfProfile()
+            fragment.arguments = bundle
+            fragmentManager?.beginTransaction()?.replace(R.id.profProfileFragment, fragment)?.commit()
         }
         return vista
     }
