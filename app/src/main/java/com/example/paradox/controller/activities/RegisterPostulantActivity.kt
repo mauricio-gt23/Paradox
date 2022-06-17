@@ -11,6 +11,7 @@ import android.widget.Toast
 import com.example.paradox.R
 import com.example.paradox.models.*
 import com.example.paradox.network.RegisterService
+import com.example.paradox.network.UserService
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
@@ -135,7 +136,24 @@ class RegisterPostulantActivity : AppCompatActivity() {
                             // handle failure at e
                         }}
                     if(response.isSuccessful){
+                        val sharedPreferences = SharedPreferences(this@RegisterPostulantActivity)
+                        val request = UserService.userInstance.getAuth(emailPost, contraPost)
+                        request.enqueue(object : Callback<User> {
+                            override fun onFailure(call: Call<User>, t: Throwable) {
+                                Log.d("ga", "Err34r in Fetching Company")
 
+                            }
+                            override fun onResponse(call: Call<User>, response: Response<User>) {
+                                if(response.isSuccessful){
+                                    val user =  response.body()!!
+
+                                    sharedPreferences.save("registerId", user.id.toString())
+
+
+                                }
+
+                            }
+                        })
 
                         Toast.makeText(this@RegisterPostulantActivity, "Successfully created", Toast.LENGTH_LONG).show()
                         val intent = Intent(this@RegisterPostulantActivity, PerfilPostulanteActivity::class.java)
