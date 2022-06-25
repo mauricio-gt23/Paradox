@@ -52,7 +52,7 @@ class SeeProfProfileB : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentSeeProfProfileBBinding.bind(view)
         loadProfProfileOfUser(view)
-        binding.btGoToEditProfessional.setOnClickListener {
+        binding.btGoToEditProfessional2.setOnClickListener {
             val bundle = Bundle()
             bundle.putParcelable("ProfProfile", this.professionalProfilePostulant)
             this.profileId?.let { it1 -> bundle.putInt("profileId", it1) }
