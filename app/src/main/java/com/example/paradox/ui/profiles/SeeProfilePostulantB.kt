@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -43,7 +44,7 @@ class SeeProfilePostulantB : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val vista: View = inflater.inflate(R.layout.fragment_see_profile_postulant_b, container, false)
-        val buttonEdit = vista.findViewById<FloatingActionButton>(R.id.fabEditProfile)
+        val buttonEdit = vista.findViewById<Button>(R.id.btGoToEditProfile)
         loadPostulant(vista)
         buttonEdit.setOnClickListener {
             val intent = Intent(context, EditProfilePostulant::class.java)

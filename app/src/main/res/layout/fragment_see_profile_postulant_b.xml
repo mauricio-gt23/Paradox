@@ -7,13 +7,13 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         tools:context=".controller.activities.SeeProfilePostulant">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:context=".controller.activities.SeeProfilePostulant">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".controller.activities.SeeProfilePostulant">
 
             <TextView
                 android:id="@+id/tvProfileSupertitle"
@@ -150,9 +150,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="60dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="80dp"
                 android:text="@string/number_show_profile"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvNumberProfileTitle" />
 
@@ -170,27 +168,13 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvProfileSupertitle"
                 tools:ignore="ImageContrastCheck" />
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fabEditProfile"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_marginEnd="32dp"
-                android:layout_marginBottom="30dp"
-                android:clickable="true"
-                app:backgroundTint="#7E57C2"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:rippleColor="#00000000"
-                app:srcCompat="@android:drawable/ic_menu_edit"
-                android:contentDescription="@string/go_to_edit_profile" />
-
             <TextView
                 android:id="@+id/tvEmailTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="60dp"
                 android:layout_marginTop="60dp"
-                android:text="@string/email_title"
+                android:text="Correo electronico"
                 android:textColor="#7E57C2"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -205,6 +189,33 @@
                 android:text="@string/email_show_profile"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvEmailTitle" />
+
+            <Button
+                android:id="@+id/btGoToProfProfile"
+                android:layout_width="0dp"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/purple_500"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="60dp"
+                android:text="Ver perfil profesional"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvEmailShow" />
+
+            <Button
+                android:id="@+id/btGoToEditProfile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="60dp"
+                android:text="Editar perfil"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btGoToProfProfile" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 

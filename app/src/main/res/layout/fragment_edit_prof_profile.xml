@@ -49,8 +49,29 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Mi perfil profesional" />
 
-        <EditText
-            android:id="@+id/etDegreeEdit"
+<!--        <EditText-->
+<!--            android:id="@+id/etDegreeEdit"-->
+<!--            android:layout_width="340dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="36dp"-->
+<!--            android:layout_marginTop="28dp"-->
+<!--            android:layout_marginEnd="37dp"-->
+<!--            android:autofillHints=""-->
+<!--            android:ems="10"-->
+<!--            android:inputType="textPersonName"-->
+<!--            android:minHeight="48dp"-->
+<!--            android:text="@string/degree_edit"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/tvProfessionalProfile"-->
+<!--            tools:text="Ingeniero de sistemas" />-->
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/etDegreeEditCont"
+
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
             android:layout_width="340dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="36dp"
@@ -58,16 +79,32 @@
             android:layout_marginEnd="37dp"
             android:autofillHints=""
             android:ems="10"
+            android:hint="Ocupacion"
             android:inputType="textPersonName"
             android:minHeight="48dp"
             android:text="@string/degree_edit"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvProfessionalProfile"
-            tools:text="Ingeniero de sistemas" />
+            tools:ignore="MissingConstraints">
 
-        <EditText
-            android:id="@+id/etProfileDescriptionShow"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etDegreeEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/secondary"
+                android:textSize="14sp"
+                tools:text="Ingeniero de sistemas"
+                tools:ignore="TextContrastCheck" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/etProfileDescriptionShowCont"
+
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
             android:layout_width="340dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="36dp"
@@ -76,12 +113,44 @@
             android:autofillHints=""
             android:ems="10"
             android:gravity="start|top"
+            android:hint="Descripcion"
             android:inputType="textMultiLine"
             android:text="@string/profile_description_edit"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etDegreeEdit"
-            tools:text="Ingeniero de Sistemas de la Universidad La Sapienza (Roma -Italia ) con amplios conocimientos en tecnologías SOA con énfasis en arquitecturas basadas en JEE. Soy una persona capaz de aprender temas nuevos con el objetivo de aportar al trabajo en equipo y hacer crecer mi conocimiento." />
+            app:layout_constraintTop_toBottomOf="@+id/etDegreeEditCont"
+            tools:ignore="MissingConstraints">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etProfileDescriptionShow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/secondary"
+                android:textSize="14sp"
+                tools:text="Ingeniero de Sistemas de la Universidad La Sapienza (Roma -Italia ) con amplios conocimientos en tecnologías SOA con énfasis en arquitecturas basadas en JEE.
+            Soy una persona capaz de aprender temas nuevos con el objetivo de aportar al trabajo en equipo y hacer crecer mi conocimiento."
+                tools:ignore="TextContrastCheck" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+<!--        <EditText-->
+<!--            android:id="@+id/etProfileDescriptionShow"-->
+<!--            android:layout_width="340dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="36dp"-->
+<!--            android:layout_marginTop="15dp"-->
+<!--            android:layout_marginEnd="37dp"-->
+<!--            android:autofillHints=""-->
+<!--            android:ems="10"-->
+<!--            android:gravity="start|top"-->
+<!--            android:inputType="textMultiLine"-->
+<!--            android:text="@string/profile_description_edit"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/etDegreeEditCont"-->
+<!--            tools:text="Ingeniero de Sistemas de la Universidad La Sapienza (Roma -Italia ) con amplios conocimientos en tecnologías SOA con énfasis en arquitecturas basadas en JEE. -->
+<!--            Soy una persona capaz de aprender temas nuevos con el objetivo de aportar al trabajo en equipo y hacer crecer mi conocimiento." />-->
 
         <TextView
             android:id="@+id/tvMultiSelectStudies"
@@ -133,19 +202,20 @@
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etProfileDescriptionShow" />
+            app:layout_constraintTop_toBottomOf="@+id/etProfileDescriptionShowCont" />
 
         <Button
             android:id="@+id/btSaveProfProfile"
-            android:layout_width="wrap_content"
+            android:layout_width="340dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="161dp"
-            android:layout_marginEnd="162dp"
-            android:layout_marginBottom="26dp"
-            android:text="Save"
+            android:layout_marginTop="27dp"
+            android:layout_marginBottom="140dp"
+            android:text="Guardar cambios"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvMultiSelectStudies" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
