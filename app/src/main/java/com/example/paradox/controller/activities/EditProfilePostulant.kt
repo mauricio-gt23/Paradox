@@ -28,7 +28,6 @@ class EditProfilePostulant : AppCompatActivity() {
         }
         val buttonSaveEditProfile = findViewById<Button>(R.id.btSaveEdit)
         buttonSaveEditProfile.setOnClickListener {
-            Log.d("bri", "button pressed");
             saveEditedPostulant()
         }
     }
