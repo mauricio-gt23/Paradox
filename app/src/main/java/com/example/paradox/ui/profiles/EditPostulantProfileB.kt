@@ -13,6 +13,7 @@ import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.example.paradox.NavigationPostulantActivity
 import com.example.paradox.R
+import com.example.paradox.databinding.FragmentEditProfProfileBinding
 import com.example.paradox.databinding.FragmentFragmentaEditPostulantProfileBinding
 import com.example.paradox.models.PostulantBri
 import com.example.paradox.network.PostulantService
@@ -56,6 +57,10 @@ class EditPostulantProfileB : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding = FragmentFragmentaEditPostulantProfileBinding.bind(view)
+        binding.btSaveEdit.setOnClickListener{
+            saveEditedPostulant(view)
+        }
     }
 
     private fun saveEditedPostulant(view: View) {
