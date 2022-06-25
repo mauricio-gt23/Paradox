@@ -16,6 +16,8 @@ import com.example.paradox.adapter.SkillAdapter
 import com.example.paradox.adapter.StudyAdapter
 import com.example.paradox.controller.activities.EditProfessionalProfileP
 import com.example.paradox.controller.activities.SharedPreferences
+import com.example.paradox.databinding.FragmentSeeProfProfileBBinding
+import com.example.paradox.databinding.FragmentViewCompanyBinding
 import com.example.paradox.models.*
 import com.example.paradox.network.PostulantService
 import com.example.paradox.ui.mycompanies.ViewCompanyFragment
@@ -25,6 +27,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class SeeProfProfileB : Fragment() {
+    private lateinit var binding: FragmentSeeProfProfileBBinding
     lateinit var skillAdapter: SkillAdapter
     lateinit var languageAdapter: LanguageAdapter
     lateinit var studiesAdapter: StudyAdapter
@@ -42,18 +45,21 @@ class SeeProfProfileB : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        val vista: View = inflater.inflate(R.layout.fragment_see_prof_profile_b, container, false)
-        val buttonEditProfessional = vista.findViewById<FloatingActionButton>(R.id.btGoToEditProfessional)
-        loadProfProfileOfUser(vista)
-        buttonEditProfessional.setOnClickListener {
+        return inflater.inflate(R.layout.fragment_see_prof_profile_b, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding = FragmentSeeProfProfileBBinding.bind(view)
+        loadProfProfileOfUser(view)
+        binding.btGoToEditProfessional.setOnClickListener {
             val bundle = Bundle()
             bundle.putParcelable("ProfProfile", this.professionalProfilePostulant)
             this.profileId?.let { it1 -> bundle.putInt("profileId", it1) }
             val fragment = EditProfProfile()
             fragment.arguments = bundle
-            fragmentManager?.beginTransaction()?.replace(R.id.profProfileFragment, fragment)?.commit()
+            fragmentManager?.beginTransaction()?.replace(R.id.nav_host_fragment_content_navigation_postulant, fragment)?.commit()
         }
-        return vista
     }
 
     companion object {

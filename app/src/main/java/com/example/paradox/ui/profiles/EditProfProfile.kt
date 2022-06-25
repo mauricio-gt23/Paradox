@@ -3,6 +3,7 @@ package com.example.paradox.ui.profiles
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -14,10 +15,9 @@ import androidx.appcompat.app.AlertDialog
 import com.example.paradox.NavigationPostulantActivity
 import com.example.paradox.R
 import com.example.paradox.controller.activities.SharedPreferences
-import com.example.paradox.models.Language
-import com.example.paradox.models.ProfProfile
-import com.example.paradox.models.Skill
-import com.example.paradox.models.Study
+import com.example.paradox.databinding.FragmentEditProfProfileBinding
+import com.example.paradox.databinding.FragmentSeeProfProfileBBinding
+import com.example.paradox.models.*
 import com.example.paradox.network.PostulantService
 import retrofit2.Call
 import retrofit2.Callback
@@ -25,6 +25,7 @@ import retrofit2.Response
 
 
 class EditProfProfile : Fragment() {
+    private lateinit var binding: FragmentEditProfProfileBinding
     var languages = listOf<Language>()
     var existentLanguages = listOf<Language>()
     var studies = listOf<Study>()
@@ -39,7 +40,7 @@ class EditProfProfile : Fragment() {
 
         arguments?.let {
             profileId = it.getInt("profileId")
-            professionalProfilePostulant = it.getParcelable("companyId")!!
+            professionalProfilePostulant = it.getParcelable("ProfProfile")!!
         }
 
     }
@@ -47,27 +48,35 @@ class EditProfProfile : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
-        val vista: View = inflater.inflate(R.layout.fragment_edit_prof_profile, container, false)
-        val tvMultiSelect = vista.findViewById<TextView>(R.id.tvMultiSelectB)
-        val tvMultiSelectStudies = vista.findViewById<TextView>(R.id.tvMultiSelectStudies)
-        val tvMultiSelectLenguages = vista.findViewById<TextView>(R.id.tvMultiSelectLenguages)
-        val btSaveProfProfile = vista.findViewById<TextView>(R.id.btSaveProfProfile)
+        return inflater.inflate(R.layout.fragment_edit_prof_profile, container, false)
+    }
 
-        tvMultiSelect.setOnClickListener{
-            configMultiSelectSkills(vista)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding = FragmentEditProfProfileBinding.bind(view)
+
+        arguments?.let {
+            binding.etDegreeEdit.setText(professionalProfilePostulant.ocupation)
+            binding.etProfileDescriptionShow.setText(professionalProfilePostulant.description)
+            if (profileId != null) {
+                getData(profileId)
+            }
         }
-        tvMultiSelectStudies.setOnClickListener{
-            configMultiSelectStudies(vista)
+
+        binding.tvMultiSelectB.setOnClickListener{
+            configMultiSelectSkills(view)
         }
-        tvMultiSelectLenguages.setOnClickListener{
-            configMultiSelectLanguages(vista)
+        binding.tvMultiSelectStudies.setOnClickListener{
+            configMultiSelectStudies(view)
         }
-        btSaveProfProfile.setOnClickListener{
-            saveEditedProfProfile(vista)
+        binding.tvMultiSelectLenguages.setOnClickListener{
+            configMultiSelectLanguages(view)
         }
-        return vista
+        binding.btSaveProfProfile.setOnClickListener{
+            saveEditedProfProfile(view)
+        }
     }
 
     companion object {
@@ -151,32 +160,32 @@ class EditProfProfile : Fragment() {
         builder?.create()?.show()
     }
     private fun configMultiSelectLanguages(view: View) {
-        val checkedSkillsArray = BooleanArray(skills.size)
-        val tvMultiSelect = view.findViewById<TextView>(R.id.tvMultiSelectB)
+        val checkedLanguagesArray = BooleanArray(languages.size)
+        val tvMultiSelect = view.findViewById<TextView>(R.id.tvMultiSelectLenguages)
         val builder = context?.let { AlertDialog.Builder(it) }
-        val skillsList = mutableListOf<String>()
+        val languagesList = mutableListOf<String>()
         // String array for alert dialog multi choice items
-        for (i in skills.indices) {
-            skillsList.add(skills[i].name)
-            for (j in existentSkills.indices) {
-                if (skills[i].id == existentSkills[j].id) {
-                    checkedSkillsArray[i] = true
+        for (i in languages.indices) {
+            languagesList.add(languages[i].name)
+            for (j in existentLanguages.indices) {
+                if (languages[i].id == existentLanguages[j].id) {
+                    checkedLanguagesArray[i] = true
                 }
             }
         }
-        val languagesArray: Array<String> = skillsList.toTypedArray()
+        val languagesArray: Array<String> = languagesList.toTypedArray()
         val colorsList = listOf(*languagesArray)
-        builder?.setTitle("Select your skills")
-        builder?.setMultiChoiceItems(languagesArray, checkedSkillsArray) { _, which, isChecked ->
-            checkedSkillsArray[which] = isChecked
+        builder?.setTitle("Select your languages")
+        builder?.setMultiChoiceItems(languagesArray, checkedLanguagesArray) { _, which, isChecked ->
+            checkedLanguagesArray[which] = isChecked
             val currentItem = colorsList[which]
             Toast.makeText(context, "$currentItem $isChecked", Toast.LENGTH_SHORT).show()
         }
         builder?.setPositiveButton("OK") { _, _ ->
-            tvMultiSelect.hint = "Select your skills..."
+            tvMultiSelect.hint = "Select your languages..."
             tvMultiSelect.text = ""
-            for (i in checkedSkillsArray.indices) {
-                val checked = checkedSkillsArray[i]
+            for (i in checkedLanguagesArray.indices) {
+                val checked = checkedLanguagesArray[i]
                 if (checked) {
                     tvMultiSelect.text = tvMultiSelect.text.toString() + colorsList[i] + "\n"
                 }
@@ -194,12 +203,12 @@ class EditProfProfile : Fragment() {
 
         val profProfileBri = ProfProfile(professionalProfilePostulant.id, etDegreeEdit.text.toString(), etProfileDescriptionShow.text.toString(), professionalProfilePostulant.video)
 
-        profileId?.let {
+        profileId.let {
             PostulantService.postulantInstance.editProfileOfSpecificPostulant(
                 id,
                 profileId, profProfileBri
             )
-        }?.enqueue(object : Callback<ProfProfile> {
+        }.enqueue(object : Callback<ProfProfile> {
             override fun onResponse(call: Call<ProfProfile>, response: Response<ProfProfile>) {
                 if (response.isSuccessful) {
                     Toast.makeText(context, "Successfully updated", Toast.LENGTH_LONG).show()
@@ -219,4 +228,110 @@ class EditProfProfile : Fragment() {
             }
         })
     }
+    private fun getData(profileId: Int) {
+        val request = PostulantService.postulantInstance.getAllLanguages()
+        val request1 = PostulantService.postulantInstance.getAllStudies()
+        val request2 = PostulantService.postulantInstance.getAllSkills()
+        val request3 = PostulantService.postulantInstance.getSkillsByProfileId(profileId)
+        val request4 = PostulantService.postulantInstance.getLanguagesByProfileId(profileId)
+        val request5 = PostulantService.postulantInstance.getStudiesByProfileId(profileId)
+
+        request.enqueue(object : Callback<Languages> {
+            override fun onResponse(call: Call<Languages>, response: Response<Languages>) {
+                if (response.isSuccessful){
+                    val content = response.body()
+                    if (content != null) {
+                        languages = content.languages
+                        Log.d("Brigitte", languages.toString())
+                    }
+                }
+            }
+
+            override fun onFailure(call: Call<Languages>, t: Throwable) {
+                Toast.makeText(context, "Languages could not be retrieved", Toast.LENGTH_LONG).show()
+            }
+        })
+
+        request1.enqueue(object : Callback<Studies> {
+            override fun onResponse(call: Call<Studies>, response: Response<Studies>) {
+                if (response.isSuccessful){
+                    val content = response.body()
+                    if (content != null) {
+                        studies = content.studies
+                        Log.d("Brigitte", studies.toString())
+                    }
+                }
+            }
+
+            override fun onFailure(call: Call<Studies>, t: Throwable) {
+                Toast.makeText(context, "Studies could not be retrieved", Toast.LENGTH_LONG).show()
+            }
+        })
+
+        request2.enqueue(object : Callback<Skills> {
+            override fun onResponse(call: Call<Skills>, response: Response<Skills>) {
+                if (response.isSuccessful){
+                    val content = response.body()
+                    if (content != null) {
+                        skills = content.skills
+                        Log.d("Brigitte", skills.toString())
+                    }
+                }
+            }
+
+            override fun onFailure(call: Call<Skills>, t: Throwable) {
+                Toast.makeText(context, "Skills could not be retrieved", Toast.LENGTH_LONG).show()
+            }
+        })
+
+        request3.enqueue(object : Callback<Skills> {
+            override fun onResponse(call: Call<Skills>, response: Response<Skills>) {
+                if (response.isSuccessful){
+                    val content = response.body()
+                    if (content != null) {
+                        existentSkills = content.skills
+                        Log.d("Brigitte", existentSkills.toString())
+                    }
+                }
+            }
+
+            override fun onFailure(call: Call<Skills>, t: Throwable) {
+                Toast.makeText(context, "Skills could not be retrieved", Toast.LENGTH_LONG).show()
+            }
+        })
+
+        request4.enqueue(object : Callback<Languages> {
+            override fun onResponse(call: Call<Languages>, response: Response<Languages>) {
+                if (response.isSuccessful){
+                    val content = response.body()
+                    if (content != null) {
+                        existentLanguages = content.languages
+                        Log.d("Brigitte", existentLanguages.toString())
+                    }
+                }
+            }
+
+            override fun onFailure(call: Call<Languages>, t: Throwable) {
+                Toast.makeText(context, "Languages could not be retrieved", Toast.LENGTH_LONG).show()
+            }
+        })
+
+        request5.enqueue(object : Callback<Studies> {
+            override fun onResponse(call: Call<Studies>, response: Response<Studies>) {
+                if (response.isSuccessful){
+                    val content = response.body()
+                    if (content != null) {
+                        existentStudies = content.studies
+                        Log.d("Brigitte", existentStudies.toString())
+                    }
+                }
+            }
+
+            override fun onFailure(call: Call<Studies>, t: Throwable) {
+                Toast.makeText(context, "Studies could not be retrieved", Toast.LENGTH_LONG).show()
+            }
+        })
+
+    }
+
 }

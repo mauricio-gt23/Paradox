@@ -86,7 +86,7 @@
         <TextView
             android:id="@+id/tvMultiSelectStudies"
             android:layout_width="340dp"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_marginStart="36dp"
             android:layout_marginTop="15dp"
