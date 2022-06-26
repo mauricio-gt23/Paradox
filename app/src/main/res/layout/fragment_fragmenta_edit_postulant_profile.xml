@@ -4,10 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- TODO: Update blank fragment layout -->
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    <ScrollView
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".controller.activities.FragmentaEditPostulantProfile">
@@ -173,7 +171,7 @@
                 android:autofillHints=""
                 android:hint="Numero telefonico"
                 android:ems="10"
-                android:inputType="textPersonName"
+                android:inputType="phone"
                 android:text="@string/number_edit_profile"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -187,6 +185,7 @@
                     android:textColor="@color/secondary"
                     android:textSize="14sp"
                     tools:text="989654323"
+                    android:inputType="phone"
                     tools:ignore="TextContrastCheck" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -202,7 +201,7 @@
                 android:layout_marginEnd="40dp"
                 android:autofillHints=""
                 android:ems="10"
-                android:inputType="textPersonName"
+                android:inputType="textEmailAddress"
                 android:text="@string/email_edit_profile"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -216,11 +215,41 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/secondary"
                     android:textSize="14sp"
+                    android:inputType="textEmailAddress"
                     tools:text="marcusworkman@gmail.com"
                     tools:ignore="TextContrastCheck" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/etProfPasswordCont"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="58dp"
+                android:hint="Contraseña"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="40dp"
+                android:autofillHints=""
+                android:ems="10"
+                android:text="@string/email_edit_profile"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etProfEmailCont"
+                tools:ignore="MissingConstraints">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etProfPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/secondary"
+                    android:textSize="14sp"
+                    android:inputType="textPassword"
+                    tools:text="marcusworkman@gmail.com"
+                    tools:ignore="TextContrastCheck" />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
             <Button
                 android:id="@+id/btSaveEdit"
@@ -234,7 +263,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etProfEmailCont" />
+                app:layout_constraintTop_toBottomOf="@+id/etProfPasswordCont" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 

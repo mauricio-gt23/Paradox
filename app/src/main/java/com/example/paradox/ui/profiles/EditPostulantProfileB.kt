@@ -11,6 +11,8 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
+import com.bumptech.glide.request.RequestOptions
 import com.example.paradox.NavigationPostulantActivity
 import com.example.paradox.R
 import com.example.paradox.databinding.FragmentEditProfProfileBinding
@@ -58,6 +60,7 @@ class EditPostulantProfileB : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentFragmentaEditPostulantProfileBinding.bind(view)
+        loadData(view)
         binding.btSaveEdit.setOnClickListener{
             saveEditedPostulant(view)
         }
@@ -114,7 +117,7 @@ class EditPostulantProfileB : Fragment() {
         etCivilStatusProfile.setText(postulantBri.civilStatus)
         etPhoneProfProfileEdit.setText(postulantBri.number.toString())
         etProfEmail.setText(postulantBri.email)
-        context?.let { Glide.with(it).load(postulantBri.link).into(ivProfilePhotoEdir) }
+        context?.let { Glide.with(it).load(postulantBri.link).apply(RequestOptions.bitmapTransform( RoundedCorners(18))).into(ivProfilePhotoEdir) }
 
     }
 }
