@@ -1,13 +1,11 @@
 package com.example.paradox.controller.activities
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.Toast
+import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 import com.example.paradox.R
 import com.example.paradox.models.*
 import com.example.paradox.network.RegisterService
@@ -21,7 +19,6 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.io.IOException
-import java.util.HashMap
 
 class RegisterPostulantActivity : AppCompatActivity() {
     private val File = 1
@@ -32,6 +29,7 @@ class RegisterPostulantActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register_postulant)
         val etPerfilPostulante = findViewById<Button>(R.id.btnContinuarPostulante)
+        val tvTerms = findViewById<TextView>(R.id.textView2)
 
         val uploadImageView = findViewById<ImageView>(R.id.uploadImageViewPost)
         uploadImageView.setOnClickListener {
@@ -43,6 +41,11 @@ class RegisterPostulantActivity : AppCompatActivity() {
             addPostulant()
 
 
+        }
+        tvTerms.setOnClickListener {
+            val browserIntent = Intent(Intent.ACTION_VIEW,
+                Uri.parse("https://www.freeprivacypolicy.com/live/b00fac55-ba79-4c5f-a2bb-cada03733179"))
+            startActivity(browserIntent)
         }
     }
 
@@ -58,6 +61,7 @@ class RegisterPostulantActivity : AppCompatActivity() {
         val txtEmailPost = findViewById<EditText>(R.id.txtCreateEmailPost)
         val txtPhonePost = findViewById<EditText>(R.id.txtCreatePhonePost)
         val txtcontraPost = findViewById<EditText>(R.id.txtCreateContraPost)
+
         val txDocumentoIdentidadPost = findViewById<EditText>(R.id.txtCreateDocumentoIdentidadPost)
 
         val txtCivilStatusPost = findViewById<EditText>(R.id.txtCreateEstadoCivilPost)

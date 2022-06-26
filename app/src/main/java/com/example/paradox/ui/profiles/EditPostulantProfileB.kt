@@ -11,6 +11,7 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
 import com.example.paradox.NavigationPostulantActivity
@@ -119,7 +120,9 @@ class EditPostulantProfileB : Fragment() {
         etPhoneProfProfileEdit.setText(postulantBri.number.toString())
         etProfEmail.setText(postulantBri.email)
         etProfPassword.setText(postulantBri.password)
-        context?.let { Glide.with(it).load(postulantBri.link).apply(RequestOptions.bitmapTransform( RoundedCorners(40))).into(ivProfilePhotoEdir) }
+        context?.let { Glide.with(it).load(postulantBri.link)
+            .transform(CenterCrop(), RoundedCorners(20))
+            .into(ivProfilePhotoEdir) }
 
     }
 }

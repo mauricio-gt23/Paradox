@@ -1,6 +1,7 @@
 package com.example.paradox.controller.activities
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.widget.*
@@ -37,6 +38,7 @@ class RegisterEmployeerActivity : AppCompatActivity() {
 
         val btRegister = findViewById<Button>(R.id.btRegistrarseEmp)
         val btncheckBox = findViewById<CheckBox>(R.id.btncheckBox)
+        val tvTerms = findViewById<TextView>(R.id.textView2)
         val uploadImageView = findViewById<ImageView>(R.id.uploadImageView)
         uploadImageView.setOnClickListener {
             fileUpload()
@@ -55,6 +57,12 @@ class RegisterEmployeerActivity : AppCompatActivity() {
 
 
             }
+        }
+
+        tvTerms.setOnClickListener {
+            val browserIntent = Intent(Intent.ACTION_VIEW,
+                Uri.parse("https://www.freeprivacypolicy.com/live/b00fac55-ba79-4c5f-a2bb-cada03733179"))
+            startActivity(browserIntent)
         }
 
     }

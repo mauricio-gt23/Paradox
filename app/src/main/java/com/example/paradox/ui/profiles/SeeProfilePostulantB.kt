@@ -12,6 +12,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
 import com.example.paradox.R
@@ -90,7 +91,7 @@ class SeeProfilePostulantB : Fragment() {
                                 val result = postulantRetrieved.link.startsWith("https:")
                                 if (result) {
                                     Glide.with(this@SeeProfilePostulantB).load(postulantRetrieved.link)
-                                        .apply(RequestOptions.bitmapTransform( RoundedCorners(40)))
+                                        .transform(CenterCrop(), RoundedCorners(20))
                                         .into(ivProfilePhoto)
                                 } else {
                                     Glide.with(this@SeeProfilePostulantB).load("https://i.stack.imgur.com/34AD2.jpg")
