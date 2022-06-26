@@ -109,6 +109,7 @@ class EditPostulantProfileB : Fragment() {
         val etCivilStatusProfile = view.findViewById<EditText>(R.id.etCivilStatusProfile)
         val etPhoneProfProfileEdit = view.findViewById<EditText>(R.id.etPhoneProfProfileEdit)
         val etProfEmail = view.findViewById<EditText>(R.id.etProfEmail)
+        val etProfPassword = view.findViewById<EditText>(R.id.etProfPassword)
         val ivProfilePhotoEdir = view.findViewById<ImageView>(R.id.ivProfilePhotoEdir)
 
         etNameProfProfile.setText(postulantBri.firstName)
@@ -117,7 +118,8 @@ class EditPostulantProfileB : Fragment() {
         etCivilStatusProfile.setText(postulantBri.civilStatus)
         etPhoneProfProfileEdit.setText(postulantBri.number.toString())
         etProfEmail.setText(postulantBri.email)
-        context?.let { Glide.with(it).load(postulantBri.link).apply(RequestOptions.bitmapTransform( RoundedCorners(18))).into(ivProfilePhotoEdir) }
+        etProfPassword.setText(postulantBri.password)
+        context?.let { Glide.with(it).load(postulantBri.link).apply(RequestOptions.bitmapTransform( RoundedCorners(40))).into(ivProfilePhotoEdir) }
 
     }
 }

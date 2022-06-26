@@ -90,7 +90,7 @@ class SeeProfilePostulantB : Fragment() {
                                 val result = postulantRetrieved.link.startsWith("https:")
                                 if (result) {
                                     Glide.with(this@SeeProfilePostulantB).load(postulantRetrieved.link)
-                                        .apply(RequestOptions.bitmapTransform( RoundedCorners(18)))
+                                        .apply(RequestOptions.bitmapTransform( RoundedCorners(40)))
                                         .into(ivProfilePhoto)
                                 } else {
                                     Glide.with(this@SeeProfilePostulantB).load("https://i.stack.imgur.com/34AD2.jpg")
