@@ -14,6 +14,9 @@ interface PostulantInterface2 {
     @PUT("postulants/{id}")
     fun editPostulant(@Path("id") postulantId: Int, @Body postulantBri: PostulantBri): Call<PostulantBri>
 
+    @DELETE("profiles/{profileId}/all")
+    fun deleteAllListsProfProfile(@Path("profileId") profileId: Int): Call<ProfProfile>
+
     @GET("postulants/{postulantId}/profiles/{profileId}")
     fun getProfileByIdAndPostulantId(@Path("postulantId") postulantId: Int, @Path("profileId") profileId: Int): Call<ProfProfile>
 
@@ -28,6 +31,16 @@ interface PostulantInterface2 {
 
     @GET("profiles/{profileId}/languages")
     fun getLanguagesByProfileId(@Path("profileId") postulantId: Int): Call<Languages>
+
+    @POST("profiles/{profileId}/languages/{languageId}")
+    fun saveLanguageProfile(@Path("profileId") postulantId: Int, @Path("languageId") languageId: Int): Call<ProfProfile>
+
+    @POST("profiles/{profileId}/skills/{skillId}")
+    fun saveSkillProfile(@Path("profileId") postulantId: Int, @Path("skillId") skillId: Int): Call<ProfProfile>
+
+    @POST("profiles/{profileId}/studies/{studyId}")
+    fun saveStudyProfile(@Path("profileId") postulantId: Int, @Path("studyId") studyId: Int): Call<ProfProfile>
+
 
     @GET("languages")
     fun getAllLanguages(): Call<Languages>

@@ -31,9 +31,15 @@ class EditProfProfile : Fragment() {
     var studies = listOf<Study>()
     var existentStudies = listOf<Study>()
     var skills = listOf<Skill>()
+    var chosenSkills = mutableListOf<Int>()
+    var chosenLanguages = mutableListOf<Int>()
+    var chosenStudies = mutableListOf<Int>()
     var existentSkills = listOf<Skill>()
     var professionalProfilePostulant = ProfProfile()
     var profileId: Int = 0
+    var changeSkills: Boolean = false
+    var changeLanguages: Boolean = false
+    var changeStudies: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -93,12 +99,19 @@ class EditProfProfile : Fragment() {
         val tvMultiSelect = view.findViewById<TextView>(R.id.tvMultiSelectB)
         val builder = context?.let { AlertDialog.Builder(it) }
         val skillsList = mutableListOf<String>()
-        // String array for alert dialog multi choice items
         for (i in skills.indices) {
             skillsList.add(skills[i].name)
-            for (j in existentSkills.indices) {
-                if (skills[i].id == existentSkills[j].id) {
-                    checkedSkillsArray[i] = true
+            if (!changeSkills) {
+                for (j in existentSkills.indices) {
+                    if (skills[i].id == existentSkills[j].id) {
+                        checkedSkillsArray[i] = true
+                    }
+                }
+            } else {
+                for (idSkill in chosenSkills) {
+                    if (skills[i].id == idSkill) {
+                        checkedSkillsArray[i] = true
+                    }
                 }
             }
         }
@@ -107,8 +120,6 @@ class EditProfProfile : Fragment() {
         builder?.setTitle("Select your skills")
         builder?.setMultiChoiceItems(languagesArray, checkedSkillsArray) { _, which, isChecked ->
             checkedSkillsArray[which] = isChecked
-            val currentItem = colorsList[which]
-            Toast.makeText(context, "$currentItem $isChecked", Toast.LENGTH_SHORT).show()
         }
         builder?.setPositiveButton("OK") { _, _ ->
             tvMultiSelect.hint = "Select your skills..."
@@ -119,6 +130,14 @@ class EditProfProfile : Fragment() {
                     tvMultiSelect.text = tvMultiSelect.text.toString() + colorsList[i] + "\n"
                 }
             }
+            chosenSkills.clear()
+            for (i in skills.indices) {
+                if (checkedSkillsArray[i]) {
+                    chosenSkills.add(skills[i].id)
+                }
+            }
+            changeSkills = true
+            Log.d("caro", chosenSkills.toString())
         }
         builder?.setNeutralButton("Cancel") { _, _ -> }
         builder?.create()?.show()
@@ -142,8 +161,6 @@ class EditProfProfile : Fragment() {
         builder?.setTitle("Select your studies")
         builder?.setMultiChoiceItems(studiesArray, checkedStudiesArray) { _, which, isChecked ->
             checkedStudiesArray[which] = isChecked
-            val currentItem = colorsList[which]
-            Toast.makeText(context, "$currentItem $isChecked", Toast.LENGTH_SHORT).show()
         }
         builder?.setPositiveButton("OK") { _, _ ->
             tvMultiSelectStudies.hint = "Select your studies..."
@@ -153,6 +170,11 @@ class EditProfProfile : Fragment() {
                 if (checked) {
                     tvMultiSelectStudies.text =
                         tvMultiSelectStudies.text.toString() + colorsList[i] + "\n"
+                }
+            }
+            for (i in studies.indices) {
+                if (checkedStudiesArray[i]) {
+                    chosenStudies.add(studies[i].id)
                 }
             }
         }
@@ -178,8 +200,6 @@ class EditProfProfile : Fragment() {
         builder?.setTitle("Select your languages")
         builder?.setMultiChoiceItems(languagesArray, checkedLanguagesArray) { _, which, isChecked ->
             checkedLanguagesArray[which] = isChecked
-            val currentItem = colorsList[which]
-            Toast.makeText(context, "$currentItem $isChecked", Toast.LENGTH_SHORT).show()
         }
         builder?.setPositiveButton("OK") { _, _ ->
             tvMultiSelect.hint = "Select your languages..."
@@ -188,6 +208,11 @@ class EditProfProfile : Fragment() {
                 val checked = checkedLanguagesArray[i]
                 if (checked) {
                     tvMultiSelect.text = tvMultiSelect.text.toString() + colorsList[i] + "\n"
+                }
+            }
+            for (i in languages.indices) {
+                if (checkedLanguagesArray[i]) {
+                    chosenLanguages.add(languages[i].id)
                 }
             }
         }
@@ -203,6 +228,25 @@ class EditProfProfile : Fragment() {
 
         val profProfileBri = ProfProfile(professionalProfilePostulant.id, etDegreeEdit.text.toString(), etProfileDescriptionShow.text.toString(), professionalProfilePostulant.video)
 
+        PostulantService.postulantInstance.deleteAllListsProfProfile(profileId).enqueue(
+                object : Callback<ProfProfile>{
+                    override fun onResponse(call: Call<ProfProfile>, response: Response<ProfProfile>) {
+                    Toast.makeText(context, "Espera un momento...", Toast.LENGTH_LONG).show()
+                    saveTwoFirstFields(profProfileBri)
+                    saveMultiSelects()
+                }
+
+                override fun onFailure(call: Call<ProfProfile>, t: Throwable) {
+                    Toast.makeText(
+                        context,
+                        "Operation unsuccessfully",
+                        Toast.LENGTH_LONG
+                    ).show()                }
+
+            }
+        )
+    }
+    private fun saveTwoFirstFields(profProfileBri: ProfProfile) {
         profileId.let {
             PostulantService.postulantInstance.editProfileOfSpecificPostulant(
                 id,
@@ -227,6 +271,65 @@ class EditProfProfile : Fragment() {
                 ).show()
             }
         })
+    }
+
+    private fun saveMultiSelects() {
+        for (idLanguage in chosenLanguages) {
+            PostulantService.postulantInstance.saveLanguageProfile(profileId, idLanguage).enqueue(
+                object : Callback<ProfProfile>{
+                    override fun onResponse(call: Call<ProfProfile>, response: Response<ProfProfile>) {
+                        Toast.makeText(context, "Saved language...", Toast.LENGTH_SHORT).show()
+                    }
+
+                    override fun onFailure(call: Call<ProfProfile>, t: Throwable) {
+                        Toast.makeText(
+                            context,
+                            "Operation unsuccessfully",
+                            Toast.LENGTH_LONG
+                        ).show()
+                    }
+
+                }
+            )
+        }
+
+        for (idSkill in chosenSkills) {
+            PostulantService.postulantInstance.saveSkillProfile(profileId, idSkill).enqueue(
+                object : Callback<ProfProfile>{
+                    override fun onResponse(call: Call<ProfProfile>, response: Response<ProfProfile>) {
+                        Toast.makeText(context, "Saved skill...", Toast.LENGTH_SHORT).show()
+                    }
+
+                    override fun onFailure(call: Call<ProfProfile>, t: Throwable) {
+                        Toast.makeText(
+                            context,
+                            "Operation unsuccessfully",
+                            Toast.LENGTH_LONG
+                        ).show()
+                    }
+
+                }
+            )
+        }
+
+        for (idStudy in chosenStudies) {
+            PostulantService.postulantInstance.saveStudyProfile(profileId, idStudy).enqueue(
+                object : Callback<ProfProfile>{
+                    override fun onResponse(call: Call<ProfProfile>, response: Response<ProfProfile>) {
+                        Toast.makeText(context, "Saved skill...", Toast.LENGTH_SHORT).show()
+                    }
+
+                    override fun onFailure(call: Call<ProfProfile>, t: Throwable) {
+                        Toast.makeText(
+                            context,
+                            "Operation unsuccessfully",
+                            Toast.LENGTH_LONG
+                        ).show()
+                    }
+
+                }
+            )
+        }
     }
     private fun getData(profileId: Int) {
         val request = PostulantService.postulantInstance.getAllLanguages()
