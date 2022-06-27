@@ -33,6 +33,12 @@ class LanguagePrototype(itemView: View) : RecyclerView.ViewHolder(itemView){
 
     fun bind(language: Language) {
         tvLanguageName.text = language.name
-        tvLanguageLevel.text = language.level.toString()
+        if (language.level == 1) {
+            tvLanguageLevel.text = "Básico"
+        } else if (language.level == 2) {
+            tvLanguageLevel.text = "Intermedio"
+        } else if (language.level == 3) {
+            tvLanguageLevel.text = "Avanzado"
+        }
     }
 }

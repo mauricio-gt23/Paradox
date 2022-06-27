@@ -83,6 +83,11 @@ class EditProfProfile : Fragment() {
         binding.btSaveProfProfile.setOnClickListener{
             saveEditedProfProfile(view)
         }
+        binding.btBack2.setOnClickListener{
+            val fragment = SeeProfProfileB()
+            fragmentManager?.beginTransaction()?.replace(R.id.nav_host_fragment_content_navigation_postulant, fragment)?.commit()
+        }
+
     }
 
     companion object {
@@ -150,9 +155,17 @@ class EditProfProfile : Fragment() {
         // String array for alert dialog multi choice items
         for (i in studies.indices) {
             studiesList.add(studies[i].name)
-            for (j in existentStudies.indices) {
-                if (studies[i].id == existentStudies[j].id) {
-                    checkedStudiesArray[i] = true
+            if (!changeStudies) {
+                for (j in existentStudies.indices) {
+                    if (studies[i].id == existentStudies[j].id) {
+                        checkedStudiesArray[i] = true
+                    }
+                }
+            } else {
+                for (idStudy in chosenStudies) {
+                    if (studies[i].id == idStudy) {
+                        checkedStudiesArray[i] = true
+                    }
                 }
             }
         }
@@ -177,6 +190,7 @@ class EditProfProfile : Fragment() {
                     chosenStudies.add(studies[i].id)
                 }
             }
+            changeStudies = true
         }
         builder?.setNeutralButton("Cancel") { _, _ -> }
         builder?.create()?.show()
@@ -189,9 +203,17 @@ class EditProfProfile : Fragment() {
         // String array for alert dialog multi choice items
         for (i in languages.indices) {
             languagesList.add(languages[i].name)
-            for (j in existentLanguages.indices) {
-                if (languages[i].id == existentLanguages[j].id) {
-                    checkedLanguagesArray[i] = true
+            if (!changeLanguages) {
+                for (j in existentLanguages.indices) {
+                    if (languages[i].id == existentLanguages[j].id) {
+                        checkedLanguagesArray[i] = true
+                    }
+                }
+            } else {
+                for (idLanguage in chosenLanguages) {
+                    if (languages[i].id == idLanguage) {
+                        checkedLanguagesArray[i] = true
+                    }
                 }
             }
         }
@@ -215,6 +237,7 @@ class EditProfProfile : Fragment() {
                     chosenLanguages.add(languages[i].id)
                 }
             }
+            changeLanguages = true
         }
         builder?.setNeutralButton("Cancel") { _, _ -> }
         builder?.create()?.show()
@@ -231,10 +254,9 @@ class EditProfProfile : Fragment() {
         PostulantService.postulantInstance.deleteAllListsProfProfile(profileId).enqueue(
                 object : Callback<ProfProfile>{
                     override fun onResponse(call: Call<ProfProfile>, response: Response<ProfProfile>) {
-                    Toast.makeText(context, "Espera un momento...", Toast.LENGTH_LONG).show()
-                    saveTwoFirstFields(profProfileBri)
-                    saveMultiSelects()
-                }
+                        saveMultiSelects()
+                        saveTwoFirstFields(profProfileBri)
+                    }
 
                 override fun onFailure(call: Call<ProfProfile>, t: Throwable) {
                     Toast.makeText(
@@ -272,20 +294,33 @@ class EditProfProfile : Fragment() {
             }
         })
     }
-
     private fun saveMultiSelects() {
+        if (chosenLanguages.size == 0){
+            for (i in existentLanguages.indices) {
+                chosenLanguages.add(existentLanguages[i].id)
+            }
+        }
+        if (chosenSkills.size == 0){
+            for (i in existentSkills.indices) {
+                chosenSkills.add(existentSkills[i].id)
+            }
+        }
+        if (chosenStudies.size == 0){
+            for (i in existentStudies.indices) {
+                chosenStudies.add(existentStudies[i].id)
+            }
+        }
         for (idLanguage in chosenLanguages) {
             PostulantService.postulantInstance.saveLanguageProfile(profileId, idLanguage).enqueue(
                 object : Callback<ProfProfile>{
                     override fun onResponse(call: Call<ProfProfile>, response: Response<ProfProfile>) {
-                        Toast.makeText(context, "Saved language...", Toast.LENGTH_SHORT).show()
                     }
 
                     override fun onFailure(call: Call<ProfProfile>, t: Throwable) {
                         Toast.makeText(
                             context,
                             "Operation unsuccessfully",
-                            Toast.LENGTH_LONG
+                            Toast.LENGTH_SHORT
                         ).show()
                     }
 
@@ -297,7 +332,6 @@ class EditProfProfile : Fragment() {
             PostulantService.postulantInstance.saveSkillProfile(profileId, idSkill).enqueue(
                 object : Callback<ProfProfile>{
                     override fun onResponse(call: Call<ProfProfile>, response: Response<ProfProfile>) {
-                        Toast.makeText(context, "Saved skill...", Toast.LENGTH_SHORT).show()
                     }
 
                     override fun onFailure(call: Call<ProfProfile>, t: Throwable) {
@@ -316,7 +350,6 @@ class EditProfProfile : Fragment() {
             PostulantService.postulantInstance.saveStudyProfile(profileId, idStudy).enqueue(
                 object : Callback<ProfProfile>{
                     override fun onResponse(call: Call<ProfProfile>, response: Response<ProfProfile>) {
-                        Toast.makeText(context, "Saved skill...", Toast.LENGTH_SHORT).show()
                     }
 
                     override fun onFailure(call: Call<ProfProfile>, t: Throwable) {

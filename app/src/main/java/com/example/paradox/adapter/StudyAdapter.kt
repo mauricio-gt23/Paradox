@@ -30,10 +30,12 @@ class StudyAdapter(val studies: List<Study>, val context: Context)
 
 class StudyPrototype(itemView: View) : RecyclerView.ViewHolder(itemView){
     val tvStudyName = itemView.findViewById<TextView>(R.id.tvStudyName)
-    val tvStudyDegree = itemView.findViewById<TextView>(R.id.tvStudyDegree)
+    // val tvStudyDegree = itemView.findViewById<TextView>(R.id.tvStudyDegree)
 
     fun bind(study: Study) {
         tvStudyName.text = study.name
+/*
         tvStudyDegree.text = study.degree.toString()
+*/
     }
 }

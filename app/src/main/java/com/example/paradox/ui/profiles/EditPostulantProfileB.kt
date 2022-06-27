@@ -65,6 +65,10 @@ class EditPostulantProfileB : Fragment() {
         binding.btSaveEdit.setOnClickListener{
             saveEditedPostulant(view)
         }
+        binding.btBack2.setOnClickListener {
+            val fragment = SeeProfilePostulantB()
+            fragmentManager?.beginTransaction()?.replace(R.id.nav_host_fragment_content_navigation_postulant, fragment)?.commit()
+        }
     }
 
     private fun saveEditedPostulant(view: View) {

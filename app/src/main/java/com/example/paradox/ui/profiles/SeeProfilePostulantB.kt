@@ -20,6 +20,7 @@ import com.example.paradox.controller.activities.EditProfilePostulant
 import com.example.paradox.controller.activities.SharedPreferences
 import com.example.paradox.databinding.FragmentSeeProfProfileBBinding
 import com.example.paradox.databinding.FragmentSeeProfilePostulantBBinding
+import com.example.paradox.databinding.NavHeaderNavigationPostulantBinding
 import com.example.paradox.models.PostulantBri
 import com.example.paradox.network.PostulantService
 import retrofit2.Call
@@ -29,6 +30,7 @@ import retrofit2.Response
 
 class SeeProfilePostulantB : Fragment() {
     private lateinit var binding: FragmentSeeProfilePostulantBBinding
+
     private var postulantBri = PostulantBri()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -93,6 +95,7 @@ class SeeProfilePostulantB : Fragment() {
                                     Glide.with(this@SeeProfilePostulantB).load(postulantRetrieved.link)
                                         .transform(CenterCrop(), RoundedCorners(20))
                                         .into(ivProfilePhoto)
+
                                 } else {
                                     Glide.with(this@SeeProfilePostulantB).load("https://i.stack.imgur.com/34AD2.jpg")
                                         .into(ivProfilePhoto)
