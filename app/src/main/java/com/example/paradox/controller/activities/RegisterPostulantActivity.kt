@@ -5,6 +5,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.widget.*
+import android.provider.MediaStore
 import androidx.appcompat.app.AppCompatActivity
 import com.example.paradox.R
 import com.example.paradox.models.*
@@ -52,6 +53,7 @@ class RegisterPostulantActivity : AppCompatActivity() {
     fun fileUpload() {
         val intent = Intent(Intent.ACTION_GET_CONTENT)
         intent.type = "*/*"
+        Log.d("intentbri", intent.toString())
         startActivityForResult(intent, File)
     }
     private fun addPostulant() {
@@ -185,6 +187,8 @@ class RegisterPostulantActivity : AppCompatActivity() {
         if (requestCode == File) {
             if (resultCode == RESULT_OK) {
                 val FileUri = data!!.data
+                Log.d("firebase", FileUri.toString())
+                val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, FileUri)
                 val Folder: StorageReference =
                     FirebaseStorage.getInstance().getReference().child("User")
                 val file_name: StorageReference = Folder.child("file" + FileUri!!.lastPathSegment)
