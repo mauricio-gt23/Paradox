@@ -43,6 +43,12 @@
         <entry key="..\:/Brigitte/7mo ciclo/Apps-Moviles/paradox/MobileParadox/app/src/main/res/menu/menu_salir.xml" value="0.6" />
         <entry key="..\:/Brigitte/7mo ciclo/Apps-Moviles/paradox/MobileParadox/app/src/main/res/menu/navigation_employeer.xml" value="0.13645833333333332" />
         <entry key="..\:/Brigitte/7mo ciclo/Apps-Moviles/paradox/MobileParadox/app/src/main/res/menu/navigation_postulant.xml" value="0.13645833333333332" />
+        <entry key="..\:/MobileParadox/app/src/main/res/layout/fragment_announcement.xml" value="0.36666666666666664" />
+        <entry key="..\:/MobileParadox/app/src/main/res/layout/fragment_published_works.xml" value="0.36666666666666664" />
+        <entry key="..\:/MobileParadox/app/src/main/res/layout/list_element_card_work.xml" value="0.36666666666666664" />
+        <entry key="..\:/MobileParadox/app/src/main/res/layout/list_element_postulant.xml" value="0.36666666666666664" />
+        <entry key="..\:/MobileParadox/app/src/main/res/layout/list_element_postulation.xml" value="0.36666666666666664" />
+        <entry key="..\:/MobileParadox/app/src/main/res/layout/list_element_published_work.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1295" />
         <entry key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/drawable/ic_baseline_lock_24.xml" value="0.2325" />
         <entry key="..\:/Users/AMG/Desktop/MovilesTrabajoParcial/MobileParadox/app/src/main/res/drawable/ic_baseline_person_outline_24.xml" value="0.2325" />
