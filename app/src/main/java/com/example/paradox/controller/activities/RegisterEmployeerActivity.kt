@@ -11,7 +11,6 @@ import com.example.paradox.R
 import com.example.paradox.models.Errores
 import com.example.paradox.models.RequestEmployeer
 import com.example.paradox.models.ResponseEmployeer
-import com.example.paradox.models.Sector
 import com.example.paradox.network.RegisterService
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
@@ -38,7 +37,7 @@ class RegisterEmployeerActivity : AppCompatActivity() {
 
         val btRegister = findViewById<Button>(R.id.btRegistrarseEmp)
         val btncheckBox = findViewById<CheckBox>(R.id.btncheckBox)
-        val tvTerms = findViewById<TextView>(R.id.textView2)
+        val tvTerms = findViewById<TextView>(R.id.tvFirstPart)
         val uploadImageView = findViewById<ImageView>(R.id.uploadImageView)
         uploadImageView.setOnClickListener {
             fileUpload()

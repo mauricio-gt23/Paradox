@@ -30,7 +30,7 @@ class RegisterPostulantActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register_postulant)
         val etPerfilPostulante = findViewById<Button>(R.id.btnContinuarPostulante)
-        val tvTerms = findViewById<TextView>(R.id.textView2)
+        val tvTerms = findViewById<TextView>(R.id.tvSecondPart)
 
         val uploadImageView = findViewById<ImageView>(R.id.uploadImageViewPost)
         uploadImageView.setOnClickListener {
