@@ -7,6 +7,8 @@ import android.util.Log
 import android.widget.*
 import androidx.core.app.ActivityCompat.startActivityForResult
 import com.example.paradox.R
+import com.example.paradox.databinding.ActivityPerfilPostulanteBinding
+import com.example.paradox.databinding.FragmentAddCompanyBinding
 import com.example.paradox.models.*
 import com.example.paradox.network.RegisterService
 import com.google.firebase.database.ktx.database
@@ -19,11 +21,39 @@ import java.io.File
 import java.io.IOException
 
 class PerfilPostulanteActivity : AppCompatActivity() {
+    private var studyId : Int = 0
+    private var skillId : Int = 0
+    private var languageId : Int = 0
+    private lateinit var studies : ArrayList<Study>
+    private lateinit var skills: ArrayList<Skill>
+    private lateinit var languages : ArrayList<Language>
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_perfil_postulante)
 
+        val studyAdapter = ArrayAdapter(this, R.layout.prototype_study, studies)
+        val skillAdapter = ArrayAdapter(this, R.layout.prototype_study, skills)
+        val languageAdapter = ArrayAdapter(this, R.layout.prototype_study, languages)
+
+        val atvStudy = findViewById<AutoCompleteTextView>(R.id.atvStudy)
+        atvStudy.setOnItemClickListener { _, _, position, _ ->
+            val selectedStudy = studyAdapter.getItem(position) as Study
+            studyId = selectedStudy.id
+        }
+
+        val atvSkill = findViewById<AutoCompleteTextView>(R.id.atvSkill)
+        atvSkill.setOnItemClickListener { _, _, position, _ ->
+            val selectedSkill = skillAdapter.getItem(position) as Skill
+            languageId = selectedSkill.id
+        }
+
+        val atvLanguage = findViewById<AutoCompleteTextView>(R.id.atvLanguage)
+        atvLanguage.setOnItemClickListener { _, _, position, _ ->
+            val selectedLanguage = languageAdapter.getItem(position) as Language
+            skillId = selectedLanguage.id
+        }
 
         val crearPerfilPostulante = findViewById<Button>(R.id.btCrearPost)
 
@@ -31,45 +61,7 @@ class PerfilPostulanteActivity : AppCompatActivity() {
         crearPerfilPostulante.setOnClickListener {
             addPostulantPerfil()
 
-
         }
-
-
-        val spinner_grado_estudios: Spinner = findViewById(R.id.spGradoDeEstudios)
-        ArrayAdapter.createFromResource(
-            this,
-            R.array.grado_array,
-            android.R.layout.simple_spinner_item
-        ).also { adapter ->
-            // Specify the layout to use when the list of choices appears
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-            // Apply the adapter to the spinner
-            spinner_grado_estudios.adapter = adapter
-        }
-
-        val spinner_habilidades: Spinner = findViewById(R.id.spHabilidades)
-        ArrayAdapter.createFromResource(
-            this,
-            R.array.habilidades_array,
-            android.R.layout.simple_spinner_item
-        ).also { adapter ->
-            // Specify the layout to use when the list of choices appears
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-            // Apply the adapter to the spinner
-            spinner_habilidades.adapter = adapter
-        }
-        val spinner_Idiomas: Spinner = findViewById(R.id.spIdiomas)
-        ArrayAdapter.createFromResource(
-            this,
-            R.array.idiomas_array,
-            android.R.layout.simple_spinner_item
-        ).also { adapter ->
-            // Specify the layout to use when the list of choices appears
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-            // Apply the adapter to the spinner
-            spinner_Idiomas.adapter = adapter
-        }
-
     }
 
     private fun addPostulantPerfil() {
