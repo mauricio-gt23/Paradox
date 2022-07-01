@@ -3,6 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Brigitte/UPC/Moviles/Paradox/MobileParadox/app/src/main/res/layout/activity_edit_profile_postulant.xml" value="0.128125" />
+        <entry key="..\:/Users/Brigitte/UPC/Moviles/Paradox/MobileParadox/app/src/main/res/layout/content_navigation_postulant.xml" value="0.2" />
+        <entry key="..\:/Users/Brigitte/UPC/Moviles/Paradox/MobileParadox/app/src/main/res/layout/fragment_announcement.xml" value="0.128125" />
+        <entry key="..\:/Users/Brigitte/UPC/Moviles/Paradox/MobileParadox/app/src/main/res/layout/fragment_postulation.xml" value="0.3203125" />
+        <entry key="..\:/Users/Brigitte/UPC/Moviles/Paradox/MobileParadox/app/src/main/res/layout/fragment_watch_announcement.xml" value="0.128125" />
+        <entry key="..\:/Users/Brigitte/UPC/Moviles/Paradox/MobileParadox/app/src/main/res/layout/list_element_postulation.xml" value="0.4" />
+        <entry key="..\:/Users/Brigitte/UPC/Moviles/Paradox/MobileParadox/app/src/main/res/layout/list_element_published_work.xml" value="0.536" />
+        <entry key="..\:/Users/Brigitte/UPC/Moviles/Paradox/MobileParadox/app/src/main/res/layout/nav_header_navigation_postulant.xml" value="0.128125" />
+        <entry key="..\:/Users/Brigitte/UPC/Moviles/Paradox/MobileParadox/app/src/main/res/layout/prototype_company.xml" value="0.128125" />
+        <entry key="..\:/Users/Brigitte/UPC/Moviles/Paradox/MobileParadox/app/src/main/res/layout/prototype_languages.xml" value="0.128125" />
         <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_edit_professional_profile_p.xml" value="0.14583333333333334" />
         <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_edit_profile_postulant.xml" value="0.14583333333333334" />
         <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_empleadorprofile.xml" value="0.14583333333333334" />
