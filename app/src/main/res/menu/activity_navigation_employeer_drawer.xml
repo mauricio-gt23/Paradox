@@ -14,5 +14,9 @@
             android:id="@+id/addCompanyFragment"
             android:title="@string/add_company" />
 
+        <item
+            android:id="@+id/aboutFragment"
+            android:title="Acerca de" />
+
     </group>
 </menu>

@@ -95,7 +95,7 @@
             android:layout_marginEnd="37dp"
             android:autofillHints=""
             android:ems="10"
-            android:hint="Ocupacion"
+            android:hint="@string/ocupation"
             android:inputType="textPersonName"
             android:minHeight="48dp"
             android:text="@string/degree_edit"
@@ -129,7 +129,7 @@
             android:autofillHints=""
             android:ems="10"
             android:gravity="start|top"
-            android:hint="Descripcion"
+            android:hint="@string/description"
             android:inputType="textMultiLine"
             android:text="@string/profile_description_edit"
             app:layout_constraintEnd_toEndOf="parent"
@@ -149,25 +149,6 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-
-<!--        <EditText-->
-<!--            android:id="@+id/etProfileDescriptionShow"-->
-<!--            android:layout_width="340dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginStart="36dp"-->
-<!--            android:layout_marginTop="15dp"-->
-<!--            android:layout_marginEnd="37dp"-->
-<!--            android:autofillHints=""-->
-<!--            android:ems="10"-->
-<!--            android:gravity="start|top"-->
-<!--            android:inputType="textMultiLine"-->
-<!--            android:text="@string/profile_description_edit"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/etDegreeEditCont"-->
-<!--            tools:text="Ingeniero de Sistemas de la Universidad La Sapienza (Roma -Italia ) con amplios conocimientos en tecnologías SOA con énfasis en arquitecturas basadas en JEE. -->
-<!--            Soy una persona capaz de aprender temas nuevos con el objetivo de aportar al trabajo en equipo y hacer crecer mi conocimiento." />-->
-
         <TextView
             android:id="@+id/tvMultiSelectStudies"
             android:layout_width="0dp"
@@ -179,7 +160,7 @@
             android:background="@android:drawable/editbox_background"
             android:drawablePadding="16dp"
             android:padding="12dp"
-            android:text="Estudios"
+            android:text="@string/studies"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -196,7 +177,7 @@
             android:background="@android:drawable/editbox_background"
             android:drawablePadding="16dp"
             android:padding="12dp"
-            android:text="Habilidades"
+            android:text="@string/skills"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -213,7 +194,7 @@
             android:background="@android:drawable/editbox_background"
             android:drawablePadding="16dp"
             android:padding="12dp"
-            android:text="Lenguajes"
+            android:text="@string/languages"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -227,7 +208,9 @@
             android:layout_marginTop="27dp"
             android:layout_marginEnd="37dp"
             android:layout_marginBottom="140dp"
-            android:text="Guardar cambios"
+            android:text="@string/save_changes"
+            android:shadowRadius="@integer/material_motion_duration_short_1"
+            app:cornerRadius="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.495"

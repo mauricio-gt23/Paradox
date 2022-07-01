@@ -37,8 +37,6 @@ class NavigationEmployeerActivity : AppCompatActivity() {
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_content_navigation_employeer)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.publishedWorksFragment, R.id.viewCompaniesFragment, R.id.addCompanyFragment

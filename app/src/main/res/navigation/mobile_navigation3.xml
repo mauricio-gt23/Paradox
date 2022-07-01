@@ -28,5 +28,11 @@
         android:label=""
         tools:layout="@layout/fragment_see_prof_profile_b" />
 
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.paradox.ui.about.About"
+        android:label=""
+        tools:layout="@layout/fragment_about" />
+
 
 </navigation>

@@ -30,7 +30,7 @@ class RegisterPostulantActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register_postulant)
         val etPerfilPostulante = findViewById<Button>(R.id.btnContinuarPostulante)
-        val tvTerms = findViewById<TextView>(R.id.textView2)
+        val tvTerms = findViewById<TextView>(R.id.tvSecondPart)
 
         val uploadImageView = findViewById<ImageView>(R.id.uploadImageViewPost)
         uploadImageView.setOnClickListener {
@@ -45,7 +45,7 @@ class RegisterPostulantActivity : AppCompatActivity() {
         }
         tvTerms.setOnClickListener {
             val browserIntent = Intent(Intent.ACTION_VIEW,
-                Uri.parse("https://www.freeprivacypolicy.com/live/b00fac55-ba79-4c5f-a2bb-cada03733179"))
+                Uri.parse("https://www.freeprivacypolicy.com/live/2c6b0958-129b-439c-85a8-b7fcee37d5ba"))
             startActivity(browserIntent)
         }
     }

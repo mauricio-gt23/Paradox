@@ -13,3 +13,8 @@ class Skill (
     @SerializedName("description")
     val description: String = ""
 ) : Parcelable
+{
+    override fun toString(): String {
+        return name
+    }
+}

@@ -26,7 +26,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvWork"
             android:layout_width="373dp"
-            android:layout_height="290dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="64dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -46,24 +46,22 @@
 
         <TextView
             android:id="@+id/tvOffers"
-            android:layout_width="273dp"
+            android:layout_width="wrap_content"
             android:layout_height="21dp"
             android:layout_marginTop="12dp"
             android:text="@string/ofertas"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.681"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/svSearch" />
 
         <TextView
             android:id="@+id/tvCountOffers"
-            android:layout_width="21dp"
-            android:layout_height="21dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
+            android:layout_marginEnd="4dp"
             android:textAlignment="center"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.187"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tvOffers"
             app:layout_constraintTop_toBottomOf="@+id/svSearch"
             tools:text="#" />
 
@@ -78,18 +76,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:queryHint="Buscar empleo" />
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floatingActionButton2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="44dp"
-            android:layout_marginBottom="56dp"
-            android:clickable="true"
-            app:backgroundTint="#7E57C2"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/ic_filter" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
