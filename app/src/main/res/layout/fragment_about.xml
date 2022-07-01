@@ -13,9 +13,9 @@
         <!-- TODO: Update blank fragment layout -->
 
         <ImageView
-            android:id="@+id/ivParadoxName"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
+            android:id="@+id/ivParadoxLogo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="151dp"
             android:layout_marginTop="7dp"
             android:layout_marginEnd="151dp"
@@ -23,18 +23,20 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ivParadoxName"
+            app:srcCompat="@drawable/paradox"
             tools:src="@drawable/paradox" />
 
         <ImageView
             android:id="@+id/ivParadoxName"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="140dp"
             android:layout_marginTop="27dp"
             android:layout_marginEnd="140dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/avatar"
             tools:src="@drawable/avatar" />
 
         <TextView
@@ -66,7 +68,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
-            android:layout_marginTop="54dp"
+            android:layout_marginTop="45dp"
             android:layout_marginEnd="40dp"
             android:text="Una aplicación creada con el próposito de Organizar y optimizar el proceso de postulación y contratación mediante el uso de las nuevas tecnologías y lineamientos modernos y, de esta manera, crear un espacio moderno y adaptado a las circunstancias actuales en el que encontrar trabajo."
             app:layout_constraintEnd_toEndOf="parent"
