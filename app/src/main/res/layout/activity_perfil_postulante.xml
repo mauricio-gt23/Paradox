@@ -81,44 +81,84 @@
     </com.google.android.material.textfield.TextInputLayout>
 
 
-    <Spinner
-        android:id="@+id/spGradoDeEstudios"
-        android:layout_width="0dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="40dp"
-        android:ems="10"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtDescriptionPerfilCont" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tfStudies"
 
-    <Spinner
-        android:id="@+id/spHabilidades"
-        android:layout_width="0dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="40dp"
-        android:ems="10"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spGradoDeEstudios" />
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
 
-    <Spinner
-        android:id="@+id/spIdiomas"
         android:layout_width="0dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="40dp"
-        android:ems="10"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="37dp"
+        android:hint="@string/grado_de_estudios"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spHabilidades" />
+        app:layout_constraintTop_toBottomOf="@+id/txtDescriptionPerfilCont">
+
+        <AutoCompleteTextView
+            android:id="@+id/atvStudy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            tools:ignore="LabelFor,TextContrastCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tfSkills"
+
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="37dp"
+        android:hint="@string/skills_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tfStudies">
+
+        <AutoCompleteTextView
+            android:id="@+id/atvSkill"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            tools:ignore="LabelFor,TextContrastCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tfLanguages"
+
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="37dp"
+        android:hint="@string/language_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tfSkills">
+
+        <AutoCompleteTextView
+            android:id="@+id/atvLanguage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            tools:ignore="LabelFor,TextContrastCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <Button
         android:id="@+id/btCrearPost"
@@ -135,6 +175,6 @@
         app:cornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spIdiomas" />
+        app:layout_constraintTop_toBottomOf="@+id/tfLanguages" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
