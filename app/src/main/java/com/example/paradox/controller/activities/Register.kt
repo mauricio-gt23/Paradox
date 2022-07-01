@@ -22,7 +22,7 @@ class Register : AppCompatActivity() {
 
         btRegisterPostulantActivity.setOnClickListener {
 
-            val intent = Intent(this, RegisterPostulantActivity::class.java)
+            val intent = Intent(this, PerfilPostulanteActivity::class.java)
             startActivity(intent)
         }
     }

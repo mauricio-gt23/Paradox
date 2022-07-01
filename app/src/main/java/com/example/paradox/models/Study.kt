@@ -9,4 +9,8 @@ class Study (
     val name: String = "",
     @SerializedName("degree")
     val degree: Int = 1
-)
+){
+    override fun toString(): String {
+        return name
+    }
+}

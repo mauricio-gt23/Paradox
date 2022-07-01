@@ -10,3 +10,8 @@ class Language (
     @SerializedName("level")
     val level: Int = 1
 )
+{
+    override fun toString(): String {
+        return name
+    }
+}
