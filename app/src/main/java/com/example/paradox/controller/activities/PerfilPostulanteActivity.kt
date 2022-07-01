@@ -10,6 +10,7 @@ import com.example.paradox.R
 import com.example.paradox.databinding.ActivityPerfilPostulanteBinding
 import com.example.paradox.databinding.FragmentAddCompanyBinding
 import com.example.paradox.models.*
+import com.example.paradox.network.PostulantService
 import com.example.paradox.network.RegisterService
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
@@ -24,32 +25,38 @@ class PerfilPostulanteActivity : AppCompatActivity() {
     private var studyId : Int = 0
     private var skillId : Int = 0
     private var languageId : Int = 0
-    private lateinit var studies : ArrayList<Study>
-    private lateinit var skills: ArrayList<Skill>
     private lateinit var languages : ArrayList<Language>
+    private lateinit var studies : ArrayList<Study>
+    private lateinit var skills : ArrayList<Skill>
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_perfil_postulante)
-
+        getData()
         val studyAdapter = ArrayAdapter(this, R.layout.prototype_study, studies)
-        val skillAdapter = ArrayAdapter(this, R.layout.prototype_study, skills)
-        val languageAdapter = ArrayAdapter(this, R.layout.prototype_study, languages)
+        val skillAdapter = ArrayAdapter(this, R.layout.prototype_skill, skills)
+        val languageAdapter = ArrayAdapter(this, R.layout.prototype_language, languages)
+
 
         val atvStudy = findViewById<AutoCompleteTextView>(R.id.atvStudy)
+        atvStudy.setAdapter(studyAdapter)
         atvStudy.setOnItemClickListener { _, _, position, _ ->
             val selectedStudy = studyAdapter.getItem(position) as Study
             studyId = selectedStudy.id
+            Log.d("idbri", studyId.toString())
         }
 
         val atvSkill = findViewById<AutoCompleteTextView>(R.id.atvSkill)
+        atvSkill.setAdapter(skillAdapter)
         atvSkill.setOnItemClickListener { _, _, position, _ ->
             val selectedSkill = skillAdapter.getItem(position) as Skill
             languageId = selectedSkill.id
         }
 
         val atvLanguage = findViewById<AutoCompleteTextView>(R.id.atvLanguage)
+        atvLanguage.setAdapter(languageAdapter)
         atvLanguage.setOnItemClickListener { _, _, position, _ ->
             val selectedLanguage = languageAdapter.getItem(position) as Language
             skillId = selectedLanguage.id
@@ -140,7 +147,69 @@ class PerfilPostulanteActivity : AppCompatActivity() {
 
         }
 
+    private fun getData() {
+        studies = ArrayList<Study>()
+        languages = ArrayList<Language>()
+        skills = ArrayList<Skill>()
 
+        val request = PostulantService.postulantInstance.getAllLanguages()
+        val request1 = PostulantService.postulantInstance.getAllStudies()
+        val request2 = PostulantService.postulantInstance.getAllSkills()
+
+        request.enqueue(object : Callback<Languages> {
+            override fun onResponse(call: Call<Languages>, response: Response<Languages>) {
+                if (response.isSuccessful){
+                    val content = response.body()
+                    if (content != null) {
+                        languages.apply {
+                            addAll(content.languages)
+                        }
+                        Log.d("Brigitte", languages.toString())
+                    }
+                }
+            }
+
+            override fun onFailure(call: Call<Languages>, t: Throwable) {
+                Toast.makeText(this@PerfilPostulanteActivity, "Languages could not be retrieved", Toast.LENGTH_LONG).show()
+            }
+        })
+
+        request1.enqueue(object : Callback<Studies> {
+            override fun onResponse(call: Call<Studies>, response: Response<Studies>) {
+                if (response.isSuccessful){
+                    val content = response.body()
+                    if (content != null) {
+                        studies.apply {
+                            addAll(content.studies)
+                        }
+                        Log.d("Brigitte", studies.toString())
+                    }
+                }
+            }
+
+            override fun onFailure(call: Call<Studies>, t: Throwable) {
+                Toast.makeText(this@PerfilPostulanteActivity, "Studies could not be retrieved", Toast.LENGTH_LONG).show()
+            }
+        })
+
+        request2.enqueue(object : Callback<Skills> {
+            override fun onResponse(call: Call<Skills>, response: Response<Skills>) {
+                if (response.isSuccessful){
+                    val content = response.body()
+                    if (content != null) {
+                        skills.apply {
+                            addAll(content.skills)
+                        }
+                        Log.d("Brigitte", skills.toString())
+                    }
+                }
+            }
+
+            override fun onFailure(call: Call<Skills>, t: Throwable) {
+                Toast.makeText(this@PerfilPostulanteActivity, "Skills could not be retrieved", Toast.LENGTH_LONG).show()
+            }
+        })
+    }
 
 
 
