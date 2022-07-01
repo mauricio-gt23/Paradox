@@ -36,8 +36,9 @@
     <string name="numero_telefonico">Número teléfonico</string>
     <string name="correo_electronico">Correo electronico</string>
     <string name="contrase_a">contraseña</string>
-    <string name="posicion">Posición</string>
+    <string name="posicion">Ultima posición laboral </string>
     <string name="continuar">Continuar</string>
+    joelc@gmail.com
     <string name="registrarse">Registrarse</string>
     <string name="he_le_do_y_acepto_los_terminos_y_condiciones">He leído y acepto los terminos y condiciones</string>
     <string name="perfil_del_postulante">Perfil del postulante</string>
@@ -246,5 +247,5 @@
     <string name="no_registers_yet">(Aun no hay registros)</string>
     <string name="see_professional_profile">Ver perfil profesional</string>
     <string name="edit_profile">Editar perfil</string>
->>>>>>> 761eace8261b394db357f0017ece8e29b2722cfa
+
 </resources>

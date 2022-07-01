@@ -22,103 +22,237 @@
         app:layout_constraintStart_toStartOf="parent"
 
         app:layout_constraintTop_toTopOf="parent" />
-    <EditText
-        android:id="@+id/txCreateNameEmp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:inputType="text"
-        android:hint="@string/nombres"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/register_title" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txCreateNameEmpCon"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="58dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:layout_marginTop="20dp"
+            android:hint="@string/nombres"
+            android:inputType="textPersonName"
+            android:text="@string/name_edit_profile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/register_title"
+            tools:ignore="MissingConstraints">
 
-    <EditText
-        android:id="@+id/txCreateApellidoEmp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:inputType="text"
-        android:hint="@string/apellidos"
-        app:layout_constraintTop_toBottomOf="@+id/txCreateNameEmp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txCreateNameEmp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/secondary"
+                android:textSize="14sp"
+                tools:text="Marcus"
+                tools:ignore="TextContrastCheck" />
 
-    <EditText
-        android:id="@+id/txDocumentoIdentidadEmp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:inputType="text"
-        android:hint="@string/documento_de_identidad"
-        app:layout_constraintTop_toBottomOf="@+id/txCreateApellidoEmp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/txtEstadoCivilEmpl"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:inputType="text"
-        android:hint="@string/estado_civil"
-        app:layout_constraintTop_toBottomOf="@+id/txDocumentoIdentidadEmp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txCreateApellidoEmpCon"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="58dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:layout_marginTop="20dp"
+            android:hint="@string/apellidos"
+            android:inputType="textPersonName"
+            android:text="@string/name_edit_profile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txCreateNameEmpCon"
+            tools:ignore="MissingConstraints">
 
-    <EditText
-        android:id="@+id/txtPhoneEmp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:hint="@string/numero_telefonico"
-        android:inputType="number"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txCreateApellidoEmp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/secondary"
+                android:textSize="14sp"
+                tools:text="Marcus"
+                tools:ignore="TextContrastCheck" />
 
-        app:layout_constraintTop_toBottomOf="@+id/txtEstadoCivilEmpl"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/txtPosicionEmp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/posicion"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPhoneEmp" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txDocumentoIdentidadEmpCon"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="58dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:layout_marginTop="20dp"
+            android:hint="@string/documento_de_identidad"
+            android:inputType="textPersonName"
+            android:text="@string/name_edit_profile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txCreateApellidoEmpCon"
+            tools:ignore="MissingConstraints">
 
-    <EditText
-        android:id="@+id/txtEmailEmp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/correo_electronico"
-        android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPosicionEmp" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txDocumentoIdentidadEmp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/secondary"
+                android:textSize="14sp"
+                tools:text="Marcus"
+                tools:ignore="TextContrastCheck" />
 
-    <EditText
-        android:id="@+id/txtContraEmp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:inputType="textPassword"
-        android:hint="@string/password_hint"
-        app:layout_constraintTop_toBottomOf="@+id/txtEmailEmp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtEstadoCivilEmplCon"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="58dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:layout_marginTop="20dp"
+            android:hint="@string/estado_civil"
+            android:inputType="textPersonName"
+            android:text="@string/name_edit_profile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txDocumentoIdentidadEmpCon"
+            tools:ignore="MissingConstraints">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtEstadoCivilEmpl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/secondary"
+                android:textSize="14sp"
+                tools:text="Marcus"
+                tools:ignore="TextContrastCheck" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtPhoneEmpCon"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="58dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:layout_marginTop="20dp"
+            android:hint="@string/numero_telefonico"
+            android:inputType="textPersonName"
+            android:text="@string/name_edit_profile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtEstadoCivilEmplCon"
+            tools:ignore="MissingConstraints">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtPhoneEmp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/secondary"
+                android:textSize="14sp"
+                tools:text="Marcus"
+                tools:ignore="TextContrastCheck" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtPosicionEmpCon"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="58dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:layout_marginTop="20dp"
+            android:hint="@string/posicion"
+            android:inputType="textPersonName"
+            android:text="@string/name_edit_profile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtPhoneEmpCon"
+            tools:ignore="MissingConstraints">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtPosicionEmp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/secondary"
+                android:textSize="14sp"
+                tools:text="Marcus"
+                tools:ignore="TextContrastCheck" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtEmailEmpCon"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="58dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:layout_marginTop="20dp"
+            android:hint="@string/email_hint"
+            android:inputType="textPersonName"
+            android:text="@string/name_edit_profile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtPosicionEmpCon"
+            tools:ignore="MissingConstraints">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtEmailEmp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/secondary"
+                android:textSize="14sp"
+                tools:text="Marcus"
+                tools:ignore="TextContrastCheck" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtContraEmpCon"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="58dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:layout_marginTop="20dp"
+            android:hint="@string/password_hint"
+            android:inputType="textPersonName"
+            android:text="@string/name_edit_profile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtEmailEmpCon"
+            tools:ignore="MissingConstraints">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtContraEmp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/secondary"
+                android:textSize="14sp"
+                tools:text="Marcus"
+                tools:ignore="TextContrastCheck" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
             android:id="@+id/btnAdjuntarArchivos"
@@ -132,7 +266,7 @@
             android:hint="@string/adjuntar_archivos"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtContraEmp" />
+            app:layout_constraintTop_toBottomOf="@+id/txtContraEmpCon" />
 
 
         <LinearLayout
@@ -185,13 +319,13 @@
             android:id="@+id/uploadImageView"
             android:layout_width="20dp"
             android:layout_height="30dp"
-            android:textAlignment="center"
             android:layout_gravity="center"
-            android:layout_marginStart="215dp"
-            android:layout_marginTop="492dp"
+            android:layout_marginStart="210dp"
+            android:layout_marginTop="704dp"
             android:contentDescription="@string/all"
+            android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.452"
             app:layout_constraintStart_toStartOf="@+id/btnAdjuntarArchivos"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_upload_file"
