@@ -237,4 +237,12 @@
     <string name="miPerfil">Mi perfil</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="crear">Crear</string>
+    <string name="ocupation">Ocupacion</string>
+    <string name="studies">Estudios</string>
+    <string name="skills">Habilidades</string>
+    <string name="languages">Lenguajes</string>
+    <string name="save_changes">Guardar cambios</string>
+    <string name="no_registers_yet">(Aun no hay registros)</string>
+    <string name="see_professional_profile">Ver perfil profesional</string>
+    <string name="edit_profile">Editar perfil</string>
 </resources>
