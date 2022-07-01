@@ -19,6 +19,7 @@
             android:layout_marginEnd="121dp"
             android:fontFamily="sans-serif-black"
             android:text="@string/add_company"
+            android:textAlignment="center"
             android:textColor="@color/primary"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -30,11 +31,13 @@
 
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
 
-            android:layout_width="249dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="81dp"
+            android:layout_marginStart="58dp"
             android:layout_marginTop="16dp"
+            android:layout_marginEnd="58dp"
             android:hint="@string/sector_de_industria"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvAddTitle">
 
@@ -54,12 +57,14 @@
 
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
 
-            android:layout_width="249dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="81dp"
+            android:layout_marginStart="58dp"
             android:layout_marginTop="16dp"
+            android:layout_marginEnd="58dp"
             android:hint="@string/nombre_de_empresa"
             android:textColorHint="@color/secondary"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tfSectors"
             tools:ignore="MissingConstraints">
@@ -80,12 +85,14 @@
 
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
 
-            android:layout_width="249dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="81dp"
+            android:layout_marginStart="58dp"
             android:layout_marginTop="16dp"
+            android:layout_marginEnd="58dp"
             android:hint="@string/ruc"
             android:textColorHint="@color/secondary"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tfAddName"
             tools:ignore="MissingConstraints">
@@ -106,12 +113,14 @@
 
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
 
-            android:layout_width="249dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="81dp"
+            android:layout_marginStart="58dp"
             android:layout_marginTop="16dp"
+            android:layout_marginEnd="58dp"
             android:hint="@string/address"
             android:textColorHint="@color/secondary"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tfAddRuc"
             tools:ignore="MissingConstraints">
@@ -132,12 +141,14 @@
 
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
 
-            android:layout_width="249dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="81dp"
+            android:layout_marginStart="58dp"
             android:layout_marginTop="16dp"
+            android:layout_marginEnd="58dp"
             android:hint="@string/description"
             android:textColorHint="@color/secondary"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tfAddAddress"
             tools:ignore="MissingConstraints">
@@ -158,12 +169,14 @@
 
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
 
-            android:layout_width="249dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="81dp"
+            android:layout_marginStart="58dp"
             android:layout_marginTop="16dp"
+            android:layout_marginEnd="58dp"
             android:hint="@string/adjuntar_logo"
             android:textColorHint="@color/secondary"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tfAddDescription"
             tools:ignore="MissingConstraints">
@@ -180,13 +193,15 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:enabled="false"
             android:id="@+id/btAddCompany"
-            android:layout_width="249dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="81dp"
+            android:layout_marginStart="58dp"
             android:layout_marginTop="16dp"
+            android:layout_marginEnd="58dp"
+            android:enabled="false"
             android:text="@string/add_company"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tfAddLogo"
             tools:ignore="MissingConstraints,DuplicateSpeakableTextCheck" />

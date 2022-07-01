@@ -31,6 +31,7 @@
             android:layout_marginEnd="132dp"
             android:fontFamily="sans-serif-black"
             android:text="@string/edit_company"
+            android:textAlignment="center"
             android:textColor="@color/primary"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -42,11 +43,11 @@
 
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
 
-            android:layout_width="249dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="81dp"
+            android:layout_marginStart="58dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="81dp"
+            android:layout_marginEnd="58dp"
             android:hint="@string/nombre_de_empresa"
             android:textColorHint="@color/secondary"
             app:layout_constraintEnd_toEndOf="parent"
@@ -70,11 +71,11 @@
 
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
 
-            android:layout_width="249dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="81dp"
+            android:layout_marginStart="58dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="81dp"
+            android:layout_marginEnd="58dp"
             android:hint="@string/ruc"
             android:textColorHint="@color/secondary"
             app:layout_constraintEnd_toEndOf="parent"
@@ -98,11 +99,11 @@
 
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
 
-            android:layout_width="249dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="81dp"
+            android:layout_marginStart="58dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="81dp"
+            android:layout_marginEnd="58dp"
             android:hint="@string/address"
             android:textColorHint="@color/secondary"
             app:layout_constraintEnd_toEndOf="parent"
@@ -126,11 +127,11 @@
 
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
 
-            android:layout_width="249dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="81dp"
+            android:layout_marginStart="58dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="81dp"
+            android:layout_marginEnd="58dp"
             android:hint="@string/description"
             android:textColorHint="@color/secondary"
             app:layout_constraintEnd_toEndOf="parent"
@@ -154,11 +155,11 @@
 
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
 
-            android:layout_width="249dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="81dp"
+            android:layout_marginStart="58dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="81dp"
+            android:layout_marginEnd="58dp"
             android:hint="@string/adjuntar_logo"
             android:textColorHint="@color/secondary"
             app:layout_constraintEnd_toEndOf="parent"
@@ -179,11 +180,13 @@
 
         <Button
             android:id="@+id/btSaveEditedCompany"
-            android:layout_width="245dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="80dp"
+            android:layout_marginStart="58dp"
             android:layout_marginTop="16dp"
+            android:layout_marginEnd="58dp"
             android:text="@string/guardar_cambios"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tfEditLogo"
             tools:ignore="MissingConstraints" />
