@@ -17,5 +17,9 @@
         <item
             android:id="@+id/profProfileFragment"
             android:title="Mi perfil profesional" />
+
+        <item
+            android:id="@+id/aboutFragment"
+            android:title="Acerca de" />
     </group>
 </menu>

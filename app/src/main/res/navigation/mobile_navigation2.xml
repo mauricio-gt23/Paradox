@@ -77,6 +77,12 @@
         android:label=""
         tools:layout="@layout/fragment_postulant_profile" />
 
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.paradox.ui.about.About"
+        android:label=""
+        tools:layout="@layout/fragment_about" />
+
 
     <!--    <fragment-->
 <!--        android:id="@+id/nav_slideshow"-->

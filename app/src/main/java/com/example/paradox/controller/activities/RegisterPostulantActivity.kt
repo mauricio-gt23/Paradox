@@ -45,7 +45,7 @@ class RegisterPostulantActivity : AppCompatActivity() {
         }
         tvTerms.setOnClickListener {
             val browserIntent = Intent(Intent.ACTION_VIEW,
-                Uri.parse("https://www.freeprivacypolicy.com/live/b00fac55-ba79-4c5f-a2bb-cada03733179"))
+                Uri.parse("https://www.freeprivacypolicy.com/live/2c6b0958-129b-439c-85a8-b7fcee37d5ba"))
             startActivity(browserIntent)
         }
     }
