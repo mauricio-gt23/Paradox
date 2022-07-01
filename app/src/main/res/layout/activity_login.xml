@@ -30,7 +30,7 @@
         app:srcCompat="@drawable/paradox" />
 
 
-    <EditText
+  <!--  <EditText
         android:id="@+id/etUsername"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -54,9 +54,74 @@
         app:layout_constraintHorizontal_bias="0.842"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivTitleHome"
-        tools:ignore="TextContrastCheck" />
+        tools:ignore="TextContrastCheck" />-->
 
-    <EditText
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etUsernameCont"
+
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="37dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="Correo electronico"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:text="@string/degree_edit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivTitleHome"
+        tools:ignore="MissingConstraints">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/secondary"
+            android:textSize="14sp"
+            tools:ignore="TextContrastCheck"
+            tools:text="Ingeniero de sistemas" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etPasswordCont"
+
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="37dp"
+        android:autofillHints=""
+        android:ems="10"
+        app:passwordToggleEnabled="true"
+        android:hint="Contraseña"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:text="@string/degree_edit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etUsernameCont"
+        tools:ignore="MissingConstraints">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/secondary"
+            android:textSize="14sp"
+            tools:ignore="TextContrastCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+ <!--   <EditText
         android:id="@+id/etPassword"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -76,14 +141,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etUsername"
         tools:ignore="TextContrastCheck"
-        android:importantForAutofill="no" />
+        android:importantForAutofill="no" />-->
 
     <Button
         android:id="@+id/btCreateAccount"
         android:layout_width="245dp"
         android:layout_height="57dp"
         android:layout_marginTop="7dp"
-        android:backgroundTint="#00FFFFFF"
+        android:backgroundTint="@color/white"
         android:text="@string/register"
         android:textColor="@color/purple_500"
         android:textColorHint="@color/black"
@@ -91,7 +156,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btLogin"
-        tools:ignore="TextContrastCheck"
         tools:layout_editor_absoluteY="507dp" />
 
     <Button
@@ -107,7 +171,7 @@
         android:shadowRadius="@integer/material_motion_duration_short_1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/etPasswordCont" />
 
 
     <TextView
@@ -121,7 +185,7 @@
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/etPasswordCont" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
