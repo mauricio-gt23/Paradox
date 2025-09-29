@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_my_announcement">
+
+    <activity
+        android:id="@+id/nav_my_announcement"
+        android:name="com.example.paradox.controller.activities.MyAnnoucementActivity"
+        android:label="my_announcement"
+        tools:layout="@layout/activity_my_announcement"/>
+
+<!--    <activity
+        android:id="@+id/nav_publicar_anuncio"
+        android:name="com.example.paradox.controller.activities.MyAnnoucementActivity"
+        android:label="my_announcement"
+        tools:layout="@layout/activity_my_announcement"/> -->
+
+
+    <activity
+        android:id="@+id/nav_mi_perfil"
+        android:name="com.example.paradox.controller.activities.EmpleadorProfileActivity"
+        android:label="my_profile"
+        tools:layout="@layout/activity_empleadorprofile"/>
+
+    <activity
+        android:id="@+id/nav_cerrar_sesion"
+        android:name="com.example.paradox.controller.activities.LoginActivity"
+        android:label="cerrar_sesion"
+        tools:layout="@layout/activity_login"/>
+
+</navigation>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Brigitte/UPC/Moviles/Paradox/MobileParadox/app/src/main/res/layout/activity_edit_profile_postulant.xml" value="0.128125" />
+        <entry key="..\:/Users/Brigitte/UPC/Moviles/Paradox/MobileParadox/app/src/main/res/layout/content_navigation_postulant.xml" value="0.2" />
+        <entry key="..\:/Users/Brigitte/UPC/Moviles/Paradox/MobileParadox/app/src/main/res/layout/fragment_announcement.xml" value="0.128125" />
+        <entry key="..\:/Users/Brigitte/UPC/Moviles/Paradox/MobileParadox/app/src/main/res/layout/fragment_postulation.xml" value="0.3203125" />
+        <entry key="..\:/Users/Brigitte/UPC/Moviles/Paradox/MobileParadox/app/src/main/res/layout/fragment_watch_announcement.xml" value="0.128125" />
+        <entry key="..\:/Users/Brigitte/UPC/Moviles/Paradox/MobileParadox/app/src/main/res/layout/list_element_postulation.xml" value="0.4" />
+        <entry key="..\:/Users/Brigitte/UPC/Moviles/Paradox/MobileParadox/app/src/main/res/layout/list_element_published_work.xml" value="0.536" />
+        <entry key="..\:/Users/Brigitte/UPC/Moviles/Paradox/MobileParadox/app/src/main/res/layout/nav_header_navigation_postulant.xml" value="0.128125" />
+        <entry key="..\:/Users/Brigitte/UPC/Moviles/Paradox/MobileParadox/app/src/main/res/layout/prototype_company.xml" value="0.128125" />
+        <entry key="..\:/Users/Brigitte/UPC/Moviles/Paradox/MobileParadox/app/src/main/res/layout/prototype_languages.xml" value="0.128125" />
+        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_edit_professional_profile_p.xml" value="0.14583333333333334" />
+        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_edit_profile_postulant.xml" value="0.14583333333333334" />
+        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_empleadorprofile.xml" value="0.14583333333333334" />
+        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_information_job.xml" value="0.14583333333333334" />
+        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_login.xml" value="0.16847826086956522" />
+        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_main.xml" value="0.16847826086956522" />
+        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_menu.xml" value="0.16847826086956522" />
+        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_multiselect.xml" value="0.16847826086956522" />
+        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_my_announcement.xml" value="0.16847826086956522" />
+        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_perfil_postulante.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_register_employeer.xml" value="0.33" />
+        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_register_postulant.xml" value="0.25" />
+        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/activity_see_professional_profile_p.xml" value="0.16847826086956522" />
+        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/app_bar_navigation_employeer.xml" value="0.16847826086956522" />
+        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/content_navigation_postulant.xml" value="0.14583333333333334" />
+        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/dropdown_item.xml" value="0.12135416666666667" />
+        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/fragment_add_company.xml" value="0.12135416666666667" />
+        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/fragment_announcement.xml" value="0.14583333333333334" />
+        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/fragment_edit_company.xml" value="0.14583333333333334" />
+        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/fragment_edit_prof_profile.xml" value="0.16847826086956522" />
+        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/fragment_postulant_profile.xml" value="0.14583333333333334" />
+        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/fragment_postulation.xml" value="0.14583333333333334" />
+        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/fragment_published_works.xml" value="0.14583333333333334" />
+        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/fragment_see_prof_profile_b.xml" value="0.14583333333333334" />
+        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/fragment_see_profile_postulant_b.xml" value="0.14583333333333334" />
+        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/fragment_view_company.xml" value="0.14583333333333334" />
+        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/fragment_watch_announcement.xml" value="0.14583333333333334" />
+        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/list_element_card_work.xml" value="0.16847826086956522" />
+        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/list_element_postulant.xml" value="0.14583333333333334" />
+        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/list_element_postulation.xml" value="0.14583333333333334" />
+        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/nav_header_navigation_postulant.xml" value="0.16847826086956522" />
+        <entry key="..\:/Users/Carolina/Desktop/movileesnoche/MobileParadox/app/src/main/res/layout/prototype_company.xml" value="0.16847826086956522" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

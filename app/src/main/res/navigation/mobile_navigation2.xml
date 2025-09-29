@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation2"
+    app:startDestination="@+id/publishedWorksFragment">
+
+    <fragment
+        android:id="@+id/publishedWorksFragment"
+        android:name="com.example.paradox.ui.publishedworksm.PublishedWorksFragment"
+        android:label=""
+        tools:layout="@layout/fragment_published_works" >
+        <action
+            android:id="@+id/action_publishedWorksFragment_to_watchAnnouncementFragment"
+            app:destination="@id/watchAnnouncementFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.example.paradox.ui.gallery.GalleryFragment"
+        android:label=""
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.paradox.ui.profiles.SeeProfilePostulantB"
+        android:label=""
+        tools:layout="@layout/fragment_see_profile_postulant_b" />
+
+    <fragment
+        android:id="@+id/profProfileFragment"
+        android:name="com.example.paradox.ui.profiles.SeeProfProfileB"
+        android:label=""
+        tools:layout="@layout/fragment_see_prof_profile_b" />
+    <fragment
+        android:id="@+id/viewCompaniesFragment"
+        android:name="com.example.paradox.ui.mycompanies.ViewCompaniesFragment"
+        android:label=""
+        tools:layout="@layout/fragment_view_companies" >
+        <action
+            android:id="@+id/action_viewCompaniesFragment_to_viewCompanyFragment"
+            app:destination="@id/viewCompanyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addCompanyFragment"
+        android:name="com.example.paradox.ui.addcompany.AddCompanyFragment"
+        android:label=""
+        tools:layout="@layout/fragment_add_company" />
+    <fragment
+        android:id="@+id/viewCompanyFragment"
+        android:name="com.example.paradox.ui.mycompanies.ViewCompanyFragment"
+        android:label=""
+        tools:layout="@layout/fragment_view_company" >
+        <action
+            android:id="@+id/action_viewCompanyFragment_to_editCompanyFragment"
+            app:destination="@id/editCompanyFragment" />
+        <action
+            android:id="@+id/action_viewCompanyFragment_to_viewCompaniesFragment"
+            app:destination="@id/viewCompaniesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editCompanyFragment"
+        android:name="com.example.paradox.ui.mycompanies.EditCompanyFragment"
+        android:label=""
+        tools:layout="@layout/fragment_edit_company" />
+    <fragment
+        android:id="@+id/watchAnnouncementFragment"
+        android:name="com.example.paradox.ui.watchannouncementm.WatchAnnouncementFragment"
+        android:label=""
+        tools:layout="@layout/fragment_watch_announcement" >
+        <action
+            android:id="@+id/action_watchAnnouncementFragment_to_postulantProfileFragment"
+            app:destination="@id/postulantProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/postulantProfileFragment"
+        android:name="com.example.paradox.ui.postulantprofilem.PostulantProfileFragment"
+        android:label=""
+        tools:layout="@layout/fragment_postulant_profile" />
+
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.paradox.ui.about.About"
+        android:label=""
+        tools:layout="@layout/fragment_about" />
+
+
+    <!--    <fragment-->
+<!--        android:id="@+id/nav_slideshow"-->
+<!--        android:name="com.example.paradox.ui.slideshow.SlideshowFragment"-->
+<!--        android:label="@string/miPerfil"-->
+<!--        tools:layout="@layout/fragment_slideshow" />-->
+</navigation>

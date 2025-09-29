@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".PublishedWorksActivity">
+
+        <TextView
+            android:id="@+id/tvPostulation2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="104dp"
+            android:text="Mis anuncios"
+            android:textColor="#7E57C2"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="71dp"
+            android:layout_height="72dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@mipmap/ic_paradox" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvPublishedWork"
+            android:layout_width="345dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="33dp"
+            android:layout_marginTop="64dp"
+            android:layout_marginEnd="33dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/svSearchPublishedWork" />
+
+        <TextView
+            android:id="@+id/tvCountPublishedWorks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="4dp"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toStartOf="@+id/tvPublishedWorks"
+            app:layout_constraintTop_toBottomOf="@+id/svSearchPublishedWork"
+            tools:text="#" />
+
+        <TextView
+            android:id="@+id/tvPublishedWorks"
+            android:layout_width="wrap_content"
+            android:layout_height="21dp"
+            android:layout_marginStart="107dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="108dp"
+            android:text="@string/ofertas"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/svSearchPublishedWork" />
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/svSearchPublishedWork"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="140dp"
+            app:iconifiedByDefault="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:queryHint="Buscar anuncio" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
